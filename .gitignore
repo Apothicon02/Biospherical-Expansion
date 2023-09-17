@@ -1,25 +1,22 @@
-# eclipse
-bin
-*.launch
-.settings
-.metadata
-.classpath
-.project
-
-# idea
-out
-*.ipr
-*.iws
-*.iml
-.idea
-
-# gradle
-build
 .gradle
+++/build/
+!src/**/build/
+run/
 
-# other
-eclipse
-run
+# Ignore Gradle GUI config
+gradle-app.setting
 
-# Files from Forge MDK
-forge*changelog.txt
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+
+#Avoid ignore gradle wrapper properties
+!gradle-wrapper.properties
+
+# Cache of project
+.gradletasknamecache
+
+#Eclipse gradle plugin generated files
+# Eclipe Core
+.project
+#JDT-specific (Eclipse Java Development Tools)
+.classpath
