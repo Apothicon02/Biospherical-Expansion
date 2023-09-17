@@ -1,0 +1,17 @@
+{
+  "compatibilityLevel": "JAVA_17",
+  "package": "com.Apothic0n.BiosphericalExpansion.mixin",
+  "refmap": "mixins.biox.refmap.json",
+  "required": true,
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "mixins": [
+    "BiomeMixin",
+    "BiomeSpecialEffectsMixin"
+  ],
+  "client": [
+  ],
+  "server": [
+  ]
+}
