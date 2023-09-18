@@ -1,0 +1,6 @@
+{
+  "type": "forge:add_features",
+  "biomes": ["minecraft:deep_cold_ocean", "minecraft:cold_ocean", "minecraft:deep_frozen_ocean", "minecraft:frozen_ocean", "minecraft:grove", "minecraft:ice_spikes", "minecraft;snowy_plains", "minecraft:snowy_taiga"],
+  "features": "biox:amethyst_void_ceiling_crystals",
+  "step": "vegetal_decoration"
+}

@@ -1,0 +1,7 @@
+{
+  "type": "forge:add_features",
+  "biomes": ["minecraft:mushroom_fields", "minecraft:cherry_grove", "minecraft:cold_ocean", "minecraft:deep_cold_ocean", "minecraft:deep_frozen_ocean", "minecraft:flower_forest", "minecraft:frozen_ocean", "minecraft:grove",
+    "minecraft:ice_spikes", "minecraft:snowy_plains", "minecraft:snowy_taiga", "minecraft:wooded_badlands"],
+  "features": "biox:amethyst_void_crystals",
+  "step": "vegetal_decoration"
+}
