@@ -1,6 +1,6 @@
 {
   "type": "forge:add_features",
-  "biomes": ["minecraft:wooded_badlands", "minecraft:cherry_grove", "minecraft:flower_forest", "minecraft:mushroom_fields"],
+  "biomes": ["minecraft:mushroom_fields", "minecraft:cherry_grove", "minecraft:flower_forest", "minecraft:wooded_badlands"],
   "features": "biox:amethyst_void_ceiling_crystals",
   "step": "vegetal_decoration"
 }

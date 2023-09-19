@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(targets = "net.minecraft.world.level.biome.BiomeSpecialEffects$GrassColorModifier$1")
-public class BiomeSpecialEffectsMixin {
+public class BiomeSpecialEffectsGrassMixin {
     private static final PerlinSimplexNoise GRASS_SATURATION_NOISE = new PerlinSimplexNoise(new WorldgenRandom(new LegacyRandomSource(2345L)), ImmutableList.of(0));
     private static final PerlinSimplexNoise GRASS_BRIGHTNESS_NOISE = new PerlinSimplexNoise(new WorldgenRandom(new LegacyRandomSource(5432L)), ImmutableList.of(0));
     @Inject(at = @At("RETURN"), method = "modifyColor", cancellable = true)
