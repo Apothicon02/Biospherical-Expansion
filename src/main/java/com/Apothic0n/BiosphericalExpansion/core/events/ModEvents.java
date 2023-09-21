@@ -3,8 +3,10 @@ package com.Apothic0n.BiosphericalExpansion.core.events;
 import com.Apothic0n.BiosphericalExpansion.BiosphericalExpansion;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.Minecraft;
+import net.minecraft.core.BlockPos;
 import net.minecraft.util.FastColor;
 import net.minecraft.util.Mth;
+import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.LegacyRandomSource;
 import net.minecraft.world.level.levelgen.WorldgenRandom;
@@ -122,11 +124,51 @@ public class ModEvents {
                 Blocks.DEEPSLATE_COAL_ORE, Blocks.DEEPSLATE_IRON_ORE, Blocks.DEEPSLATE_LAPIS_ORE, Blocks.DEEPSLATE_REDSTONE_ORE, Blocks.DEEPSLATE_GOLD_ORE, Blocks.DEEPSLATE_DIAMOND_ORE, Blocks.DEEPSLATE_EMERALD_ORE);
 
         event.register((blockState, blockAndTintGetter, blockPos, tint) -> {
+                    if (blockPos != null && Minecraft.getInstance().level != null) {
+                        int x = blockPos.getX();
+                        int z = blockPos.getZ();
+                        int color = -328966;
+                        int maxHeight = Minecraft.getInstance().level.getMaxBuildHeight();
+                        int midHeight = maxHeight/2;
+                        int minHeight = Minecraft.getInstance().level.getMinBuildHeight();
+                        int offset = 0;
+                        if (minHeight < 0) {
+                            offset = -(minHeight);
+                            maxHeight = maxHeight + offset;
+                            midHeight = (maxHeight/2);
+                        }
+                        BlockPos offsetPos = blockPos.above(offset);
+                        double temperature = 0;
+                        if (offsetPos.getY() < midHeight) {
+                            temperature = (offsetPos.getY()-midHeight) * 0.005;
+                        } else {
+                            temperature = Mth.clamp(offsetPos.getY()-midHeight * 0.005, -1, 0.05);
+                        }
+                        double saturate = Mth.clamp(SATURATION_NOISE.getValue(x * 0.1, z * 0.1, false) * 0.33, -0.03, 0.03)+1.1;
+                        double brighten = Mth.clamp(BRIGHTNESS_NOISE.getValue(x * 0.025, z * 0.025, false) * 0.3, -0.33, 0.33);
+                        float red = (float) Mth.clamp(FastColor.ABGR32.red(color), 1, 255)/255;
+                        float green = (float) Mth.clamp(FastColor.ABGR32.green(color), 1, 255)/255;
+                        float blue = (float) Mth.clamp(FastColor.ABGR32.blue(color), 1, 255)/255;
+                        float gray = (float) ((red + green + blue) / (3 + brighten));
+                        return FastColor.ABGR32.color(FastColor.ABGR32.alpha(color),
+                                (int) (Mth.clamp(((red + (gray - red)) * saturate) + temperature, 0, 1) * 255),
+                                (int) (Mth.clamp(((green + (gray - green)) * saturate) + temperature, 0, 1) * 255),
+                                (int) (Mth.clamp(((blue + (gray - blue)) * saturate) - temperature, 0, 1) * 255));
+                    } else {
+                        return -328966;
+                    }
+                },
+                Blocks.END_STONE, Blocks.END_STONE_BRICKS, Blocks.END_STONE_BRICK_STAIRS, Blocks.END_STONE_BRICK_SLAB, Blocks.END_STONE_BRICK_WALL);
+
+        event.register((blockState, blockAndTintGetter, blockPos, tint) -> {
                     if (blockPos != null) {
                         int x = blockPos.getX();
                         int z = blockPos.getZ();
                         int color = -328966;
                         double humidity = -(Minecraft.getInstance().level.getBiome(blockPos).get().getModifiedClimateSettings().downfall()) * 0.25;
+                        if (Minecraft.getInstance().level.getBiome(blockPos).is(Biomes.MUSHROOM_FIELDS)) {
+                            humidity = -2;
+                        }
                         double saturate = Mth.clamp(SATURATION_NOISE.getValue(x * 0.1, z * 0.1, false) * 0.33, -0.03, 0.03)+1;
                         float red = (float) Mth.clamp(FastColor.ABGR32.red(color), 1, 255)/255;
                         float green = (float) Mth.clamp(FastColor.ABGR32.green(color), 1, 255)/255;

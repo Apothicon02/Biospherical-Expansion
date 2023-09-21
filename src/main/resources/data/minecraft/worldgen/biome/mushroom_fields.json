@@ -1,0 +1,142 @@
+{
+  "temperature": 0.9,
+  "downfall": 1.0,
+  "has_precipitation": true,
+  "category": "mushroom",
+  "effects": {
+    "sky_color": 9806079,
+    "fog_color": 12638463,
+    "water_color": 7318712,
+    "water_fog_color": 272948,
+    "foliage_color": 8028646,
+    "mood_sound": {
+      "sound": "minecraft:ambient.cave",
+      "tick_delay": 6000,
+      "block_search_extent": 8,
+      "offset": 2
+    }
+  },
+  "spawners": {
+    "ambient": [
+      {
+        "type": "minecraft:bat",
+        "weight": 10,
+        "minCount": 8,
+        "maxCount": 8
+      }
+    ],
+    "axolotls": [],
+    "creature": [
+      {
+        "type": "minecraft:mooshroom",
+        "weight": 8,
+        "minCount": 4,
+        "maxCount": 8
+      }
+    ],
+    "misc": [],
+    "monster": [],
+    "underground_water_creature": [
+      {
+        "type": "minecraft:glow_squid",
+        "weight": 10,
+        "minCount": 4,
+        "maxCount": 6
+      }
+    ],
+    "water_ambient": [],
+    "water_creature": []
+  },
+  "spawn_costs": {},
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:cave_extra_underground",
+      "minecraft:canyon"
+    ]
+  },
+  "features": [
+    [],
+    [
+      "minecraft:lake_lava_underground",
+      "minecraft:lake_lava_surface"
+    ],
+    [
+      "minecraft:amethyst_geode",
+      "eco:sparse_smooth_basalt_pillar",
+      "eco:amethyst_crystal_spike",
+      "eco:amethyst_crystal_ground_spike",
+      "eco:amethyst_spiral"
+    ],
+    [
+      "minecraft:monster_room",
+      "minecraft:monster_room_deep"
+    ],
+    [
+      "eco:amethyst_water_fall"
+    ],
+    [],
+    [
+      "minecraft:ore_dirt",
+      "minecraft:ore_gravel",
+      "minecraft:ore_granite_upper",
+      "minecraft:ore_granite_lower",
+      "minecraft:ore_diorite_upper",
+      "minecraft:ore_diorite_lower",
+      "minecraft:ore_andesite_upper",
+      "minecraft:ore_andesite_lower",
+      "minecraft:ore_tuff",
+      "minecraft:ore_coal_upper",
+      "minecraft:ore_coal_lower",
+      "minecraft:ore_iron_upper",
+      "minecraft:ore_iron_middle",
+      "minecraft:ore_iron_small",
+      "minecraft:ore_gold",
+      "minecraft:ore_gold_lower",
+      "minecraft:ore_redstone",
+      "minecraft:ore_redstone_lower",
+      "minecraft:ore_diamond",
+      "minecraft:ore_diamond_large",
+      "minecraft:ore_diamond_buried",
+      "minecraft:ore_lapis",
+      "minecraft:ore_lapis_buried",
+      "minecraft:ore_copper",
+      "minecraft:underwater_magma",
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel"
+    ],
+    [
+      "eco:smooth_basalt_blob",
+      "eco:calcite_blob",
+      "eco:calcite_ground_blob",
+      "eco:deepslate_calcite_blob",
+      "eco:smooth_basalt_calcite_blob"
+    ],
+    [
+      "minecraft:spring_water",
+      "minecraft:spring_lava",
+      "minecraft:glow_lichen",
+      "eco:blackstone_anvil_rocks",
+      "eco:mud",
+      "eco:mud_pond",
+      "eco:mud_pool",
+      "eco:wild_flower_patch",
+      "eco:dense_tall_mushrooms",
+      "biox:dense_mushrooms_giant",
+      "eco:mangrove_bushes_noise_dense"
+    ],
+    [
+      "eco:dense_overworld_mushrooms",
+      "eco:nether_mushrooms",
+      "minecraft:patch_sugar_cane",
+      "minecraft:patch_pumpkin",
+      "eco:large_pumpkin",
+      "minecraft:warm_ocean_vegetation",
+      "eco:lush_spore_blossom"
+    ],
+    [
+      "minecraft:freeze_top_layer"
+    ]
+  ]
+}
