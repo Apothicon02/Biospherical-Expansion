@@ -1,6 +1,7 @@
 package com.Apothic0n.BiosphericalExpansion.core.events;
 
 import com.Apothic0n.BiosphericalExpansion.BiosphericalExpansion;
+import com.Apothic0n.BiosphericalExpansion.core.objects.BioxBlocks;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
@@ -185,6 +186,7 @@ public class ModEvents {
                 Blocks.MOSS_BLOCK, Blocks.MOSS_CARPET,
                 Blocks.CAVE_VINES, Blocks.CAVE_VINES_PLANT,
                 Blocks.AZALEA, Blocks.FLOWERING_AZALEA,
-                Blocks.AZALEA_LEAVES, Blocks.FLOWERING_AZALEA_LEAVES);
+                Blocks.AZALEA_LEAVES, Blocks.FLOWERING_AZALEA_LEAVES,
+                Blocks.GLOW_LICHEN, BioxBlocks.AQUATIC_LICHEN.get());
     }
 }

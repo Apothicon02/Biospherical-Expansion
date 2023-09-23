@@ -3,9 +3,13 @@ package com.Apothic0n.BiosphericalExpansion.core.objects;
 import com.Apothic0n.BiosphericalExpansion.BiosphericalExpansion;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.SoundType;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.util.valueproviders.UniformInt;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
+import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -29,9 +33,14 @@ public final class BioxBlocks {
             new GlowingAmethystBlock(3, 4, BlockBehaviour.Properties.copy(AMETHYST_CLUSTER)
                     .lightLevel(brightness -> {return 11;})));
 
+    public static final RegistryObject<Block> AQUATIC_LICHEN = BLOCKS.register("aquatic_lichen", () ->
+            new WaterlilyBlock(BlockBehaviour.Properties.of().mapColor(MapColor.GLOW_LICHEN)
+                    .replaceable().noCollission().strength(0.2F).sound(SoundType.GLOW_LICHEN).lightLevel(brightness -> {return 7;}).ignitedByLava().pushReaction(PushReaction.DESTROY)));
+
     public static void fixBlockRenderLayers() {
             ItemBlockRenderTypes.setRenderLayer(AMETHYST_VINES.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(AMETHYST_VINES_PLANT.get(), RenderType.cutout());
             ItemBlockRenderTypes.setRenderLayer(GLOWING_AMETHYST.get(), RenderType.cutout());
+            ItemBlockRenderTypes.setRenderLayer(AQUATIC_LICHEN.get(), RenderType.cutout());
     }
 }

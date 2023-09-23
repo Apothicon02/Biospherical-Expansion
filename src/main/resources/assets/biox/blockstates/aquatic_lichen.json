@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "biox:block/aquatic_lichen"
+      },
+      {
+        "model": "biox:block/aquatic_lichen",
+        "y": 90
+      },
+      {
+        "model": "biox:block/aquatic_lichen",
+        "y": 180
+      },
+      {
+        "model": "biox:block/aquatic_lichen",
+        "y": 270
+      }
+    ]
+  }
+}
