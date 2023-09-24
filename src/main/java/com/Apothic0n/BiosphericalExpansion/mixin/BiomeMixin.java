@@ -15,6 +15,10 @@ public abstract class BiomeMixin {
 
     @Shadow protected abstract int getGrassColorFromTexture();
 
+    /**
+     * @author Apothicon
+     * @reason Compat with sodium / rubidium.
+     */
     @Overwrite
     public int getGrassColor(double posX, double posZ) {
         int i = this.specialEffects.getGrassColorOverride().orElseGet(this::getGrassColorFromTexture);

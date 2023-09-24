@@ -2,11 +2,16 @@ package com.Apothic0n.BiosphericalExpansion.core.events;
 
 import com.Apothic0n.BiosphericalExpansion.BiosphericalExpansion;
 import com.Apothic0n.BiosphericalExpansion.core.objects.BioxBlocks;
+import com.Apothic0n.BiosphericalExpansion.core.objects.BioxItems;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.util.FastColor;
 import net.minecraft.util.Mth;
+import net.minecraft.world.item.CreativeModeTab;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.LegacyRandomSource;
@@ -14,11 +19,20 @@ import net.minecraft.world.level.levelgen.WorldgenRandom;
 import net.minecraft.world.level.levelgen.synth.PerlinSimplexNoise;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 @Mod.EventBusSubscriber(modid = BiosphericalExpansion.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ModEvents {
+    @SubscribeEvent
+    public static void addItemsToTabs(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTabKey().equals(CreativeModeTabs.NATURAL_BLOCKS)) {
+            event.accept(BioxItems.GLOWING_AMETHYST.get(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.accept(BioxItems.AQUATIC_LICHEN.get(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+        }
+    }
+
     private static final PerlinSimplexNoise SATURATION_NOISE = new PerlinSimplexNoise(new WorldgenRandom(new LegacyRandomSource(2345L)), ImmutableList.of(0));
     private static final PerlinSimplexNoise BRIGHTNESS_NOISE = new PerlinSimplexNoise(new WorldgenRandom(new LegacyRandomSource(5432L)), ImmutableList.of(0));
     @SubscribeEvent
@@ -166,8 +180,9 @@ public class ModEvents {
                         int x = blockPos.getX();
                         int z = blockPos.getZ();
                         int color = -328966;
-                        double humidity = -(Minecraft.getInstance().level.getBiome(blockPos).get().getModifiedClimateSettings().downfall()) * 0.25;
-                        if (Minecraft.getInstance().level.getBiome(blockPos).is(Biomes.MUSHROOM_FIELDS)) {
+                        Biome biome = Minecraft.getInstance().level.getBiome(blockPos).get();
+                        double humidity = -(biome.getModifiedClimateSettings().downfall()) * 0.25;
+                        if (biome.equals(Biomes.MUSHROOM_FIELDS)) {
                             humidity = -2;
                         }
                         double saturate = Mth.clamp(SATURATION_NOISE.getValue(x * 0.1, z * 0.1, false) * 0.33, -0.03, 0.03)+1;

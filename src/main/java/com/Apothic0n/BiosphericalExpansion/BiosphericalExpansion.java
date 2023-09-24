@@ -5,6 +5,7 @@ import com.Apothic0n.BiosphericalExpansion.api.biome.features.decorators.BioxTre
 import com.Apothic0n.BiosphericalExpansion.api.biome.features.foliage_placers.BioxFoliagePlacerType;
 import com.Apothic0n.BiosphericalExpansion.api.biome.features.trunk_placers.BioxTrunkPlacerType;
 import com.Apothic0n.BiosphericalExpansion.core.objects.BioxBlocks;
+import com.Apothic0n.BiosphericalExpansion.core.objects.BioxItems;
 import net.minecraft.client.color.block.BlockColors;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -21,6 +22,7 @@ public class BiosphericalExpansion {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
 
         BioxBlocks.BLOCKS.register(eventBus);
+        BioxItems.ITEMS.register(eventBus);
         BioxFeatureRegistry.register(eventBus);
         BioxTrunkPlacerType.register(eventBus);
         BioxFoliagePlacerType.register(eventBus);

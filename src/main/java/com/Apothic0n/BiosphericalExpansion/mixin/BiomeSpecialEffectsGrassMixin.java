@@ -15,6 +15,11 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public class BiomeSpecialEffectsGrassMixin {
     private static final PerlinSimplexNoise GRASS_SATURATION_NOISE = new PerlinSimplexNoise(new WorldgenRandom(new LegacyRandomSource(2345L)), ImmutableList.of(0));
     private static final PerlinSimplexNoise GRASS_BRIGHTNESS_NOISE = new PerlinSimplexNoise(new WorldgenRandom(new LegacyRandomSource(5432L)), ImmutableList.of(0));
+
+    /**
+     * @author Apothicon
+     * @reason Adds grass discoloration.
+     */
     @Inject(at = @At("RETURN"), method = "modifyColor", cancellable = true)
     private void eco_modifyColor(double x, double z, int grassColor, CallbackInfoReturnable<Integer> cir) {
         double saturate = -(Mth.clamp(GRASS_SATURATION_NOISE.getValue(x * 0.05, z * 0.01, false) * 0.33, -0.33, 0.33)+0.33);
