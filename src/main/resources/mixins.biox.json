@@ -8,8 +8,7 @@
   },
   "mixins": [
     "BiomeMixin",
-    "BiomeSpecialEffectsGrassMixin",
-    "BlocksMixin"
+    "BiomeSpecialEffectsGrassMixin"
   ],
   "client": [
   ],
