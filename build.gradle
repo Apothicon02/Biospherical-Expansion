@@ -159,6 +159,8 @@ dependencies {
     // implementation fg.deobf("blank:coolmod-${mc_version}:${coolmod_version}")
     // ecospherical expansion
     implementation fg.deobf("com.Apothic0n.EcosphericalExpansion:Ecospherical-Expansion:2.3.0")
+    // terrablender
+    implementation fg.deobf("curse.maven:terrablender-563928:4764561")
 
     // Apply Mixin AP
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'

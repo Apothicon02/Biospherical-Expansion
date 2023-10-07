@@ -5,11 +5,18 @@ import com.Apothic0n.BiosphericalExpansion.core.objects.BioxBlocks;
 import com.Apothic0n.BiosphericalExpansion.core.objects.BioxItems;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.RegistrySetBuilder;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.PackOutput;
 import net.minecraft.util.FastColor;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.FoliageColor;
+import net.minecraft.world.level.GrassColor;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.Blocks;
@@ -17,13 +24,19 @@ import net.minecraft.world.level.levelgen.LegacyRandomSource;
 import net.minecraft.world.level.levelgen.WorldgenRandom;
 import net.minecraft.world.level.levelgen.synth.PerlinSimplexNoise;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
+import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
+import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
-@Mod.EventBusSubscriber(modid = BiosphericalExpansion.MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+import java.util.Set;
+
+@Mod.EventBusSubscriber(modid = BiosphericalExpansion.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEvents {
+    @OnlyIn(Dist.CLIENT)
     @SubscribeEvent
     public static void addItemsToTabs(BuildCreativeModeTabContentsEvent event) {
         if (event.getTabKey().equals(CreativeModeTabs.NATURAL_BLOCKS)) {
@@ -34,6 +47,8 @@ public class ModEvents {
 
     private static final PerlinSimplexNoise SATURATION_NOISE = new PerlinSimplexNoise(new WorldgenRandom(new LegacyRandomSource(2345L)), ImmutableList.of(0));
     private static final PerlinSimplexNoise BRIGHTNESS_NOISE = new PerlinSimplexNoise(new WorldgenRandom(new LegacyRandomSource(5432L)), ImmutableList.of(0));
+
+    @OnlyIn(Dist.CLIENT)
     @SubscribeEvent
     public static void onBlockColors(RegisterColorHandlersEvent.Block event) {
         event.register((blockState, blockAndTintGetter, blockPos, tint) -> {
@@ -48,9 +63,9 @@ public class ModEvents {
                 float blue = (float) Mth.clamp(FastColor.ABGR32.blue(color), 1, 255) / 255;
                 float gray = (float) ((red + green + blue) / (3 + brighten));
                 return FastColor.ABGR32.color(FastColor.ABGR32.alpha(color),
-                        (int) (Mth.clamp((red + (gray - red)) * saturate, 0, 1) * 255),
+                        (int) (Mth.clamp((blue + (gray - blue)) * saturate, 0, 1) * 255),
                         (int) (Mth.clamp((green + (gray - green)) * saturate, 0, 1) * 255),
-                        (int) (Mth.clamp((blue + (gray - blue)) * saturate, 0, 1) * 255));
+                        (int) (Mth.clamp((red + (gray - red)) * saturate, 0, 1) * 255));
             } else {
                 return -328966;
             }
@@ -70,9 +85,9 @@ public class ModEvents {
                         float blue = (float) Mth.clamp(FastColor.ABGR32.blue(color), 1, 255) / 255;
                         float gray = (float) ((red + green + blue) / (3 + brighten));
                         return FastColor.ABGR32.color(FastColor.ABGR32.alpha(color),
-                                (int) (Mth.clamp((red + (gray - red)) * saturate, 0, 1) * 255),
+                                (int) (Mth.clamp((blue + (gray - blue)) * saturate, 0, 1) * 255),
                                 (int) (Mth.clamp((green + (gray - green)) * saturate, 0, 1) * 255),
-                                (int) (Mth.clamp((blue + (gray - blue)) * saturate, 0, 1) * 255));
+                                (int) (Mth.clamp((red + (gray - red)) * saturate, 0, 1) * 255));
                     } else {
                         return -328966;
                     }
@@ -93,9 +108,9 @@ public class ModEvents {
                         float blue = (float) Mth.clamp(FastColor.ABGR32.blue(color), 1, 255) / 255;
                         float gray = (float) ((red + green + blue) / (3 + brighten));
                         return FastColor.ABGR32.color(FastColor.ABGR32.alpha(color),
-                                (int) (Mth.clamp((red + (gray - red)) * saturate, 0, 1) * 255),
+                                (int) (Mth.clamp((blue + (gray - blue)) * saturate, 0, 1) * 255),
                                 (int) (Mth.clamp((green + (gray - green)) * saturate, 0, 1) * 255),
-                                (int) (Mth.clamp((blue + (gray - blue)) * saturate, 0, 1) * 255));
+                                (int) (Mth.clamp((red + (gray - red)) * saturate, 0, 1) * 255));
                     } else {
                         return -328966;
                     }
@@ -115,9 +130,9 @@ public class ModEvents {
                 float blue = (float) Mth.clamp(FastColor.ABGR32.blue(color), 1, 255)/255;
                 float gray = (red+green+blue)/(3);
                 return FastColor.ABGR32.color(FastColor.ABGR32.alpha(color),
-                        (int) (Mth.clamp(((red + (gray - red)) * saturate) + temperature, 0, 1) * 255),
+                        (int) (Mth.clamp(((blue + (gray - blue)) * saturate) + temperature, 0, 1) * 255),
                         (int) (Mth.clamp((green + (gray - green)) * saturate, 0, 1) * 255),
-                        (int) (Mth.clamp(((blue + (gray - blue)) * saturate) - temperature, 0, 1) * 255));
+                        (int) (Mth.clamp(((red + (gray - red)) * saturate) - temperature, 0, 1) * 255));
             } else {
                 return -328966;
             }
@@ -165,9 +180,9 @@ public class ModEvents {
                         float blue = (float) Mth.clamp(FastColor.ABGR32.blue(color), 1, 255)/255;
                         float gray = (float) ((red + green + blue) / (3 + brighten));
                         return FastColor.ABGR32.color(FastColor.ABGR32.alpha(color),
-                                (int) (Mth.clamp(((red + (gray - red)) * saturate) + temperature, 0, 1) * 255),
+                                (int) (Mth.clamp(((blue + (gray - blue)) * saturate) + temperature, 0, 1) * 255),
                                 (int) (Mth.clamp(((green + (gray - green)) * saturate) + temperature, 0, 1) * 255),
-                                (int) (Mth.clamp(((blue + (gray - blue)) * saturate) - temperature, 0, 1) * 255));
+                                (int) (Mth.clamp(((red + (gray - red)) * saturate) - temperature, 0, 1) * 255));
                     } else {
                         return -328966;
                     }
@@ -175,32 +190,42 @@ public class ModEvents {
                 Blocks.END_STONE, Blocks.END_STONE_BRICKS, Blocks.END_STONE_BRICK_STAIRS, Blocks.END_STONE_BRICK_SLAB, Blocks.END_STONE_BRICK_WALL);
 
         event.register((blockState, blockAndTintGetter, blockPos, tint) -> {
+                    int color = blockAndTintGetter != null && blockPos != null ? BiomeColors.getAverageFoliageColor(blockAndTintGetter, blockPos) : FoliageColor.getDefaultColor();
                     if (blockPos != null) {
                         int x = blockPos.getX();
                         int z = blockPos.getZ();
-                        int color = -328966;
-                        Biome biome = Minecraft.getInstance().level.getBiome(blockPos).get();
-                        double humidity = -(biome.getModifiedClimateSettings().downfall()) * 0.25;
-                        if (biome.equals(Biomes.MUSHROOM_FIELDS)) {
-                            humidity = -2;
-                        }
-                        double saturate = Mth.clamp(SATURATION_NOISE.getValue(x * 0.1, z * 0.1, false) * 0.33, -0.03, 0.03)+1;
-                        float red = (float) Mth.clamp(FastColor.ABGR32.red(color), 1, 255)/255;
-                        float green = (float) Mth.clamp(FastColor.ABGR32.green(color), 1, 255)/255;
-                        float blue = (float) Mth.clamp(FastColor.ABGR32.blue(color), 1, 255)/255;
-                        float gray = (red+green+blue)/(3);
+                        double saturate = Mth.clamp(SATURATION_NOISE.getValue(x * 0.66, z * 0.6, false) * 0.1, -0.2, 0.22) + 0.9;
+                        float red = (float) Mth.clamp(FastColor.ABGR32.red(color), 1, 255) / 255;
+                        float green = (float) Mth.clamp(FastColor.ABGR32.green(color), 1, 255) / 255;
+                        float blue = (float) Mth.clamp(FastColor.ABGR32.blue(color), 1, 255) / 255;
                         return FastColor.ABGR32.color(FastColor.ABGR32.alpha(color),
-                                (int) (Mth.clamp(((red + (gray - red)) * saturate) + humidity, 0, 1) * 255),
-                                (int) (Mth.clamp((green + (gray - green)) * saturate, 0, 1) * 255),
-                                (int) (Mth.clamp(((blue + (gray - blue)) * saturate) - humidity, 0, 1) * 255));
-                    } else {
-                        return -328966;
+                                (int) (Mth.clamp(blue * saturate, 0, 1) * 255),
+                                (int) (Mth.clamp(green * saturate, 0, 1) * 255),
+                                (int) (Mth.clamp(red * saturate, 0, 1) * 255));
                     }
+                    return color;
                 },
-                Blocks.MOSS_BLOCK, Blocks.MOSS_CARPET,
                 Blocks.CAVE_VINES, Blocks.CAVE_VINES_PLANT,
                 Blocks.AZALEA, Blocks.FLOWERING_AZALEA,
                 Blocks.AZALEA_LEAVES, Blocks.FLOWERING_AZALEA_LEAVES,
                 Blocks.GLOW_LICHEN, BioxBlocks.AQUATIC_LICHEN.get());
+
+        event.register((blockState, blockAndTintGetter, blockPos, tint) -> {
+                    int color = blockAndTintGetter != null && blockPos != null ? BiomeColors.getAverageGrassColor(blockAndTintGetter, blockPos) : GrassColor.getDefaultColor();
+                    if (blockPos != null) {
+                        int x = blockPos.getX();
+                        int z = blockPos.getZ();
+                        double saturate = Mth.clamp(SATURATION_NOISE.getValue(x * 0.66, z * 0.6, false) * 0.1, -0.2, 0.22) + 0.9;
+                        float red = (float) Mth.clamp(FastColor.ABGR32.red(color), 1, 255) / 255;
+                        float green = (float) Mth.clamp(FastColor.ABGR32.green(color), 1, 255) / 255;
+                        float blue = (float) Mth.clamp(FastColor.ABGR32.blue(color), 1, 255) / 255;
+                        return FastColor.ABGR32.color(FastColor.ABGR32.alpha(color),
+                                (int) (Mth.clamp(blue * saturate, 0, 1) * 255),
+                                (int) (Mth.clamp(green * saturate, 0, 1) * 255),
+                                (int) (Mth.clamp(red * saturate, 0, 1) * 255));
+                    }
+                    return color;
+                },
+                Blocks.MOSS_BLOCK, Blocks.MOSS_CARPET);
     }
 }
