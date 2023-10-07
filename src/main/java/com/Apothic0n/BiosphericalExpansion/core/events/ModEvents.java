@@ -207,8 +207,7 @@ public class ModEvents {
                 },
                 Blocks.CAVE_VINES, Blocks.CAVE_VINES_PLANT,
                 Blocks.AZALEA, Blocks.FLOWERING_AZALEA,
-                Blocks.AZALEA_LEAVES, Blocks.FLOWERING_AZALEA_LEAVES,
-                Blocks.GLOW_LICHEN, BioxBlocks.AQUATIC_LICHEN.get());
+                Blocks.AZALEA_LEAVES, Blocks.FLOWERING_AZALEA_LEAVES);
 
         event.register((blockState, blockAndTintGetter, blockPos, tint) -> {
                     int color = blockAndTintGetter != null && blockPos != null ? BiomeColors.getAverageGrassColor(blockAndTintGetter, blockPos) : GrassColor.getDefaultColor();
@@ -226,6 +225,7 @@ public class ModEvents {
                     }
                     return color;
                 },
-                Blocks.MOSS_BLOCK, Blocks.MOSS_CARPET);
+                Blocks.MOSS_BLOCK, Blocks.MOSS_CARPET,
+                Blocks.GLOW_LICHEN, BioxBlocks.AQUATIC_LICHEN.get());
     }
 }
