@@ -13,6 +13,7 @@ import net.minecraft.world.level.levelgen.synth.NormalNoise;
 public class BioxSurfaceRuleData {
     private static final SurfaceRules.RuleSource COARSE_DIRT = makeStateRule(Blocks.COARSE_DIRT);
     private static final SurfaceRules.RuleSource MOSS_BLOCK = makeStateRule(Blocks.MOSS_BLOCK);
+    private static final SurfaceRules.RuleSource GREEN_CONCRETE_POWDER = makeStateRule(Blocks.GREEN_CONCRETE_POWDER);
     private static final SurfaceRules.RuleSource DIORITE = makeStateRule(Blocks.DIORITE);
 
     public static final ResourceKey<NormalNoise.NoiseParameters> SURFACE_VARIATION = ResourceKey.create(Registries.NOISE, new ResourceLocation("eco","surface_variation"));
@@ -38,6 +39,11 @@ public class BioxSurfaceRuleData {
                 SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR,
                         SurfaceRules.ifTrue(SurfaceRules.yStartCheck(VerticalAnchor.absolute(61), 0),
                                 SurfaceRules.ifTrue(SurfaceRules.noiseCondition(LESS_SURFACE_VARIATION, 0.0370D, 0.23D), DIORITE)
+                        )));
+        SurfaceRules.RuleSource lessGreenConcretePowder = SurfaceRules.sequence(
+                SurfaceRules.ifTrue(SurfaceRules.ON_FLOOR,
+                        SurfaceRules.ifTrue(SurfaceRules.yStartCheck(VerticalAnchor.absolute(61), 0),
+                                SurfaceRules.ifTrue(SurfaceRules.noiseCondition(LESS_SURFACE_VARIATION, 0.0370D, 0.23D), GREEN_CONCRETE_POWDER)
                         )));
 
         return SurfaceRules.sequence(

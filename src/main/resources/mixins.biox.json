@@ -9,7 +9,8 @@
   "mixins": [
     "BiomeMixin",
     "BiomeSpecialEffectsGrassMixin",
-    "BlocksMixin"
+    "BlocksMixin",
+    "ClimateMixin"
   ],
   "client": [
   ],
