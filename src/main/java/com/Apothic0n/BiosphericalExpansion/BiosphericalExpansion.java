@@ -24,7 +24,9 @@ public class BiosphericalExpansion {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
 
         BioxBlocks.BLOCKS.register(eventBus);
+        BioxBlocks.generateStairsSlabsWalls();
         BioxItems.ITEMS.register(eventBus);
+        BioxItems.generateStairsSlabsWalls();
         BioxFeatureRegistry.register(eventBus);
         BioxTrunkPlacerType.register(eventBus);
         BioxFoliagePlacerType.register(eventBus);

@@ -95,6 +95,10 @@
     },
     "decorators": [
       {
+        "type": "biox:trunk_mushrooms",
+        "probability": 1
+      },
+      {
         "type": "eco:mushrooms",
         "probability": 1
       }

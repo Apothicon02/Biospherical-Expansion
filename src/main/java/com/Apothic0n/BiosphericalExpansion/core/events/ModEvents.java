@@ -15,10 +15,12 @@ import net.minecraft.util.FastColor;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.biome.Biomes;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.LegacyRandomSource;
 import net.minecraft.world.level.levelgen.WorldgenRandom;
@@ -31,8 +33,13 @@ import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.registries.RegistryObject;
 
+import java.util.List;
+import java.util.Map;
 import java.util.Set;
+
+import static com.Apothic0n.BiosphericalExpansion.core.objects.BioxBlocks.wallBlocks;
 
 @Mod.EventBusSubscriber(modid = BiosphericalExpansion.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ModEvents {
@@ -42,6 +49,13 @@ public class ModEvents {
         if (event.getTabKey().equals(CreativeModeTabs.NATURAL_BLOCKS)) {
             event.accept(BioxItems.GLOWING_AMETHYST.get(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             event.accept(BioxItems.AQUATIC_LICHEN.get(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            List<List<RegistryObject<Item>>> buildingBlockItems = List.of(BioxItems.wallItems, BioxItems.stairItems, BioxItems.slabItems);
+            for (int i = 0; i < buildingBlockItems.size(); i++) {
+                List<RegistryObject<Item>> blockItemTypeList = buildingBlockItems.get(i);
+                for (int o = 0; o < blockItemTypeList.size(); o++) {
+                    event.accept(blockItemTypeList.get(o).get(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                }
+            }
         }
     }
 
@@ -51,6 +65,47 @@ public class ModEvents {
     @OnlyIn(Dist.CLIENT)
     @SubscribeEvent
     public static void onBlockColors(RegisterColorHandlersEvent.Block event) {
+        Block spruceLeaves = Blocks.SPRUCE_LEAVES;
+        Block birchLeaves = Blocks.BIRCH_LEAVES;
+        Block oakLeaves = Blocks.OAK_LEAVES;
+        Block jungleLeaves = Blocks.JUNGLE_LEAVES;
+        Block acaciaLeaves = Blocks.ACACIA_LEAVES;
+        Block darkOakLeaves = Blocks.DARK_OAK_LEAVES;
+        Block mangroveLeaves = Blocks.MANGROVE_LEAVES;
+        Block azaleaLeaves = Blocks.AZALEA_LEAVES;
+        Block floweringAzaleaLeaves = Blocks.FLOWERING_AZALEA_LEAVES;
+        for (int i = 0; i < wallBlocks.size(); i++) {
+            Map<Block, RegistryObject<Block>> map = wallBlocks.get(i);
+            if (map.containsKey(Blocks.SPRUCE_LEAVES)) {
+                spruceLeaves = map.get(Blocks.SPRUCE_LEAVES).get();
+            } else if (map.containsKey(Blocks.BIRCH_LEAVES)) {
+                birchLeaves = map.get(Blocks.BIRCH_LEAVES).get();
+            } else if (map.containsKey(Blocks.OAK_LEAVES)) {
+                oakLeaves = map.get(Blocks.OAK_LEAVES).get();
+            } else if (map.containsKey(Blocks.JUNGLE_LEAVES)) {
+                jungleLeaves = map.get(Blocks.JUNGLE_LEAVES).get();
+            } else if (map.containsKey(Blocks.ACACIA_LEAVES)) {
+                acaciaLeaves = map.get(Blocks.ACACIA_LEAVES).get();
+            } else if (map.containsKey(Blocks.DARK_OAK_LEAVES)) {
+                darkOakLeaves = map.get(Blocks.DARK_OAK_LEAVES).get();
+            } else if (map.containsKey(Blocks.MANGROVE_LEAVES)) {
+                mangroveLeaves = map.get(Blocks.MANGROVE_LEAVES).get();
+            } else if (map.containsKey(Blocks.AZALEA_LEAVES)) {
+                azaleaLeaves = map.get(Blocks.AZALEA_LEAVES).get();
+            } else if (map.containsKey(Blocks.FLOWERING_AZALEA_LEAVES)) {
+                floweringAzaleaLeaves = map.get(Blocks.FLOWERING_AZALEA_LEAVES).get();
+            }
+        }
+        event.register((p_92636_, p_92637_, p_92638_, p_92639_) -> {
+            return FoliageColor.getEvergreenColor();
+        }, spruceLeaves);
+        event.register((p_92631_, p_92632_, p_92633_, p_92634_) -> {
+            return FoliageColor.getBirchColor();
+        }, birchLeaves);
+        event.register((p_92626_, p_92627_, p_92628_, p_92629_) -> {
+            return p_92627_ != null && p_92628_ != null ? BiomeColors.getAverageFoliageColor(p_92627_, p_92628_) : FoliageColor.getDefaultColor();
+        }, oakLeaves, jungleLeaves, acaciaLeaves, darkOakLeaves, mangroveLeaves);
+
         event.register((blockState, blockAndTintGetter, blockPos, tint) -> {
             if (blockPos != null) {
                 int x = blockPos.getX();
@@ -207,7 +262,7 @@ public class ModEvents {
                 },
                 Blocks.CAVE_VINES, Blocks.CAVE_VINES_PLANT,
                 Blocks.AZALEA, Blocks.FLOWERING_AZALEA,
-                Blocks.AZALEA_LEAVES, Blocks.FLOWERING_AZALEA_LEAVES);
+                Blocks.AZALEA_LEAVES, Blocks.FLOWERING_AZALEA_LEAVES, azaleaLeaves, floweringAzaleaLeaves);
 
         event.register((blockState, blockAndTintGetter, blockPos, tint) -> {
                     int color = blockAndTintGetter != null && blockPos != null ? BiomeColors.getAverageGrassColor(blockAndTintGetter, blockPos) : GrassColor.getDefaultColor();

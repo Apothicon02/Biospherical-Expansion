@@ -50,6 +50,10 @@
     },
     "decorators": [
       {
+        "type": "biox:trunk_mushrooms",
+        "probability": 0.13
+      },
+      {
         "type": "minecraft:trunk_vine"
       },
       {

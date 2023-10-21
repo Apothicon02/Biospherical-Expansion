@@ -1,0 +1,25 @@
+{
+  "values": [
+    "biox:red_mushroom_block_wall",
+    "biox:brown_mushroom_block_wall",
+    "biox:mushroom_stem_wall",
+    "biox:oak_wood_wall",
+    "biox:dark_oak_wood_wall",
+    "biox:birch_wood_wall",
+    "biox:spruce_wood_wall",
+    "biox:jungle_wood_wall",
+    "biox:acacia_wood_wall",
+    "biox:mangrove_wood_wall",
+    "biox:cherry_wood_wall",
+    "biox:oak_leaves_wall",
+    "biox:dark_oak_leaves_wall",
+    "biox:birch_leaves_wall",
+    "biox:spruce_leaves_wall",
+    "biox:jungle_leaves_wall",
+    "biox:acacia_leaves_wall",
+    "biox:mangrove_leaves_wall",
+    "biox:cherry_leaves_wall",
+    "biox:azalea_leaves_wall",
+    "biox:flowering_azalea_leaves_wall"
+  ]
+}

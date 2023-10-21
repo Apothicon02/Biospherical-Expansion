@@ -90,12 +90,16 @@
     },
     "decorators": [
       {
-        "type": "eco:mushrooms",
-        "probability": 0.9
+        "type": "biox:trunk_mushrooms",
+        "probability": 0.44
       },
       {
-        "type": "eco:cave_vines",
-        "probability": 0.2
+        "type": "biox:hanging_leaves",
+        "probability": 0.8
+      },
+      {
+        "type": "eco:mushrooms",
+        "probability": 0.9
       }
     ]
   }

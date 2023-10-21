@@ -68,6 +68,14 @@
     },
     "decorators": [
       {
+        "type": "biox:trunk_mushrooms",
+        "probability": 0.5
+      },
+      {
+        "type": "biox:hanging_leaves",
+        "probability": 0.1
+      },
+      {
         "type": "minecraft:trunk_vine"
       }
     ]
