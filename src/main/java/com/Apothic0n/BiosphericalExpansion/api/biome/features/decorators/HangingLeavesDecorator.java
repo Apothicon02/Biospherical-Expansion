@@ -7,6 +7,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.predicate.BlockStatePredicate;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
@@ -31,7 +32,6 @@ public class HangingLeavesDecorator extends TreeDecorator {
     @Override
     public void place(Context context) {
         LevelSimulatedReader level = context.level();
-        RandomSource randomSource = context.random();
         ObjectArrayList<BlockPos> list = context.leaves();
         list.forEach(blockPos -> {
             if ((Math.random()*(100)+1)/100 <= (probability/4)) {
@@ -92,7 +92,7 @@ public class HangingLeavesDecorator extends TreeDecorator {
             maxLength = 1;
         }
         for (int h = 0; h < Math.random()*(maxLength)+1; h++) {
-            if (level.isStateAtPosition(blockPos.below(h).above(), BlockStatePredicate.forBlock(hangingBlock).or(BlockStatePredicate.forBlock(block))) && level.isStateAtPosition(blockPos.below(h), BlockStatePredicate.forBlock(Blocks.AIR))) {
+            if (level.isStateAtPosition(blockPos.below(h).above(), BlockStatePredicate.forBlock(hangingBlock).or(BlockStatePredicate.forBlock(block))) && level.isStateAtPosition(blockPos.below(h),  BlockBehaviour.BlockStateBase::canBeReplaced)) {
                 context.setBlock(blockPos.below(h), blockState);
                 placedAny = true;
             }

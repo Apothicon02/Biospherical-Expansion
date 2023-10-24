@@ -7,10 +7,6 @@ import com.google.common.collect.ImmutableList;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.RegistrySetBuilder;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.PackOutput;
 import net.minecraft.util.FastColor;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.CreativeModeTab;
@@ -18,8 +14,6 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
-import net.minecraft.world.level.biome.Biome;
-import net.minecraft.world.level.biome.Biomes;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.levelgen.LegacyRandomSource;
@@ -28,8 +22,6 @@ import net.minecraft.world.level.levelgen.synth.PerlinSimplexNoise;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
-import net.minecraftforge.common.data.DatapackBuiltinEntriesProvider;
-import net.minecraftforge.data.event.GatherDataEvent;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -37,7 +29,6 @@ import net.minecraftforge.registries.RegistryObject;
 
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import static com.Apothic0n.BiosphericalExpansion.core.objects.BioxBlocks.wallBlocks;
 
@@ -103,8 +94,11 @@ public class ModEvents {
             return FoliageColor.getBirchColor();
         }, birchLeaves);
         event.register((p_92626_, p_92627_, p_92628_, p_92629_) -> {
-            return p_92627_ != null && p_92628_ != null ? BiomeColors.getAverageFoliageColor(p_92627_, p_92628_) : FoliageColor.getDefaultColor();
-        }, oakLeaves, jungleLeaves, acaciaLeaves, darkOakLeaves, mangroveLeaves);
+            return p_92627_ != null && p_92628_ != null ? BiomeColors.getAverageFoliageColor(p_92627_, new BlockPos(p_92628_.getX(), 63, p_92628_.getZ())) : FoliageColor.getDefaultColor();
+        }, mangroveLeaves, Blocks.MANGROVE_LEAVES);
+        event.register((p_92626_, p_92627_, p_92628_, p_92629_) -> {
+            return p_92627_ != null && p_92628_ != null ? BiomeColors.getAverageFoliageColor(p_92627_, new BlockPos(p_92628_.getX(), 68, p_92628_.getZ())) : FoliageColor.getDefaultColor();
+        }, oakLeaves, Blocks.OAK_LEAVES, jungleLeaves, Blocks.JUNGLE_LEAVES, acaciaLeaves, Blocks.ACACIA_LEAVES, darkOakLeaves, Blocks.DARK_OAK_LEAVES);
 
         event.register((blockState, blockAndTintGetter, blockPos, tint) -> {
             if (blockPos != null) {

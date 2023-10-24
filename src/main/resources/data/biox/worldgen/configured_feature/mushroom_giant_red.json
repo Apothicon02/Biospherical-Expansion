@@ -95,6 +95,16 @@
     },
     "decorators": [
       {
+        "type": "biox:trunk_wooden_roots",
+        "probability": 0.8,
+        "wall_state": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "biox:mushroom_stem_wall"
+          }
+        }
+      },
+      {
         "type": "biox:trunk_mushrooms",
         "probability": 1
       },

@@ -16,6 +16,9 @@ public abstract class BioxTreeDecoratorType<P extends TreeDecorator> {
             new TreeDecoratorType<>(TrunkMushroomsDecorator.CODEC));
     public static final RegistryObject<TreeDecoratorType<HangingLeavesDecorator>> HANGING_LEAVES = TREE_DECORATOR_TYPE.register("hanging_leaves", () ->
             new TreeDecoratorType<>(HangingLeavesDecorator.CODEC));
+    public static final RegistryObject<TreeDecoratorType<TrunkWoodenRootsDecorator>> TRUNK_WOODEN_ROOTS = TREE_DECORATOR_TYPE.register("trunk_wooden_roots", () ->
+            new TreeDecoratorType<>(TrunkWoodenRootsDecorator.CODEC));
+
 
     public static void register(IEventBus eventBus) {
         TREE_DECORATOR_TYPE.register(eventBus);

@@ -56,6 +56,24 @@
     },
     "decorators": [
       {
+        "type": "biox:trunk_wooden_roots",
+        "probability": 0.5,
+        "wall_state": {
+          "type": "minecraft:simple_state_provider",
+          "state": {
+            "Name": "biox:spruce_wood_wall",
+            "Properties": {
+              "east": "tall",
+              "north": "tall",
+              "south": "tall",
+              "up": "true",
+              "waterlogged": "false",
+              "west": "tall"
+            }
+          }
+        }
+      },
+      {
         "type": "biox:trunk_mushrooms",
         "probability": 0.15
       },

@@ -7,6 +7,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.predicate.BlockStatePredicate;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
@@ -42,19 +43,19 @@ public class TrunkMushroomsDecorator extends TreeDecorator {
         list.forEach(blockPos -> {
             int randomNumber = (int)(Math.random()*(42)+1);
             if (randomNumber < 2) {
-                if (level.isStateAtPosition(blockPos.north(), BlockStatePredicate.forBlock(Blocks.AIR))) {
+                if (level.isStateAtPosition(blockPos.north(),  BlockBehaviour.BlockStateBase::canBeReplaced)) {
                     context.setBlock(blockPos.north(), randomMushroom());
                 }
             } else if (randomNumber < 3) {
-                if (level.isStateAtPosition(blockPos.east(), BlockStatePredicate.forBlock(Blocks.AIR))) {
+                if (level.isStateAtPosition(blockPos.east(),  BlockBehaviour.BlockStateBase::canBeReplaced)) {
                     context.setBlock(blockPos.east(), randomMushroom());
                 }
             } else if (randomNumber < 4) {
-                if (level.isStateAtPosition(blockPos.south(), BlockStatePredicate.forBlock(Blocks.AIR))) {
+                if (level.isStateAtPosition(blockPos.south(),  BlockBehaviour.BlockStateBase::canBeReplaced)) {
                     context.setBlock(blockPos.south(), randomMushroom());
                 }
             } else if (randomNumber < 5) {
-                if (level.isStateAtPosition(blockPos.west(), BlockStatePredicate.forBlock(Blocks.AIR))) {
+                if (level.isStateAtPosition(blockPos.west(),  BlockBehaviour.BlockStateBase::canBeReplaced)) {
                     context.setBlock(blockPos.west(), randomMushroom());
                 }
             }
