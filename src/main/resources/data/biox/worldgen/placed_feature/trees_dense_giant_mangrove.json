@@ -23,7 +23,7 @@
       "y_spread": 0
     },
     {
-      "max_water_depth": 3,
+      "max_water_depth": 8,
       "type": "minecraft:surface_water_depth_filter"
     },
     {

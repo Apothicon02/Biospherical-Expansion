@@ -94,8 +94,8 @@ public class ModEvents {
             return FoliageColor.getBirchColor();
         }, birchLeaves);
         event.register((p_92626_, p_92627_, p_92628_, p_92629_) -> {
-            return p_92627_ != null && p_92628_ != null ? BiomeColors.getAverageFoliageColor(p_92627_, new BlockPos(p_92628_.getX(), 63, p_92628_.getZ())) : FoliageColor.getDefaultColor();
-        }, mangroveLeaves, Blocks.MANGROVE_LEAVES);
+            return p_92627_ != null && p_92628_ != null ? BiomeColors.getAverageFoliageColor(p_92627_, new BlockPos(p_92628_.getX(), 55, p_92628_.getZ())) : FoliageColor.getDefaultColor();
+        }, mangroveLeaves, Blocks.MANGROVE_LEAVES, Blocks.VINE);
         event.register((p_92626_, p_92627_, p_92628_, p_92629_) -> {
             return p_92627_ != null && p_92628_ != null ? BiomeColors.getAverageFoliageColor(p_92627_, new BlockPos(p_92628_.getX(), 68, p_92628_.getZ())) : FoliageColor.getDefaultColor();
         }, oakLeaves, Blocks.OAK_LEAVES, jungleLeaves, Blocks.JUNGLE_LEAVES, acaciaLeaves, Blocks.ACACIA_LEAVES, darkOakLeaves, Blocks.DARK_OAK_LEAVES);
