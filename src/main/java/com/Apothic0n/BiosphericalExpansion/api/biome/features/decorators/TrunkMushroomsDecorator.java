@@ -37,7 +37,7 @@ public class TrunkMushroomsDecorator extends TreeDecorator {
         if (randomSource.nextFloat() >= this.probability) {
             return;
         }
-        if (list.isEmpty()) {
+        if (list.isEmpty() && context.logs().size() > 8) {
             list = ObjectArrayList.of(context.logs().get(0), context.logs().get(1), context.logs().get(2), context.logs().get(3), context.logs().get(4), context.logs().get(5), context.logs().get(6), context.logs().get(7), context.logs().get(8));
         }
         list.forEach(blockPos -> {

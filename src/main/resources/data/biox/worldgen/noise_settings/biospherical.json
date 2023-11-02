@@ -524,8 +524,8 @@
         },
         "argument2": {
           "type": "minecraft:y_clamped_gradient",
-          "from_y": 320,
-          "to_y": 255,
+          "from_y": 272,
+          "to_y": 212,
           "from_value": -1,
           "to_value": 1
         }
@@ -2910,6 +2910,102 @@
                     "if_true": {
                       "type": "minecraft:biome",
                       "biome_is": [
+                        "biox:wooded_mesa"
+                      ]
+                    },
+                    "then_run": {
+                      "type": "minecraft:condition",
+                      "if_true": {
+                        "type": "minecraft:y_above",
+                        "anchor": {
+                          "absolute": 97
+                        },
+                        "surface_depth_multiplier": 2,
+                        "add_stone_depth": false
+                      },
+                      "then_run": {
+                        "type": "minecraft:sequence",
+                        "sequence": [
+                          {
+                            "type": "minecraft:condition",
+                            "if_true": {
+                              "type": "minecraft:noise_threshold",
+                              "noise": "minecraft:surface",
+                              "min_threshold": -0.909,
+                              "max_threshold": -0.5454
+                            },
+                            "then_run": {
+                              "type": "minecraft:block",
+                              "result_state": {
+                                "Name": "minecraft:mud"
+                              }
+                            }
+                          },
+                          {
+                            "type": "minecraft:condition",
+                            "if_true": {
+                              "type": "minecraft:noise_threshold",
+                              "noise": "minecraft:surface",
+                              "min_threshold": -0.1818,
+                              "max_threshold": 0.1818
+                            },
+                            "then_run": {
+                              "type": "minecraft:block",
+                              "result_state": {
+                                "Name": "minecraft:mud"
+                              }
+                            }
+                          },
+                          {
+                            "type": "minecraft:condition",
+                            "if_true": {
+                              "type": "minecraft:noise_threshold",
+                              "noise": "minecraft:surface",
+                              "min_threshold": 0.5454,
+                              "max_threshold": 0.909
+                            },
+                            "then_run": {
+                              "type": "minecraft:block",
+                              "result_state": {
+                                "Name": "minecraft:mud"
+                              }
+                            }
+                          },
+                          {
+                            "type": "minecraft:sequence",
+                            "sequence": [
+                              {
+                                "type": "minecraft:condition",
+                                "if_true": {
+                                  "type": "minecraft:water",
+                                  "offset": 0,
+                                  "surface_depth_multiplier": 0,
+                                  "add_stone_depth": false
+                                },
+                                "then_run": {
+                                  "type": "minecraft:block",
+                                  "result_state": {
+                                    "Name": "minecraft:mud"
+                                  }
+                                }
+                              },
+                              {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:mud"
+                                }
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:biome",
+                      "biome_is": [
                         "minecraft:swamp"
                       ]
                     },
@@ -3260,6 +3356,1514 @@
                         },
                         {
                           "type": "minecraft:bandlands"
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:stone_depth",
+                      "offset": 0,
+                      "surface_type": "floor",
+                      "add_surface_depth": true,
+                      "secondary_depth_range": 0
+                    },
+                    "then_run": {
+                      "type": "minecraft:condition",
+                      "if_true": {
+                        "type": "minecraft:water",
+                        "offset": -6,
+                        "surface_depth_multiplier": -1,
+                        "add_stone_depth": true
+                      },
+                      "then_run": {
+                        "type": "minecraft:block",
+                        "result_state": {
+                          "Name": "minecraft:white_terracotta"
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:biome",
+                "biome_is": [
+                  "biox:mesa",
+                  "biox:eroded_mesa",
+                  "biox:wooded_mesa"
+                ]
+              },
+              "then_run": {
+                "type": "minecraft:sequence",
+                "sequence": [
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:stone_depth",
+                      "offset": 0,
+                      "surface_type": "floor",
+                      "add_surface_depth": false,
+                      "secondary_depth_range": 0
+                    },
+                    "then_run": {
+                      "type": "minecraft:sequence",
+                      "sequence": [
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:y_above",
+                            "anchor": {
+                              "absolute": 256
+                            },
+                            "surface_depth_multiplier": 0,
+                            "add_stone_depth": false
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:white_terracotta"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:y_above",
+                            "anchor": {
+                              "absolute": 74
+                            },
+                            "surface_depth_multiplier": 1,
+                            "add_stone_depth": true
+                          },
+                          "then_run": {
+                            "type": "minecraft:sequence",
+                            "sequence": [
+                              {
+                                "type": "minecraft:condition",
+                                "if_true": {
+                                  "type": "minecraft:noise_threshold",
+                                  "noise": "minecraft:surface",
+                                  "min_threshold": -0.909,
+                                  "max_threshold": -0.5454
+                                },
+                                "then_run": {
+                                  "type": "minecraft:block",
+                                  "result_state": {
+                                    "Name": "minecraft:white_terracotta"
+                                  }
+                                }
+                              },
+                              {
+                                "type": "minecraft:condition",
+                                "if_true": {
+                                  "type": "minecraft:noise_threshold",
+                                  "noise": "minecraft:surface",
+                                  "min_threshold": -0.1818,
+                                  "max_threshold": 0.1818
+                                },
+                                "then_run": {
+                                  "type": "minecraft:block",
+                                  "result_state": {
+                                    "Name": "minecraft:white_terracotta"
+                                  }
+                                }
+                              },
+                              {
+                                "type": "minecraft:condition",
+                                "if_true": {
+                                  "type": "minecraft:noise_threshold",
+                                  "noise": "minecraft:surface",
+                                  "min_threshold": 0.5454,
+                                  "max_threshold": 0.909
+                                },
+                                "then_run": {
+                                  "type": "minecraft:block",
+                                  "result_state": {
+                                    "Name": "minecraft:white_terracotta"
+                                  }
+                                }
+                              },
+                              {
+                                "type": "minecraft:sequence",
+                                "sequence": [
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 63
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:gray_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 70
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:brown_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 73
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:light_gray_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 80
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:white_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 90
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:cyan_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 100
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:gray_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 110
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:brown_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 120
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:light_gray_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 123
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:white_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 130
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:cyan_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 133
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:gray_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 140
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:brown_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 150
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:light_gray_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 160
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:white_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 170
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:cyan_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 180
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:gray_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 183
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:brown_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 190
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:light_gray_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 193
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:white_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 200
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:cyan_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 210
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:gray_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 213
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:brown_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 220
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:light_gray_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 223
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:white_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 230
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:cyan_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 240
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:gray_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 250
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:brown_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 260
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:light_gray_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 263
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:white_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 270
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:cyan_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 280
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:gray_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 290
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:brown_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 300
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:light_gray_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 303
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:white_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 313
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:cyan_terracotta"
+                                      }
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:y_above",
+                                      "anchor": {
+                                        "absolute": 317
+                                      },
+                                      "surface_depth_multiplier": 0,
+                                      "add_stone_depth": false
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:block",
+                                      "result_state": {
+                                        "Name": "minecraft:gray_terracotta"
+                                      }
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:water",
+                            "offset": -1,
+                            "surface_depth_multiplier": 0,
+                            "add_stone_depth": false
+                          },
+                          "then_run": {
+                            "type": "minecraft:sequence",
+                            "sequence": [
+                              {
+                                "type": "minecraft:condition",
+                                "if_true": {
+                                  "type": "minecraft:stone_depth",
+                                  "offset": 0,
+                                  "surface_type": "ceiling",
+                                  "add_surface_depth": false,
+                                  "secondary_depth_range": 0
+                                },
+                                "then_run": {
+                                  "type": "minecraft:block",
+                                  "result_state": {
+                                    "Name": "minecraft:mud"
+                                  }
+                                }
+                              },
+                              {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:mud"
+                                }
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:not",
+                            "invert": {
+                              "type": "minecraft:hole"
+                            }
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:white_terracotta"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:water",
+                            "offset": -6,
+                            "surface_depth_multiplier": -1,
+                            "add_stone_depth": true
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:white_terracotta"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:sequence",
+                          "sequence": [
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:stone_depth",
+                                "offset": 0,
+                                "surface_type": "ceiling",
+                                "add_surface_depth": false,
+                                "secondary_depth_range": 0
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:stone"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:block",
+                              "result_state": {
+                                "Name": "minecraft:gravel"
+                              }
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:y_above",
+                      "anchor": {
+                        "absolute": 63
+                      },
+                      "surface_depth_multiplier": -1,
+                      "add_stone_depth": true
+                    },
+                    "then_run": {
+                      "type": "minecraft:sequence",
+                      "sequence": [
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:y_above",
+                            "anchor": {
+                              "absolute": 63
+                            },
+                            "surface_depth_multiplier": 0,
+                            "add_stone_depth": false
+                          },
+                          "then_run": {
+                            "type": "minecraft:condition",
+                            "if_true": {
+                              "type": "minecraft:not",
+                              "invert": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 74
+                                },
+                                "surface_depth_multiplier": 1,
+                                "add_stone_depth": true
+                              }
+                            },
+                            "then_run": {
+                              "type": "minecraft:block",
+                              "result_state": {
+                                "Name": "minecraft:white_terracotta"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:sequence",
+                          "sequence": [
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 63
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:gray_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 70
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:brown_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 73
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:light_gray_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 80
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:white_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 90
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:cyan_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 100
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:gray_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 110
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:brown_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 120
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:light_gray_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 123
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:white_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 130
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:cyan_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 133
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:gray_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 140
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:brown_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 150
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:light_gray_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 160
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:white_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 170
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:cyan_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 180
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:gray_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 183
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:brown_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 190
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:light_gray_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 193
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:white_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 200
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:cyan_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 210
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:gray_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 213
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:brown_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 220
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:light_gray_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 223
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:white_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 230
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:cyan_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 240
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:gray_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 250
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:brown_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 260
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:light_gray_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 263
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:white_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 270
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:cyan_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 280
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:gray_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 290
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:brown_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 300
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:light_gray_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 303
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:white_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 313
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:cyan_terracotta"
+                                }
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:y_above",
+                                "anchor": {
+                                  "absolute": 317
+                                },
+                                "surface_depth_multiplier": 0,
+                                "add_stone_depth": false
+                              },
+                              "then_run": {
+                                "type": "minecraft:block",
+                                "result_state": {
+                                  "Name": "minecraft:gray_terracotta"
+                                }
+                              }
+                            }
+                          ]
                         }
                       ]
                     }
@@ -3691,6 +5295,62 @@
                                     "type": "minecraft:block",
                                     "result_state": {
                                       "Name": "minecraft:stone"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:biome",
+                                "biome_is": [
+                                  "biox:sandstony_shore"
+                                ]
+                              },
+                              "then_run": {
+                                "type": "minecraft:sequence",
+                                "sequence": [
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:noise_threshold",
+                                      "noise": "minecraft:gravel",
+                                      "min_threshold": -0.05,
+                                      "max_threshold": 0.05
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:sequence",
+                                      "sequence": [
+                                        {
+                                          "type": "minecraft:condition",
+                                          "if_true": {
+                                            "type": "minecraft:stone_depth",
+                                            "offset": 0,
+                                            "surface_type": "ceiling",
+                                            "add_surface_depth": false,
+                                            "secondary_depth_range": 0
+                                          },
+                                          "then_run": {
+                                            "type": "minecraft:block",
+                                            "result_state": {
+                                              "Name": "minecraft:smooth_sandstone"
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "type": "minecraft:block",
+                                          "result_state": {
+                                            "Name": "minecraft:sand"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:block",
+                                    "result_state": {
+                                      "Name": "minecraft:smooth_sandstone"
                                     }
                                   }
                                 ]
@@ -4467,6 +6127,62 @@
                                     "type": "minecraft:block",
                                     "result_state": {
                                       "Name": "minecraft:stone"
+                                    }
+                                  }
+                                ]
+                              }
+                            },
+                            {
+                              "type": "minecraft:condition",
+                              "if_true": {
+                                "type": "minecraft:biome",
+                                "biome_is": [
+                                  "biox:sandstony_shore"
+                                ]
+                              },
+                              "then_run": {
+                                "type": "minecraft:sequence",
+                                "sequence": [
+                                  {
+                                    "type": "minecraft:condition",
+                                    "if_true": {
+                                      "type": "minecraft:noise_threshold",
+                                      "noise": "minecraft:gravel",
+                                      "min_threshold": -0.05,
+                                      "max_threshold": 0.05
+                                    },
+                                    "then_run": {
+                                      "type": "minecraft:sequence",
+                                      "sequence": [
+                                        {
+                                          "type": "minecraft:condition",
+                                          "if_true": {
+                                            "type": "minecraft:stone_depth",
+                                            "offset": 0,
+                                            "surface_type": "ceiling",
+                                            "add_surface_depth": false,
+                                            "secondary_depth_range": 0
+                                          },
+                                          "then_run": {
+                                            "type": "minecraft:block",
+                                            "result_state": {
+                                              "Name": "minecraft:smooth_sandstone"
+                                            }
+                                          }
+                                        },
+                                        {
+                                          "type": "minecraft:block",
+                                          "result_state": {
+                                            "Name": "minecraft:sand"
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  },
+                                  {
+                                    "type": "minecraft:block",
+                                    "result_state": {
+                                      "Name": "minecraft:smooth_sandstone"
                                     }
                                   }
                                 ]
