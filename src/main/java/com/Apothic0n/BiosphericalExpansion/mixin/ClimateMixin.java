@@ -41,6 +41,6 @@ public class ClimateMixin {
         int j = QuartPos.toBlock(p_186976_);
         int k = QuartPos.toBlock(p_186977_);
         DensityFunction.SinglePointContext densityfunction$singlepointcontext = new DensityFunction.SinglePointContext(i, j, k);
-        return Climate.target((float)(this.temperature.compute(densityfunction$singlepointcontext) - (Mth.clamp(k, -2048, 2048) * 0.00048)), (float)(this.humidity.compute(densityfunction$singlepointcontext) + (Mth.clamp(i, -2048, 2048) * 0.00048)), (float)this.continentalness.compute(densityfunction$singlepointcontext), (float)this.erosion.compute(densityfunction$singlepointcontext), (float)this.depth.compute(densityfunction$singlepointcontext), (float)this.weirdness.compute(densityfunction$singlepointcontext));
+        return Climate.target((float)(this.temperature.compute(densityfunction$singlepointcontext) - (Mth.clamp(k, -102400, 102400) * 0.00024)), (float)(this.humidity.compute(densityfunction$singlepointcontext) + (Mth.clamp(i, -102400, 102400) * 0.00024)), (float)this.continentalness.compute(densityfunction$singlepointcontext), (float)this.erosion.compute(densityfunction$singlepointcontext), (float)this.depth.compute(densityfunction$singlepointcontext), (float)this.weirdness.compute(densityfunction$singlepointcontext));
     }
 }

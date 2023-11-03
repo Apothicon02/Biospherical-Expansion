@@ -47,7 +47,7 @@ public class TrunkWoodenRootsDecorator extends TreeDecorator {
         LevelSimulatedReader level = context.level();
         RandomSource randomSource = context.random();
         ObjectArrayList<BlockPos> list = context.roots();
-        if (list.isEmpty()) {
+        if (list.isEmpty() && context.logs().size() > 6) {
             list = ObjectArrayList.of(context.logs().get(0), context.logs().get(1), context.logs().get(2), context.logs().get(3), context.logs().get(4), context.logs().get(5), context.logs().get(6));
         }
         BlockState woodWall = this.wallBlock.getState(randomSource, new BlockPos(0, 0, 0));

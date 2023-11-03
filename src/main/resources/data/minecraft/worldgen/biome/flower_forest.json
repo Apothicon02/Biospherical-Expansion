@@ -1,28 +1,26 @@
 {
-  "temperature": 0.83,
-  "downfall": -0.5,
-  "has_precipitation": false,
+  "temperature": 0.7,
+  "downfall": 0.8,
+  "has_precipitation": true,
+  "category": "forest",
   "effects": {
-    "sky_color": 7254527,
-    "fog_color": 6840176,
+    "sky_color": 9806079,
+    "fog_color": 12638463,
     "water_color": 7318712,
     "water_fog_color": 272948,
-    "ambient_sound": "minecraft:ambient.basalt_deltas.loop",
+    "grass_color": 7265674,
+    "foliage_color": 47226,
     "mood_sound": {
-      "sound": "minecraft:ambient.basalt_deltas.mood",
+      "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
       "block_search_extent": 8,
       "offset": 2
     },
-    "additions_sound": {
-      "sound": "minecraft:ambient.basalt_deltas.additions",
-      "tick_chance": 0.0111
-    },
-    "particle": {
-      "options": {
-        "type": "minecraft:white_ash"
-      },
-      "probability": 0.118093334
+    "music": {
+      "sound": "minecraft:music.overworld.flower_forest",
+      "min_delay": 12000,
+      "max_delay": 24000,
+      "replace_current_music": false
     }
   },
   "spawners": {
@@ -35,7 +33,38 @@
       }
     ],
     "axolotls": [],
-    "creature": [],
+    "creature": [
+      {
+        "type": "minecraft:sheep",
+        "weight": 12,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:pig",
+        "weight": 10,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:chicken",
+        "weight": 10,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:cow",
+        "weight": 8,
+        "minCount": 4,
+        "maxCount": 4
+      },
+      {
+        "type": "minecraft:rabbit",
+        "weight": 4,
+        "minCount": 2,
+        "maxCount": 3
+      }
+    ],
     "misc": [],
     "monster": [
       {
@@ -110,22 +139,21 @@
     [],
     [
       "minecraft:lake_lava_underground",
-      "minecraft:lake_lava_surface",
-      "eco:delta"
+      "minecraft:lake_lava_surface"
     ],
     [
       "minecraft:amethyst_geode",
-      "minecraft:large_dripstone",
-      "eco:small_basalt_columns",
-      "eco:large_basalt_columns",
-      "eco:sparse_smooth_basalt_pillar"
+      "eco:sparse_smooth_basalt_pillar",
+      "eco:amethyst_crystal_spike",
+      "eco:amethyst_crystal_ground_spike",
+      "eco:amethyst_spiral"
     ],
     [
       "minecraft:monster_room",
       "minecraft:monster_room_deep"
     ],
     [
-      "eco:lava_fall"
+      "eco:amethyst_water_fall"
     ],
     [],
     [
@@ -152,15 +180,18 @@
       "minecraft:ore_diamond_buried",
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
-      "minecraft:ore_copper_large",
+      "minecraft:ore_copper",
       "minecraft:underwater_magma",
       "minecraft:disk_sand",
       "minecraft:disk_clay",
       "minecraft:disk_gravel"
     ],
     [
-      "minecraft:dripstone_cluster",
-      "minecraft:pointed_dripstone"
+      "eco:smooth_basalt_blob",
+      "eco:calcite_blob",
+      "eco:calcite_ground_blob",
+      "eco:deepslate_calcite_blob",
+      "eco:smooth_basalt_calcite_blob"
     ],
     [
       "minecraft:spring_water",
@@ -168,15 +199,32 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:patch_tall_grass_2",
-      "minecraft:trees_plains",
-      "minecraft:flower_plains",
-      "minecraft:patch_grass_plain",
-      "minecraft:brown_mushroom_normal",
-      "minecraft:red_mushroom_normal",
+      "eco:grass_rocks",
+      "eco:rooted_dirt",
+      "eco:mossy_pond",
+      "eco:tall_mushrooms",
+      "eco:azalea_bushes",
+      "minecraft:bamboo_light",
+      "biox:trees_giant_oak",
+      "eco:trees_branching_oak",
+      "eco:trees_sparse_lush_oak",
+      "biox:trees_sparse_tall_oak",
+      "eco:trees_noise_tall_birch",
+      "eco:fallen_trees_birch_and_oak",
+      "eco:moss_patch",
+      "eco:extra_ancient_flower_patch",
+      "eco:extra_tulip_flower_patch",
+      "eco:extra_lily_flower_patch",
+      "eco:extra_tall_flower_patch",
+      "eco:noise_flower_cherry",
+      "eco:sparse_trees_giant_cherry",
+      "eco:basic_grass",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
-      "eco:large_pumpkin"
+      "eco:large_pumpkin",
+      "minecraft:patch_berry_rare",
+      "minecraft:warm_ocean_vegetation",
+      "eco:lush_spore_blossom"
     ],
     [
       "minecraft:freeze_top_layer"
