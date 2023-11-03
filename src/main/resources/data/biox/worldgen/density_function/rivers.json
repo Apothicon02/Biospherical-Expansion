@@ -1,0 +1,86 @@
+{
+  "type": "minecraft:mul",
+  "argument1": {
+    "type": "minecraft:y_clamped_gradient",
+    "from_y": 48,
+    "to_y": 63,
+    "from_value": 0,
+    "to_value": 1
+  },
+  "argument2": {
+    "type": "minecraft:min",
+    "argument1": 0,
+    "argument2": {
+      "type": "minecraft:add",
+      "argument1": -0.4037500262260437,
+      "argument2": {
+        "type": "minecraft:spline",
+        "spline": {
+          "coordinate": "minecraft:zero",
+          "points": [
+            {
+              "location": -0.35,
+              "derivative": 0.05,
+              "value": {
+                "coordinate": {
+                  "type": "minecraft:mul",
+                  "argument1": -2.5,
+                  "argument2": {
+                    "type": "minecraft:add",
+                    "argument1": -0.3333333333333333,
+                    "argument2": {
+                      "type": "minecraft:abs",
+                      "argument": {
+                        "type": "minecraft:add",
+                        "argument1": -0.6666666666666667,
+                        "argument2": {
+                          "type": "minecraft:abs",
+                          "argument": {
+                            "type": "minecraft:shifted_noise",
+                            "noise": "minecraft:ridge",
+                            "xz_scale": 0.1,
+                            "y_scale": 0,
+                            "shift_x": "minecraft:shift_x",
+                            "shift_y": 0,
+                            "shift_z": "minecraft:shift_z"
+                          }
+                        }
+                      }
+                    }
+                  }
+                },
+                "points": [
+                  {
+                    "location": -1,
+                    "derivative": 0.5,
+                    "value": -5
+                  },
+                  {
+                    "location": -0.7,
+                    "derivative": 0,
+                    "value": 0.5
+                  },
+                  {
+                    "location": 0,
+                    "derivative": 0,
+                    "value": 0.5
+                  },
+                  {
+                    "location": 0.7,
+                    "derivative": 0,
+                    "value": 0.5
+                  },
+                  {
+                    "location": 1,
+                    "derivative": 0.070000015,
+                    "value": 0.6
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      }
+    }
+  }
+}
