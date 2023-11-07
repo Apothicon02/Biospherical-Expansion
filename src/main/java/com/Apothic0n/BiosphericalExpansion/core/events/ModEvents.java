@@ -30,6 +30,7 @@ import net.minecraftforge.registries.RegistryObject;
 import java.util.List;
 import java.util.Map;
 
+import static com.Apothic0n.BiosphericalExpansion.core.objects.BioxBlocks.pileBlocks;
 import static com.Apothic0n.BiosphericalExpansion.core.objects.BioxBlocks.wallBlocks;
 
 @Mod.EventBusSubscriber(modid = BiosphericalExpansion.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -40,7 +41,7 @@ public class ModEvents {
         if (event.getTabKey().equals(CreativeModeTabs.NATURAL_BLOCKS)) {
             event.accept(BioxItems.GLOWING_AMETHYST.get(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             event.accept(BioxItems.AQUATIC_LICHEN.get(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
-            List<List<RegistryObject<Item>>> buildingBlockItems = List.of(BioxItems.wallItems, BioxItems.stairItems, BioxItems.slabItems);
+            List<List<RegistryObject<Item>>> buildingBlockItems = List.of(BioxItems.wallItems, BioxItems.stairItems, BioxItems.slabItems, BioxItems.pileItems);
             for (int i = 0; i < buildingBlockItems.size(); i++) {
                 List<RegistryObject<Item>> blockItemTypeList = buildingBlockItems.get(i);
                 for (int o = 0; o < blockItemTypeList.size(); o++) {
@@ -65,6 +66,15 @@ public class ModEvents {
         Block mangroveLeaves = Blocks.MANGROVE_LEAVES;
         Block azaleaLeaves = Blocks.AZALEA_LEAVES;
         Block floweringAzaleaLeaves = Blocks.FLOWERING_AZALEA_LEAVES;
+        Block sprucePile = Blocks.SPRUCE_LEAVES;
+        Block birchPile = Blocks.BIRCH_LEAVES;
+        Block oakPile = Blocks.OAK_LEAVES;
+        Block junglePile = Blocks.JUNGLE_LEAVES;
+        Block acaciaPile = Blocks.ACACIA_LEAVES;
+        Block darkOakPile = Blocks.DARK_OAK_LEAVES;
+        Block mangrovePile = Blocks.MANGROVE_LEAVES;
+        Block azaleaPile = Blocks.AZALEA_LEAVES;
+        Block floweringAzaleaPile = Blocks.FLOWERING_AZALEA_LEAVES;
         for (int i = 0; i < wallBlocks.size(); i++) {
             Map<Block, RegistryObject<Block>> map = wallBlocks.get(i);
             if (map.containsKey(Blocks.SPRUCE_LEAVES)) {
@@ -87,18 +97,40 @@ public class ModEvents {
                 floweringAzaleaLeaves = map.get(Blocks.FLOWERING_AZALEA_LEAVES).get();
             }
         }
+        for (int i = 0; i < pileBlocks.size(); i++) {
+            Map<Block, RegistryObject<Block>> map = pileBlocks.get(i);
+            if (map.containsKey(Blocks.SPRUCE_LEAVES)) {
+                sprucePile = map.get(Blocks.SPRUCE_LEAVES).get();
+            } else if (map.containsKey(Blocks.BIRCH_LEAVES)) {
+                birchPile = map.get(Blocks.BIRCH_LEAVES).get();
+            } else if (map.containsKey(Blocks.OAK_LEAVES)) {
+                oakPile = map.get(Blocks.OAK_LEAVES).get();
+            } else if (map.containsKey(Blocks.JUNGLE_LEAVES)) {
+                junglePile = map.get(Blocks.JUNGLE_LEAVES).get();
+            } else if (map.containsKey(Blocks.ACACIA_LEAVES)) {
+                acaciaPile = map.get(Blocks.ACACIA_LEAVES).get();
+            } else if (map.containsKey(Blocks.DARK_OAK_LEAVES)) {
+                darkOakPile = map.get(Blocks.DARK_OAK_LEAVES).get();
+            } else if (map.containsKey(Blocks.MANGROVE_LEAVES)) {
+                mangrovePile = map.get(Blocks.MANGROVE_LEAVES).get();
+            } else if (map.containsKey(Blocks.AZALEA_LEAVES)) {
+                azaleaPile = map.get(Blocks.AZALEA_LEAVES).get();
+            } else if (map.containsKey(Blocks.FLOWERING_AZALEA_LEAVES)) {
+                floweringAzaleaPile = map.get(Blocks.FLOWERING_AZALEA_LEAVES).get();
+            }
+        }
         event.register((p_92636_, p_92637_, p_92638_, p_92639_) -> {
             return FoliageColor.getEvergreenColor();
-        }, spruceLeaves);
+        }, spruceLeaves, sprucePile);
         event.register((p_92631_, p_92632_, p_92633_, p_92634_) -> {
             return FoliageColor.getBirchColor();
-        }, birchLeaves);
+        }, birchLeaves, birchPile);
         event.register((p_92626_, p_92627_, p_92628_, p_92629_) -> {
             return p_92627_ != null && p_92628_ != null ? BiomeColors.getAverageFoliageColor(p_92627_, new BlockPos(p_92628_.getX(), 55, p_92628_.getZ())) : FoliageColor.getDefaultColor();
-        }, mangroveLeaves, Blocks.MANGROVE_LEAVES, Blocks.VINE);
+        }, mangroveLeaves, mangrovePile, Blocks.MANGROVE_LEAVES, Blocks.VINE);
         event.register((p_92626_, p_92627_, p_92628_, p_92629_) -> {
             return p_92627_ != null && p_92628_ != null ? BiomeColors.getAverageFoliageColor(p_92627_, new BlockPos(p_92628_.getX(), 68, p_92628_.getZ())) : FoliageColor.getDefaultColor();
-        }, oakLeaves, Blocks.OAK_LEAVES, jungleLeaves, Blocks.JUNGLE_LEAVES, acaciaLeaves, Blocks.ACACIA_LEAVES, darkOakLeaves, Blocks.DARK_OAK_LEAVES);
+        }, oakLeaves, oakPile, Blocks.OAK_LEAVES, jungleLeaves, junglePile, Blocks.JUNGLE_LEAVES, acaciaLeaves, acaciaPile, Blocks.ACACIA_LEAVES, darkOakLeaves, darkOakPile, Blocks.DARK_OAK_LEAVES);
 
         event.register((blockState, blockAndTintGetter, blockPos, tint) -> {
             if (blockPos != null) {
@@ -256,7 +288,7 @@ public class ModEvents {
                 },
                 Blocks.CAVE_VINES, Blocks.CAVE_VINES_PLANT,
                 Blocks.AZALEA, Blocks.FLOWERING_AZALEA,
-                Blocks.AZALEA_LEAVES, Blocks.FLOWERING_AZALEA_LEAVES, azaleaLeaves, floweringAzaleaLeaves);
+                Blocks.AZALEA_LEAVES, Blocks.FLOWERING_AZALEA_LEAVES, azaleaLeaves, azaleaPile, floweringAzaleaLeaves, floweringAzaleaPile);
 
         event.register((blockState, blockAndTintGetter, blockPos, tint) -> {
                     int color = blockAndTintGetter != null && blockPos != null ? BiomeColors.getAverageGrassColor(blockAndTintGetter, blockPos) : GrassColor.getDefaultColor();

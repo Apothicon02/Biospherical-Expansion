@@ -7,6 +7,7 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.LevelSimulatedReader;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SnowLayerBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.predicate.BlockStatePredicate;
@@ -14,6 +15,7 @@ import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
 import net.minecraftforge.registries.RegistryObject;
 
+import static com.Apothic0n.BiosphericalExpansion.core.objects.BioxBlocks.pileBlocks;
 import static com.Apothic0n.BiosphericalExpansion.core.objects.BioxBlocks.wallBlocks;
 
 public class HangingLeavesDecorator extends TreeDecorator {
@@ -91,10 +93,27 @@ public class HangingLeavesDecorator extends TreeDecorator {
         if (hangingBlock == Blocks.ACACIA_LEAVES) {
             maxLength = 1;
         }
-        for (int h = 0; h < Math.random()*(maxLength)+1; h++) {
+        double rand = (int) (Math.random()*(maxLength)+1);
+        for (int h = 0; h < rand; h++) {
             if (level.isStateAtPosition(blockPos.below(h).above(), BlockStatePredicate.forBlock(hangingBlock).or(BlockStatePredicate.forBlock(block))) && level.isStateAtPosition(blockPos.below(h),  BlockBehaviour.BlockStateBase::canBeReplaced)) {
                 context.setBlock(blockPos.below(h), blockState);
                 placedAny = true;
+            }
+            if (h == rand-1) {
+                Block pile = Blocks.AIR;
+                for (int o = 0; o < pileBlocks.size(); o++) {
+                    RegistryObject<Block> blockRegistryObject = pileBlocks.get(o).get(hangingBlock);
+                    if (blockRegistryObject != null) {
+                        pile = blockRegistryObject.get();
+                        o = 420;
+                    }
+                }
+                for (int d = 0; d < Math.random()*(maxLength)+1; d++) {
+                    if (level.isStateAtPosition(blockPos.below(h+d).above(), BlockBehaviour.BlockStateBase::canBeReplaced) && level.isStateAtPosition(blockPos.below(h+d),  BlockBehaviour.BlockStateBase::isSolid)) {
+                        BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (Math.random()*(3)+1));
+                        context.setBlock(blockPos.below(h+d).above(), pileState);
+                    }
+                }
             }
         }
         return placedAny;

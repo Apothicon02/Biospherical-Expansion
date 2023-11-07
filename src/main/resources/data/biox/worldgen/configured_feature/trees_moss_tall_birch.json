@@ -1,0 +1,24 @@
+{
+  "config": {
+    "features": [
+      {
+        "feature": "biox:moss_tilted_tall_birch",
+        "chance": 0.28
+      },
+      {
+        "feature": "biox:moss_big_tall_birch",
+        "chance": 0.37
+      },
+      {
+        "feature": "biox:moss_normal_tall_birch",
+        "chance": 0.2
+      },
+      {
+        "feature": "eco:normal_tall_birch",
+        "chance": 0.1
+      }
+    ],
+    "default": "biox:moss_normal_tall_birch"
+  },
+  "type": "minecraft:random_selector"
+}

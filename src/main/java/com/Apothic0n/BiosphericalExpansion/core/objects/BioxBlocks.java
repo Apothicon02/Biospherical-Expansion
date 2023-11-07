@@ -59,9 +59,15 @@ public final class BioxBlocks {
             OAK_LEAVES, DARK_OAK_LEAVES, BIRCH_LEAVES, SPRUCE_LEAVES, JUNGLE_LEAVES, ACACIA_LEAVES, MANGROVE_LEAVES, CHERRY_LEAVES, AZALEA_LEAVES, FLOWERING_AZALEA_LEAVES
     );
 
+    public static List<Block> blocksWithPiles = List.of(
+            OAK_LEAVES, DARK_OAK_LEAVES, BIRCH_LEAVES, SPRUCE_LEAVES, JUNGLE_LEAVES, ACACIA_LEAVES, MANGROVE_LEAVES, CHERRY_LEAVES, AZALEA_LEAVES, FLOWERING_AZALEA_LEAVES
+    );
+
+
     public static final List<Map<Block, RegistryObject<Block>>> wallBlocks = new ArrayList<>(List.of());
     public static final List<Map<Block, RegistryObject<Block>>> stairBlocks = new ArrayList<>(List.of());
     public static final List<Map<Block, RegistryObject<Block>>> slabBlocks = new ArrayList<>(List.of());
+    public static final List<Map<Block, RegistryObject<Block>>> pileBlocks = new ArrayList<>(List.of());
 
     public static void generateStairsSlabsWalls() {
         for (int i = 0; i < blocksWithStairsSlabsAndWalls.size(); i++) {
@@ -76,8 +82,28 @@ public final class BioxBlocks {
         }
         for (int i = 0; i < blocksWithFragileWalls.size(); i++) {
             Block baseBlock = blocksWithFragileWalls.get(i);
-            wallBlocks.add(createWallBlocks(baseBlock));
+            wallBlocks.add(createFragileWallBlocks(baseBlock));
         }
+        for (int i = 0; i < blocksWithPiles.size(); i++) {
+            Block baseBlock = blocksWithPiles.get(i);
+            pileBlocks.add(createPileBlocks(baseBlock));
+        }
+    }
+
+    public static Map<Block, RegistryObject<Block>> createPileBlocks(Block baseBlock) {
+        String name = baseBlock.toString();
+        return Map.of(
+                baseBlock, BLOCKS.register(name.substring(16, name.length() - 1) + "_pile", () ->
+                        new SnowLayerBlock(BlockBehaviour.Properties.copy(baseBlock).forceSolidOff().replaceable().instabreak().requiresCorrectToolForDrops()))
+        );
+    }
+
+    public static Map<Block, RegistryObject<Block>> createFragileWallBlocks(Block baseBlock) {
+        String name = baseBlock.toString();
+        return Map.of(
+                baseBlock, BLOCKS.register(name.substring(16, name.length() - 1) + "_wall", () ->
+                        new FragileWallBlock(BlockBehaviour.Properties.copy(baseBlock).replaceable().instabreak().requiresCorrectToolForDrops()))
+        );
     }
 
     public static Map<Block, RegistryObject<Block>> createWallBlocks(Block baseBlock) {

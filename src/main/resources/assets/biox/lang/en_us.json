@@ -28,5 +28,15 @@
   "block.biox.mangrove_leaves_wall": "Mangrove Leaves Wall",
   "block.biox.cherry_leaves_wall": "Cherry Leaves Wall",
   "block.biox.azalea_leaves_wall": "Azalea Leaves Wall",
-  "block.biox.flowering_azalea_leaves_wall": "Flowering Azalea Leaves Wall"
+  "block.biox.flowering_azalea_leaves_wall": "Flowering Azalea Leaves Wall",
+  "block.biox.oak_leaves_pile": "Oak Leaves Pile",
+  "block.biox.dark_oak_leaves_pile": "Dark Oak Leaves Pile",
+  "block.biox.birch_leaves_pile": "Birch Leaves Pile",
+  "block.biox.spruce_leaves_pile": "Spruce Leaves Pile",
+  "block.biox.jungle_leaves_pile": "Jungle Leaves Pile",
+  "block.biox.acacia_leaves_pile": "Acacia Leaves Pile",
+  "block.biox.mangrove_leaves_pile": "Mangrove Leaves Pile",
+  "block.biox.cherry_leaves_pile": "Cherry Leaves Pile",
+  "block.biox.azalea_leaves_pile": "Azalea Leaves Pile",
+  "block.biox.flowering_azalea_leaves_pile": "Flowering Azalea Leaves Pile"
 }

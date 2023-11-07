@@ -30,6 +30,7 @@ public final class BioxItems extends Items {
     public static final List<RegistryObject<Item>> wallItems = new ArrayList<>(List.of());
     public static final List<RegistryObject<Item>> stairItems = new ArrayList<>(List.of());
     public static final List<RegistryObject<Item>> slabItems = new ArrayList<>(List.of());
+    public static final List<RegistryObject<Item>> pileItems = new ArrayList<>(List.of());
 
     public static void generateStairsSlabsWalls() {
         for (int i = 0; i < blocksWithStairsSlabsAndWalls.size(); i++) {
@@ -46,24 +47,35 @@ public final class BioxItems extends Items {
             Block baseBlock = blocksWithFragileWalls.get(i);
             wallItems.add(createWallItems(baseBlock));
         }
+        for (int i = 0; i < blocksWithPiles.size(); i++) {
+            Block baseBlock = blocksWithPiles.get(i);
+            pileItems.add(createPileItems(baseBlock));
+        }
+    }
+
+    public static RegistryObject<Item> createPileItems(Block baseBlock) {
+        RegistryObject<Block> block = getBlock(baseBlock, pileBlocks);
+        return ITEMS.register(block.getId().toString().substring(5), () ->
+                new BlockItem(block.get(), new Item.Properties())
+        );
     }
 
     public static RegistryObject<Item> createWallItems(Block baseBlock) {
-        RegistryObject<Block> block = getBlock(baseBlock, BioxBlocks.wallBlocks);
+        RegistryObject<Block> block = getBlock(baseBlock, wallBlocks);
         return ITEMS.register(block.getId().toString().substring(5), () ->
                 new BlockItem(block.get(), new Item.Properties())
         );
     }
 
     public static RegistryObject<Item> createStairItems(Block baseBlock) {
-        RegistryObject<Block> block = getBlock(baseBlock, BioxBlocks.stairBlocks);
+        RegistryObject<Block> block = getBlock(baseBlock, stairBlocks);
         return ITEMS.register(block.getId().toString().substring(5), () ->
                 new BlockItem(block.get(), new Item.Properties())
         );
     }
 
     public static RegistryObject<Item> createSlabItems(Block baseBlock) {
-        RegistryObject<Block> block = getBlock(baseBlock, BioxBlocks.slabBlocks);
+        RegistryObject<Block> block = getBlock(baseBlock, slabBlocks);
         return ITEMS.register(block.getId().toString().substring(5), () ->
                 new BlockItem(block.get(), new Item.Properties())
         );

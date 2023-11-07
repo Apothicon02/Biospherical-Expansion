@@ -56,6 +56,13 @@ public class CommonModEvents {
                 ResourceLocation baseBlock = new ResourceLocation("minecraft", "block/" + finalName);
                 map = makeWallModels(map, baseBlockBlock, baseBlock, new ResourceLocation("minecraft", "cutout"));
             }
+            for (int i = 0; i < blocksWithPiles.size(); i++) {
+                Block baseBlockBlock = blocksWithPiles.get(i);
+                String name = baseBlockBlock.toString();
+                String finalName = name.substring(16, name.length() - 1);
+                ResourceLocation baseBlock = new ResourceLocation("minecraft", "block/" + finalName);
+                map = makePileModels(map, baseBlockBlock, baseBlock, new ResourceLocation("minecraft", "cutout"));
+            }
         }));
         // blockstates
         BlockStateFile.addDataProvider(event, BiosphericalExpansion.MODID, JsonOps.INSTANCE, Util.make(new HashMap<>(), map -> {
@@ -73,7 +80,73 @@ public class CommonModEvents {
                 Block baseBlockBlock = blocksWithFragileWalls.get(i);
                 map = makeWallBlockstates(map, baseBlockBlock);
             }
+            for (int i = 0; i < blocksWithPiles.size(); i++) {
+                Block baseBlockBlock = blocksWithPiles.get(i);
+                map = makePileBlockstates(map, baseBlockBlock);
+            }
         }));
+    }
+
+    private static HashMap makePileModels(HashMap map, Block baseBlockBlock, ResourceLocation baseBlock, ResourceLocation renderType) {
+        ResourceLocation tempPileBlock2 = new ResourceLocation("block/failure2");
+        ResourceLocation tempPileBlock4 = new ResourceLocation("block/failure4");
+        ResourceLocation tempPileBlock6 = new ResourceLocation("block/failure6");
+        ResourceLocation tempPileBlock8 = new ResourceLocation("block/failure8");
+        ResourceLocation tempPileBlock10 = new ResourceLocation("block/failure10");
+        ResourceLocation tempPileBlock12 = new ResourceLocation("block/failure12");
+        ResourceLocation tempPileBlock14 = new ResourceLocation("block/failure14");
+        ResourceLocation tempPileBlock16 = new ResourceLocation("block/failure16");
+        ResourceLocation tempPileBlockItem = new ResourceLocation("block/failure_block_item");
+        for (int o = 0; o < pileBlocks.size(); o++) {
+            Map<Block, RegistryObject<Block>> pileBlockMap = pileBlocks.get(o);
+            if (pileBlockMap.containsKey(baseBlockBlock)) {
+                tempPileBlock2 = new ResourceLocation(BiosphericalExpansion.MODID, "block/" + pileBlockMap.get(baseBlockBlock).getId().toString().substring(5) + "_height2");
+                tempPileBlock4 = new ResourceLocation(BiosphericalExpansion.MODID, "block/" + pileBlockMap.get(baseBlockBlock).getId().toString().substring(5) + "_height4");
+                tempPileBlock6 = new ResourceLocation(BiosphericalExpansion.MODID, "block/" + pileBlockMap.get(baseBlockBlock).getId().toString().substring(5) + "_height6");
+                tempPileBlock8 = new ResourceLocation(BiosphericalExpansion.MODID, "block/" + pileBlockMap.get(baseBlockBlock).getId().toString().substring(5) + "_height8");
+                tempPileBlock10 = new ResourceLocation(BiosphericalExpansion.MODID, "block/" + pileBlockMap.get(baseBlockBlock).getId().toString().substring(5) + "_height10");
+                tempPileBlock12 = new ResourceLocation(BiosphericalExpansion.MODID, "block/" + pileBlockMap.get(baseBlockBlock).getId().toString().substring(5) + "_height12");
+                tempPileBlock14 = new ResourceLocation(BiosphericalExpansion.MODID, "block/" + pileBlockMap.get(baseBlockBlock).getId().toString().substring(5) + "_height14");
+                tempPileBlock16 = new ResourceLocation(BiosphericalExpansion.MODID, "block/" + pileBlockMap.get(baseBlockBlock).getId().toString().substring(5) + "_height16");
+                tempPileBlockItem = new ResourceLocation(BiosphericalExpansion.MODID, "item/" + pileBlockMap.get(baseBlockBlock).getId().toString().substring(5));
+            }
+        }
+        ResourceLocation pileBlock2 = tempPileBlock2;
+        ResourceLocation pileBlock4 = tempPileBlock4;
+        ResourceLocation pileBlock6 = tempPileBlock6;
+        ResourceLocation pileBlock8 = tempPileBlock8;
+        ResourceLocation pileBlock10 = tempPileBlock10;
+        ResourceLocation pileBlock12 = tempPileBlock12;
+        ResourceLocation pileBlock14 = tempPileBlock14;
+        ResourceLocation pileBlock16 = tempPileBlock16;
+        ResourceLocation pileBlockItem = tempPileBlockItem;
+        map.put(pileBlock2,
+                SimpleModel.create(new ResourceLocation("biox", "block/leaves_height2"), renderType)
+                        .addTexture("texture", baseBlock));
+        map.put(pileBlock4,
+                SimpleModel.create(new ResourceLocation("biox", "block/leaves_height4"), renderType)
+                        .addTexture("texture", baseBlock));
+        map.put(pileBlock6,
+                SimpleModel.create(new ResourceLocation("biox", "block/leaves_height6"), renderType)
+                        .addTexture("texture", baseBlock));
+        map.put(pileBlock8,
+                SimpleModel.create(new ResourceLocation("biox", "block/leaves_height8"), renderType)
+                        .addTexture("texture", baseBlock));
+        map.put(pileBlock10,
+                SimpleModel.create(new ResourceLocation("biox", "block/leaves_height10"), renderType)
+                        .addTexture("texture", baseBlock));
+        map.put(pileBlock12,
+                SimpleModel.create(new ResourceLocation("biox", "block/leaves_height12"), renderType)
+                        .addTexture("texture", baseBlock));
+        map.put(pileBlock14,
+                SimpleModel.create(new ResourceLocation("biox", "block/leaves_height14"), renderType)
+                        .addTexture("texture", baseBlock));
+        map.put(pileBlock16,
+                SimpleModel.create(new ResourceLocation("block/cube_all"), renderType)
+                        .addTexture("all", baseBlock));
+        map.put(pileBlockItem,
+                SimpleModel.create(pileBlock2));
+        return map;
     }
 
     private static HashMap makeWallModels(HashMap map, Block baseBlockBlock, ResourceLocation baseBlock, ResourceLocation renderType) {
@@ -174,6 +247,68 @@ public class CommonModEvents {
                         .addTexture("top", baseBlock));
         map.put(slabBlockItem,
                 SimpleModel.create(slabBlock));
+        return map;
+    }
+
+    private static HashMap makePileBlockstates(HashMap map, Block baseBlockBlock) {
+        ResourceLocation tempBlockstate = new ResourceLocation("block/failure_blockstate");
+        ResourceLocation tempPileBlock2 = new ResourceLocation("block/failure2");
+        ResourceLocation tempPileBlock4 = new ResourceLocation("block/failure4");
+        ResourceLocation tempPileBlock6 = new ResourceLocation("block/failure6");
+        ResourceLocation tempPileBlock8 = new ResourceLocation("block/failure8");
+        ResourceLocation tempPileBlock10 = new ResourceLocation("block/failure10");
+        ResourceLocation tempPileBlock12 = new ResourceLocation("block/failure12");
+        ResourceLocation tempPileBlock14 = new ResourceLocation("block/failure14");
+        ResourceLocation tempPileBlock16 = new ResourceLocation("block/failure16");
+        for (int o = 0; o < pileBlocks.size(); o++) {
+            Map<Block, RegistryObject<Block>> pileBlockMap = pileBlocks.get(o);
+            if (pileBlockMap.containsKey(baseBlockBlock)) {
+                tempBlockstate = new ResourceLocation(BiosphericalExpansion.MODID, pileBlockMap.get(baseBlockBlock).getId().toString().substring(5));
+                tempPileBlock2 = new ResourceLocation(BiosphericalExpansion.MODID, "block/" + pileBlockMap.get(baseBlockBlock).getId().toString().substring(5) + "_height2");
+                tempPileBlock4 = new ResourceLocation(BiosphericalExpansion.MODID, "block/" + pileBlockMap.get(baseBlockBlock).getId().toString().substring(5) + "_height4");
+                tempPileBlock6 = new ResourceLocation(BiosphericalExpansion.MODID, "block/" + pileBlockMap.get(baseBlockBlock).getId().toString().substring(5) + "_height6");
+                tempPileBlock8 = new ResourceLocation(BiosphericalExpansion.MODID, "block/" + pileBlockMap.get(baseBlockBlock).getId().toString().substring(5) + "_height8");
+                tempPileBlock10 = new ResourceLocation(BiosphericalExpansion.MODID, "block/" + pileBlockMap.get(baseBlockBlock).getId().toString().substring(5) + "_height10");
+                tempPileBlock12 = new ResourceLocation(BiosphericalExpansion.MODID, "block/" + pileBlockMap.get(baseBlockBlock).getId().toString().substring(5) + "_height12");
+                tempPileBlock14 = new ResourceLocation(BiosphericalExpansion.MODID, "block/" + pileBlockMap.get(baseBlockBlock).getId().toString().substring(5) + "_height14");
+                tempPileBlock16 = new ResourceLocation(BiosphericalExpansion.MODID, "block/" + pileBlockMap.get(baseBlockBlock).getId().toString().substring(5) + "_height16");
+            }
+        }
+        ResourceLocation blockstate = tempBlockstate;
+        ResourceLocation pileBlock2 = tempPileBlock2;
+        ResourceLocation pileBlock4 = tempPileBlock4;
+        ResourceLocation pileBlock6 = tempPileBlock6;
+        ResourceLocation pileBlock8 = tempPileBlock8;
+        ResourceLocation pileBlock10 = tempPileBlock10;
+        ResourceLocation pileBlock12 = tempPileBlock12;
+        ResourceLocation pileBlock14 = tempPileBlock14;
+        ResourceLocation pileBlock16 = tempPileBlock16;
+        map.put(blockstate,
+                BlockStateFile.variants(BlockStateFile.Variants.builder()
+                        .addVariant(
+                                BlockStateFile.PropertyValue.create(SnowLayerBlock.LAYERS, 1),
+                                BlockStateFile.Model.create(pileBlock2))
+                        .addVariant(
+                                BlockStateFile.PropertyValue.create(SnowLayerBlock.LAYERS, 2),
+                                BlockStateFile.Model.create(pileBlock4))
+                        .addVariant(
+                                BlockStateFile.PropertyValue.create(SnowLayerBlock.LAYERS, 3),
+                                BlockStateFile.Model.create(pileBlock6))
+                        .addVariant(
+                                BlockStateFile.PropertyValue.create(SnowLayerBlock.LAYERS, 4),
+                                BlockStateFile.Model.create(pileBlock8))
+                        .addVariant(
+                                BlockStateFile.PropertyValue.create(SnowLayerBlock.LAYERS, 5),
+                                BlockStateFile.Model.create(pileBlock10))
+                        .addVariant(
+                                BlockStateFile.PropertyValue.create(SnowLayerBlock.LAYERS, 6),
+                                BlockStateFile.Model.create(pileBlock12))
+                        .addVariant(
+                                BlockStateFile.PropertyValue.create(SnowLayerBlock.LAYERS, 7),
+                                BlockStateFile.Model.create(pileBlock14))
+                        .addVariant(
+                                BlockStateFile.PropertyValue.create(SnowLayerBlock.LAYERS, 8),
+                                BlockStateFile.Model.create(pileBlock16))));
         return map;
     }
 
