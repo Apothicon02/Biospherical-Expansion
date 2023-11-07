@@ -51,6 +51,7 @@ public class BioxSurfaceRuleData {
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(Biomes.TAIGA), SurfaceRules.sequence(lessCoarseDirt, lessMoss)),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(Biomes.OLD_GROWTH_PINE_TAIGA), SurfaceRules.sequence(lessCoarseDirt, lessMoss)),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(Biomes.OLD_GROWTH_SPRUCE_TAIGA), SurfaceRules.sequence(lessCoarseDirt, lessMoss)),
+                SurfaceRules.ifTrue(SurfaceRules.isBiome(BioxBiomes.FLOWER_PLAINS), lessMoss),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(Biomes.BIRCH_FOREST), lessDiorite),
                 SurfaceRules.ifTrue(SurfaceRules.isBiome(Biomes.OLD_GROWTH_BIRCH_FOREST), lessDiorite));
     }

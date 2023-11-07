@@ -1379,7 +1379,10 @@
                             "biome_is": [
                               "minecraft:swamp",
                               "minecraft:mangrove_swamp",
-                              "minecraft:mushroom_fields"
+                              "minecraft:mushroom_fields",
+                              "biox:eroded_mesa",
+                              "biox:mesa",
+                              "biox:wooded_mesa"
                             ]
                           },
                           "then_run": {
@@ -1546,7 +1549,8 @@
                               "minecraft:dark_forest",
                               "minecraft:taiga",
                               "minecraft:old_growth_pine_taiga",
-                              "minecraft:old_growth_spruce_taiga"
+                              "minecraft:old_growth_spruce_taiga",
+                              "biox:autumnal_dark_forest"
                             ]
                           },
                           "then_run": {
@@ -1564,7 +1568,8 @@
                               "minecraft:flower_forest",
                               "minecraft:forest",
                               "minecraft:sunflower_plains",
-                              "minecraft:plains"
+                              "minecraft:plains",
+                              "biox:flower_plains"
                             ]
                           },
                           "then_run": {
