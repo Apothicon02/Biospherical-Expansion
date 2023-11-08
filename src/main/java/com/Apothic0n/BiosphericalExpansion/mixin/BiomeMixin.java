@@ -17,7 +17,7 @@ public abstract class BiomeMixin {
 
     /**
      * @author Apothicon
-     * @reason Compat with sodium / rubidium.
+     * @reason Compat with sodium.
      */
     @Overwrite
     public int getGrassColor(double posX, double posZ) {

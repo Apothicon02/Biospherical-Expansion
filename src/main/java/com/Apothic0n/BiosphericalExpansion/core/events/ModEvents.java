@@ -119,17 +119,17 @@ public class ModEvents {
                 floweringAzaleaPile = map.get(Blocks.FLOWERING_AZALEA_LEAVES).get();
             }
         }
-        event.register((p_92636_, p_92637_, p_92638_, p_92639_) -> {
+        event.register((blockState, blockAndTintGetter, blockPos, tint) -> {
             return FoliageColor.getEvergreenColor();
         }, spruceLeaves, sprucePile);
-        event.register((p_92631_, p_92632_, p_92633_, p_92634_) -> {
+        event.register((blockState, blockAndTintGetter, blockPos, tint) -> {
             return FoliageColor.getBirchColor();
         }, birchLeaves, birchPile);
-        event.register((p_92626_, p_92627_, p_92628_, p_92629_) -> {
-            return p_92627_ != null && p_92628_ != null ? BiomeColors.getAverageFoliageColor(p_92627_, new BlockPos(p_92628_.getX(), 55, p_92628_.getZ())) : FoliageColor.getDefaultColor();
+        event.register((blockState, blockAndTintGetter, blockPos, tint) -> {
+            return Minecraft.getInstance().level != null && blockPos != null ? BiomeColors.getAverageFoliageColor(Minecraft.getInstance().level, new BlockPos(blockPos.getX(), 55, blockPos.getZ())) : FoliageColor.getDefaultColor();
         }, mangroveLeaves, mangrovePile, Blocks.MANGROVE_LEAVES, Blocks.VINE);
-        event.register((p_92626_, p_92627_, p_92628_, p_92629_) -> {
-            return p_92627_ != null && p_92628_ != null ? BiomeColors.getAverageFoliageColor(p_92627_, new BlockPos(p_92628_.getX(), 68, p_92628_.getZ())) : FoliageColor.getDefaultColor();
+        event.register((blockState, blockAndTintGetter, blockPos, tint) -> {
+            return Minecraft.getInstance().level != null && blockPos != null ? BiomeColors.getAverageFoliageColor(Minecraft.getInstance().level, new BlockPos(blockPos.getX(), 68, blockPos.getZ())) : FoliageColor.getDefaultColor();
         }, oakLeaves, oakPile, Blocks.OAK_LEAVES, jungleLeaves, junglePile, Blocks.JUNGLE_LEAVES, acaciaLeaves, acaciaPile, Blocks.ACACIA_LEAVES, darkOakLeaves, darkOakPile, Blocks.DARK_OAK_LEAVES);
 
         event.register((blockState, blockAndTintGetter, blockPos, tint) -> {
