@@ -99,7 +99,7 @@ public class HangingLeavesDecorator extends TreeDecorator {
                 context.setBlock(blockPos.below(h), blockState);
                 placedAny = true;
             }
-            if (h == rand-1) {
+            if (h == rand-1 && placedAny) {
                 Block pile = Blocks.AIR;
                 for (int o = 0; o < pileBlocks.size(); o++) {
                     RegistryObject<Block> blockRegistryObject = pileBlocks.get(o).get(hangingBlock);
@@ -108,10 +108,36 @@ public class HangingLeavesDecorator extends TreeDecorator {
                         o = 420;
                     }
                 }
-                for (int d = 0; d < Math.random()*(maxLength)+1; d++) {
+                for (int d = 0; d < Math.random()*(24)+8; d++) {
                     if (level.isStateAtPosition(blockPos.below(h+d).above(), BlockBehaviour.BlockStateBase::canBeReplaced) && level.isStateAtPosition(blockPos.below(h+d),  BlockBehaviour.BlockStateBase::isSolid)) {
                         BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (Math.random()*(3)+1));
                         context.setBlock(blockPos.below(h+d).above(), pileState);
+                    }
+
+                    if (level.isStateAtPosition(blockPos.below(h+d).above().north(), BlockBehaviour.BlockStateBase::canBeReplaced) && level.isStateAtPosition(blockPos.below(h+d).north(),  BlockBehaviour.BlockStateBase::isSolid)) {
+                        BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (Math.random()*(3)+1));
+                        context.setBlock(blockPos.below(h+d).above().north(), pileState);
+                    }
+                    if (level.isStateAtPosition(blockPos.below(h+d).above().north().east(), BlockBehaviour.BlockStateBase::canBeReplaced) && level.isStateAtPosition(blockPos.below(h+d).north().east(),  BlockBehaviour.BlockStateBase::isSolid)) {
+                        BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (Math.random()*(3)+1));
+                        context.setBlock(blockPos.below(h+d).above().north().east(), pileState);
+                    }
+                    if (level.isStateAtPosition(blockPos.below(h+d).above().east(), BlockBehaviour.BlockStateBase::canBeReplaced) && level.isStateAtPosition(blockPos.below(h+d).east(),  BlockBehaviour.BlockStateBase::isSolid)) {
+                        BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (Math.random()*(3)+1));
+                        context.setBlock(blockPos.below(h+d).above().east(), pileState);
+                    }
+
+                    if (level.isStateAtPosition(blockPos.below(h+d).above().south(), BlockBehaviour.BlockStateBase::canBeReplaced) && level.isStateAtPosition(blockPos.below(h+d).south(),  BlockBehaviour.BlockStateBase::isSolid)) {
+                        BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (Math.random()*(3)+1));
+                        context.setBlock(blockPos.below(h+d).above().south(), pileState);
+                    }
+                    if (level.isStateAtPosition(blockPos.below(h+d).above().south().west(), BlockBehaviour.BlockStateBase::canBeReplaced) && level.isStateAtPosition(blockPos.below(h+d).south().west(),  BlockBehaviour.BlockStateBase::isSolid)) {
+                        BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (Math.random()*(3)+1));
+                        context.setBlock(blockPos.below(h+d).above().south().west(), pileState);
+                    }
+                    if (level.isStateAtPosition(blockPos.below(h+d).above().west(), BlockBehaviour.BlockStateBase::canBeReplaced) && level.isStateAtPosition(blockPos.below(h+d).west(),  BlockBehaviour.BlockStateBase::isSolid)) {
+                        BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (Math.random()*(3)+1));
+                        context.setBlock(blockPos.below(h+d).above().west(), pileState);
                     }
                 }
             }
