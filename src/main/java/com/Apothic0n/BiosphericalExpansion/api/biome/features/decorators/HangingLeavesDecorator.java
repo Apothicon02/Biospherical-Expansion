@@ -109,7 +109,7 @@ public class HangingLeavesDecorator extends TreeDecorator {
                     }
                 }
                 for (int d = 0; d < Math.random()*(24)+8; d++) {
-                    if (level.isStateAtPosition(blockPos.below(h+d).above(), BlockBehaviour.BlockStateBase::canBeReplaced) && level.isStateAtPosition(blockPos.below(h+d),  BlockBehaviour.BlockStateBase::isSolid)) {
+                    if (level.isStateAtPosition(blockPos.below(h+d).above(), BlockBehaviour.BlockStateBase::canBeReplaced) && level.isStateAtPosition(blockPos.below(h+d), BlockBehaviour.BlockStateBase::isSolid)) {
                         BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (Math.random()*(3)+1));
                         context.setBlock(blockPos.below(h+d).above(), pileState);
                     }

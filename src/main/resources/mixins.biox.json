@@ -10,7 +10,8 @@
     "BiomeMixin",
     "BiomeSpecialEffectsGrassMixin",
     "BlocksMixin",
-    "ClimateMixin"
+    "ClimateMixin",
+    "LocateBiomeMixin"
   ],
   "client": [
   ],

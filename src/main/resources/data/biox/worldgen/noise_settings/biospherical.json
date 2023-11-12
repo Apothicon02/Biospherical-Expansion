@@ -55,8 +55,8 @@
     },
     "vegetation": {
       "type": "minecraft:shifted_noise",
-      "noise": "minecraft:vegetation_large",
-      "xz_scale": 0.05,
+      "noise": "minecraft:vegetation",
+      "xz_scale": 0.25,
       "y_scale": 0,
       "shift_x": "minecraft:shift_x",
       "shift_y": 0,
