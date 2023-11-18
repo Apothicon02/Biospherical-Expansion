@@ -1,14 +1,14 @@
 {
-  "temperature": 0.25,
-  "downfall": -0.5,
+  "temperature": 0,
+  "downfall": 0.5,
   "has_precipitation": true,
+  "category": "taiga",
   "effects": {
     "sky_color": 9806079,
     "fog_color": 12638463,
     "water_color": 7318712,
     "water_fog_color": 272948,
-    "grass_color": 8558614,
-    "foliage_color": 3365957,
+    "foliage_color": 16777215,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
@@ -28,46 +28,16 @@
     "axolotls": [],
     "creature": [
       {
-        "type": "minecraft:sheep",
-        "weight": 12,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:pig",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:chicken",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:cow",
-        "weight": 8,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:wolf",
-        "weight": 8,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
         "type": "minecraft:rabbit",
-        "weight": 4,
+        "weight": 10,
         "minCount": 2,
         "maxCount": 3
       },
       {
-        "type": "minecraft:fox",
-        "weight": 8,
-        "minCount": 2,
-        "maxCount": 4
+        "type": "minecraft:polar_bear",
+        "weight": 1,
+        "minCount": 1,
+        "maxCount": 2
       }
     ],
     "misc": [],
@@ -92,7 +62,7 @@
       },
       {
         "type": "minecraft:skeleton",
-        "weight": 100,
+        "weight": 20,
         "minCount": 4,
         "maxCount": 4
       },
@@ -119,6 +89,12 @@
         "weight": 5,
         "minCount": 1,
         "maxCount": 1
+      },
+      {
+        "type": "minecraft:stray",
+        "weight": 80,
+        "minCount": 4,
+        "maxCount": 4
       }
     ],
     "underground_water_creature": [
@@ -147,15 +123,16 @@
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode"
+      "minecraft:amethyst_geode",
+      "eco:sparse_packed_ice_pillar",
+      "eco:thin_ice_pillar",
+      "eco:sparse_thin_blue_ice_pillar"
     ],
     [
       "minecraft:monster_room",
       "minecraft:monster_room_deep"
     ],
-    [
-      "eco:clay_water_fall"
-    ],
+    [],
     [],
     [
       "minecraft:ore_dirt",
@@ -187,24 +164,30 @@
       "minecraft:disk_clay",
       "minecraft:disk_gravel"
     ],
-    [],
+    [
+      "eco:amethyst_block_cluster"
+    ],
     [
       "minecraft:spring_water",
       "minecraft:spring_lava"
     ],
     [
       "minecraft:glow_lichen",
-      "eco:gray_stones",
-      "biox:dense_terracotta_pond",
-      "eco:red_flowers",
+      "eco:white_stones",
+      "eco:calcite_pond",
+      "eco:rooted_dirt_pool",
+      "eco:ice_spike",
+      "biox:trees_noise_tall_spruce",
+      "eco:trees_giant_spruce",
+      "eco:bushes_dense",
+      "eco:purple_flowers",
       "eco:fern_grass",
+      "biox:trees_pine_taiga",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin",
-      "biox:patch_berry",
-      "eco:large_dripstone",
-      "eco:dripstone_cluster",
-      "eco:pointed_dripstone",
-      "eco:clay_pool_with_dripleaves"
+      "minecraft:patch_berry_rare",
+      "eco:snowy_pool_with_ice",
+      "eco:powdered_snow_pool",
+      "eco:patch_snow_layer"
     ],
     [
       "minecraft:freeze_top_layer"

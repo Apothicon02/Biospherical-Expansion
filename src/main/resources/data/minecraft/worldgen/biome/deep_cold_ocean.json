@@ -1,14 +1,12 @@
 {
-  "temperature": 0.25,
-  "downfall": -0.5,
+  "temperature": 0.5,
+  "downfall": 0.5,
   "has_precipitation": true,
   "effects": {
     "sky_color": 9806079,
     "fog_color": 12638463,
     "water_color": 7318712,
     "water_fog_color": 272948,
-    "grass_color": 8558614,
-    "foliage_color": 3365957,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
@@ -26,50 +24,7 @@
       }
     ],
     "axolotls": [],
-    "creature": [
-      {
-        "type": "minecraft:sheep",
-        "weight": 12,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:pig",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:chicken",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:cow",
-        "weight": 8,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:wolf",
-        "weight": 8,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:rabbit",
-        "weight": 4,
-        "minCount": 2,
-        "maxCount": 3
-      },
-      {
-        "type": "minecraft:fox",
-        "weight": 8,
-        "minCount": 2,
-        "maxCount": 4
-      }
-    ],
+    "creature": [],
     "misc": [],
     "monster": [
       {
@@ -119,6 +74,12 @@
         "weight": 5,
         "minCount": 1,
         "maxCount": 1
+      },
+      {
+        "type": "minecraft:drowned",
+        "weight": 5,
+        "minCount": 1,
+        "maxCount": 1
       }
     ],
     "underground_water_creature": [
@@ -129,8 +90,28 @@
         "maxCount": 6
       }
     ],
-    "water_ambient": [],
-    "water_creature": []
+    "water_ambient": [
+      {
+        "type": "minecraft:cod",
+        "weight": 15,
+        "minCount": 3,
+        "maxCount": 6
+      },
+      {
+        "type": "minecraft:salmon",
+        "weight": 15,
+        "minCount": 1,
+        "maxCount": 5
+      }
+    ],
+    "water_creature": [
+      {
+        "type": "minecraft:squid",
+        "weight": 3,
+        "minCount": 1,
+        "maxCount": 4
+      }
+    ]
   },
   "spawn_costs": {},
   "carvers": {
@@ -141,21 +122,25 @@
     ]
   },
   "features": [
-    [],
+    [
+      "eco:underwater_diorite",
+      "eco:underwater_noise_calcite_rocks"
+    ],
     [
       "minecraft:lake_lava_underground",
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode"
+      "minecraft:amethyst_geode",
+      "eco:sparse_packed_ice_pillar",
+      "eco:sparse_thin_blue_ice_pillar",
+      "eco:sparse_dark_prismarine_pillar"
     ],
     [
       "minecraft:monster_room",
       "minecraft:monster_room_deep"
     ],
-    [
-      "eco:clay_water_fall"
-    ],
+    [],
     [],
     [
       "minecraft:ore_dirt",
@@ -194,19 +179,28 @@
     ],
     [
       "minecraft:glow_lichen",
-      "eco:gray_stones",
-      "biox:dense_terracotta_pond",
-      "eco:red_flowers",
-      "eco:fern_grass",
+      "minecraft:trees_water",
+      "eco:bushes_super_dense",
+      "minecraft:flower_default",
+      "minecraft:patch_grass_badlands",
+      "minecraft:brown_mushroom_normal",
+      "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
-      "biox:patch_berry",
-      "eco:large_dripstone",
-      "eco:dripstone_cluster",
-      "eco:pointed_dripstone",
-      "eco:clay_pool_with_dripleaves"
+      "eco:large_pumpkin",
+      "minecraft:seagrass_deep_cold",
+      "minecraft:seagrass_simple",
+      "minecraft:kelp_cold",
+      "eco:cave_seagrass_warm",
+      "eco:cave_kelp_warm",
+      "eco:cave_pickle",
+      "eco:snowy_pool_with_ice",
+      "eco:powdered_snow_pool",
+      "eco:patch_snow_layer"
     ],
     [
+      "eco:dense_powdered_snow_fall",
+      "biox:amethyst_frosted_ice_crystals",
       "minecraft:freeze_top_layer"
     ]
   ]

@@ -27,7 +27,10 @@
             -1,
             0
           ],
-          "blocks": "minecraft:coarse_dirt"
+          "blocks": [
+            "minecraft:coarse_dirt",
+            "minecraft:snow_block"
+          ]
         }
       },
       {

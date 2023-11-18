@@ -1,6 +1,0 @@
-{
-  "type": "forge:add_features",
-  "biomes": ["minecraft:mushroom_fields", "minecraft:cherry_grove", "minecraft:flower_forest", "minecraft:wooded_badlands"],
-  "features": "biox:amethyst_vine",
-  "step": "vegetal_decoration"
-}
