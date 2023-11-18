@@ -144,31 +144,15 @@
   "features": [
     [],
     [
-      "minecraft:lake_lava_underground",
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode",
-      "eco:sparse_packed_ice_pillar",
-      "eco:thin_ice_pillar",
-      "eco:sparse_thin_blue_ice_pillar"
     ],
     [
-      "minecraft:monster_room",
-      "minecraft:monster_room_deep"
     ],
     [],
     [],
     [
-      "minecraft:ore_dirt",
-      "minecraft:ore_gravel",
-      "minecraft:ore_granite_upper",
-      "minecraft:ore_granite_lower",
-      "minecraft:ore_diorite_upper",
-      "minecraft:ore_diorite_lower",
-      "minecraft:ore_andesite_upper",
-      "minecraft:ore_andesite_lower",
-      "minecraft:ore_tuff",
       "minecraft:ore_coal_upper",
       "minecraft:ore_coal_lower",
       "minecraft:ore_iron_upper",
@@ -183,11 +167,7 @@
       "minecraft:ore_diamond_buried",
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
-      "minecraft:ore_copper",
-      "minecraft:underwater_magma",
-      "minecraft:disk_sand",
-      "minecraft:disk_clay",
-      "minecraft:disk_gravel"
+      "minecraft:ore_copper"
     ],
     [],
     [
@@ -205,10 +185,7 @@
       "eco:fallen_trees_spruce",
       "eco:basic_grass",
       "eco:fern_grass",
-      "biox:trees_pine_taiga",
-      "eco:snowy_pool_with_ice",
-      "eco:powdered_snow_pool",
-      "eco:patch_snow_layer"
+      "biox:trees_pine_taiga"
     ],
     [
       "minecraft:freeze_top_layer"

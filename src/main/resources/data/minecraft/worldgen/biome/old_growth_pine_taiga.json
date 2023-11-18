@@ -150,35 +150,16 @@
   "features": [
     [],
     [
-      "minecraft:lake_lava_underground",
-      "minecraft:lake_lava_surface",
-      "eco:delta"
+      "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode",
-      "minecraft:forest_rock",
-      "eco:small_basalt_columns",
-      "eco:large_basalt_columns",
-      "eco:sparse_smooth_basalt_pillar"
     ],
     [
-      "minecraft:monster_room",
-      "minecraft:monster_room_deep"
     ],
     [
-      "eco:lava_fall"
     ],
     [],
     [
-      "minecraft:ore_dirt",
-      "minecraft:ore_gravel",
-      "minecraft:ore_granite_upper",
-      "minecraft:ore_granite_lower",
-      "minecraft:ore_diorite_upper",
-      "minecraft:ore_diorite_lower",
-      "minecraft:ore_andesite_upper",
-      "minecraft:ore_andesite_lower",
-      "minecraft:ore_tuff",
       "minecraft:ore_coal_upper",
       "minecraft:ore_coal_lower",
       "minecraft:ore_iron_upper",
@@ -193,11 +174,7 @@
       "minecraft:ore_diamond_buried",
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
-      "minecraft:ore_copper",
-      "minecraft:underwater_magma",
-      "minecraft:disk_sand",
-      "minecraft:disk_clay",
-      "minecraft:disk_gravel"
+      "minecraft:ore_copper"
     ],
     [],
     [
@@ -228,10 +205,7 @@
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
       "eco:large_pumpkin",
-      "biox:patch_berry",
-      "minecraft:spring_delta",
-      "minecraft:ore_magma",
-      "minecraft:spring_closed_double"
+      "biox:patch_berry"
     ],
     [
       "minecraft:freeze_top_layer"

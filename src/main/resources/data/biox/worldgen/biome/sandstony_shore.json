@@ -98,22 +98,16 @@
   "features": [
     [],
     [
-      "minecraft:lake_lava_underground",
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode"
     ],
     [
-      "minecraft:monster_room",
-      "minecraft:monster_room_deep"
     ],
     [
-      "eco:clay_water_fall"
     ],
     [],
     [
-      "minecraft:ore_tuff",
       "minecraft:ore_coal_upper",
       "minecraft:ore_coal_lower",
       "minecraft:ore_iron_upper",
@@ -129,7 +123,6 @@
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
-      "minecraft:underwater_magma",
       "biox:tan_mountainous_rocks"
     ],
     [],
@@ -148,10 +141,7 @@
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
       "eco:large_pumpkin",
-      "eco:large_dripstone",
-      "eco:dripstone_cluster",
-      "eco:pointed_dripstone",
-      "eco:clay_pool_with_dripleaves"
+      "eco:large_dripstone"
     ],
     [
       "minecraft:freeze_top_layer"

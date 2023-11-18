@@ -106,28 +106,17 @@
   "features": [
     [],
     [
-      "minecraft:lake_lava_underground",
-      "minecraft:lake_lava_surface",
-      "eco:delta"
+      "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode",
-      "eco:small_basalt_columns",
-      "eco:large_basalt_columns",
-      "eco:sparse_smooth_basalt_pillar"
     ],
     [
-      "minecraft:monster_room",
-      "minecraft:monster_room_deep"
     ],
     [
-      "eco:lava_fall"
     ],
     [
-      "eco:sand_patches"
     ],
     [
-      "minecraft:ore_tuff",
       "minecraft:ore_coal_upper",
       "minecraft:ore_coal_lower",
       "minecraft:ore_iron_upper",
@@ -143,11 +132,7 @@
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
-      "minecraft:underwater_magma",
-      "minecraft:ore_gold_extra",
-      "minecraft:disk_sand",
-      "minecraft:disk_clay",
-      "minecraft:disk_gravel"
+      "minecraft:ore_gold_extra"
     ],
     [],
     [
@@ -167,10 +152,7 @@
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane_badlands",
       "eco:clustered_pumpkin",
-      "minecraft:patch_cactus_decorated",
-      "minecraft:spring_delta",
-      "minecraft:ore_magma",
-      "minecraft:spring_closed_double"
+      "minecraft:patch_cactus_decorated"
     ],
     [
       "minecraft:freeze_top_layer"
