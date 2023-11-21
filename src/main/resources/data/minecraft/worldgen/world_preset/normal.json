@@ -1,7 +1,7 @@
 {
   "dimensions": {
     "minecraft:overworld": {
-      "type": "minecraft:overworld",
+      "type": "biox:brighter_overworld",
       "generator": {
         "type": "minecraft:noise",
         "settings": "biox:biospherical",
@@ -24,8 +24,8 @@
                   1
                 ],
                 "erosion": [
-                  0.3,
-                  1
+                  -1,
+                  0.2
                 ],
                 "weirdness": [
                   -1,
@@ -51,8 +51,8 @@
                   1
                 ],
                 "erosion": [
-                  0.3,
-                  1
+                  -1,
+                  0.2
                 ],
                 "weirdness": [
                   -1,
@@ -78,8 +78,8 @@
                   1
                 ],
                 "erosion": [
-                  0.3,
-                  1
+                  -1,
+                  0.2
                 ],
                 "weirdness": [
                   -1,
@@ -105,8 +105,8 @@
                   1
                 ],
                 "erosion": [
-                  0.3,
-                  1
+                  -1,
+                  0.2
                 ],
                 "weirdness": [
                   -1,
@@ -132,8 +132,8 @@
                   1
                 ],
                 "erosion": [
-                  0.3,
-                  1
+                  -1,
+                  0.2
                 ],
                 "weirdness": [
                   -1,
@@ -159,8 +159,8 @@
                   1
                 ],
                 "erosion": [
-                  0.3,
-                  1
+                  -1,
+                  0.2
                 ],
                 "weirdness": [
                   -1,
@@ -186,8 +186,8 @@
                   1
                 ],
                 "erosion": [
-                  0.3,
-                  1
+                  -1,
+                  0.2
                 ],
                 "weirdness": [
                   -1,
@@ -213,8 +213,8 @@
                   1
                 ],
                 "erosion": [
-                  0.3,
-                  1
+                  -1,
+                  0.2
                 ],
                 "weirdness": [
                   -1,
@@ -240,8 +240,8 @@
                   1
                 ],
                 "erosion": [
-                  0.3,
-                  1
+                  -1,
+                  0.2
                 ],
                 "weirdness": [
                   -1,
@@ -267,8 +267,8 @@
                   1
                 ],
                 "erosion": [
-                  0.3,
-                  1
+                  -1,
+                  0.2
                 ],
                 "weirdness": [
                   -1,
@@ -294,8 +294,8 @@
                   1
                 ],
                 "erosion": [
-                  0.3,
-                  1
+                  -1,
+                  0.2
                 ],
                 "weirdness": [
                   -1,
@@ -321,8 +321,8 @@
                   1
                 ],
                 "erosion": [
-                  0.3,
-                  1
+                  -1,
+                  0.2
                 ],
                 "weirdness": [
                   -1,
@@ -348,8 +348,8 @@
                   1
                 ],
                 "erosion": [
-                  0.3,
-                  1
+                  -1,
+                  0.2
                 ],
                 "weirdness": [
                   -1,
@@ -375,8 +375,8 @@
                   1
                 ],
                 "erosion": [
-                  0.3,
-                  1
+                  -1,
+                  0.2
                 ],
                 "weirdness": [
                   -1,
@@ -2515,18 +2515,21 @@
                   0
                 ],
                 "continentalness": [
-                  0.05,
+                  -1,
                   1
                 ],
                 "erosion": [
-                  -1,
-                  0.3
+                  0.2,
+                  1
                 ],
                 "weirdness": [
                   -1,
                   1
                 ],
-                "depth": 0,
+                "depth": [
+                  0,
+                  0.05
+                ],
                 "offset": 0
               }
             },
@@ -2534,26 +2537,29 @@
               "biome": "biox:geodeial_caves",
               "parameters": {
                 "temperature": [
-                  -0.33,
-                  0.66
+                  0.66,
+                  1
                 ],
                 "humidity": [
-                  -1,
-                  0
+                  0,
+                  1
                 ],
                 "continentalness": [
-                  0.05,
+                  -1,
                   1
                 ],
                 "erosion": [
-                  -1,
-                  0.3
+                  0.2,
+                  1
                 ],
                 "weirdness": [
                   -1,
                   1
                 ],
-                "depth": 0,
+                "depth": [
+                  0,
+                  0.05
+                ],
                 "offset": 0
               }
             },
@@ -2561,26 +2567,29 @@
               "biome": "minecraft:dripstone_caves",
               "parameters": {
                 "temperature": [
-                  0.33,
-                  1
+                  -0.66,
+                  0.66
                 ],
                 "humidity": [
-                  0,
-                  1
+                  -1,
+                  0
                 ],
                 "continentalness": [
-                  0.05,
+                  -1,
                   1
                 ],
                 "erosion": [
-                  -1,
-                  0.3
+                  0.2,
+                  1
                 ],
                 "weirdness": [
                   -1,
                   1
                 ],
-                "depth": 0,
+                "depth": [
+                  0,
+                  0.05
+                ],
                 "offset": 0
               }
             },
@@ -2588,26 +2597,29 @@
               "biome": "minecraft:lush_caves",
               "parameters": {
                 "temperature": [
-                  -0.33,
-                  0.33
+                  -0.66,
+                  0.66
                 ],
                 "humidity": [
                   0,
                   1
                 ],
                 "continentalness": [
-                  0.05,
+                  -1,
                   1
                 ],
                 "erosion": [
-                  -1,
-                  0.3
+                  0.2,
+                  1
                 ],
                 "weirdness": [
                   -1,
                   1
                 ],
-                "depth": 0,
+                "depth": [
+                  0,
+                  0.05
+                ],
                 "offset": 0
               }
             },
@@ -2616,25 +2628,28 @@
               "parameters": {
                 "temperature": [
                   -1,
-                  -0.33
+                  -0.66
                 ],
                 "humidity": [
                   -1,
                   1
                 ],
                 "continentalness": [
-                  0.05,
+                  -1,
                   1
                 ],
                 "erosion": [
-                  -1,
-                  0.3
+                  0.2,
+                  1
                 ],
                 "weirdness": [
                   -1,
                   1
                 ],
-                "depth": 0,
+                "depth": [
+                  0,
+                  0.05
+                ],
                 "offset": 0
               }
             }
