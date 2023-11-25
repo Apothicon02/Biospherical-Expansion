@@ -7,6 +7,10 @@ import com.Apothic0n.BiosphericalExpansion.api.biome.features.foliage_placers.Bi
 import com.Apothic0n.BiosphericalExpansion.api.biome.features.trunk_placers.BioxTrunkPlacerType;
 import com.Apothic0n.BiosphericalExpansion.core.objects.BioxBlocks;
 import com.Apothic0n.BiosphericalExpansion.core.objects.BioxItems;
+import com.Apothic0n.BiosphericalExpansion.core.objects.BioxParticleTypes;
+import net.minecraft.core.particles.ParticleType;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -23,6 +27,7 @@ public class BiosphericalExpansion {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::commonSetup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
 
+        BioxParticleTypes.PARTICLE_TYPES.register(eventBus);
         BioxBlocks.BLOCKS.register(eventBus);
         BioxBlocks.generateStairsSlabsWalls();
         BioxItems.ITEMS.register(eventBus);
@@ -36,7 +41,6 @@ public class BiosphericalExpansion {
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             SurfaceRuleManager.setDefaultSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, BioxSurfaceRuleData.makeRules());
-            //Regions.register(new GeodeialCavesProvider(new ResourceLocation(MODID, "geodeial_caves_biome_provider"), RegionType.OVERWORLD, 6));
         });
     }
 

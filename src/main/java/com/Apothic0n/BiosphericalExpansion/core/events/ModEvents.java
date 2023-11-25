@@ -1,8 +1,7 @@
 package com.Apothic0n.BiosphericalExpansion.core.events;
 
 import com.Apothic0n.BiosphericalExpansion.BiosphericalExpansion;
-import com.Apothic0n.BiosphericalExpansion.core.objects.BioxBlocks;
-import com.Apothic0n.BiosphericalExpansion.core.objects.BioxItems;
+import com.Apothic0n.BiosphericalExpansion.core.objects.*;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.BiomeColors;
@@ -22,6 +21,7 @@ import net.minecraft.world.level.levelgen.synth.PerlinSimplexNoise;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
+import net.minecraftforge.client.event.RegisterParticleProvidersEvent;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -49,6 +49,56 @@ public class ModEvents {
                 }
             }
         }
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    @SubscribeEvent
+    public static void registerSpriteSet(RegisterParticleProvidersEvent event) {
+        event.registerSpriteSet(BioxParticleTypes.OAK_LEAVES.get(), (spriteSet) -> {
+            return (particleType, level, x, y, z, p_277222_, p_277223_, p_277224_) -> {
+                return new OakLeavesParticle(level, x, y, z, spriteSet);
+            };
+        });
+        event.registerSpriteSet(BioxParticleTypes.DARK_OAK_LEAVES.get(), (spriteSet) -> {
+            return (particleType, level, x, y, z, p_277222_, p_277223_, p_277224_) -> {
+                return new OakLeavesParticle(level, x, y, z, spriteSet);
+            };
+        });
+        event.registerSpriteSet(BioxParticleTypes.BIRCH_LEAVES.get(), (spriteSet) -> {
+            return (particleType, level, x, y, z, p_277222_, p_277223_, p_277224_) -> {
+                return new BirchLeavesParticle(level, x, y, z, spriteSet);
+            };
+        });
+        event.registerSpriteSet(BioxParticleTypes.SPRUCE_LEAVES.get(), (spriteSet) -> {
+            return (particleType, level, x, y, z, p_277222_, p_277223_, p_277224_) -> {
+                return new SpruceLeavesParticle(level, x, y, z, spriteSet);
+            };
+        });
+        event.registerSpriteSet(BioxParticleTypes.JUNGLE_LEAVES.get(), (spriteSet) -> {
+            return (particleType, level, x, y, z, p_277222_, p_277223_, p_277224_) -> {
+                return new OakLeavesParticle(level, x, y, z, spriteSet);
+            };
+        });
+        event.registerSpriteSet(BioxParticleTypes.ACACIA_LEAVES.get(), (spriteSet) -> {
+            return (particleType, level, x, y, z, p_277222_, p_277223_, p_277224_) -> {
+                return new OakLeavesParticle(level, x, y, z, spriteSet);
+            };
+        });
+        event.registerSpriteSet(BioxParticleTypes.MANGROVE_LEAVES.get(), (spriteSet) -> {
+            return (particleType, level, x, y, z, p_277222_, p_277223_, p_277224_) -> {
+                return new MangroveLeavesParticle(level, x, y, z, spriteSet);
+            };
+        });
+        event.registerSpriteSet(BioxParticleTypes.AZALEA_LEAVES.get(), (spriteSet) -> {
+            return (particleType, level, x, y, z, p_277222_, p_277223_, p_277224_) -> {
+                return new AzaleaLeavesParticle(level, x, y, z, spriteSet);
+            };
+        });
+        event.registerSpriteSet(BioxParticleTypes.FLOWERING_AZALEA_LEAVES.get(), (spriteSet) -> {
+            return (particleType, level, x, y, z, p_277222_, p_277223_, p_277224_) -> {
+                return new AzaleaLeavesParticle(level, x, y, z, spriteSet);
+            };
+        });
     }
 
     private static final PerlinSimplexNoise SATURATION_NOISE = new PerlinSimplexNoise(new WorldgenRandom(new LegacyRandomSource(2345L)), ImmutableList.of(0));

@@ -4,12 +4,16 @@ import com.google.common.collect.ImmutableMap;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.util.ParticleUtils;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.BlockGetter;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.LevelReader;
 import net.minecraft.world.level.block.*;
@@ -25,7 +29,10 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
+import javax.annotation.Nullable;
 import java.util.Map;
+
+import static net.minecraft.world.level.block.state.properties.BlockStateProperties.LAYERS;
 
 public class FragileWallBlock extends Block implements SimpleWaterloggedBlock {
     public static final BooleanProperty UP = BlockStateProperties.UP;
@@ -93,9 +100,9 @@ public class FragileWallBlock extends Block implements SimpleWaterloggedBlock {
                                 voxelshape9 = Shapes.or(voxelshape9, voxelshape);
                             }
 
-                            BlockState blockstate = this.defaultBlockState().setValue(UP, obool).setValue(EAST_WALL, wallside).setValue(WEST_WALL, wallside2).setValue(NORTH_WALL, wallside1).setValue(SOUTH_WALL, wallside3);
-                            builder.put(blockstate.setValue(WATERLOGGED, Boolean.valueOf(false)), voxelshape9);
-                            builder.put(blockstate.setValue(WATERLOGGED, Boolean.valueOf(true)), voxelshape9);
+                            BlockState blockState = this.defaultBlockState().setValue(UP, obool).setValue(EAST_WALL, wallside).setValue(WEST_WALL, wallside2).setValue(NORTH_WALL, wallside1).setValue(SOUTH_WALL, wallside3);
+                            builder.put(blockState.setValue(WATERLOGGED, Boolean.valueOf(false)), voxelshape9);
+                            builder.put(blockState.setValue(WATERLOGGED, Boolean.valueOf(true)), voxelshape9);
                         }
                     }
                 }
@@ -123,26 +130,46 @@ public class FragileWallBlock extends Block implements SimpleWaterloggedBlock {
         return p_58021_.is(BlockTags.WALLS) || !isExceptionForConnection(p_58021_) && p_58022_ || block instanceof IronBarsBlock || flag;
     }
 
-    public BlockState getStateForPlacement(BlockPlaceContext p_57973_) {
-        LevelReader levelreader = p_57973_.getLevel();
-        BlockPos blockpos = p_57973_.getClickedPos();
-        FluidState fluidstate = p_57973_.getLevel().getFluidState(p_57973_.getClickedPos());
-        BlockPos blockpos1 = blockpos.north();
-        BlockPos blockpos2 = blockpos.east();
-        BlockPos blockpos3 = blockpos.south();
-        BlockPos blockpos4 = blockpos.west();
-        BlockPos blockpos5 = blockpos.above();
-        BlockState blockstate = levelreader.getBlockState(blockpos1);
-        BlockState blockstate1 = levelreader.getBlockState(blockpos2);
-        BlockState blockstate2 = levelreader.getBlockState(blockpos3);
-        BlockState blockstate3 = levelreader.getBlockState(blockpos4);
-        BlockState blockstate4 = levelreader.getBlockState(blockpos5);
-        boolean flag = this.connectsTo(blockstate, blockstate.isFaceSturdy(levelreader, blockpos1, Direction.SOUTH), Direction.SOUTH);
-        boolean flag1 = this.connectsTo(blockstate1, blockstate1.isFaceSturdy(levelreader, blockpos2, Direction.WEST), Direction.WEST);
-        boolean flag2 = this.connectsTo(blockstate2, blockstate2.isFaceSturdy(levelreader, blockpos3, Direction.NORTH), Direction.NORTH);
-        boolean flag3 = this.connectsTo(blockstate3, blockstate3.isFaceSturdy(levelreader, blockpos4, Direction.EAST), Direction.EAST);
-        BlockState blockstate5 = this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
-        return this.updateShape(levelreader, blockstate5, blockpos5, blockstate4, flag, flag1, flag2, flag3);
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        LevelAccessor levelAccessor = context.getLevel();
+        BlockPos blockPos = context.getClickedPos();
+        FluidState fluidstate = context.getLevel().getFluidState(context.getClickedPos());
+        BlockPos blockPos1 = blockPos.north();
+        BlockPos blockPos2 = blockPos.east();
+        BlockPos blockPos3 = blockPos.south();
+        BlockPos blockPos4 = blockPos.west();
+        BlockPos blockPos5 = blockPos.above();
+        BlockState blockState = levelAccessor.getBlockState(blockPos1);
+        BlockState blockState1 = levelAccessor.getBlockState(blockPos2);
+        BlockState blockState2 = levelAccessor.getBlockState(blockPos3);
+        BlockState blockState3 = levelAccessor.getBlockState(blockPos4);
+        BlockState blockState4 = levelAccessor.getBlockState(blockPos5);
+        boolean flag = this.connectsTo(blockState, blockState.isFaceSturdy(levelAccessor, blockPos1, Direction.SOUTH), Direction.SOUTH);
+        boolean flag1 = this.connectsTo(blockState1, blockState1.isFaceSturdy(levelAccessor, blockPos2, Direction.WEST), Direction.WEST);
+        boolean flag2 = this.connectsTo(blockState2, blockState2.isFaceSturdy(levelAccessor, blockPos3, Direction.NORTH), Direction.NORTH);
+        boolean flag3 = this.connectsTo(blockState3, blockState3.isFaceSturdy(levelAccessor, blockPos4, Direction.EAST), Direction.EAST);
+        BlockState blockState5 = this.defaultBlockState().setValue(WATERLOGGED, Boolean.valueOf(fluidstate.getType() == Fluids.WATER));
+        Boolean supported = false;
+        for (int i = 1; i < 48; i++) {
+            BlockState block = levelAccessor.getBlockState(blockPos.above(i));
+            if (!(block.getBlock() instanceof FragileWallBlock)) {
+                supported = block.isSolid();
+                break;
+            }
+        }
+        if (!supported) {
+            for (int i = 1; i < 48; i++) {
+                BlockState block = levelAccessor.getBlockState(blockPos.below(i));
+                if (!(block.getBlock() instanceof FragileWallBlock)) {
+                    supported = block.isSolid();
+                    break;
+                }
+            }
+        }
+        if (!supported) {
+            return breakBlock(levelAccessor, blockPos, blockState, null);
+        }
+        return this.updateShape(levelAccessor, blockState5, blockPos5, blockState4, flag, flag1, flag2, flag3);
     }
 
     public BlockState updateShape(BlockState blockState, Direction p_58015_, BlockState p_58016_, LevelAccessor levelAccessor, BlockPos blockPos, BlockPos p_58019_) {
@@ -165,9 +192,7 @@ public class FragileWallBlock extends Block implements SimpleWaterloggedBlock {
             }
         }
         if (!supported) {
-            levelAccessor.setBlock(blockPos, Blocks.AIR.defaultBlockState(), UPDATE_ALL);
-            levelAccessor.addParticle(ParticleTypes.RAIN, (double)blockPos.getX() + 0.5D + randomSource.nextDouble() / 4.0D * (double)(randomSource.nextBoolean() ? 1 : -1), (double)blockPos.getY() + 0.4D, (double)blockPos.getZ() - 0.5D - randomSource.nextDouble() / 4.0D * (double)(randomSource.nextBoolean() ? 1 : -1), 0.0D, 0.005D, 0.0D);
-            return Blocks.AIR.defaultBlockState();
+            return breakBlock(levelAccessor, blockPos, blockState, randomSource);
         }
 
 
@@ -180,6 +205,46 @@ public class FragileWallBlock extends Block implements SimpleWaterloggedBlock {
         } else {
             return p_58015_ == Direction.UP ? this.topUpdate(levelAccessor, blockState, p_58019_, p_58016_) : this.sideUpdate(levelAccessor, blockPos, blockState, p_58019_, p_58016_, p_58015_);
         }
+    }
+
+    public void animateTick(BlockState blockState, Level level, BlockPos blockPos, RandomSource randomSource) {
+        super.animateTick(blockState, level, blockPos, randomSource);
+        if (randomSource.nextInt(10) == 0) {
+            BlockPos blockpos = blockPos.below();
+            BlockState blockstate = level.getBlockState(blockpos);
+            if (!isFaceFull(blockstate.getCollisionShape(level, blockpos), Direction.UP)) {
+                String name = level.getBlockState(blockPos).getBlock().getName().getContents().toString();
+                if (name.contains("dark_oak")) {
+                    ParticleUtils.spawnParticleBelow(level, blockPos, randomSource, BioxParticleTypes.DARK_OAK_LEAVES.get());
+                } else if (name.contains("oak")) {
+                    ParticleUtils.spawnParticleBelow(level, blockPos, randomSource, BioxParticleTypes.OAK_LEAVES.get());
+                } else if (name.contains("birch")) {
+                    ParticleUtils.spawnParticleBelow(level, blockPos, randomSource, BioxParticleTypes.BIRCH_LEAVES.get());
+                } else if (name.contains("spruce")) {
+                    ParticleUtils.spawnParticleBelow(level, blockPos, randomSource, BioxParticleTypes.SPRUCE_LEAVES.get());
+                } else if (name.contains("jungle")) {
+                    ParticleUtils.spawnParticleBelow(level, blockPos, randomSource, BioxParticleTypes.JUNGLE_LEAVES.get());
+                } else if (name.contains("acacia")) {
+                    ParticleUtils.spawnParticleBelow(level, blockPos, randomSource, BioxParticleTypes.ACACIA_LEAVES.get());
+                } else if (name.contains("mangrove")) {
+                    ParticleUtils.spawnParticleBelow(level, blockPos, randomSource, BioxParticleTypes.MANGROVE_LEAVES.get());
+                } else if (name.contains("flowering_azalea")) {
+                    ParticleUtils.spawnParticleBelow(level, blockPos, randomSource, BioxParticleTypes.FLOWERING_AZALEA_LEAVES.get());
+                } else if (name.contains("azalea")) {
+                    ParticleUtils.spawnParticleBelow(level, blockPos, randomSource, BioxParticleTypes.AZALEA_LEAVES.get());
+                } else if (name.contains("cherry")) {
+                    ParticleUtils.spawnParticleBelow(level, blockPos, randomSource, ParticleTypes.CHERRY_LEAVES);
+                }
+            }
+        }
+    }
+    
+    private BlockState breakBlock(LevelAccessor levelAccessor, BlockPos blockPos, BlockState blockState, @Nullable RandomSource randomSource) {
+        levelAccessor.setBlock(blockPos, Blocks.AIR.defaultBlockState(), UPDATE_ALL);
+        if (randomSource != null) {
+            levelAccessor.addParticle(ParticleTypes.RAIN, (double) blockPos.getX() + 0.5D + randomSource.nextDouble() / 4.0D * (double) (randomSource.nextBoolean() ? 1 : -1), (double) blockPos.getY() + 0.4D, (double) blockPos.getZ() - 0.5D - randomSource.nextDouble() / 4.0D * (double) (randomSource.nextBoolean() ? 1 : -1), 0.0D, 0.005D, 0.0D);
+        }
+        return Blocks.AIR.defaultBlockState();
     }
 
     private static boolean isConnected(BlockState p_58011_, Property<WallSide> p_58012_) {
@@ -204,15 +269,15 @@ public class FragileWallBlock extends Block implements SimpleWaterloggedBlock {
         boolean flag1 = p_57994_ == Direction.EAST ? this.connectsTo(p_57993_, p_57993_.isFaceSturdy(p_57989_, p_57992_, direction), direction) : isConnected(p_57991_, EAST_WALL);
         boolean flag2 = p_57994_ == Direction.SOUTH ? this.connectsTo(p_57993_, p_57993_.isFaceSturdy(p_57989_, p_57992_, direction), direction) : isConnected(p_57991_, SOUTH_WALL);
         boolean flag3 = p_57994_ == Direction.WEST ? this.connectsTo(p_57993_, p_57993_.isFaceSturdy(p_57989_, p_57992_, direction), direction) : isConnected(p_57991_, WEST_WALL);
-        BlockPos blockpos = p_57990_.above();
-        BlockState blockstate = p_57989_.getBlockState(blockpos);
-        return this.updateShape(p_57989_, p_57991_, blockpos, blockstate, flag, flag1, flag2, flag3);
+        BlockPos blockPos = p_57990_.above();
+        BlockState blockState = p_57989_.getBlockState(blockPos);
+        return this.updateShape(p_57989_, p_57991_, blockPos, blockState, flag, flag1, flag2, flag3);
     }
 
     private BlockState updateShape(LevelReader p_57980_, BlockState p_57981_, BlockPos p_57982_, BlockState p_57983_, boolean p_57984_, boolean p_57985_, boolean p_57986_, boolean p_57987_) {
         VoxelShape voxelshape = p_57983_.getCollisionShape(p_57980_, p_57982_).getFaceShape(Direction.DOWN);
-        BlockState blockstate = this.updateSides(p_57981_, p_57984_, p_57985_, p_57986_, p_57987_, voxelshape);
-        return blockstate.setValue(UP, Boolean.valueOf(this.shouldRaisePost(blockstate, p_57983_, voxelshape)));
+        BlockState blockState = this.updateSides(p_57981_, p_57984_, p_57985_, p_57986_, p_57987_, voxelshape);
+        return blockState.setValue(UP, Boolean.valueOf(this.shouldRaisePost(blockState, p_57983_, voxelshape)));
     }
 
     private boolean shouldRaisePost(BlockState p_58007_, BlockState p_58008_, VoxelShape p_58009_) {
