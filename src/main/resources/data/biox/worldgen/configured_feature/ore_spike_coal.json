@@ -38,7 +38,7 @@
     "blobMass": {
       "type": "minecraft:uniform",
       "value": {
-        "min_inclusive": 7,
+        "min_inclusive": 12,
         "max_inclusive": 18
       }
     },

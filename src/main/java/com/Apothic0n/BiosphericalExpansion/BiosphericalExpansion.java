@@ -8,9 +8,12 @@ import com.Apothic0n.BiosphericalExpansion.api.biome.features.trunk_placers.Biox
 import com.Apothic0n.BiosphericalExpansion.core.objects.BioxBlocks;
 import com.Apothic0n.BiosphericalExpansion.core.objects.BioxItems;
 import com.Apothic0n.BiosphericalExpansion.core.objects.BioxParticleTypes;
+import com.google.common.collect.ImmutableList;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -41,7 +44,16 @@ public class BiosphericalExpansion {
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             SurfaceRuleManager.setDefaultSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, BioxSurfaceRuleData.makeRules());
+            addLight(Blocks.BLUE_ICE.getStateDefinition().getPossibleStates(), 7);
+            addLight(Blocks.TORCHFLOWER.getStateDefinition().getPossibleStates(), 9);
+            addLight(Blocks.TORCHFLOWER_CROP.getStateDefinition().getPossibleStates(), 9);
         });
+    }
+
+    private void addLight(ImmutableList<BlockState> blockStates, int light) {
+        for (int i = 0; i < blockStates.size(); i++) {
+            blockStates.get(i).lightEmission = light;
+        }
     }
 
     private void clientSetup(final FMLClientSetupEvent event) {BioxBlocks.fixBlockRenderLayers();}
