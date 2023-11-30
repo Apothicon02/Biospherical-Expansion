@@ -1,19 +1,23 @@
 {
-  "temperature": 0.25,
-  "downfall": -0.5,
-  "has_precipitation": true,
+  "temperature": -0.83,
+  "downfall": 0.5,
+  "has_precipitation": false,
   "effects": {
     "sky_color": 9806079,
     "fog_color": 12638463,
     "water_color": 7318712,
     "water_fog_color": 272948,
-    "grass_color": 8558614,
-    "foliage_color": 3365957,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
       "block_search_extent": 8,
       "offset": 2
+    },
+    "music": {
+      "sound": "minecraft:music.overworld.dripstone_caves",
+      "min_delay": 12000,
+      "max_delay": 24000,
+      "replace_current_music": false
     }
   },
   "spawners": {
@@ -26,50 +30,7 @@
       }
     ],
     "axolotls": [],
-    "creature": [
-      {
-        "type": "minecraft:sheep",
-        "weight": 12,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:pig",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:chicken",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:cow",
-        "weight": 8,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:wolf",
-        "weight": 8,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:rabbit",
-        "weight": 4,
-        "minCount": 2,
-        "maxCount": 3
-      },
-      {
-        "type": "minecraft:fox",
-        "weight": 8,
-        "minCount": 2,
-        "maxCount": 4
-      }
-    ],
+    "creature": [],
     "misc": [],
     "monster": [
       {
@@ -143,11 +104,16 @@
   "features": [
     [],
     [
+      "minecraft:lake_lava_underground",
       "minecraft:lake_lava_surface"
     ],
     [
+      "minecraft:amethyst_geode",
+      "biox:blue_ice_crystal_spike"
     ],
     [
+      "minecraft:monster_room",
+      "minecraft:monster_room_deep"
     ],
     [
     ],
@@ -167,34 +133,16 @@
       "minecraft:ore_diamond_buried",
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
-      "minecraft:ore_copper"
+      "minecraft:ore_copper_large"
     ],
-    [],
+    [
+    ],
     [
       "minecraft:spring_water",
       "minecraft:spring_lava"
     ],
     [
-      "minecraft:glow_lichen",
-      "eco:gray_standalone_cliffs",
-      "eco:mossy_stone_filler",
-      "eco:moss_stones",
-      "eco:gray_stones",
-      "eco:terracotta_pond",
-      "biox:trees_noise_stripped_thin_spruce",
-      "biox:trees_noise_stripped_tall_spruce",
-      "biox:trees_dense_stripped_giant_spruce",
-      "biox:fallen_trees_stripped_spruce",
-      "biox:bushes_taiga",
-      "eco:red_flowers",
-      "eco:overworld_mushrooms",
-      "eco:basic_grass",
-      "eco:fern_grass",
-      "biox:trees_stripped_pine_taiga",
-      "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin",
-      "eco:large_pumpkin",
-      "biox:patch_berry"
+      "minecraft:glow_lichen"
     ],
     [
       "minecraft:freeze_top_layer"

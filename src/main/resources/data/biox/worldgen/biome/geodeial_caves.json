@@ -110,8 +110,7 @@
     [
       "minecraft:amethyst_geode",
       "eco:sparse_smooth_basalt_pillar",
-      "eco:amethyst_crystal_spike",
-      "eco:amethyst_crystal_ground_spike",
+      "biox:amethyst_crystal_spike",
       "eco:amethyst_spiral"
     ],
     [
@@ -152,11 +151,9 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:patch_cactus_decorated",
       "biox:amethyst_void_crystals",
       "biox:amethyst_void_ceiling_crystals",
-      "biox:amethyst_vine",
-      "eco:lush_spore_blossom"
+      "biox:amethyst_vine"
     ],
     [
       "minecraft:freeze_top_layer"
