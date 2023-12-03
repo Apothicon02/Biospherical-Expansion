@@ -604,33 +604,6 @@
               }
             },
             {
-              "biome": "minecraft:beach",
-              "parameters": {
-                "temperature": [
-                  0.5,
-                  1
-                ],
-                "humidity": [
-                  0.55,
-                  1
-                ],
-                "continentalness": [
-                  -1,
-                  1
-                ],
-                "erosion": [
-                  -1,
-                  1
-                ],
-                "weirdness": [
-                  -1,
-                  1
-                ],
-                "depth": 0.1,
-                "offset": 0
-              }
-            },
-            {
               "biome": "minecraft:swamp",
               "parameters": {
                 "temperature": [
