@@ -21,9 +21,8 @@ public class OreSpikeFeature extends Feature<OreSpikeConfiguration> {
         int blobMass = config.getBlobMass().sample(random);
         int blobWidth = config.getBlobWidth().sample(random);
         int blobHeight = config.getBlobHeight().sample(random);
-        if (worldgenlevel.isEmptyBlock(blockpos) || worldgenlevel.getBlockState(blockpos).isAir() || blockpos.getY() > 48) {
-            return false;
-        } else {
+        if ((worldgenlevel.getBlockState(blockpos.above()).isSolid() && blockpos.getY() < 48) && worldgenlevel.getBlockState(blockpos.above().north()).isSolid() && worldgenlevel.getBlockState(blockpos.above().east()).isSolid() &&
+                worldgenlevel.getBlockState(blockpos.above().south()).isSolid() && worldgenlevel.getBlockState(blockpos.above().west()).isSolid()) {
             placeOre(config, random, worldgenlevel, blockpos);
             BlockPos blockpos1 = blockpos;
             BlockPos blockpos2 = blockpos;
@@ -53,9 +52,17 @@ public class OreSpikeFeature extends Feature<OreSpikeConfiguration> {
             for (int i = 0; i < blobMass * 4; ++i) {
                 int randomNumber2 = (int)(Math.random() * 4.0 + 1.0);
                 if (randomNumber2 >= 4 / blobHeight) {
-                    blockpos1 = new BlockPos(blockpos1.getX() + xFactor, blockpos1.getY() + 1, blockpos1.getZ() + zFactor);
+                    if (blockpos.getY() > -16) {
+                        blockpos1 = new BlockPos(blockpos2.getX() + xFactor, blockpos2.getY() - 1, blockpos2.getZ() + zFactor);
+                    } else {
+                        blockpos1 = new BlockPos(blockpos1.getX() + xFactor, blockpos1.getY() + 1, blockpos1.getZ() + zFactor);
+                    }
                 } else {
-                    blockpos1 = new BlockPos(blockpos1.getX(), blockpos1.getY() + 1, blockpos1.getZ());
+                    if (blockpos.getY() > -16) {
+                        blockpos1 = new BlockPos(blockpos2.getX(), blockpos2.getY() - 1, blockpos2.getZ());
+                    } else {
+                        blockpos1 = new BlockPos(blockpos1.getX(), blockpos1.getY() + 1, blockpos1.getZ());
+                    }
                 }
 
                 int xDistance = blockpos1.getX() - blockpos.getX();
@@ -75,9 +82,17 @@ public class OreSpikeFeature extends Feature<OreSpikeConfiguration> {
             for (int i = 0; i < blobMass * 4; ++i) {
                 int randomNumber2 = (int)(Math.random() * 4.0 + 1.0);
                 if (randomNumber2 >= 4 / blobHeight) {
-                    blockpos2 = new BlockPos(blockpos2.getX() + xFactor, blockpos2.getY() + 1, blockpos2.getZ() + zFactor);
+                    if (blockpos.getY() > -16) {
+                        blockpos2 = new BlockPos(blockpos2.getX() + xFactor, blockpos2.getY() - 1, blockpos2.getZ() + zFactor);
+                    } else {
+                        blockpos2 = new BlockPos(blockpos2.getX() + xFactor, blockpos2.getY() + 1, blockpos2.getZ() + zFactor);
+                    }
                 } else {
-                    blockpos2 = new BlockPos(blockpos2.getX(), blockpos2.getY() + 1, blockpos2.getZ());
+                    if (blockpos.getY() > -16) {
+                        blockpos2 = new BlockPos(blockpos2.getX(), blockpos2.getY() - 1, blockpos2.getZ());
+                    } else {
+                        blockpos2 = new BlockPos(blockpos2.getX(), blockpos2.getY() + 1, blockpos2.getZ());
+                    }
                 }
 
                 int xDistance = blockpos2.getX() - blockpos.getX();
@@ -112,6 +127,7 @@ public class OreSpikeFeature extends Feature<OreSpikeConfiguration> {
 
             return true;
         }
+        return false;
     }
     private void placeOre(OreSpikeConfiguration config, RandomSource random, WorldGenLevel worldgenlevel, BlockPos blockPos) {
         if (blockPos.getY() > 0) {

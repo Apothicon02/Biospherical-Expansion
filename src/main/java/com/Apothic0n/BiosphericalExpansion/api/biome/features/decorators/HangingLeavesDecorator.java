@@ -109,33 +109,33 @@ public class HangingLeavesDecorator extends TreeDecorator {
                     }
                 }
                 for (int d = 0; d < Math.random()*(24)+8; d++) {
-                    if (level.isStateAtPosition(blockPos.below(h+d).above(), BlockBehaviour.BlockStateBase::canBeReplaced) && level.isStateAtPosition(blockPos.below(h+d), BlockBehaviour.BlockStateBase::isSolid)) {
+                    if (level.isStateAtPosition(blockPos.below(h+d).above(), BlockBehaviour.BlockStateBase::canBeReplaced) && !level.isStateAtPosition(blockPos.below(h+d).above(), BlockBehaviour.BlockStateBase::liquid) && level.isStateAtPosition(blockPos.below(h+d), BlockBehaviour.BlockStateBase::isSolid)) {
                         BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (Math.random()*(3)+1));
                         context.setBlock(blockPos.below(h+d).above(), pileState);
                     }
 
-                    if (level.isStateAtPosition(blockPos.below(h+d).above().north(), BlockBehaviour.BlockStateBase::canBeReplaced) && level.isStateAtPosition(blockPos.below(h+d).north(),  BlockBehaviour.BlockStateBase::isSolid)) {
+                    if (level.isStateAtPosition(blockPos.below(h+d).above().north(), BlockBehaviour.BlockStateBase::canBeReplaced) && !level.isStateAtPosition(blockPos.below(h+d).above().north(), BlockBehaviour.BlockStateBase::liquid) && level.isStateAtPosition(blockPos.below(h+d).north(),  BlockBehaviour.BlockStateBase::isSolid)) {
                         BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (Math.random()*(3)+1));
                         context.setBlock(blockPos.below(h+d).above().north(), pileState);
                     }
-                    if (level.isStateAtPosition(blockPos.below(h+d).above().north().east(), BlockBehaviour.BlockStateBase::canBeReplaced) && level.isStateAtPosition(blockPos.below(h+d).north().east(),  BlockBehaviour.BlockStateBase::isSolid)) {
+                    if (level.isStateAtPosition(blockPos.below(h+d).above().north().east(), BlockBehaviour.BlockStateBase::canBeReplaced) && !level.isStateAtPosition(blockPos.below(h+d).above().north().east(), BlockBehaviour.BlockStateBase::liquid) && level.isStateAtPosition(blockPos.below(h+d).north().east(),  BlockBehaviour.BlockStateBase::isSolid)) {
                         BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (Math.random()*(3)+1));
                         context.setBlock(blockPos.below(h+d).above().north().east(), pileState);
                     }
-                    if (level.isStateAtPosition(blockPos.below(h+d).above().east(), BlockBehaviour.BlockStateBase::canBeReplaced) && level.isStateAtPosition(blockPos.below(h+d).east(),  BlockBehaviour.BlockStateBase::isSolid)) {
+                    if (level.isStateAtPosition(blockPos.below(h+d).above().east(), BlockBehaviour.BlockStateBase::canBeReplaced) && !level.isStateAtPosition(blockPos.below(h+d).above().east(), BlockBehaviour.BlockStateBase::liquid) && level.isStateAtPosition(blockPos.below(h+d).east(),  BlockBehaviour.BlockStateBase::isSolid)) {
                         BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (Math.random()*(3)+1));
                         context.setBlock(blockPos.below(h+d).above().east(), pileState);
                     }
 
-                    if (level.isStateAtPosition(blockPos.below(h+d).above().south(), BlockBehaviour.BlockStateBase::canBeReplaced) && level.isStateAtPosition(blockPos.below(h+d).south(),  BlockBehaviour.BlockStateBase::isSolid)) {
+                    if (level.isStateAtPosition(blockPos.below(h+d).above().south(), BlockBehaviour.BlockStateBase::canBeReplaced) && !level.isStateAtPosition(blockPos.below(h+d).above().south(), BlockBehaviour.BlockStateBase::liquid) && level.isStateAtPosition(blockPos.below(h+d).south(),  BlockBehaviour.BlockStateBase::isSolid)) {
                         BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (Math.random()*(3)+1));
                         context.setBlock(blockPos.below(h+d).above().south(), pileState);
                     }
-                    if (level.isStateAtPosition(blockPos.below(h+d).above().south().west(), BlockBehaviour.BlockStateBase::canBeReplaced) && level.isStateAtPosition(blockPos.below(h+d).south().west(),  BlockBehaviour.BlockStateBase::isSolid)) {
+                    if (level.isStateAtPosition(blockPos.below(h+d).above().south().west(), BlockBehaviour.BlockStateBase::canBeReplaced) && !level.isStateAtPosition(blockPos.below(h+d).above().south().west(), BlockBehaviour.BlockStateBase::liquid) && level.isStateAtPosition(blockPos.below(h+d).south().west(),  BlockBehaviour.BlockStateBase::isSolid)) {
                         BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (Math.random()*(3)+1));
                         context.setBlock(blockPos.below(h+d).above().south().west(), pileState);
                     }
-                    if (level.isStateAtPosition(blockPos.below(h+d).above().west(), BlockBehaviour.BlockStateBase::canBeReplaced) && level.isStateAtPosition(blockPos.below(h+d).west(),  BlockBehaviour.BlockStateBase::isSolid)) {
+                    if (level.isStateAtPosition(blockPos.below(h+d).above().west(), BlockBehaviour.BlockStateBase::canBeReplaced) && !level.isStateAtPosition(blockPos.below(h+d).above().west(), BlockBehaviour.BlockStateBase::liquid) && level.isStateAtPosition(blockPos.below(h+d).west(),  BlockBehaviour.BlockStateBase::isSolid)) {
                         BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (Math.random()*(3)+1));
                         context.setBlock(blockPos.below(h+d).above().west(), pileState);
                     }

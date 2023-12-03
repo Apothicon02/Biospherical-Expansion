@@ -634,7 +634,7 @@
               "biome": "minecraft:swamp",
               "parameters": {
                 "temperature": [
-                  0.5,
+                  0.7,
                   1
                 ],
                 "humidity": [
@@ -661,7 +661,7 @@
               "biome": "minecraft:mangrove_swamp",
               "parameters": {
                 "temperature": [
-                  0.5,
+                  0.7,
                   1
                 ],
                 "humidity": [
@@ -685,10 +685,37 @@
               }
             },
             {
-              "biome": "minecraft:swamp",
+              "biome": "biox:cherry_swamp",
               "parameters": {
                 "temperature": [
                   0.5,
+                  0.7
+                ],
+                "humidity": [
+                  0.55,
+                  1
+                ],
+                "continentalness": [
+                  -1,
+                  1
+                ],
+                "erosion": [
+                  -1,
+                  1
+                ],
+                "weirdness": [
+                  -1,
+                  1
+                ],
+                "depth": 0.1,
+                "offset": 0
+              }
+            },
+            {
+              "biome": "minecraft:swamp",
+              "parameters": {
+                "temperature": [
+                  0.7,
                   1
                 ],
                 "humidity": [
@@ -2598,6 +2625,36 @@
               "parameters": {
                 "temperature": [
                   -0.66,
+                  0.15
+                ],
+                "humidity": [
+                  0,
+                  1
+                ],
+                "continentalness": [
+                  -1,
+                  1
+                ],
+                "erosion": [
+                  0.2,
+                  1
+                ],
+                "weirdness": [
+                  -1,
+                  1
+                ],
+                "depth": [
+                  0,
+                  0.05
+                ],
+                "offset": 0
+              }
+            },
+            {
+              "biome": "biox:honeyed_caves",
+              "parameters": {
+                "temperature": [
+                  0.15,
                   0.66
                 ],
                 "humidity": [

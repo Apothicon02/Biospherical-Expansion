@@ -44,6 +44,8 @@ public class BiosphericalExpansion {
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             SurfaceRuleManager.setDefaultSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, BioxSurfaceRuleData.makeRules());
+            addLight(Blocks.SUNFLOWER.getStateDefinition().getPossibleStates(), 2);
+            addLight(Blocks.SPORE_BLOSSOM.getStateDefinition().getPossibleStates(), 4);
             addLight(Blocks.BLUE_ICE.getStateDefinition().getPossibleStates(), 7);
             addLight(Blocks.TORCHFLOWER.getStateDefinition().getPossibleStates(), 9);
             addLight(Blocks.TORCHFLOWER_CROP.getStateDefinition().getPossibleStates(), 9);
