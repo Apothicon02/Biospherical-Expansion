@@ -1,6 +1,5 @@
 package com.Apothic0n.BiosphericalExpansion;
 
-import com.Apothic0n.BiosphericalExpansion.api.biome.BioxSurfaceRuleData;
 import com.Apothic0n.BiosphericalExpansion.api.biome.features.BioxFeatureRegistry;
 import com.Apothic0n.BiosphericalExpansion.api.biome.features.decorators.BioxTreeDecoratorType;
 import com.Apothic0n.BiosphericalExpansion.api.biome.features.foliage_placers.BioxFoliagePlacerType;
@@ -9,9 +8,6 @@ import com.Apothic0n.BiosphericalExpansion.core.objects.BioxBlocks;
 import com.Apothic0n.BiosphericalExpansion.core.objects.BioxItems;
 import com.Apothic0n.BiosphericalExpansion.core.objects.BioxParticleTypes;
 import com.google.common.collect.ImmutableList;
-import net.minecraft.core.particles.ParticleType;
-import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -19,7 +15,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import terrablender.api.SurfaceRuleManager;
 
 @Mod(BiosphericalExpansion.MODID)
 public class BiosphericalExpansion {
@@ -43,7 +38,6 @@ public class BiosphericalExpansion {
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
-            SurfaceRuleManager.setDefaultSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, BioxSurfaceRuleData.makeRules());
             addLight(Blocks.SUNFLOWER.getStateDefinition().getPossibleStates(), 2);
             addLight(Blocks.SPORE_BLOSSOM.getStateDefinition().getPossibleStates(), 4);
             addLight(Blocks.BLUE_ICE.getStateDefinition().getPossibleStates(), 7);
