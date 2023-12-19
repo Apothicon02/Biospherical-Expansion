@@ -9,6 +9,16 @@
     "biox:mangrove_leaves_wall",
     "biox:cherry_leaves_wall",
     "biox:azalea_leaves_wall",
-    "biox:flowering_azalea_leaves_wall"
+    "biox:flowering_azalea_leaves_wall",
+    "biox:oak_leaves_pile",
+    "biox:dark_oak_leaves_pile",
+    "biox:birch_leaves_pile",
+    "biox:spruce_leaves_pile",
+    "biox:jungle_leaves_pile",
+    "biox:acacia_leaves_pile",
+    "biox:mangrove_leaves_pile",
+    "biox:cherry_leaves_pile",
+    "biox:azalea_leaves_pile",
+    "biox:flowering_azalea_leaves_pile"
   ]
 }

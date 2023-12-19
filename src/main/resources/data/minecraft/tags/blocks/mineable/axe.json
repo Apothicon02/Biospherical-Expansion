@@ -1,0 +1,19 @@
+{
+  "values": [
+    "biox:brown_mushroom_block_slab",
+    "biox:brown_mushroom_block_stairs",
+    "biox:brown_mushroom_block_wall",
+    "biox:red_mushroom_block_slab",
+    "biox:red_mushroom_block_stairs",
+    "biox:red_mushroom_block_wall",
+    "biox:mushroom_stem_wall",
+    "biox:acacia_wood_wall",
+    "biox:birch_wood_wall",
+    "biox:cherry_wood_wall",
+    "biox:dark_oak_wood_wall",
+    "biox:jungle_wood_wall",
+    "biox:mangrove_wood_wall",
+    "biox:oak_wood_wall",
+    "biox:spruce_wood_wall"
+  ]
+}
