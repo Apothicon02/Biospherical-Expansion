@@ -44,7 +44,7 @@ public class Basic3x2x3CubeFeature extends Feature<SimpleBlockConfiguration> {
             worldgenlevel.setBlock(blockpos.offset(1, 1, -1), material, 2);
             worldgenlevel.setBlock(blockpos.offset(-1, 1, 1), material, 2);
 
-            if ((int)(Math.random()*(3)+1) < 2) {
+            if ((int)(random.nextFloat()*(3)+1) < 2) {
                 blockpos = blockpos.above(2);
                 worldgenlevel.setBlock(blockpos.offset(0, 0, 0), material, 2);
                 worldgenlevel.setBlock(blockpos.offset(1, 0, 0), material, 2);
@@ -65,7 +65,7 @@ public class Basic3x2x3CubeFeature extends Feature<SimpleBlockConfiguration> {
                 worldgenlevel.setBlock(blockpos.offset(1, 1, 1), material, 2);
                 worldgenlevel.setBlock(blockpos.offset(1, 1, -1), material, 2);
                 worldgenlevel.setBlock(blockpos.offset(-1, 1, 1), material, 2);
-                if ((int)(Math.random()*(3)+1) < 2) {
+                if ((int)(random.nextFloat()*(3)+1) < 2) {
                     blockpos = blockpos.above(2);
                     worldgenlevel.setBlock(blockpos.offset(0, 0, 0), material, 2);
                     worldgenlevel.setBlock(blockpos.offset(1, 0, 0), material, 2);
@@ -86,7 +86,7 @@ public class Basic3x2x3CubeFeature extends Feature<SimpleBlockConfiguration> {
                     worldgenlevel.setBlock(blockpos.offset(1, 1, 1), material, 2);
                     worldgenlevel.setBlock(blockpos.offset(1, 1, -1), material, 2);
                     worldgenlevel.setBlock(blockpos.offset(-1, 1, 1), material, 2);
-                    if ((int)(Math.random()*(3)+1) < 2) {
+                    if ((int)(random.nextFloat()*(3)+1) < 2) {
                         blockpos = blockpos.above(2);
                         worldgenlevel.setBlock(blockpos.offset(0, 0, 0), material, 2);
                         worldgenlevel.setBlock(blockpos.offset(1, 0, 0), material, 2);
@@ -107,7 +107,7 @@ public class Basic3x2x3CubeFeature extends Feature<SimpleBlockConfiguration> {
                         worldgenlevel.setBlock(blockpos.offset(1, 1, 1), material, 2);
                         worldgenlevel.setBlock(blockpos.offset(1, 1, -1), material, 2);
                         worldgenlevel.setBlock(blockpos.offset(-1, 1, 1), material, 2);
-                        if ((int)(Math.random()*(4)+1) < 2) {
+                        if ((int)(random.nextFloat()*(4)+1) < 2) {
                             blockpos = blockpos.above(2);
                             worldgenlevel.setBlock(blockpos.offset(0, 0, 0), material, 2);
                             worldgenlevel.setBlock(blockpos.offset(1, 0, 0), material, 2);
@@ -128,7 +128,7 @@ public class Basic3x2x3CubeFeature extends Feature<SimpleBlockConfiguration> {
                             worldgenlevel.setBlock(blockpos.offset(1, 1, 1), material, 2);
                             worldgenlevel.setBlock(blockpos.offset(1, 1, -1), material, 2);
                             worldgenlevel.setBlock(blockpos.offset(-1, 1, 1), material, 2);
-                            if ((int)(Math.random()*(4)+1) < 2) {
+                            if ((int)(random.nextFloat()*(4)+1) < 2) {
                                 blockpos = blockpos.above(2);
                                 worldgenlevel.setBlock(blockpos.offset(0, 0, 0), material, 2);
                                 worldgenlevel.setBlock(blockpos.offset(1, 0, 0), material, 2);

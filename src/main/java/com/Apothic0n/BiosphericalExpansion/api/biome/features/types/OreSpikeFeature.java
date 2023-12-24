@@ -28,7 +28,7 @@ public class OreSpikeFeature extends Feature<OreSpikeConfiguration> {
             BlockPos blockpos2 = blockpos;
             boolean northNegative = false;
             boolean eastNegative = false;
-            int randomNumber = (int)(Math.random() * 4.0 + 1.0);
+            int randomNumber = (int)(random.nextFloat() * 4.0 + 1.0);
             if (randomNumber >= 4) {
                 northNegative = true;
                 eastNegative = true;
@@ -50,7 +50,7 @@ public class OreSpikeFeature extends Feature<OreSpikeConfiguration> {
 
             int thickness = 0;
             for (int i = 0; i < blobMass * 4; ++i) {
-                int randomNumber2 = (int)(Math.random() * 4.0 + 1.0);
+                int randomNumber2 = (int)(random.nextFloat() * 4.0 + 1.0);
                 if (randomNumber2 >= 4 / blobHeight) {
                     if (blockpos.getY() > -16) {
                         blockpos1 = new BlockPos(blockpos2.getX() + xFactor, blockpos2.getY() - 1, blockpos2.getZ() + zFactor);
@@ -80,7 +80,7 @@ public class OreSpikeFeature extends Feature<OreSpikeConfiguration> {
             thickness = thickness/2;
             boolean toggleThickness = false;
             for (int i = 0; i < blobMass * 4; ++i) {
-                int randomNumber2 = (int)(Math.random() * 4.0 + 1.0);
+                int randomNumber2 = (int)(random.nextFloat() * 4.0 + 1.0);
                 if (randomNumber2 >= 4 / blobHeight) {
                     if (blockpos.getY() > -16) {
                         blockpos2 = new BlockPos(blockpos2.getX() + xFactor, blockpos2.getY() - 1, blockpos2.getZ() + zFactor);

@@ -45,14 +45,14 @@ public class TrunkWoodenRootsDecorator extends TreeDecorator {
     @Override
     public void place(Context context) {
         LevelSimulatedReader level = context.level();
-        RandomSource randomSource = context.random();
+        RandomSource random = context.random();
         ObjectArrayList<BlockPos> list = context.roots();
         if (list.isEmpty() && context.logs().size() > 6) {
             list = ObjectArrayList.of(context.logs().get(0), context.logs().get(1), context.logs().get(2), context.logs().get(3), context.logs().get(4), context.logs().get(5), context.logs().get(6));
         }
-        BlockState woodWall = this.wallBlock.getState(randomSource, new BlockPos(0, 0, 0));
+        BlockState woodWall = this.wallBlock.getState(random, new BlockPos(0, 0, 0));
         list.forEach(blockPos -> {
-            int randomNumber = (int)(Math.random()*(this.probability*100)+1);
+            int randomNumber = (int)(random.nextFloat()*(this.probability*100)+1);
             if (randomNumber < 2) {
                 placeRoot(context, level, blockPos.north(), woodWall);
             } else if (randomNumber < 3) {

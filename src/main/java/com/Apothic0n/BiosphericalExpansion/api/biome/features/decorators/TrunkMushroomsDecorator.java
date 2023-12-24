@@ -32,38 +32,38 @@ public class TrunkMushroomsDecorator extends TreeDecorator {
     @Override
     public void place(Context context) {
         LevelSimulatedReader level = context.level();
-        RandomSource randomSource = context.random();
+        RandomSource random = context.random();
         ObjectArrayList<BlockPos> list = context.roots();
-        if (randomSource.nextFloat() >= this.probability) {
+        if (random.nextFloat() >= this.probability) {
             return;
         }
         if (list.isEmpty() && context.logs().size() > 8) {
             list = ObjectArrayList.of(context.logs().get(0), context.logs().get(1), context.logs().get(2), context.logs().get(3), context.logs().get(4), context.logs().get(5), context.logs().get(6), context.logs().get(7), context.logs().get(8));
         }
         list.forEach(blockPos -> {
-            int randomNumber = (int)(Math.random()*(42)+1);
+            int randomNumber = (int)(random.nextFloat()*(42)+1);
             if (randomNumber < 2) {
                 if (level.isStateAtPosition(blockPos.north(),  BlockBehaviour.BlockStateBase::canBeReplaced)) {
-                    context.setBlock(blockPos.north(), randomMushroom());
+                    context.setBlock(blockPos.north(), randomMushroom(random));
                 }
             } else if (randomNumber < 3) {
                 if (level.isStateAtPosition(blockPos.east(),  BlockBehaviour.BlockStateBase::canBeReplaced)) {
-                    context.setBlock(blockPos.east(), randomMushroom());
+                    context.setBlock(blockPos.east(), randomMushroom(random));
                 }
             } else if (randomNumber < 4) {
                 if (level.isStateAtPosition(blockPos.south(),  BlockBehaviour.BlockStateBase::canBeReplaced)) {
-                    context.setBlock(blockPos.south(), randomMushroom());
+                    context.setBlock(blockPos.south(), randomMushroom(random));
                 }
             } else if (randomNumber < 5) {
                 if (level.isStateAtPosition(blockPos.west(),  BlockBehaviour.BlockStateBase::canBeReplaced)) {
-                    context.setBlock(blockPos.west(), randomMushroom());
+                    context.setBlock(blockPos.west(), randomMushroom(random));
                 }
             }
         });
     }
 
-    private BlockState randomMushroom() {
-        int randomNumber = (int)(Math.random()*(3)+1);
+    private BlockState randomMushroom(RandomSource random) {
+        int randomNumber = (int)(random.nextFloat()*(3)+1);
         if (randomNumber < 2) {
             for (int o = 0; o < slabBlocks.size(); o++) {
                 RegistryObject<Block> block = slabBlocks.get(o).get(Blocks.RED_MUSHROOM_BLOCK);

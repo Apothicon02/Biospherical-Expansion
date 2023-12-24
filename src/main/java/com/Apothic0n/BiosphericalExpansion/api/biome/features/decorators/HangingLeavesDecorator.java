@@ -34,28 +34,29 @@ public class HangingLeavesDecorator extends TreeDecorator {
     @Override
     public void place(Context context) {
         LevelSimulatedReader level = context.level();
+        RandomSource random = context.random();
         ObjectArrayList<BlockPos> list = context.leaves();
         list.forEach(blockPos -> {
-            if ((Math.random()*(100)+1)/100 <= (probability/4)) {
-                boolean anySuccess = placeColumn(context, level, blockPos, Blocks.OAK_LEAVES);
+            if ((random.nextFloat()*(100)+1)/100 <= (probability/4)) {
+                boolean anySuccess = placeColumn(context, level, blockPos, Blocks.OAK_LEAVES, random);
                 if (!anySuccess) {
-                    anySuccess = placeColumn(context, level, blockPos, Blocks.DARK_OAK_LEAVES);
+                    anySuccess = placeColumn(context, level, blockPos, Blocks.DARK_OAK_LEAVES, random);
                     if (!anySuccess) {
-                        anySuccess = placeColumn(context, level, blockPos, Blocks.BIRCH_LEAVES);
+                        anySuccess = placeColumn(context, level, blockPos, Blocks.BIRCH_LEAVES, random);
                         if (!anySuccess) {
-                            anySuccess = placeColumn(context, level, blockPos, Blocks.SPRUCE_LEAVES);
+                            anySuccess = placeColumn(context, level, blockPos, Blocks.SPRUCE_LEAVES, random);
                             if (!anySuccess) {
-                                anySuccess = placeColumn(context, level, blockPos, Blocks.JUNGLE_LEAVES);
+                                anySuccess = placeColumn(context, level, blockPos, Blocks.JUNGLE_LEAVES, random);
                                 if (!anySuccess) {
-                                    anySuccess = placeColumn(context, level, blockPos, Blocks.ACACIA_LEAVES);
+                                    anySuccess = placeColumn(context, level, blockPos, Blocks.ACACIA_LEAVES, random);
                                     if (!anySuccess) {
-                                        anySuccess = placeColumn(context, level, blockPos, Blocks.MANGROVE_LEAVES);
+                                        anySuccess = placeColumn(context, level, blockPos, Blocks.MANGROVE_LEAVES, random);
                                         if (!anySuccess) {
-                                            anySuccess = placeColumn(context, level, blockPos, Blocks.CHERRY_LEAVES);
+                                            anySuccess = placeColumn(context, level, blockPos, Blocks.CHERRY_LEAVES, random);
                                             if (!anySuccess) {
-                                                anySuccess = placeColumn(context, level, blockPos, Blocks.AZALEA_LEAVES);
+                                                anySuccess = placeColumn(context, level, blockPos, Blocks.AZALEA_LEAVES, random);
                                                 if (!anySuccess) {
-                                                    placeColumn(context, level, blockPos, Blocks.FLOWERING_AZALEA_LEAVES);
+                                                    placeColumn(context, level, blockPos, Blocks.FLOWERING_AZALEA_LEAVES, random);
                                                 }
                                             }
                                         }
@@ -69,7 +70,7 @@ public class HangingLeavesDecorator extends TreeDecorator {
         });
     }
 
-    private static boolean placeColumn(Context context, LevelSimulatedReader level, BlockPos blockPos, Block hangingBlock) {
+    private static boolean placeColumn(Context context, LevelSimulatedReader level, BlockPos blockPos, Block hangingBlock, RandomSource random) {
         Block block = Blocks.AIR;
         for (int o = 0; o < wallBlocks.size(); o++) {
             RegistryObject<Block> blockRegistryObject = wallBlocks.get(o).get(hangingBlock);
@@ -93,7 +94,7 @@ public class HangingLeavesDecorator extends TreeDecorator {
         if (hangingBlock == Blocks.ACACIA_LEAVES) {
             maxLength = 1;
         }
-        double rand = (int) (Math.random()*(maxLength)+1);
+        double rand = (int) (random.nextFloat()*(maxLength)+1);
         for (int h = 0; h < rand; h++) {
             if (level.isStateAtPosition(blockPos.below(h).above(), BlockStatePredicate.forBlock(hangingBlock).or(BlockStatePredicate.forBlock(block))) && level.isStateAtPosition(blockPos.below(h),  BlockBehaviour.BlockStateBase::canBeReplaced)) {
                 context.setBlock(blockPos.below(h), blockState);
@@ -108,35 +109,35 @@ public class HangingLeavesDecorator extends TreeDecorator {
                         o = 420;
                     }
                 }
-                for (int d = 0; d < Math.random()*(24)+8; d++) {
+                for (int d = 0; d < random.nextFloat()*(24)+8; d++) {
                     if (level.isStateAtPosition(blockPos.below(h+d).above(), BlockBehaviour.BlockStateBase::canBeReplaced) && !level.isStateAtPosition(blockPos.below(h+d).above(), BlockBehaviour.BlockStateBase::liquid) && level.isStateAtPosition(blockPos.below(h+d), BlockBehaviour.BlockStateBase::isSolid)) {
-                        BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (Math.random()*(3)+1));
+                        BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (random.nextFloat()*(3)+1));
                         context.setBlock(blockPos.below(h+d).above(), pileState);
                     }
 
                     if (level.isStateAtPosition(blockPos.below(h+d).above().north(), BlockBehaviour.BlockStateBase::canBeReplaced) && !level.isStateAtPosition(blockPos.below(h+d).above().north(), BlockBehaviour.BlockStateBase::liquid) && level.isStateAtPosition(blockPos.below(h+d).north(),  BlockBehaviour.BlockStateBase::isSolid)) {
-                        BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (Math.random()*(3)+1));
+                        BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (random.nextFloat()*(3)+1));
                         context.setBlock(blockPos.below(h+d).above().north(), pileState);
                     }
                     if (level.isStateAtPosition(blockPos.below(h+d).above().north().east(), BlockBehaviour.BlockStateBase::canBeReplaced) && !level.isStateAtPosition(blockPos.below(h+d).above().north().east(), BlockBehaviour.BlockStateBase::liquid) && level.isStateAtPosition(blockPos.below(h+d).north().east(),  BlockBehaviour.BlockStateBase::isSolid)) {
-                        BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (Math.random()*(3)+1));
+                        BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (random.nextFloat()*(3)+1));
                         context.setBlock(blockPos.below(h+d).above().north().east(), pileState);
                     }
                     if (level.isStateAtPosition(blockPos.below(h+d).above().east(), BlockBehaviour.BlockStateBase::canBeReplaced) && !level.isStateAtPosition(blockPos.below(h+d).above().east(), BlockBehaviour.BlockStateBase::liquid) && level.isStateAtPosition(blockPos.below(h+d).east(),  BlockBehaviour.BlockStateBase::isSolid)) {
-                        BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (Math.random()*(3)+1));
+                        BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (random.nextFloat()*(3)+1));
                         context.setBlock(blockPos.below(h+d).above().east(), pileState);
                     }
 
                     if (level.isStateAtPosition(blockPos.below(h+d).above().south(), BlockBehaviour.BlockStateBase::canBeReplaced) && !level.isStateAtPosition(blockPos.below(h+d).above().south(), BlockBehaviour.BlockStateBase::liquid) && level.isStateAtPosition(blockPos.below(h+d).south(),  BlockBehaviour.BlockStateBase::isSolid)) {
-                        BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (Math.random()*(3)+1));
+                        BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (random.nextFloat()*(3)+1));
                         context.setBlock(blockPos.below(h+d).above().south(), pileState);
                     }
                     if (level.isStateAtPosition(blockPos.below(h+d).above().south().west(), BlockBehaviour.BlockStateBase::canBeReplaced) && !level.isStateAtPosition(blockPos.below(h+d).above().south().west(), BlockBehaviour.BlockStateBase::liquid) && level.isStateAtPosition(blockPos.below(h+d).south().west(),  BlockBehaviour.BlockStateBase::isSolid)) {
-                        BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (Math.random()*(3)+1));
+                        BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (random.nextFloat()*(3)+1));
                         context.setBlock(blockPos.below(h+d).above().south().west(), pileState);
                     }
                     if (level.isStateAtPosition(blockPos.below(h+d).above().west(), BlockBehaviour.BlockStateBase::canBeReplaced) && !level.isStateAtPosition(blockPos.below(h+d).above().west(), BlockBehaviour.BlockStateBase::liquid) && level.isStateAtPosition(blockPos.below(h+d).west(),  BlockBehaviour.BlockStateBase::isSolid)) {
-                        BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (Math.random()*(3)+1));
+                        BlockState pileState = pile.defaultBlockState().setValue(SnowLayerBlock.LAYERS, (int) (random.nextFloat()*(3)+1));
                         context.setBlock(blockPos.below(h+d).above().west(), pileState);
                     }
                 }
