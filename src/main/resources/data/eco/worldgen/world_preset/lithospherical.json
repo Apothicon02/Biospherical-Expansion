@@ -4,7 +4,7 @@
       "type": "eco:the_enclosed_overworld",
       "generator": {
         "type": "minecraft:noise",
-        "settings": "eco:lithospherical",
+        "settings": "biox:lithospherical",
         "biome_source": {
           "type": "minecraft:multi_noise",
           "biomes": [
