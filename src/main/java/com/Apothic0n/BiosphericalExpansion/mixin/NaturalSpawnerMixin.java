@@ -26,13 +26,13 @@ import static net.minecraft.world.level.NaturalSpawner.isSpawnPositionOk;
 public abstract class NaturalSpawnerMixin {
 
     @Shadow
-    protected static BlockPos getTopNonCollidingPos(LevelReader p_47066_, EntityType<?> p_47067_, int p_47068_, int p_47069_) {
+    private static BlockPos getTopNonCollidingPos(LevelReader p_47066_, EntityType<?> p_47067_, int p_47068_, int p_47069_) {
         return null;
     }
 
     /**
      * @author Apothicon
-     * @reason Fixes a moderately important issue where creatures can spawn in the wrong biome if the correct biome is at a different elevation than the actual spawn point.
+     * @reason Fixes a moderately important issue where creatures can spawn in the wrong biome if the correct biome is at a different elevation than the actual spawn point. Also allows mobs to spawn in the lithospherical world preset.
      */
     @Overwrite
     public static void spawnMobsForChunkGeneration(ServerLevelAccessor p_220451_, Holder<Biome> p_220452_, ChunkPos p_220453_, RandomSource p_220454_) {
@@ -62,7 +62,12 @@ public abstract class NaturalSpawnerMixin {
                                 float f = mobspawnsettings$spawnerdata.type.getWidth();
                                 double d0 = Mth.clamp((double)l, (double)i + (double)f, (double)i + 16.0D - (double)f);
                                 double d1 = Mth.clamp((double)i1, (double)j + (double)f, (double)j + 16.0D - (double)f);
-                                if (!p_220451_.noCollision(mobspawnsettings$spawnerdata.type.getAABB(d0, (double)blockpos.getY(), d1)) || !SpawnPlacements.checkSpawnRules(mobspawnsettings$spawnerdata.type, p_220451_, MobSpawnType.CHUNK_GENERATION, BlockPos.containing(d0, (double)blockpos.getY(), d1), p_220451_.getRandom())) {
+                                boolean skipChecks = false;
+                                if (p_220451_.getMaxBuildHeight() != 63) {
+                                    skipChecks = true;
+                                }
+
+                                if (skipChecks == false && (!p_220451_.noCollision(mobspawnsettings$spawnerdata.type.getAABB(d0, (double) blockpos.getY(), d1)) || !SpawnPlacements.checkSpawnRules(mobspawnsettings$spawnerdata.type, p_220451_, MobSpawnType.CHUNK_GENERATION, BlockPos.containing(d0, (double) blockpos.getY(), d1), p_220451_.getRandom()))) {
                                     continue;
                                 }
 
@@ -81,7 +86,7 @@ public abstract class NaturalSpawnerMixin {
                                 entity.moveTo(d0, (double)blockpos.getY(), d1, p_220454_.nextFloat() * 360.0F, 0.0F);
                                 if (entity instanceof Mob) {
                                     Mob mob = (Mob)entity;
-                                    if (net.minecraftforge.event.ForgeEventFactory.checkSpawnPosition(mob, p_220451_, MobSpawnType.CHUNK_GENERATION)) {
+                                    if (skipChecks == true || net.minecraftforge.event.ForgeEventFactory.checkSpawnPosition(mob, p_220451_, MobSpawnType.CHUNK_GENERATION)) {
                                         spawngroupdata = mob.finalizeSpawn(p_220451_, p_220451_.getCurrentDifficultyAt(mob.blockPosition()), MobSpawnType.CHUNK_GENERATION, spawngroupdata, (CompoundTag)null);
                                         p_220451_.addFreshEntityWithPassengers(mob);
                                         flag = true;
