@@ -2731,7 +2731,7 @@
       "type": "eco:the_open_nether",
       "generator": {
         "type": "minecraft:noise",
-        "settings": "eco:tropospherical_nether",
+        "settings": "eco:exospherical_nether",
         "biome_source": {
           "type": "minecraft:multi_noise",
           "preset": "minecraft:nether"
