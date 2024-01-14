@@ -20,7 +20,7 @@ modId="biox" #mandatory
 # ${file.jarVersion} will substitute the value of the Implementation-Version as read from the mod's JAR file metadata
 # see the associated build.gradle script for how to populate this completely automatically during a build
 version="${file.jarVersion}" #mandatory
- # A display name for the mod
+# A display name for the mod
 displayName="Biospherical Expansion" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification https://mcforge.readthedocs.io/en/latest/gettingstarted/autoupdate/
 #updateJSONURL="https://change.me.example.invalid/updates.json" #optional
@@ -38,3 +38,9 @@ Biospherical Expansion:
 
 Expanding the biosphere!
 '''
+[[dependencies.biox]]
+modId="eco"
+mandatory=true
+versionRange="[2.4.1,)"
+ordering="AFTER"
+side="SERVER"

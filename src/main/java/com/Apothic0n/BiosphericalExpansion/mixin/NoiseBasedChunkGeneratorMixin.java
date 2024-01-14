@@ -11,7 +11,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
 
-@Mixin(value = NoiseBasedChunkGenerator.class, priority = 69420)
+@Mixin(value = NoiseBasedChunkGenerator.class, priority = 1)
 public class NoiseBasedChunkGeneratorMixin {
     @Shadow @Final private Holder<NoiseGeneratorSettings> settings;
 
