@@ -1,10 +1,10 @@
 {
   "dimensions": {
     "minecraft:overworld": {
-      "type": "eco:the_open_overworld",
+      "type": "biox:brighter_overworld",
       "generator": {
         "type": "minecraft:noise",
-        "settings": "biox:tropospherical",
+        "settings": "biox:amplified",
         "biome_source": {
           "type": "minecraft:multi_noise",
           "biomes": [
@@ -2747,6 +2747,17 @@
         }
       }
     },
+    "minecraft:the_nether": {
+      "type": "minecraft:the_nether",
+      "generator": {
+        "type": "minecraft:noise",
+        "settings": "minecraft:nether",
+        "biome_source": {
+          "type": "minecraft:multi_noise",
+          "preset": "minecraft:nether"
+        }
+      }
+    },
     "minecraft:the_end": {
       "type": "minecraft:the_end",
       "generator": {
@@ -2754,17 +2765,6 @@
         "settings": "minecraft:end",
         "biome_source": {
           "type": "minecraft:the_end"
-        }
-      }
-    },
-    "minecraft:the_nether": {
-      "type": "eco:the_open_nether",
-      "generator": {
-        "type": "minecraft:noise",
-        "settings": "eco:tropospherical_nether",
-        "biome_source": {
-          "type": "minecraft:multi_noise",
-          "preset": "minecraft:nether"
         }
       }
     }

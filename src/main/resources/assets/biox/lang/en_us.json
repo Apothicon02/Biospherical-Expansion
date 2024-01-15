@@ -1,4 +1,6 @@
 {
+  "generator.biox.performance": "Performance",
+
   "biome.biox.autumnal_dark_forest": "Autumnal Dark Forest",
   "biome.biox.autumnal_dark_plains": "Autumnal Dark Plains",
   "biome.biox.birch_plains": "Birch Plains",
@@ -11,6 +13,7 @@
   "biome.biox.dark_plains": "Dark Plains",
   "biome.biox.eroded_mesa": "Eroded Mesa",
   "biome.biox.flower_plains": "Flower Plains",
+  "biome.biox.fungal_caves": "Fungal Caves",
   "biome.biox.geodeial_caves": "Geodeial Caves",
   "biome.biox.glacial_caves": "Glacial Caves",
   "biome.biox.honeyed_caves": "Honeyed Caves",

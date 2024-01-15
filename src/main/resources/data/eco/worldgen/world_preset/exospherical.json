@@ -2624,10 +2624,40 @@
               }
             },
             {
-              "biome": "biox:honeyed_caves",
+              "biome": "biox:fungal_caves",
               "parameters": {
                 "temperature": [
                   0.15,
+                  0.5
+                ],
+                "humidity": [
+                  0,
+                  1
+                ],
+                "continentalness": [
+                  -1,
+                  1
+                ],
+                "erosion": [
+                  0.2,
+                  1
+                ],
+                "weirdness": [
+                  -1,
+                  1
+                ],
+                "depth": [
+                  0,
+                  0.05
+                ],
+                "offset": 0
+              }
+            },
+            {
+              "biome": "biox:honeyed_caves",
+              "parameters": {
+                "temperature": [
+                  0.5,
                   0.66
                 ],
                 "humidity": [
