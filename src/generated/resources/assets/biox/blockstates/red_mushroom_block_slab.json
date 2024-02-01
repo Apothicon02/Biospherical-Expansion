@@ -4,7 +4,7 @@
       "model": "biox:block/red_mushroom_block_slab"
     },
     "type=double": {
-      "model": "minecraft:block/red_mushroom_block"
+      "model": "biox:block/red_mushroom_block_double_slab"
     },
     "type=top": {
       "model": "biox:block/red_mushroom_block_slab_top"

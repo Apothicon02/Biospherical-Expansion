@@ -421,6 +421,11 @@ public class CommonModEvents {
         ResourceLocation slabState = tempSlabState;
         ResourceLocation slabBlock = tempSlabBlock;
         ResourceLocation slabBlockTop = tempSlabBlockTop;
+        if (name.contains("red_mushroom_block")) {
+            baseBlock = new ResourceLocation("biox", "block/red_mushroom_block_double_slab");
+        } else if (name.contains("brown_mushroom_block")) {
+            baseBlock = new ResourceLocation("biox", "block/brown_mushroom_block_double_slab");
+        }
         map.put(slabState,
                 BlockStateFile.variants(BlockStateFile.Variants.builder()
                         .addVariant(

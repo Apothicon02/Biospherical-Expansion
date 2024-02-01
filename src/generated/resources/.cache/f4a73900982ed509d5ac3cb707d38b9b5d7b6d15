@@ -1,4 +1,4 @@
-// 1.20.2	2023-11-07T17:31:38.6512094	blockstates generator for biox
+// 1.20.2	2024-02-01T14:35:34.371161	blockstates generator for biox
 c79ab77f31b133a54dde2262588945c53a3954f6 assets/biox/blockstates/acacia_leaves_pile.json
 245baebb678ecd342a1aba64ffbd2c802076f9c3 assets/biox/blockstates/acacia_leaves_wall.json
 e987020d320be1d8b43da5eef44201c82d6af2f8 assets/biox/blockstates/acacia_wood_wall.json
@@ -7,7 +7,7 @@ e987020d320be1d8b43da5eef44201c82d6af2f8 assets/biox/blockstates/acacia_wood_wal
 b0cfa8ecbfd57ad1fb0aa7593b5b46a01017c493 assets/biox/blockstates/birch_leaves_pile.json
 7bc23ebc45a762238efc5e6bb28b7c9e33f6cbf8 assets/biox/blockstates/birch_leaves_wall.json
 7948e68c9c1fefbfc087f3eac23102b4b98ba559 assets/biox/blockstates/birch_wood_wall.json
-87c9ba3e35ab7ca7809437409cf4ed7186f13bcf assets/biox/blockstates/brown_mushroom_block_slab.json
+631e93323f32241e986a1702e3472aabf0922717 assets/biox/blockstates/brown_mushroom_block_slab.json
 55f4baffc71c88019231a77b2c22575b9b29c1d7 assets/biox/blockstates/brown_mushroom_block_stairs.json
 423ea5b71560c9c7a3d303d4d58d401646e5ebf9 assets/biox/blockstates/brown_mushroom_block_wall.json
 16e164d7f2728723469d2fed80b31f08c45c0cab assets/biox/blockstates/cherry_leaves_pile.json
@@ -28,7 +28,7 @@ fdd78e08dc2654bddf90d61ffc7e03b3d27c3473 assets/biox/blockstates/mushroom_stem_w
 cd66d632b7fac901b434df576a0bc4f26479dc46 assets/biox/blockstates/oak_leaves_pile.json
 738aab4588ff5d4476986e46c56d717942a86dad assets/biox/blockstates/oak_leaves_wall.json
 7cdf83fea7892e5af937dee30bb996cb029d6e0b assets/biox/blockstates/oak_wood_wall.json
-ab97cbeabdd011648cac34768339902e5efc4750 assets/biox/blockstates/red_mushroom_block_slab.json
+28d84bc23e77d586f68c3ca3c6fa022f5597225a assets/biox/blockstates/red_mushroom_block_slab.json
 a14f1501d87690d6145dc8e95cfd3e10d8a63081 assets/biox/blockstates/red_mushroom_block_stairs.json
 e70b3107a97d320fb0939bf8915601e183cee8bf assets/biox/blockstates/red_mushroom_block_wall.json
 fe37c9e815ac2be33697bd01ec13ee5d39fb1845 assets/biox/blockstates/spruce_leaves_pile.json
