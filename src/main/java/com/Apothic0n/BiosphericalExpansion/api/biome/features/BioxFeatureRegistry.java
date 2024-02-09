@@ -5,8 +5,6 @@ import com.Apothic0n.BiosphericalExpansion.api.biome.features.configurations.Ore
 import com.Apothic0n.BiosphericalExpansion.api.biome.features.types.Basic3x2x3CubeFeature;
 import com.Apothic0n.BiosphericalExpansion.api.biome.features.types.OreSpikeFeature;
 import com.Apothic0n.BiosphericalExpansion.api.biome.features.types.UnlimitedIceSpikeFeature;
-import com.Apothic0n.EcosphericalExpansion.api.biome.features.configurations.VerticalBlobConfiguration;
-import com.Apothic0n.EcosphericalExpansion.api.biome.features.types.Stemmed2x2x2CubeFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;

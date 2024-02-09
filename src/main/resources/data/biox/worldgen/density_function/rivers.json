@@ -36,13 +36,10 @@
                         "argument2": {
                           "type": "minecraft:abs",
                           "argument": {
-                            "type": "minecraft:shifted_noise",
+                            "type": "minecraft:noise",
                             "noise": "minecraft:ridge",
                             "xz_scale": 0.1,
-                            "y_scale": 0,
-                            "shift_x": "minecraft:shift_x",
-                            "shift_y": 0,
-                            "shift_z": "minecraft:shift_z"
+                            "y_scale": 0
                           }
                         }
                       }

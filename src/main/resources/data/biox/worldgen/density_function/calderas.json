@@ -19,13 +19,10 @@
                   "argument1": {
                     "type": "minecraft:min",
                     "argument1": {
-                      "type": "minecraft:shifted_noise",
+                      "type": "minecraft:noise",
                       "noise": "minecraft:temperature_large",
                       "xz_scale": 0.25,
-                      "y_scale": 0,
-                      "shift_x": "minecraft:shift_x",
-                      "shift_y": 0,
-                      "shift_z": "minecraft:shift_z"
+                      "y_scale": 0
                     },
                     "argument2": -0.25
                   },
@@ -40,13 +37,10 @@
                       "argument1": {
                         "type": "minecraft:min",
                         "argument1": {
-                          "type": "minecraft:shifted_noise",
+                          "type": "minecraft:noise",
                           "noise": "minecraft:vegetation",
                           "xz_scale": 0.175,
-                          "y_scale": 0,
-                          "shift_x": "minecraft:shift_x",
-                          "shift_y": 0,
-                          "shift_z": "minecraft:shift_z"
+                          "y_scale": 0
                         },
                         "argument2": -0.48
                       },
@@ -59,13 +53,10 @@
                         "argument1": {
                           "type": "minecraft:min",
                           "argument1": {
-                            "type": "minecraft:shifted_noise",
+                            "type": "minecraft:noise",
                             "noise": "minecraft:vegetation",
                             "xz_scale": 0.175,
-                            "y_scale": 0,
-                            "shift_x": "minecraft:shift_x",
-                            "shift_y": 0,
-                            "shift_z": "minecraft:shift_z"
+                            "y_scale": 0
                           },
                           "argument2": -0.5
                         },
@@ -100,13 +91,10 @@
                     "argument1": {
                       "type": "minecraft:min",
                       "argument1": {
-                        "type": "minecraft:shifted_noise",
+                        "type": "minecraft:noise",
                         "noise": "minecraft:temperature_large",
                         "xz_scale": 0.25,
-                        "y_scale": 0,
-                        "shift_x": "minecraft:shift_x",
-                        "shift_y": 0,
-                        "shift_z": "minecraft:shift_z"
+                        "y_scale": 0
                       },
                       "argument2": -0.25
                     },
@@ -123,13 +111,10 @@
                           "argument1": {
                             "type": "minecraft:min",
                             "argument1": {
-                              "type": "minecraft:shifted_noise",
+                              "type": "minecraft:noise",
                               "noise": "minecraft:vegetation",
                               "xz_scale": 0.175,
-                              "y_scale": 0,
-                              "shift_x": "minecraft:shift_x",
-                              "shift_y": 0,
-                              "shift_z": "minecraft:shift_z"
+                              "y_scale": 0
                             },
                             "argument2": -0.5
                           },
@@ -142,13 +127,10 @@
                             "argument1": {
                               "type": "minecraft:min",
                               "argument1": {
-                                "type": "minecraft:shifted_noise",
+                                "type": "minecraft:noise",
                                 "noise": "minecraft:vegetation",
                                 "xz_scale": 0.175,
-                                "y_scale": 0,
-                                "shift_x": "minecraft:shift_x",
-                                "shift_y": 0,
-                                "shift_z": "minecraft:shift_z"
+                                "y_scale": 0
                               },
                               "argument2": -0.52
                             },
@@ -176,13 +158,10 @@
                 "to_value": -1
               },
               "argument2": {
-                "type": "minecraft:shifted_noise",
+                "type": "minecraft:noise",
                 "noise": "minecraft:gravel",
                 "xz_scale": 2,
-                "y_scale": 0,
-                "shift_x": "minecraft:shift_x",
-                "shift_y": 0,
-                "shift_z": "minecraft:shift_z"
+                "y_scale": 0
               }
             }
           }
@@ -202,13 +181,10 @@
                 "argument1": {
                   "type": "minecraft:min",
                   "argument1": {
-                    "type": "minecraft:shifted_noise",
+                    "type": "minecraft:noise",
                     "noise": "minecraft:temperature_large",
                     "xz_scale": 0.25,
-                    "y_scale": 0,
-                    "shift_x": "minecraft:shift_x",
-                    "shift_y": 0,
-                    "shift_z": "minecraft:shift_z"
+                    "y_scale": 0
                   },
                   "argument2": -0.25
                 },
@@ -223,13 +199,10 @@
                     "argument1": {
                       "type": "minecraft:min",
                       "argument1": {
-                        "type": "minecraft:shifted_noise",
+                        "type": "minecraft:noise",
                         "noise": "minecraft:vegetation",
                         "xz_scale": 0.175,
-                        "y_scale": 0,
-                        "shift_x": "minecraft:shift_x",
-                        "shift_y": 0,
-                        "shift_z": "minecraft:shift_z"
+                        "y_scale": 0
                       },
                       "argument2": -0.5
                     },
@@ -242,13 +215,10 @@
                       "argument1": {
                         "type": "minecraft:min",
                         "argument1": {
-                          "type": "minecraft:shifted_noise",
+                          "type": "minecraft:noise",
                           "noise": "minecraft:vegetation",
                           "xz_scale": 0.175,
-                          "y_scale": 0,
-                          "shift_x": "minecraft:shift_x",
-                          "shift_y": 0,
-                          "shift_z": "minecraft:shift_z"
+                          "y_scale": 0
                         },
                         "argument2": -0.7
                       },
@@ -277,13 +247,10 @@
                 "argument1": {
                   "type": "minecraft:min",
                   "argument1": {
-                    "type": "minecraft:shifted_noise",
+                    "type": "minecraft:noise",
                     "noise": "minecraft:temperature_large",
                     "xz_scale": 0.25,
-                    "y_scale": 0,
-                    "shift_x": "minecraft:shift_x",
-                    "shift_y": 0,
-                    "shift_z": "minecraft:shift_z"
+                    "y_scale": 0
                   },
                   "argument2": -0.25
                 },
@@ -296,13 +263,10 @@
                   "argument1": {
                     "type": "minecraft:min",
                     "argument1": {
-                      "type": "minecraft:shifted_noise",
+                      "type": "minecraft:noise",
                       "noise": "minecraft:vegetation",
                       "xz_scale": 0.175,
-                      "y_scale": 0,
-                      "shift_x": "minecraft:shift_x",
-                      "shift_y": 0,
-                      "shift_z": "minecraft:shift_z"
+                      "y_scale": 0
                     },
                     "argument2": -0.57
                   },
