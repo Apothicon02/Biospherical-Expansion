@@ -4,8 +4,8 @@
     "type": "minecraft:cache_2d",
     "argument": {
       "type": "minecraft:noise",
-      "noise": "minecraft:temperature_large",
-      "xz_scale": 0.5,
+      "noise": "minecraft:temperature",
+      "xz_scale": 0.25,
       "y_scale": 0
     }
   }

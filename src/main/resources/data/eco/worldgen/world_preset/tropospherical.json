@@ -1463,6 +1463,36 @@
                 ],
                 "continentalness": [
                   -1,
+                  0
+                ],
+                "erosion": [
+                  -1,
+                  1
+                ],
+                "weirdness": [
+                  -1,
+                  1
+                ],
+                "depth": [
+                  0.2,
+                  0.3
+                ],
+                "offset": 0
+              }
+            },
+            {
+              "biome": "biox:tropical_plains",
+              "parameters": {
+                "temperature": [
+                  0.5,
+                  0.55
+                ],
+                "humidity": [
+                  0.45,
+                  1
+                ],
+                "continentalness": [
+                  0,
                   1
                 ],
                 "erosion": [

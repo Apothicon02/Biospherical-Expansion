@@ -3,10 +3,10 @@
   "argument1": "biox:base_terrain",
   "argument2": {
     "type": "minecraft:range_choice",
-    "input": "biox:eroded_and_normal_cliffs",
+    "input": "biox:eroded_and_normal_cliffs_large",
     "min_inclusive": 0,
     "max_exclusive": 10000,
-    "when_in_range": "biox:eroded_and_normal_cliffs",
+    "when_in_range": "biox:eroded_and_normal_cliffs_large",
     "when_out_of_range": {
       "type": "minecraft:range_choice",
       "input": "biox:plateaus",
@@ -15,17 +15,17 @@
       "when_in_range": "biox:plateaus",
       "when_out_of_range": {
         "type": "minecraft:range_choice",
-        "input": "biox:calderas",
+        "input": "biox:calderas_large",
         "min_inclusive": 0,
         "max_exclusive": 10000,
-        "when_in_range": "biox:calderas",
+        "when_in_range": "biox:calderas_large",
         "when_out_of_range": {
           "type": "minecraft:range_choice",
           "input": "biox:terraces",
           "min_inclusive": 0,
           "max_exclusive": 10000,
           "when_in_range": "biox:terraces",
-          "when_out_of_range": "biox:swamps"
+          "when_out_of_range": "biox:swamps_large"
         }
       }
     }

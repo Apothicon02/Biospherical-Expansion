@@ -180,7 +180,6 @@
     [
       "minecraft:glow_lichen",
       "eco:grass_rocks",
-      "biox:jungle_bushes_dense",
       "eco:mud_pond",
       "minecraft:bamboo_light",
       "eco:bamboo_cluster",
@@ -190,6 +189,7 @@
       "biox:trees_rare_giant_jungle",
       "eco:bushes_clustered",
       "eco:red_flowers",
+      "biox:dense_torchflowers",
       "eco:overworld_mushrooms",
       "eco:nether_mushrooms",
       "eco:basic_grass",

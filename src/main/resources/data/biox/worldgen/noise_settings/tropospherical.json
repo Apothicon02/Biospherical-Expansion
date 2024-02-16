@@ -248,61 +248,77 @@
             {
               "type": "minecraft:condition",
               "if_true": {
-                "type": "minecraft:noise_threshold",
-                "noise": "biox:cracks",
-                "min_threshold": -0.09,
-                "max_threshold": -0.08
+                "type": "minecraft:y_above",
+                "anchor": {
+                  "absolute": 65
+                },
+                "surface_depth_multiplier": 0,
+                "add_stone_depth": false
               },
               "then_run": {
-                "type": "minecraft:block",
-                "result_state": {
-                  "Name": "minecraft:air"
-                }
-              }
-            },
-            {
-              "type": "minecraft:condition",
-              "if_true": {
-                "type": "minecraft:noise_threshold",
-                "noise": "biox:cracks_2",
-                "min_threshold": -0.05,
-                "max_threshold": -0.04
-              },
-              "then_run": {
-                "type": "minecraft:block",
-                "result_state": {
-                  "Name": "minecraft:air"
-                }
-              }
-            },
-            {
-              "type": "minecraft:condition",
-              "if_true": {
-                "type": "minecraft:noise_threshold",
-                "noise": "biox:cracks_3",
-                "min_threshold": -0.01,
-                "max_threshold": 0.0
-              },
-              "then_run": {
-                "type": "minecraft:block",
-                "result_state": {
-                  "Name": "minecraft:air"
-                }
-              }
-            },
-            {
-              "type": "minecraft:condition",
-              "if_true": {
-                "type": "minecraft:noise_threshold",
-                "noise": "biox:cracks_4",
-                "min_threshold": 0.04,
-                "max_threshold": 0.05
-              },
-              "then_run": {
-                "type": "minecraft:block",
-                "result_state": {
-                  "Name": "minecraft:air"
-                }
+                "type": "minecraft:sequence",
+                "sequence": [
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "noise": "biox:cracks",
+                      "min_threshold": -0.09,
+                      "max_threshold": -0.08
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "minecraft:air"
+                      }
+                    }
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "noise": "biox:cracks_2",
+                      "min_threshold": -0.05,
+                      "max_threshold": -0.04
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "minecraft:air"
+                      }
+                    }
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "noise": "biox:cracks_3",
+                      "min_threshold": -0.01,
+                      "max_threshold": 0.0
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "minecraft:air"
+                      }
+                    }
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "noise": "biox:cracks_4",
+                      "min_threshold": 0.04,
+                      "max_threshold": 0.05
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "minecraft:air"
+                      }
+                    }
+                  }
+                ]
               }
             },
             {
@@ -797,6 +813,7 @@
                 "biome_is": [
                   "minecraft:jungle",
                   "minecraft:sparse_jungle",
+                  "biox:tropical_plains",
                   "minecraft:bamboo_jungle"
                 ]
               },
@@ -815,6 +832,21 @@
                       "type": "minecraft:block",
                       "result_state": {
                         "Name": "minecraft:sand"
+                      }
+                    }
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "noise": "eco:surface_variation",
+                      "min_threshold": 0.05,
+                      "max_threshold": 0.161
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "minecraft:moss_block"
                       }
                     }
                   },
@@ -2399,6 +2431,7 @@
                 "biome_is": [
                   "minecraft:jungle",
                   "minecraft:sparse_jungle",
+                  "biox:tropical_plains",
                   "minecraft:bamboo_jungle"
                 ]
               },
@@ -2417,6 +2450,21 @@
                       "type": "minecraft:block",
                       "result_state": {
                         "Name": "minecraft:sand"
+                      }
+                    }
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "noise": "eco:surface_variation",
+                      "min_threshold": 0.05,
+                      "max_threshold": 0.161
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "minecraft:moss_block"
                       }
                     }
                   },
@@ -3803,7 +3851,8 @@
                   "biox:eroded_mesa",
                   "biox:wooded_mesa",
                   "minecraft:jungle",
-                  "minecraft:sparse_jungle"
+                  "minecraft:sparse_jungle",
+                  "biox:tropical_plains"
                 ]
               },
               "then_run": {
@@ -6013,7 +6062,8 @@
                   "biox:eroded_mesa",
                   "biox:wooded_mesa",
                   "minecraft:jungle",
-                  "minecraft:sparse_jungle"
+                  "minecraft:sparse_jungle",
+                  "biox:tropical_plains"
                 ]
               },
               "then_run": {
