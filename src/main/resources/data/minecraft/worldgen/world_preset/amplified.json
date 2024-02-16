@@ -1223,6 +1223,36 @@
                 ],
                 "continentalness": [
                   -1,
+                  0
+                ],
+                "erosion": [
+                  -1,
+                  1
+                ],
+                "weirdness": [
+                  -1,
+                  1
+                ],
+                "depth": [
+                  0.2,
+                  0.3
+                ],
+                "offset": 0
+              }
+            },
+            {
+              "biome": "biox:lowlands",
+              "parameters": {
+                "temperature": [
+                  0,
+                  0.4
+                ],
+                "humidity": [
+                  -0.5,
+                  0
+                ],
+                "continentalness": [
+                  0,
                   1
                 ],
                 "erosion": [
@@ -1974,6 +2004,36 @@
                 ],
                 "continentalness": [
                   -1,
+                  0
+                ],
+                "erosion": [
+                  -1,
+                  1
+                ],
+                "weirdness": [
+                  -1,
+                  1
+                ],
+                "depth": [
+                  0.313,
+                  0.407
+                ],
+                "offset": 0
+              }
+            },
+            {
+              "biome": "biox:highlands",
+              "parameters": {
+                "temperature": [
+                  -0.2,
+                  0.25
+                ],
+                "humidity": [
+                  -0.25,
+                  1
+                ],
+                "continentalness": [
+                  0,
                   1
                 ],
                 "erosion": [

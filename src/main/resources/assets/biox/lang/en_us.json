@@ -1,6 +1,4 @@
 {
-  "generator.biox.performance": "Performance",
-
   "biome.biox.autumnal_dark_forest": "Autumnal Dark Forest",
   "biome.biox.autumnal_dark_plains": "Autumnal Dark Plains",
   "biome.biox.birch_plains": "Birch Plains",
@@ -22,6 +20,8 @@
   "biome.biox.orchard": "Orchard",
   "biome.biox.sandstony_shore": "Sandstony Shore",
   "biome.biox.wooded_mesa": "Wooded Mesa",
+  "biome.biox.lowlands": "Lowlands",
+  "biome.biox.highlands": "Highlands",
 
   "block.biox.amethyst_vines": "Amethyst Vines",
   "block.biox.amethyst_vines_plant": "Amethyst Vines Plant",
