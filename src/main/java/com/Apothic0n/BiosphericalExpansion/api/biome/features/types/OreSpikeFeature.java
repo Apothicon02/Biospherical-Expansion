@@ -21,7 +21,7 @@ public class OreSpikeFeature extends Feature<OreSpikeConfiguration> {
         int blobMass = config.getBlobMass().sample(random);
         int blobWidth = config.getBlobWidth().sample(random);
         int blobHeight = config.getBlobHeight().sample(random);
-        if ((worldgenlevel.getBlockState(blockpos.above()).isSolid() && blockpos.getY() < 48) && worldgenlevel.getBlockState(blockpos.above().north()).isSolid() && worldgenlevel.getBlockState(blockpos.above().east()).isSolid() &&
+        if ((worldgenlevel.getBlockState(blockpos.above()).isSolid()) && worldgenlevel.getBlockState(blockpos.above().north()).isSolid() && worldgenlevel.getBlockState(blockpos.above().east()).isSolid() &&
                 worldgenlevel.getBlockState(blockpos.above().south()).isSolid() && worldgenlevel.getBlockState(blockpos.above().west()).isSolid()) {
             placeOre(config, random, worldgenlevel, blockpos);
             BlockPos blockpos1 = blockpos;
@@ -32,9 +32,9 @@ public class OreSpikeFeature extends Feature<OreSpikeConfiguration> {
             if (randomNumber >= 4) {
                 northNegative = true;
                 eastNegative = true;
-            } else if (randomNumber >= 3) {
+            } else if (randomNumber == 3) {
                 northNegative = true;
-            } else if (randomNumber >= 2) {
+            } else if (randomNumber == 2) {
                 eastNegative = true;
             }
 

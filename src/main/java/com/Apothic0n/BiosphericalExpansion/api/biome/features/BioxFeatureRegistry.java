@@ -2,9 +2,7 @@ package com.Apothic0n.BiosphericalExpansion.api.biome.features;
 
 import com.Apothic0n.BiosphericalExpansion.BiosphericalExpansion;
 import com.Apothic0n.BiosphericalExpansion.api.biome.features.configurations.OreSpikeConfiguration;
-import com.Apothic0n.BiosphericalExpansion.api.biome.features.types.Basic3x2x3CubeFeature;
-import com.Apothic0n.BiosphericalExpansion.api.biome.features.types.OreSpikeFeature;
-import com.Apothic0n.BiosphericalExpansion.api.biome.features.types.UnlimitedIceSpikeFeature;
+import com.Apothic0n.BiosphericalExpansion.api.biome.features.types.*;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
@@ -22,6 +20,12 @@ public abstract class BioxFeatureRegistry {
             new UnlimitedIceSpikeFeature(NoneFeatureConfiguration.CODEC));
     public static final RegistryObject<Feature<OreSpikeConfiguration>> ORE_SPIKE_FEATURE = FEATURES.register("ore_spike", () ->
             new OreSpikeFeature(OreSpikeConfiguration.CODEC));
+    public static final RegistryObject<Feature<NoneFeatureConfiguration>> PATH_FEATURE = FEATURES.register("path", () ->
+            new PathFeature(NoneFeatureConfiguration.CODEC));
+    public static final RegistryObject<Feature<NoneFeatureConfiguration>> NOODLE_CAVE_FEATURE = FEATURES.register("noodle_cave", () ->
+            new NoodleCaveFeature(NoneFeatureConfiguration.CODEC));
+    public static final RegistryObject<Feature<NoneFeatureConfiguration>> NOODLE_RIVER_FEATURE = FEATURES.register("noodle_river", () ->
+            new NoodleRiverFeature(NoneFeatureConfiguration.CODEC));
 
     public static void register(IEventBus eventBus) {
         FEATURES.register(eventBus);
