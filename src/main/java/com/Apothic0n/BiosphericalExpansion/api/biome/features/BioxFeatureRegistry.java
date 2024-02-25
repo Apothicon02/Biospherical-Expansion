@@ -20,12 +20,6 @@ public abstract class BioxFeatureRegistry {
             new UnlimitedIceSpikeFeature(NoneFeatureConfiguration.CODEC));
     public static final RegistryObject<Feature<OreSpikeConfiguration>> ORE_SPIKE_FEATURE = FEATURES.register("ore_spike", () ->
             new OreSpikeFeature(OreSpikeConfiguration.CODEC));
-    public static final RegistryObject<Feature<NoneFeatureConfiguration>> PATH_FEATURE = FEATURES.register("path", () ->
-            new PathFeature(NoneFeatureConfiguration.CODEC));
-    public static final RegistryObject<Feature<NoneFeatureConfiguration>> NOODLE_CAVE_FEATURE = FEATURES.register("noodle_cave", () ->
-            new NoodleCaveFeature(NoneFeatureConfiguration.CODEC));
-    public static final RegistryObject<Feature<NoneFeatureConfiguration>> NOODLE_RIVER_FEATURE = FEATURES.register("noodle_river", () ->
-            new NoodleRiverFeature(NoneFeatureConfiguration.CODEC));
 
     public static void register(IEventBus eventBus) {
         FEATURES.register(eventBus);
