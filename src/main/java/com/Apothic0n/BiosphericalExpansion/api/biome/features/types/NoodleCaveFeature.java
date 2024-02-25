@@ -8,7 +8,6 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.FallingBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -38,7 +37,8 @@ public class NoodleCaveFeature extends Feature<NoneFeatureConfiguration> {
         for(int x = origin.getX() - 16; x < origin.getX() + 16; ++x) {
             for(int z = origin.getZ() - 16; z < origin.getZ() + 16; ++z) {
                 double noise = NOODLE_NOISE.getValue(x, z, true);
-                if (noise > 0 && noise < 0.01) {
+                double avoidNoise = NoodleRiverFeature.NOODLE_NOISE.getValue(x, z, true);
+                if (noise > 0 && noise < 0.01 && (avoidNoise < -0.2 || avoidNoise > 0.2)) {
                     BlockPos heightmapPos = worldgenlevel.getHeightmapPos(Heightmap.Types.OCEAN_FLOOR_WG, new BlockPos(x, 0, z));
                     BlockPos blockpos = new BlockPos(heightmapPos.getX(), BioxMath.mid(heightmapPos.getY()-27, scanDownUntilPositive(worldgenlevel.getMinBuildHeight() + 15, heightmapPos)), heightmapPos.getZ());
                     if (blockpos.getY() > worldgenlevel.getMinBuildHeight()+15 && blockpos.getY() < worldgenlevel.getMaxBuildHeight()-15) {
@@ -71,15 +71,15 @@ public class NoodleCaveFeature extends Feature<NoneFeatureConfiguration> {
             int waterSources = booleanToInt(worldgenlevel.getBlockState(blockpos1.north()).is(Blocks.WATER))+booleanToInt(worldgenlevel.getBlockState(blockpos1.east()).is(Blocks.WATER))+
                     booleanToInt(worldgenlevel.getBlockState(blockpos1.south()).is(Blocks.WATER))+booleanToInt(worldgenlevel.getBlockState(blockpos1.west()).is(Blocks.WATER));
             if (originalBlockState.getBlock() instanceof FallingBlock) {
-                this.setBlock(worldgenlevel, blockpos1, Blocks.DRIPSTONE_BLOCK.defaultBlockState());
+                worldgenlevel.setBlock(blockpos1, Blocks.DRIPSTONE_BLOCK.defaultBlockState(), 2);
             } else if (waterSources == 2) {
-                this.setBlock(worldgenlevel, blockpos1, Blocks.DRIPSTONE_BLOCK.defaultBlockState());
-                this.setBlock(worldgenlevel, blockpos1.north(), Blocks.DRIPSTONE_BLOCK.defaultBlockState());
-                this.setBlock(worldgenlevel, blockpos1.east(), Blocks.DRIPSTONE_BLOCK.defaultBlockState());
-                this.setBlock(worldgenlevel, blockpos1.south(), Blocks.DRIPSTONE_BLOCK.defaultBlockState());
-                this.setBlock(worldgenlevel, blockpos1.west(), Blocks.DRIPSTONE_BLOCK.defaultBlockState());
+                worldgenlevel.setBlock(blockpos1, Blocks.DRIPSTONE_BLOCK.defaultBlockState(), 2);
+                worldgenlevel.setBlock(blockpos1.north(), Blocks.DRIPSTONE_BLOCK.defaultBlockState(), 2);
+                worldgenlevel.setBlock(blockpos1.east(), Blocks.DRIPSTONE_BLOCK.defaultBlockState(), 2);
+                worldgenlevel.setBlock(blockpos1.south(), Blocks.DRIPSTONE_BLOCK.defaultBlockState(), 2);
+                worldgenlevel.setBlock(blockpos1.west(), Blocks.DRIPSTONE_BLOCK.defaultBlockState(), 2);
             } else if (originalBlockState.is(BlockTags.OVERWORLD_CARVER_REPLACEABLES)) {
-                this.setBlock(worldgenlevel, blockpos1, Blocks.CAVE_AIR.defaultBlockState());
+                worldgenlevel.setBlock(blockpos1, Blocks.CAVE_AIR.defaultBlockState(), 2);
             }
         }
     }

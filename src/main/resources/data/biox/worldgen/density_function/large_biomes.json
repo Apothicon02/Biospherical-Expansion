@@ -3,29 +3,41 @@
   "argument1": "biox:base_terrain",
   "argument2": {
     "type": "minecraft:range_choice",
-    "input": "biox:eroded_and_normal_cliffs_large",
-    "min_inclusive": 0,
+    "input": {
+      "type": "minecraft:noise",
+      "noise": "biox:volcanoes",
+      "xz_scale": 1,
+      "y_scale": 0
+    },
+    "min_inclusive": 0.9,
     "max_exclusive": 10000,
-    "when_in_range": "biox:eroded_and_normal_cliffs_large",
+    "when_in_range": "biox:volcanoes",
     "when_out_of_range": {
       "type": "minecraft:range_choice",
-      "input": "biox:plateaus",
+      "input": "biox:eroded_and_normal_cliffs_large",
       "min_inclusive": 0,
       "max_exclusive": 10000,
-      "when_in_range": "biox:plateaus",
+      "when_in_range": "biox:eroded_and_normal_cliffs_large",
       "when_out_of_range": {
         "type": "minecraft:range_choice",
-        "input": "biox:calderas_large",
+        "input": "biox:plateaus",
         "min_inclusive": 0,
         "max_exclusive": 10000,
-        "when_in_range": "biox:calderas_large",
+        "when_in_range": "biox:plateaus",
         "when_out_of_range": {
           "type": "minecraft:range_choice",
-          "input": "biox:terraces",
+          "input": "biox:calderas_large",
           "min_inclusive": 0,
           "max_exclusive": 10000,
-          "when_in_range": "biox:terraces",
-          "when_out_of_range": "biox:swamps_large"
+          "when_in_range": "biox:calderas_large",
+          "when_out_of_range": {
+            "type": "minecraft:range_choice",
+            "input": "biox:terraces",
+            "min_inclusive": 0,
+            "max_exclusive": 10000,
+            "when_in_range": "biox:terraces",
+            "when_out_of_range": "biox:swamps_large"
+          }
         }
       }
     }
