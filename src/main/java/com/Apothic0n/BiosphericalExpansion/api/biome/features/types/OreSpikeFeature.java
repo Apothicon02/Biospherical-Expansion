@@ -21,7 +21,7 @@ public class OreSpikeFeature extends Feature<OreSpikeConfiguration> {
         int blobMass = config.getBlobMass().sample(random);
         int blobWidth = config.getBlobWidth().sample(random);
         int blobHeight = config.getBlobHeight().sample(random);
-        if ((worldgenlevel.getBlockState(blockpos.above()).isSolid()) && worldgenlevel.getBlockState(blockpos.above().north()).isSolid() && worldgenlevel.getBlockState(blockpos.above().east()).isSolid() &&
+        if (blockpos.getY() < 56 && worldgenlevel.getBlockState(blockpos.above()).isSolid() && worldgenlevel.getBlockState(blockpos.above().north()).isSolid() && worldgenlevel.getBlockState(blockpos.above().east()).isSolid() &&
                 worldgenlevel.getBlockState(blockpos.above().south()).isSolid() && worldgenlevel.getBlockState(blockpos.above().west()).isSolid()) {
             placeOre(config, random, worldgenlevel, blockpos);
             BlockPos blockpos1 = blockpos;
