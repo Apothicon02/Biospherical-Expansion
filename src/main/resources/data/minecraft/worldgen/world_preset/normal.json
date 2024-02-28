@@ -40,33 +40,6 @@
               "parameters": {
                 "temperature": [
                   -1,
-                  -0.45
-                ],
-                "humidity": [
-                  -0.5,
-                  1
-                ],
-                "continentalness": [
-                  -1,
-                  1
-                ],
-                "erosion": [
-                  -1,
-                  0.2
-                ],
-                "weirdness": [
-                  -1,
-                  1
-                ],
-                "depth": 0.05,
-                "offset": 0
-              }
-            },
-            {
-              "biome": "minecraft:frozen_river",
-              "parameters": {
-                "temperature": [
-                  -0.45,
                   -0.25
                 ],
                 "humidity": [
@@ -202,33 +175,6 @@
               "parameters": {
                 "temperature": [
                   0,
-                  0.35
-                ],
-                "humidity": [
-                  -1,
-                  1
-                ],
-                "continentalness": [
-                  -1,
-                  1
-                ],
-                "erosion": [
-                  -1,
-                  0.2
-                ],
-                "weirdness": [
-                  -1,
-                  1
-                ],
-                "depth": 0.05,
-                "offset": 0
-              }
-            },
-            {
-              "biome": "minecraft:river",
-              "parameters": {
-                "temperature": [
-                  0.35,
                   0.55
                 ],
                 "humidity": [
@@ -386,7 +332,6 @@
                 "offset": 0
               }
             },
-
             {
               "biome": "minecraft:beach",
               "parameters": {
@@ -819,7 +764,6 @@
                 "offset": 0
               }
             },
-
             {
               "biome": "biox:caldera",
               "parameters": {
@@ -1690,7 +1634,6 @@
                 "offset": 0
               }
             },
-
             {
               "biome": "biox:mesa",
               "parameters": {
@@ -2291,7 +2234,6 @@
                 "offset": 0
               }
             },
-
             {
               "biome": "biox:caldera_cliffs",
               "parameters": {
@@ -2592,7 +2534,6 @@
                 "offset": 0
               }
             },
-
             {
               "biome": "biox:molten_caves",
               "parameters": {

@@ -24,7 +24,7 @@
     "temperature": "biox:temperature",
     "vegetation": "biox:vegetation",
     "continents": "biox:continents",
-    "erosion": "biox:normal",
+    "erosion": "biox:erosion",
     "depth": {
       "type": "minecraft:add",
       "argument1": {
@@ -186,16 +186,16 @@
         1
       ],
       "continentalness": [
-        -0.11,
+        -1,
         1
       ],
       "erosion": [
-        -1,
-        1
+        0,
+        0.21
       ],
       "weirdness": [
         -1,
-        -0.16
+        1
       ],
       "depth": 0,
       "offset": 0
@@ -210,15 +210,15 @@
         1
       ],
       "continentalness": [
-        -0.11,
-        1
-      ],
-      "erosion": [
         -1,
         1
       ],
+      "erosion": [
+        0,
+        0.21
+      ],
       "weirdness": [
-        0.16,
+        -1,
         1
       ],
       "depth": 0,
