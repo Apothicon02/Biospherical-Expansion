@@ -181,7 +181,7 @@
       "eco:clustered_tall_mushrooms",
       "eco:bushes_clustered",
       "eco:basic_flowers",
-      "eco:basic_grass",
+      "biox:basic_grass",
       "minecraft:patch_sugar_cane",
       "eco:clustered_pumpkin"
     ],

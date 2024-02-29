@@ -333,6 +333,61 @@
               }
             },
             {
+              "biome": "minecraft:frozen_river",
+              "parameters": {
+                "temperature": [
+                  -1,
+                  -0.5
+                ],
+                "humidity": [
+                  -1,
+                  1
+                ],
+                "continentalness": [
+                  -1,
+                  1
+                ],
+                "erosion": [
+                  0.2,
+                  0.312
+                ],
+                "weirdness": [
+                  -1,
+                  1
+                ],
+                "depth": 0.05,
+                "offset": 0
+              }
+            },
+            {
+              "biome": "minecraft:river",
+              "parameters": {
+                "temperature": [
+                  -0.5,
+                  1
+                ],
+                "humidity": [
+                  -1,
+                  1
+                ],
+                "continentalness": [
+                  -1,
+                  1
+                ],
+                "erosion": [
+                  0.2,
+                  0.312
+                ],
+                "weirdness": [
+                  -1,
+                  1
+                ],
+                "depth": 0.05,
+                "offset": 0
+              }
+            },
+
+            {
               "biome": "minecraft:beach",
               "parameters": {
                 "temperature": [
@@ -2550,7 +2605,7 @@
                   1
                 ],
                 "erosion": [
-                  0.2,
+                  0.312,
                   1
                 ],
                 "weirdness": [
@@ -2580,7 +2635,7 @@
                   1
                 ],
                 "erosion": [
-                  0.2,
+                  0.312,
                   1
                 ],
                 "weirdness": [
@@ -2610,7 +2665,7 @@
                   1
                 ],
                 "erosion": [
-                  0.2,
+                  0.312,
                   1
                 ],
                 "weirdness": [
@@ -2640,7 +2695,7 @@
                   1
                 ],
                 "erosion": [
-                  0.2,
+                  0.312,
                   1
                 ],
                 "weirdness": [
@@ -2670,7 +2725,7 @@
                   1
                 ],
                 "erosion": [
-                  0.2,
+                  0.312,
                   1
                 ],
                 "weirdness": [
@@ -2700,7 +2755,7 @@
                   1
                 ],
                 "erosion": [
-                  0.2,
+                  0.312,
                   1
                 ],
                 "weirdness": [
@@ -2730,7 +2785,7 @@
                   1
                 ],
                 "erosion": [
-                  0.2,
+                  0.312,
                   1
                 ],
                 "weirdness": [
@@ -2760,7 +2815,7 @@
                   1
                 ],
                 "erosion": [
-                  0.2,
+                  0.312,
                   1
                 ],
                 "weirdness": [

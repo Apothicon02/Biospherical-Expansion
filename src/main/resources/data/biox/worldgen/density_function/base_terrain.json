@@ -1,6 +1,6 @@
 {
   "type": "minecraft:max",
-  "argument1": 0,
+  "argument1": -1,
   "argument2": {
     "type": "minecraft:add",
     "argument1": "biox:oceans",

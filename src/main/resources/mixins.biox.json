@@ -9,7 +9,8 @@
   "mixins": [
     "BiomeMixin",
     "BiomeSpecialEffectsGrassMixin",
-    "NoiseBasedChunkGeneratorMixin"
+    "NoiseBasedChunkGeneratorMixin",
+    "UtilMixin"
   ],
   "client": [
     "NaturalSpawnerMixin"
