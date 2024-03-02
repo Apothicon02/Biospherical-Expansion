@@ -47,7 +47,7 @@
       "shift_y": 0,
       "shift_z": "minecraft:shift_z"
     },
-    "continents": {
+    "erosion": {
       "type": "minecraft:mul",
       "argument1": {
         "type": "minecraft:shifted_noise",
@@ -72,7 +72,7 @@
         "argument2": 3
       }
     },
-    "erosion": {
+    "continents": {
       "type": "minecraft:y_clamped_gradient",
       "from_y": -32,
       "to_y": -31,

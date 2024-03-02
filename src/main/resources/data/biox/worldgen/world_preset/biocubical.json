@@ -19,11 +19,11 @@
                   -1,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   0.2
                 ],
@@ -46,11 +46,11 @@
                   -0.5,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   0.2
                 ],
@@ -73,11 +73,11 @@
                   -1,
                   -0.5
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   0.2
                 ],
@@ -100,11 +100,11 @@
                   -1,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   0.2
                 ],
@@ -127,11 +127,11 @@
                   -1,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   0.2
                 ],
@@ -154,11 +154,11 @@
                   -1,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   0.2
                 ],
@@ -181,11 +181,11 @@
                   -1,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   0.2
                 ],
@@ -208,11 +208,11 @@
                   -1,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   0.2
                 ],
@@ -235,11 +235,11 @@
                   -1,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   0.2
                 ],
@@ -262,11 +262,11 @@
                   -1,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   0.2
                 ],
@@ -289,11 +289,11 @@
                   -1,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   0.2
                 ],
@@ -316,11 +316,11 @@
                   -1,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   0.2
                 ],
@@ -343,11 +343,11 @@
                   -1,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   0.2,
                   0.312
                 ],
@@ -370,11 +370,11 @@
                   -1,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   0.2,
                   0.312
                 ],
@@ -398,11 +398,11 @@
                   -0.5,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -425,11 +425,11 @@
                   -1,
                   -0.5
                 ],
-                "continentalness": [
+                "erosion": [
                   -0.5,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -452,11 +452,11 @@
                   -1,
                   -0.5
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   -0.5
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -479,11 +479,11 @@
                   -1,
                   0
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -506,11 +506,11 @@
                   -1,
                   0
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -533,11 +533,11 @@
                   -1,
                   0
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -560,11 +560,11 @@
                   0,
                   0.55
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -587,11 +587,11 @@
                   -1,
                   0.55
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -614,11 +614,11 @@
                   0.55,
                   0.6
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -641,11 +641,11 @@
                   0.6,
                   0.95
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -668,11 +668,11 @@
                   0.55,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -695,11 +695,11 @@
                   0.95,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -722,11 +722,11 @@
                   -0.5,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -749,11 +749,11 @@
                   -0.5,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -776,11 +776,11 @@
                   -0.5,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -803,11 +803,11 @@
                   -1,
                   -0.5
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -830,11 +830,11 @@
                   -1,
                   -0.5
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -860,11 +860,11 @@
                   -0.5,
                   0.2
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -890,11 +890,11 @@
                   0.2,
                   0.4
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -920,11 +920,11 @@
                   0.4,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -950,11 +950,11 @@
                   0.1,
                   0.3
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -980,11 +980,11 @@
                   0.3,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1010,11 +1010,11 @@
                   -1,
                   0.1
                 ],
-                "continentalness": [
+                "erosion": [
                   0.2,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1040,11 +1040,11 @@
                   -1,
                   0.1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   0.2
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1070,11 +1070,11 @@
                   -1,
                   0.1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1100,11 +1100,11 @@
                   0.1,
                   0.4
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1130,11 +1130,11 @@
                   0.4,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1160,11 +1160,11 @@
                   0.33,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1190,11 +1190,11 @@
                   0,
                   0.33
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1220,11 +1220,11 @@
                   -0.5,
                   -0.3
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   0
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1250,11 +1250,11 @@
                   -0.3,
                   0
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   0
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1280,11 +1280,11 @@
                   -0.3,
                   0
                 ],
-                "continentalness": [
+                "erosion": [
                   0,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1310,11 +1310,11 @@
                   -0.5,
                   -0.3
                 ],
-                "continentalness": [
+                "erosion": [
                   0,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1340,11 +1340,11 @@
                   -1,
                   -0.5
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1370,11 +1370,11 @@
                   -1,
                   0
                 ],
-                "continentalness": [
+                "erosion": [
                   0.33,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1400,11 +1400,11 @@
                   0,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   0.33,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1430,11 +1430,11 @@
                   -1,
                   0
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   0.33
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1460,11 +1460,11 @@
                   0,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   0.33
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1490,11 +1490,11 @@
                   -1,
                   0.45
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1520,11 +1520,11 @@
                   0.45,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   0
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1550,11 +1550,11 @@
                   0.45,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   0,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1580,11 +1580,11 @@
                   -1,
                   0.4
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1610,11 +1610,11 @@
                   -1,
                   0
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1640,11 +1640,11 @@
                   0,
                   0.4
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1670,11 +1670,11 @@
                   0.4,
                   0.45
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1700,11 +1700,11 @@
                   0.45,
                   0.99
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1730,11 +1730,11 @@
                   0.99,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1760,11 +1760,11 @@
                   0.15,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   0,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1790,11 +1790,11 @@
                   0.15,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   0,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1820,11 +1820,11 @@
                   0.15,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   0
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1850,11 +1850,11 @@
                   -1,
                   -0.15
                 ],
-                "continentalness": [
+                "erosion": [
                   0,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1880,11 +1880,11 @@
                   -1,
                   -0.15
                 ],
-                "continentalness": [
+                "erosion": [
                   0,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1910,11 +1910,11 @@
                   -1,
                   -0.15
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   0
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1940,11 +1940,11 @@
                   -0.15,
                   0.15
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -1970,11 +1970,11 @@
                   -1,
                   -0.6
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -2000,11 +2000,11 @@
                   -1,
                   -0.6
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -2030,11 +2030,11 @@
                   -0.6,
                   -0.25
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -2060,11 +2060,11 @@
                   -0.25,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -2090,11 +2090,11 @@
                   -0.25,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   0
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -2120,11 +2120,11 @@
                   -0.25,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   0,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -2150,11 +2150,11 @@
                   -0.25,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -2180,11 +2180,11 @@
                   -1,
                   -0.25
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -2210,11 +2210,11 @@
                   0.1,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -2240,11 +2240,11 @@
                   -0.5,
                   -0.1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -2270,11 +2270,11 @@
                   0.1,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -2300,11 +2300,11 @@
                   -0.5,
                   0.1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -2330,11 +2330,11 @@
                   -1,
                   -0.5
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -2360,11 +2360,11 @@
                   -1,
                   -0.5
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -2390,11 +2390,11 @@
                   -0.5,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -2420,11 +2420,11 @@
                   -1,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -2450,11 +2450,11 @@
                   -1,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -2480,11 +2480,11 @@
                   0.15,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   0,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -2510,11 +2510,11 @@
                   0.15,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   0,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -2540,11 +2540,11 @@
                   0.15,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   0
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -2570,11 +2570,11 @@
                   -1,
                   0.15
                 ],
-                "continentalness": [
+                "erosion": [
                   0,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -2600,11 +2600,11 @@
                   -1,
                   0.15
                 ],
-                "continentalness": [
+                "erosion": [
                   0,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -2630,11 +2630,11 @@
                   -1,
                   0.15
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   0
                 ],
-                "erosion": [
+                "continentalness": [
                   -1,
                   1
                 ],
@@ -2660,11 +2660,11 @@
                   -1,
                   0
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   0.312,
                   1
                 ],
@@ -2690,11 +2690,11 @@
                   0,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   0.312,
                   1
                 ],
@@ -2720,11 +2720,11 @@
                   -1,
                   0
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   0.312,
                   1
                 ],
@@ -2750,11 +2750,11 @@
                   0,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   0.312,
                   1
                 ],
@@ -2780,11 +2780,11 @@
                   0,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   0.312,
                   1
                 ],
@@ -2810,11 +2810,11 @@
                   0,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   0.312,
                   1
                 ],
@@ -2840,11 +2840,11 @@
                   -1,
                   0
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   0.312,
                   1
                 ],
@@ -2870,11 +2870,11 @@
                   0,
                   1
                 ],
-                "continentalness": [
+                "erosion": [
                   -1,
                   1
                 ],
-                "erosion": [
+                "continentalness": [
                   0.312,
                   1
                 ],

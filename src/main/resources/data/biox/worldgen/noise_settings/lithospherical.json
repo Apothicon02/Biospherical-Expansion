@@ -62,7 +62,7 @@
       "shift_y": 0,
       "shift_z": "minecraft:shift_z"
     },
-    "continents": {
+    "erosion": {
       "type": "minecraft:mul",
       "argument1": {
         "type": "minecraft:shifted_noise",
@@ -87,7 +87,7 @@
         "argument2": 3
       }
     },
-    "erosion": "minecraft:overworld_large_biomes/erosion",
+    "continents": "minecraft:overworld_large_biomes/erosion",
     "depth": {
       "type": "minecraft:add",
       "argument1": {
