@@ -1210,7 +1210,7 @@
               }
             },
             {
-              "biome": "minecraft:plains",
+              "biome": "biox:popping_plains",
               "parameters": {
                 "temperature": [
                   0,
@@ -1218,6 +1218,36 @@
                 ],
                 "humidity": [
                   -0.5,
+                  -0.3
+                ],
+                "continentalness": [
+                  -1,
+                  0
+                ],
+                "erosion": [
+                  -1,
+                  1
+                ],
+                "weirdness": [
+                  -1,
+                  1
+                ],
+                "depth": [
+                  0.2,
+                  0.3
+                ],
+                "offset": 0
+              }
+            },
+            {
+              "biome": "minecraft:plains",
+              "parameters": {
+                "temperature": [
+                  0,
+                  0.4
+                ],
+                "humidity": [
+                  -0.3,
                   0
                 ],
                 "continentalness": [
@@ -1247,8 +1277,38 @@
                   0.4
                 ],
                 "humidity": [
-                  -0.5,
+                  -0.3,
                   0
+                ],
+                "continentalness": [
+                  0,
+                  1
+                ],
+                "erosion": [
+                  -1,
+                  1
+                ],
+                "weirdness": [
+                  -1,
+                  1
+                ],
+                "depth": [
+                  0.2,
+                  0.3
+                ],
+                "offset": 0
+              }
+            },
+            {
+              "biome": "biox:sedimentary_plains",
+              "parameters": {
+                "temperature": [
+                  0,
+                  0.4
+                ],
+                "humidity": [
+                  -0.5,
+                  -0.3
                 ],
                 "continentalness": [
                   0,

@@ -1788,6 +1788,71 @@
               "if_true": {
                 "type": "minecraft:biome",
                 "biome_is": [
+                  "biox:sedimentary_plains"
+                ]
+              },
+              "then_run": {
+                "type": "minecraft:sequence",
+                "sequence": [
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "noise": "eco:surface_variation",
+                      "min_threshold": -0.069,
+                      "max_threshold": 0.042
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "minecraft:coarse_dirt"
+                      }
+                    }
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "noise": "eco:surface_variation",
+                      "min_threshold": -0.6,
+                      "max_threshold": -0.444
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "minecraft:granite"
+                      }
+                    }
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "noise": "eco:surface_variation",
+                      "min_threshold": 0.333,
+                      "max_threshold": 0.5
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "minecraft:tuff"
+                      }
+                    }
+                  },
+                  {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:grass_block"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:biome",
+                "biome_is": [
                   "minecraft:forest"
                 ]
               },
@@ -1841,7 +1906,8 @@
               "if_true": {
                 "type": "minecraft:biome",
                 "biome_is": [
-                  "biox:flower_plains"
+                  "biox:flower_plains",
+                  "biox:popping_plains"
                 ]
               },
               "then_run": {

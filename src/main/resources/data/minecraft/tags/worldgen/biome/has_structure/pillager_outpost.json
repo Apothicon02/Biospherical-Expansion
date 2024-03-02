@@ -6,6 +6,10 @@
     "biox:dark_plains",
     "biox:autumnal_dark_plains",
     "biox:birch_plains",
-    "biox:flower_plains"
+    "biox:flower_plains",
+    "biox:popping_plains",
+    "biox:lowlands",
+    "biox:sedimentary_plains",
+    "biox:tropical_plains"
   ]
 }

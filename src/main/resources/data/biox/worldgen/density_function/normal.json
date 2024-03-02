@@ -1,9 +1,9 @@
 {
   "type": "minecraft:add",
-  "argument1": "biox:base_terrain",
+  "argument1": "biox:eroded_and_normal_cliffs",
   "argument2": {
     "type": "minecraft:add",
-    "argument1": "biox:eroded_and_normal_cliffs",
+    "argument1": "biox:base_terrain",
     "argument2": {
       "type": "minecraft:add",
       "argument1": "biox:plateaus",

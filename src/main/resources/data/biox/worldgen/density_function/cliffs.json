@@ -36,7 +36,7 @@
             "argument2": {
               "type": "minecraft:noise",
               "noise": "biox:cliff_noise",
-              "xz_scale": 10,
+              "xz_scale": 3,
               "y_scale": 0
             }
           }

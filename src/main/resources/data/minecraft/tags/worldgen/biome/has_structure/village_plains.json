@@ -3,6 +3,11 @@
     "minecraft:sunflower_plains",
     "biox:orchard",
     "biox:birch_plains",
-    "biox:dark_plains"
+    "biox:dark_plains",
+    "biox:flower_plains",
+    "biox:popping_plains",
+    "biox:lowlands",
+    "biox:sedimentary_plains",
+    "biox:tropical_plains"
   ]
 }
