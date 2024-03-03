@@ -26,8 +26,8 @@
         "type": "minecraft:min",
         "argument1": {
           "type": "minecraft:noise",
-          "noise": "minecraft:temperature_large",
-          "xz_scale": 0.25,
+          "noise": "biox:temperature_large",
+          "xz_scale": 1,
           "y_scale": 0
         },
         "argument2": 0.99

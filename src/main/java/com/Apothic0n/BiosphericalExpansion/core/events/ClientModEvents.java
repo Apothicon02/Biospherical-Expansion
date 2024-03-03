@@ -199,7 +199,6 @@ public class ClientModEvents {
                 return -328966;
             }
         },
-                Blocks.DIRT, Blocks.ROOTED_DIRT, Blocks.COARSE_DIRT, Blocks.DIRT_PATH, Blocks.PODZOL, Blocks.MYCELIUM,
                 Blocks.NETHERRACK);
 
         event.register((blockState, blockAndTintGetter, blockPos, tint) -> {

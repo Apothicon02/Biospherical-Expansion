@@ -16,8 +16,6 @@ public abstract class BioxFeatureRegistry {
 
     public static final RegistryObject<Feature<SimpleBlockConfiguration>> BASIC_3X2X3_CUBE_FEATURE = FEATURES.register("basic_3x2x3_cube", () ->
             new Basic3x2x3CubeFeature(SimpleBlockConfiguration.CODEC));
-    public static final RegistryObject<Feature<NoneFeatureConfiguration>> UNLIMITED_ICE_SPIKE_FEATURE = FEATURES.register("unlimited_ice_spike", () ->
-            new UnlimitedIceSpikeFeature(NoneFeatureConfiguration.CODEC));
     public static final RegistryObject<Feature<OreSpikeConfiguration>> ORE_SPIKE_FEATURE = FEATURES.register("ore_spike", () ->
             new OreSpikeFeature(OreSpikeConfiguration.CODEC));
 

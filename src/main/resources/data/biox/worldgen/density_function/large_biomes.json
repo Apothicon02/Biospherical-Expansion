@@ -9,26 +9,11 @@
       "argument1": "biox:plateaus",
       "argument2": {
         "type": "minecraft:add",
-        "argument1": "biox:terraces",
+        "argument1": "biox:volcanoes",
         "argument2": {
-          "type": "minecraft:range_choice",
-          "input": {
-            "type": "minecraft:noise",
-            "noise": "biox:volcanoes",
-            "xz_scale": 1,
-            "y_scale": 0
-          },
-          "min_inclusive": 0.9,
-          "max_exclusive": 10000,
-          "when_in_range": "biox:volcanoes",
-          "when_out_of_range": {
-            "type": "minecraft:range_choice",
-            "input": "biox:calderas_large",
-            "min_inclusive": 0,
-            "max_exclusive": 10000,
-            "when_in_range": "biox:calderas_large",
-            "when_out_of_range": "biox:swamps_large"
-          }
+          "type": "minecraft:add",
+          "argument1": "biox:calderas_large",
+          "argument2": "biox:swamps_large"
         }
       }
     }

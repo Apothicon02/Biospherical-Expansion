@@ -1,5 +1,5 @@
 {
-  "feature": "biox:blackstone_cube",
+  "feature": "biox:coal_cube",
   "placement": [
     {
       "type": "minecraft:count",
@@ -48,7 +48,7 @@
           0
         ],
         "blocks": [
-          "minecraft:blackstone"
+          "minecraft:coal_block"
         ]
       }
     },
