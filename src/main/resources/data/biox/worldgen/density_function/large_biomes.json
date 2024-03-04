@@ -1,12 +1,12 @@
 {
   "type": "minecraft:add",
-  "argument1": "biox:eroded_and_normal_cliffs_large",
+  "argument1": "biox:base_terrain",
   "argument2": {
     "type": "minecraft:add",
-    "argument1": "biox:base_terrain",
+    "argument1": "biox:cliffs",
     "argument2": {
       "type": "minecraft:add",
-      "argument1": "biox:plateaus",
+      "argument1": "biox:badlands_large",
       "argument2": {
         "type": "minecraft:add",
         "argument1": "biox:volcanoes",

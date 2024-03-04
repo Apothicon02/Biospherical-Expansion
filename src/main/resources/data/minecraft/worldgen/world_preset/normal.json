@@ -4,7 +4,7 @@
       "type": "biox:brighter_overworld",
       "generator": {
         "type": "minecraft:noise",
-        "settings": "biox:biospherical",
+        "settings": "minecraft:overworld",
         "biome_source": {
           "type": "minecraft:multi_noise",
           "biomes": [

@@ -55,6 +55,8 @@ public class CommonForgeEvents {
                 for (int z = 0; z < 128000; z = z+128) {
                     BlockPos spawnPos = new BlockPos(x, 56, z);
                     if (!level.getBiome(spawnPos).is(BiomeTags.IS_OCEAN)) {
+                        ChunkPos chunkPos = level.getChunkAt(spawnPos).getPos();
+                        level.setChunkForced(chunkPos.x, chunkPos.z, true);
                         event.getSettings().setSpawn(spawnPos.atY(level.getHeight(Heightmap.Types.WORLD_SURFACE, x, z)), 0.0F);
                         cancel = true;
                         x = 128000;
