@@ -1,19 +1,33 @@
 {
   "type": "minecraft:add",
-  "argument1": "biox:base_terrain",
+  "argument1": {
+    "type": "minecraft:mul",
+    "argument1": "biox:rivers_large",
+    "argument2": {
+      "type": "minecraft:y_clamped_gradient",
+      "from_y": 59,
+      "to_y": 63,
+      "from_value": 0,
+      "to_value": 1
+    }
+  },
   "argument2": {
     "type": "minecraft:add",
-    "argument1": "biox:cliffs",
+    "argument1": "biox:swamps_large",
     "argument2": {
       "type": "minecraft:add",
-      "argument1": "biox:badlands_large",
+      "argument1": "biox:calderas_large",
       "argument2": {
         "type": "minecraft:add",
-        "argument1": "biox:volcanoes",
+        "argument1": "biox:badlands_large",
         "argument2": {
           "type": "minecraft:add",
-          "argument1": "biox:calderas_large",
-          "argument2": "biox:swamps_large"
+          "argument1": "biox:volcanoes",
+          "argument2": {
+            "type": "minecraft:add",
+            "argument1": "biox:cliffs",
+            "argument2": "biox:base_terrain_large"
+          }
         }
       }
     }

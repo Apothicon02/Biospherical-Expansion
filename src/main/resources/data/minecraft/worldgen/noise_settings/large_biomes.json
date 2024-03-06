@@ -23,8 +23,8 @@
     "lava": -1,
     "temperature": "biox:temperature_large",
     "vegetation": "biox:vegetation_large",
-    "erosion": "biox:continents",
-    "continents": "biox:erosion",
+    "erosion": "biox:continents_large",
+    "continents": "biox:erosion_large",
     "depth": {
       "type": "minecraft:add",
       "argument1": {

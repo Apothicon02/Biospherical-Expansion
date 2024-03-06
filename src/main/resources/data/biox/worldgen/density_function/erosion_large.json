@@ -3,14 +3,14 @@
   "input": {
     "type": "minecraft:noise",
     "noise": "biox:oceans",
-    "xz_scale": 1,
+    "xz_scale": 0.66,
     "y_scale": 0
   },
   "min_inclusive": 35,
   "max_exclusive": 10000,
   "when_in_range": {
     "type": "minecraft:range_choice",
-    "input": "biox:rivers",
+    "input": "biox:rivers_large",
     "min_inclusive": -10000,
     "max_exclusive": 0,
     "when_in_range": 0.21,
