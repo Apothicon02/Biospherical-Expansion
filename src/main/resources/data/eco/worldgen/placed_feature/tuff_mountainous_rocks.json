@@ -1,11 +1,6 @@
 {
-  "feature": "biox:sandstone_mountainous_rocks",
+  "feature": "eco:tuff_mountainous_rocks",
   "placement": [
-    {
-      "type": "minecraft:random_offset",
-      "xz_spread": 0,
-      "y_spread": -4
-    },
     {
       "type": "minecraft:block_predicate_filter",
       "predicate": {
@@ -15,9 +10,7 @@
           -1,
           0
         ],
-        "blocks": [
-          "minecraft:smooth_sandstone"
-        ]
+        "blocks": "#minecraft:base_stone_overworld"
       }
     }
   ]

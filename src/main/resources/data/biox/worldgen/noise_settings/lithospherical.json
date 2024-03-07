@@ -1377,7 +1377,7 @@
                 "biome_is": [
                   "minecraft:desert",
                   "minecraft:beach",
-                  "biox:sandstony_shore"
+                  "biox:himalayan_shore"
                 ]
               },
               "then_run": {
@@ -1517,6 +1517,41 @@
                     "type": "minecraft:block",
                     "result_state": {
                       "Name": "minecraft:gravel"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:biome",
+                "biome_is": [
+                  "biox:frozen_plains"
+                ]
+              },
+              "then_run": {
+                "type": "minecraft:sequence",
+                "sequence": [
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "noise": "eco:surface_variation",
+                      "min_threshold": -0.069,
+                      "max_threshold": 0.042
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "minecraft:blue_ice"
+                      }
+                    }
+                  },
+                  {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:packed_ice"
                     }
                   }
                 ]
@@ -3280,7 +3315,7 @@
                 "biome_is": [
                   "minecraft:desert",
                   "minecraft:beach",
-                  "biox:sandstony_shore"
+                  "biox:himalayan_shore"
                 ]
               },
               "then_run": {
@@ -3420,6 +3455,41 @@
                     "type": "minecraft:block",
                     "result_state": {
                       "Name": "minecraft:stone"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:biome",
+                "biome_is": [
+                  "biox:frozen_plains"
+                ]
+              },
+              "then_run": {
+                "type": "minecraft:sequence",
+                "sequence": [
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "noise": "eco:surface_variation",
+                      "min_threshold": -0.069,
+                      "max_threshold": 0.042
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "minecraft:blue_ice"
+                      }
+                    }
+                  },
+                  {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:packed_ice"
                     }
                   }
                 ]

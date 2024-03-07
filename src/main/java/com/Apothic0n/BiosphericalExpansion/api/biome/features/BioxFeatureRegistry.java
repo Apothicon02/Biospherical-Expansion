@@ -4,7 +4,6 @@ import com.Apothic0n.BiosphericalExpansion.BiosphericalExpansion;
 import com.Apothic0n.BiosphericalExpansion.api.biome.features.configurations.OreSpikeConfiguration;
 import com.Apothic0n.BiosphericalExpansion.api.biome.features.types.*;
 import net.minecraft.world.level.levelgen.feature.Feature;
-import net.minecraft.world.level.levelgen.feature.configurations.NoneFeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -18,7 +17,8 @@ public abstract class BioxFeatureRegistry {
             new Basic3x2x3CubeFeature(SimpleBlockConfiguration.CODEC));
     public static final RegistryObject<Feature<OreSpikeConfiguration>> ORE_SPIKE_FEATURE = FEATURES.register("ore_spike", () ->
             new OreSpikeFeature(OreSpikeConfiguration.CODEC));
-
+    public static final RegistryObject<Feature<SimpleBlockConfiguration>> CRYSTAL_FEATURE = FEATURES.register("crystal", () ->
+            new CrystalFeature(SimpleBlockConfiguration.CODEC));
     public static void register(IEventBus eventBus) {
         FEATURES.register(eventBus);
     }

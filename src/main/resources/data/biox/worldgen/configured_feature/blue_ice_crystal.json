@@ -1,10 +1,10 @@
 {
-  "type": "biox:basic_3x2x3_cube",
+  "type": "biox:crystal",
   "config": {
     "to_place": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "minecraft:red_sandstone"
+        "Name": "minecraft:blue_ice"
       }
     }
   }

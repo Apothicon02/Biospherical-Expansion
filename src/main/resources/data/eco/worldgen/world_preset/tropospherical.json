@@ -526,7 +526,7 @@
               }
             },
             {
-              "biome": "biox:sandstony_shore",
+              "biome": "biox:himalayan_shore",
               "parameters": {
                 "temperature": [
                   0.55,
@@ -580,7 +580,7 @@
               }
             },
             {
-              "biome": "biox:sandstony_shore",
+              "biome": "biox:himalayan_shore",
               "parameters": {
                 "temperature": [
                   0.5,
@@ -854,10 +854,40 @@
               }
             },
             {
-              "biome": "minecraft:snowy_plains",
+              "biome": "biox:frozen_plains",
               "parameters": {
                 "temperature": [
                   -1,
+                  -0.66
+                ],
+                "humidity": [
+                  -0.5,
+                  0.2
+                ],
+                "erosion": [
+                  -1,
+                  1
+                ],
+                "continentalness": [
+                  -1,
+                  1
+                ],
+                "weirdness": [
+                  -1,
+                  1
+                ],
+                "depth": [
+                  0.2,
+                  0.3
+                ],
+                "offset": 0
+              }
+            },
+            {
+              "biome": "minecraft:snowy_plains",
+              "parameters": {
+                "temperature": [
+                  -0.66,
                   -0.25
                 ],
                 "humidity": [
@@ -2295,10 +2325,40 @@
               }
             },
             {
-              "biome": "minecraft:snowy_plains",
+              "biome": "biox:frozen_plains",
               "parameters": {
                 "temperature": [
                   -1,
+                  -0.66
+                ],
+                "humidity": [
+                  -0.5,
+                  0.1
+                ],
+                "erosion": [
+                  -1,
+                  1
+                ],
+                "continentalness": [
+                  -1,
+                  1
+                ],
+                "weirdness": [
+                  -1,
+                  1
+                ],
+                "depth": [
+                  0.313,
+                  0.407
+                ],
+                "offset": 0
+              }
+            },
+            {
+              "biome": "minecraft:snowy_plains",
+              "parameters": {
+                "temperature": [
+                  -0.66,
                   -0.4
                 ],
                 "humidity": [

@@ -1,10 +1,10 @@
 {
   "dimensions": {
     "minecraft:overworld": {
-      "type": "eco:the_open_overworld",
+      "type": "biox:brighter_overworld",
       "generator": {
         "type": "minecraft:noise",
-        "settings": "biox:exospherical",
+        "settings": "biox:biocubical_large_biomes",
         "biome_source": {
           "type": "minecraft:multi_noise",
           "biomes": [
@@ -40,33 +40,6 @@
               "parameters": {
                 "temperature": [
                   -1,
-                  -0.45
-                ],
-                "humidity": [
-                  -0.5,
-                  1
-                ],
-                "erosion": [
-                  -1,
-                  1
-                ],
-                "continentalness": [
-                  -1,
-                  0.2
-                ],
-                "weirdness": [
-                  -1,
-                  1
-                ],
-                "depth": 0.05,
-                "offset": 0
-              }
-            },
-            {
-              "biome": "minecraft:frozen_river",
-              "parameters": {
-                "temperature": [
-                  -0.45,
                   -0.25
                 ],
                 "humidity": [
@@ -205,33 +178,6 @@
               "parameters": {
                 "temperature": [
                   0,
-                  0.35
-                ],
-                "humidity": [
-                  -1,
-                  1
-                ],
-                "erosion": [
-                  -1,
-                  1
-                ],
-                "continentalness": [
-                  -1,
-                  0.2
-                ],
-                "weirdness": [
-                  -1,
-                  1
-                ],
-                "depth": 0.05,
-                "offset": 0
-              }
-            },
-            {
-              "biome": "minecraft:river",
-              "parameters": {
-                "temperature": [
-                  0.35,
                   0.55
                 ],
                 "humidity": [
@@ -389,12 +335,66 @@
                 "offset": 0
               }
             },
+            {
+              "biome": "minecraft:frozen_river",
+              "parameters": {
+                "temperature": [
+                  -1,
+                  -0.5
+                ],
+                "humidity": [
+                  -1,
+                  1
+                ],
+                "erosion": [
+                  -1,
+                  1
+                ],
+                "continentalness": [
+                  0.2,
+                  0.312
+                ],
+                "weirdness": [
+                  -1,
+                  1
+                ],
+                "depth": 0.05,
+                "offset": 0
+              }
+            },
+            {
+              "biome": "minecraft:river",
+              "parameters": {
+                "temperature": [
+                  -0.5,
+                  1
+                ],
+                "humidity": [
+                  -1,
+                  1
+                ],
+                "erosion": [
+                  -1,
+                  1
+                ],
+                "continentalness": [
+                  0.2,
+                  0.312
+                ],
+                "weirdness": [
+                  -1,
+                  1
+                ],
+                "depth": 0.05,
+                "offset": 0
+              }
+            },
 
             {
               "biome": "minecraft:beach",
               "parameters": {
                 "temperature": [
-                  -0.5,
+                  -0.3,
                   0.5
                 ],
                 "humidity": [
@@ -719,7 +719,7 @@
               "parameters": {
                 "temperature": [
                   -1,
-                  -0.5
+                  -0.3
                 ],
                 "humidity": [
                   -0.5,
@@ -746,7 +746,7 @@
               "parameters": {
                 "temperature": [
                   -1,
-                  -0.5
+                  -0.3
                 ],
                 "humidity": [
                   -0.5,
@@ -772,7 +772,7 @@
               "biome": "minecraft:stony_shore",
               "parameters": {
                 "temperature": [
-                  -0.5,
+                  -0.3,
                   -0.25
                 ],
                 "humidity": [
@@ -1783,7 +1783,6 @@
                 "offset": 0
               }
             },
-
             {
               "biome": "biox:mesa",
               "parameters": {
@@ -2414,7 +2413,6 @@
                 "offset": 0
               }
             },
-
             {
               "biome": "biox:caldera_cliffs",
               "parameters": {
@@ -2715,7 +2713,6 @@
                 "offset": 0
               }
             },
-
             {
               "biome": "biox:molten_caves",
               "parameters": {
@@ -2732,7 +2729,7 @@
                   1
                 ],
                 "continentalness": [
-                  0.2,
+                  0.312,
                   1
                 ],
                 "weirdness": [
@@ -2762,7 +2759,7 @@
                   1
                 ],
                 "continentalness": [
-                  0.2,
+                  0.312,
                   1
                 ],
                 "weirdness": [
@@ -2792,7 +2789,7 @@
                   1
                 ],
                 "continentalness": [
-                  0.2,
+                  0.312,
                   1
                 ],
                 "weirdness": [
@@ -2822,7 +2819,7 @@
                   1
                 ],
                 "continentalness": [
-                  0.2,
+                  0.312,
                   1
                 ],
                 "weirdness": [
@@ -2852,7 +2849,7 @@
                   1
                 ],
                 "continentalness": [
-                  0.2,
+                  0.312,
                   1
                 ],
                 "weirdness": [
@@ -2882,7 +2879,7 @@
                   1
                 ],
                 "continentalness": [
-                  0.2,
+                  0.312,
                   1
                 ],
                 "weirdness": [
@@ -2912,7 +2909,7 @@
                   1
                 ],
                 "continentalness": [
-                  0.2,
+                  0.312,
                   1
                 ],
                 "weirdness": [
@@ -2942,7 +2939,7 @@
                   1
                 ],
                 "continentalness": [
-                  0.2,
+                  0.312,
                   1
                 ],
                 "weirdness": [
@@ -2960,6 +2957,17 @@
         }
       }
     },
+    "minecraft:the_nether": {
+      "type": "minecraft:the_nether",
+      "generator": {
+        "type": "minecraft:noise",
+        "settings": "minecraft:nether",
+        "biome_source": {
+          "type": "minecraft:multi_noise",
+          "preset": "minecraft:nether"
+        }
+      }
+    },
     "minecraft:the_end": {
       "type": "minecraft:the_end",
       "generator": {
@@ -2967,17 +2975,6 @@
         "settings": "minecraft:end",
         "biome_source": {
           "type": "minecraft:the_end"
-        }
-      }
-    },
-    "minecraft:the_nether": {
-      "type": "eco:the_open_nether",
-      "generator": {
-        "type": "minecraft:noise",
-        "settings": "eco:exospherical_nether",
-        "biome_source": {
-          "type": "minecraft:multi_noise",
-          "preset": "minecraft:nether"
         }
       }
     }

@@ -1,6 +1,7 @@
 {
   "replace": false,
   "values": [
-    "biox:biocubical"
+    "biox:biocubical",
+    "biox:biocubical_large_biomes"
   ]
 }

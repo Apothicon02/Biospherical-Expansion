@@ -1,13 +1,14 @@
 {
-  "temperature": 0,
+  "temperature": -0.85,
   "downfall": 0.5,
   "has_precipitation": true,
-  "temperature_modifier": "frozen",
+  "category": "icy",
   "effects": {
     "sky_color": 9806079,
     "fog_color": 12638463,
     "water_color": 7318712,
     "water_fog_color": 272948,
+    "foliage_color": 16777215,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
@@ -26,6 +27,12 @@
     ],
     "axolotls": [],
     "creature": [
+      {
+        "type": "minecraft:rabbit",
+        "weight": 10,
+        "minCount": 2,
+        "maxCount": 3
+      },
       {
         "type": "minecraft:polar_bear",
         "weight": 1,
@@ -55,7 +62,7 @@
       },
       {
         "type": "minecraft:skeleton",
-        "weight": 100,
+        "weight": 20,
         "minCount": 4,
         "maxCount": 4
       },
@@ -84,10 +91,10 @@
         "maxCount": 1
       },
       {
-        "type": "minecraft:drowned",
-        "weight": 5,
-        "minCount": 1,
-        "maxCount": 1
+        "type": "minecraft:stray",
+        "weight": 80,
+        "minCount": 4,
+        "maxCount": 4
       }
     ],
     "underground_water_creature": [
@@ -98,22 +105,8 @@
         "maxCount": 6
       }
     ],
-    "water_ambient": [
-      {
-        "type": "minecraft:salmon",
-        "weight": 15,
-        "minCount": 1,
-        "maxCount": 5
-      }
-    ],
-    "water_creature": [
-      {
-        "type": "minecraft:squid",
-        "weight": 1,
-        "minCount": 1,
-        "maxCount": 4
-      }
-    ]
+    "water_ambient": [],
+    "water_creature": []
   },
   "spawn_costs": {},
   "carvers": {
@@ -126,36 +119,15 @@
   "features": [
     [],
     [
-      "minecraft:lake_lava_underground",
       "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:iceberg_packed",
-      "minecraft:iceberg_blue",
-      "minecraft:amethyst_geode",
-      "eco:sparse_packed_ice_pillar",
-      "eco:sparse_thin_blue_ice_pillar",
-      "eco:sparse_dark_prismarine_pillar",
-      "biox:blue_ice_crystals"
     ],
     [
-      "minecraft:monster_room",
-      "minecraft:monster_room_deep"
-    ],
-    [
-      "minecraft:blue_ice"
     ],
     [],
+    [],
     [
-      "minecraft:ore_dirt",
-      "minecraft:ore_gravel",
-      "minecraft:ore_granite_upper",
-      "minecraft:ore_granite_lower",
-      "minecraft:ore_diorite_upper",
-      "minecraft:ore_diorite_lower",
-      "minecraft:ore_andesite_upper",
-      "minecraft:ore_andesite_lower",
-      "minecraft:ore_tuff",
       "minecraft:ore_coal_upper",
       "minecraft:ore_coal_lower",
       "minecraft:ore_iron_upper",
@@ -170,11 +142,7 @@
       "minecraft:ore_diamond_buried",
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
-      "minecraft:ore_copper",
-      "minecraft:underwater_magma",
-      "minecraft:disk_sand",
-      "minecraft:disk_clay",
-      "minecraft:disk_gravel"
+      "minecraft:ore_copper"
     ],
     [],
     [
@@ -183,24 +151,14 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:trees_water",
-      "minecraft:flower_default",
-      "minecraft:patch_grass_badlands",
-      "minecraft:brown_mushroom_normal",
-      "minecraft:red_mushroom_normal",
-      "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin",
-      "eco:large_pumpkin",
-      "eco:cave_seagrass_warm",
-      "eco:cave_kelp_warm",
-      "eco:cave_pickle",
-      "eco:snowy_pool_with_ice",
-      "eco:powdered_snow_pool",
-      "eco:patch_snow_layer"
+      "eco:white_stones",
+      "eco:calcite_pond",
+      "biox:packed_ice_ice_spike",
+      "eco:trees_giant_spruce",
+      "biox:basic_grass",
+      "eco:fern_grass"
     ],
     [
-      "eco:dense_powdered_snow_fall",
-      "biox:amethyst_frosted_ice_crystals",
       "minecraft:freeze_top_layer"
     ]
   ]

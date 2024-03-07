@@ -1,68 +1,30 @@
 {
-  "sea_level": -64,
+  "sea_level": 63,
   "disable_mob_generation": false,
-  "aquifers_enabled": false,
+  "aquifers_enabled": true,
   "ore_veins_enabled": true,
-  "legacy_random_source": true,
+  "legacy_random_source": false,
   "default_block": {
     "Name": "minecraft:stone"
   },
   "default_fluid": {
-    "Name": "minecraft:water",
-    "Properties": {
-      "level": "0"
-    }
+    "Name": "minecraft:water"
   },
   "noise": {
     "min_y": -64,
-    "height": 320,
+    "height": 384,
     "size_horizontal": 1,
     "size_vertical": 1
   },
   "noise_router": {
-    "barrier": 1,
+    "barrier": -1,
     "fluid_level_floodedness": -1,
-    "fluid_level_spread": {
-      "type": "minecraft:noise",
-      "noise": "minecraft:aquifer_fluid_level_spread",
-      "xz_scale": 1,
-      "y_scale": 0.7142857142857143
-    },
-    "lava": 0,
-    "temperature": "biox:temperature",
-    "vegetation": "biox:vegetation",
-    "erosion": {
-      "type": "minecraft:mul",
-      "argument1": {
-        "type": "minecraft:shifted_noise",
-        "noise": "minecraft:continentalness_large",
-        "xz_scale": 1,
-        "y_scale": 0,
-        "shift_x": "minecraft:shift_x",
-        "shift_y": 0,
-        "shift_z": "minecraft:shift_z"
-      },
-      "argument2": {
-        "type": "minecraft:mul",
-        "argument1": {
-          "type": "minecraft:shifted_noise",
-          "noise": "minecraft:erosion_large",
-          "xz_scale": 1,
-          "y_scale": 0,
-          "shift_x": "minecraft:shift_x",
-          "shift_y": 0,
-          "shift_z": "minecraft:shift_z"
-        },
-        "argument2": 3
-      }
-    },
-    "continents": {
-      "type": "minecraft:y_clamped_gradient",
-      "from_y": -32,
-      "to_y": -31,
-      "from_value": 1,
-      "to_value": 0.19
-    },
+    "fluid_level_spread": -1,
+    "lava": -1,
+    "temperature": "biox:temperature_large",
+    "vegetation": "biox:vegetation_large",
+    "erosion": "biox:continents_large",
+    "continents": "biox:erosion_large",
     "depth": {
       "type": "minecraft:add",
       "argument1": {
@@ -95,21 +57,139 @@
             "from_y": 65,
             "to_y": 320,
             "from_value": 0,
-            "to_value": 0.293
+            "to_value": 0.8
           }
         }
       }
     },
     "ridges": "minecraft:overworld/ridges",
-    "initial_density_without_jaggedness": 0,
-    "final_density": {
-      "type": "minecraft:max",
-      "argument1": "eco:exospherical_islands",
-      "argument2": "eco:pointy_tropospherical_islands"
+    "initial_density_without_jaggedness": {
+      "type": "minecraft:y_clamped_gradient",
+      "from_y": 15,
+      "to_y": 16,
+      "from_value": 1,
+      "to_value": -1
     },
-    "vein_toggle": 0,
-    "vein_ridged": 0,
-    "vein_gap": 0
+    "final_density": {
+      "type": "minecraft:min",
+      "argument1": {
+        "type": "minecraft:range_choice",
+        "input": {
+          "type": "minecraft:y_clamped_gradient",
+          "from_y": 15,
+          "to_y": 16,
+          "from_value": 0,
+          "to_value": 1
+        },
+        "min_inclusive": 0,
+        "max_exclusive": 1,
+        "when_in_range": {
+          "type": "minecraft:cache_once",
+          "argument": "biox:caves"
+        },
+        "when_out_of_range": {
+          "type": "minecraft:range_choice",
+          "input": {
+            "type": "minecraft:add",
+            "argument1": {
+              "type": "minecraft:y_clamped_gradient",
+              "from_y": 255,
+              "to_y": 256,
+              "from_value": 0,
+              "to_value": 1
+            },
+            "argument2": {
+              "type": "minecraft:range_choice",
+              "input": {
+                "type": "minecraft:noise",
+                "noise": "biox:volcanoes",
+                "xz_scale": 1,
+                "y_scale": 0
+              },
+              "min_inclusive": 0.82,
+              "max_exclusive": 100,
+              "when_in_range": 0,
+              "when_out_of_range": 1
+            }
+          },
+          "min_inclusive": 0,
+          "max_exclusive": 1000,
+          "when_in_range": {
+            "type": "minecraft:cache_once",
+            "argument": "biox:large_biomes"
+          },
+          "when_out_of_range": 0
+        }
+      },
+      "argument2": 1
+    },
+    "vein_toggle": {
+      "type": "minecraft:interpolated",
+      "argument": {
+        "type": "minecraft:range_choice",
+        "input": "minecraft:y",
+        "min_inclusive": -60,
+        "max_exclusive": 51,
+        "when_in_range": {
+          "type": "minecraft:noise",
+          "noise": "minecraft:ore_veininess",
+          "xz_scale": 1.5,
+          "y_scale": 1.5
+        },
+        "when_out_of_range": 0
+      }
+    },
+    "vein_ridged": {
+      "type": "minecraft:add",
+      "argument1": -0.07999999821186066,
+      "argument2": {
+        "type": "minecraft:max",
+        "argument1": {
+          "type": "minecraft:abs",
+          "argument": {
+            "type": "minecraft:interpolated",
+            "argument": {
+              "type": "minecraft:range_choice",
+              "input": "minecraft:y",
+              "min_inclusive": -60,
+              "max_exclusive": 51,
+              "when_in_range": {
+                "type": "minecraft:noise",
+                "noise": "minecraft:ore_vein_a",
+                "xz_scale": 4,
+                "y_scale": 4
+              },
+              "when_out_of_range": 0
+            }
+          }
+        },
+        "argument2": {
+          "type": "minecraft:abs",
+          "argument": {
+            "type": "minecraft:interpolated",
+            "argument": {
+              "type": "minecraft:range_choice",
+              "input": "minecraft:y",
+              "min_inclusive": -60,
+              "max_exclusive": 51,
+              "when_in_range": {
+                "type": "minecraft:noise",
+                "noise": "minecraft:ore_vein_b",
+                "xz_scale": 4,
+                "y_scale": 4
+              },
+              "when_out_of_range": 0
+            }
+          }
+        }
+      }
+    },
+    "vein_gap": {
+      "type": "minecraft:noise",
+      "noise": "minecraft:ore_gap",
+      "xz_scale": 1,
+      "y_scale": 1
+    }
   },
   "spawn_target": [
     {
@@ -122,16 +202,16 @@
         1
       ],
       "continentalness": [
-        -0.11,
+        -1,
         1
       ],
       "erosion": [
-        -1,
-        1
+        0,
+        0.21
       ],
       "weirdness": [
         -1,
-        -0.16
+        1
       ],
       "depth": 0,
       "offset": 0
@@ -146,15 +226,15 @@
         1
       ],
       "continentalness": [
-        -0.11,
-        1
-      ],
-      "erosion": [
         -1,
         1
       ],
+      "erosion": [
+        0,
+        0.21
+      ],
       "weirdness": [
-        0.16,
+        -1,
         1
       ],
       "depth": 0,
@@ -4719,7 +4799,7 @@
         "type": "minecraft:condition",
         "if_true": {
           "type": "minecraft:noise_threshold",
-          "noise": "biox:temperature",
+          "noise": "biox:temperature_large",
           "min_threshold": -10,
           "max_threshold": -0.25
         },
@@ -5263,7 +5343,7 @@
         "type": "minecraft:condition",
         "if_true": {
           "type": "minecraft:noise_threshold",
-          "noise": "biox:temperature",
+          "noise": "biox:temperature_large",
           "min_threshold": 0.5,
           "max_threshold": 10
         },
@@ -5274,7 +5354,7 @@
               "type": "minecraft:condition",
               "if_true": {
                 "type": "minecraft:noise_threshold",
-                "noise": "biox:vegetation",
+                "noise": "biox:vegetation_large",
                 "min_threshold": -10,
                 "max_threshold": 0
               },
@@ -6422,7 +6502,7 @@
               "type": "minecraft:condition",
               "if_true": {
                 "type": "minecraft:noise_threshold",
-                "noise": "biox:vegetation",
+                "noise": "biox:vegetation_large",
                 "min_threshold": 0,
                 "max_threshold": 10
               },
@@ -6714,7 +6794,7 @@
               "type": "minecraft:condition",
               "if_true": {
                 "type": "minecraft:noise_threshold",
-                "noise": "biox:vegetation",
+                "noise": "biox:vegetation_large",
                 "min_threshold": -10,
                 "max_threshold": 0
               },
@@ -7862,7 +7942,7 @@
               "type": "minecraft:condition",
               "if_true": {
                 "type": "minecraft:noise_threshold",
-                "noise": "biox:vegetation",
+                "noise": "biox:vegetation_large",
                 "min_threshold": 0,
                 "max_threshold": 10
               },

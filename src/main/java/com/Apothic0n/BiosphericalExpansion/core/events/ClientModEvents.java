@@ -4,13 +4,16 @@ import com.Apothic0n.BiosphericalExpansion.BiosphericalExpansion;
 import com.Apothic0n.BiosphericalExpansion.core.objects.*;
 import com.google.common.collect.ImmutableList;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Cursor3D;
 import net.minecraft.util.FastColor;
 import net.minecraft.util.Mth;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.level.ColorResolver;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.GrassColor;
 import net.minecraft.world.level.block.Block;
@@ -220,9 +223,34 @@ public class ClientModEvents {
                         return -328966;
                     }
                 },
-                Blocks.SAND, Blocks.SANDSTONE, Blocks.SANDSTONE_STAIRS, Blocks.SANDSTONE_SLAB, Blocks.SANDSTONE_WALL,
-                Blocks.RED_SAND, Blocks.RED_SANDSTONE, Blocks.RED_SANDSTONE_STAIRS, Blocks.RED_SANDSTONE_SLAB, Blocks.RED_SANDSTONE_WALL,
                 Blocks.SNOW_BLOCK, Blocks.SNOW, Blocks.POWDER_SNOW);
+
+        event.register((blockState, blockAndTintGetter, blockPos, tint) -> {
+                    if (blockPos != null) {
+                        int x = blockPos.getX();
+                        int z = blockPos.getZ();
+                        int color = -328966;
+                        double saturate = Mth.clamp(SATURATION_NOISE.getValue(x * 0.077, z * 0.09, false) * 0.33, -0.03, 0.03) + 1;
+                        double brighten = Mth.clamp(BRIGHTNESS_NOISE.getValue(x * 0.05, z * 0.01, false) * 0.11, -0.1, 0.1);
+                        float red = (float) Mth.clamp(FastColor.ABGR32.red(color), 1, 255) / 255;
+                        float green = (float) Mth.clamp(FastColor.ABGR32.green(color), 1, 255) / 255;
+                        float blue = (float) Mth.clamp(FastColor.ABGR32.blue(color), 1, 255) / 255;
+                        float gray = (float) ((red + green + blue) / (3 + brighten));
+                        if (Minecraft.getInstance().level.getBiome(blockPos).toString().contains("himalayan")) {
+                            return -9729;
+                        }
+                        return FastColor.ABGR32.color(FastColor.ABGR32.alpha(color),
+                                (int) (Mth.clamp((blue + (gray - blue)) * saturate, 0, 1) * 255),
+                                (int) (Mth.clamp((green + (gray - green)) * saturate, 0, 1) * 255),
+                                (int) (Mth.clamp((red + (gray - red)) * saturate, 0, 1) * 255));
+                    } else {
+                        return -328966;
+                    }
+                },
+                Blocks.SAND, Blocks.SANDSTONE, Blocks.SANDSTONE_STAIRS, Blocks.SANDSTONE_SLAB, Blocks.SANDSTONE_WALL,
+                Blocks.SMOOTH_SANDSTONE, Blocks.SMOOTH_SANDSTONE_STAIRS, Blocks.SMOOTH_SANDSTONE_SLAB, Blocks.CHISELED_SANDSTONE,
+                Blocks.RED_SAND, Blocks.RED_SANDSTONE, Blocks.RED_SANDSTONE_STAIRS, Blocks.RED_SANDSTONE_SLAB, Blocks.RED_SANDSTONE_WALL,
+                Blocks.SMOOTH_RED_SANDSTONE, Blocks.SMOOTH_RED_SANDSTONE_STAIRS, Blocks.SMOOTH_RED_SANDSTONE_SLAB, Blocks.CHISELED_RED_SANDSTONE);
 
         event.register((blockState, blockAndTintGetter, blockPos, tint) -> {
                     if (blockPos != null) {
@@ -355,7 +383,6 @@ public class ClientModEvents {
                 Blocks.MOSS_BLOCK, Blocks.MOSS_CARPET,
                 Blocks.GLOW_LICHEN, BioxBlocks.AQUATIC_LICHEN.get());
     }
-
 
     @SubscribeEvent
     public static void onItemColors(RegisterColorHandlersEvent.Item event) {
