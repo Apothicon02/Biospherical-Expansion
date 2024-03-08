@@ -2118,6 +2118,36 @@
               "parameters": {
                 "temperature": [
                   -0.2,
+                  0
+                ],
+                "humidity": [
+                  -0.25,
+                  1
+                ],
+                "erosion": [
+                  -1,
+                  0
+                ],
+                "continentalness": [
+                  -1,
+                  1
+                ],
+                "weirdness": [
+                  -1,
+                  1
+                ],
+                "depth": [
+                  0.313,
+                  0.407
+                ],
+                "offset": 0
+              }
+            },
+            {
+              "biome": "biox:birch_hills",
+              "parameters": {
+                "temperature": [
+                  0,
                   0.25
                 ],
                 "humidity": [

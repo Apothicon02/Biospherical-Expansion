@@ -175,6 +175,8 @@ dependencies {
 
     // ecospherical expansion
     implementation fg.deobf("com.Apothic0n.EcosphericalExpansion:Ecospherical-Expansion:2.4.4")
+    // locator
+    runtimeOnly fg.deobf("com.Apothic0n.Locator:Locator:1.1.0")
 
     // Apply Mixin AP
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
