@@ -1,5 +1,6 @@
 package com.Apothic0n.BiosphericalExpansion;
 
+import com.Apothic0n.BiosphericalExpansion.api.BioxDensityFunctions;
 import com.Apothic0n.BiosphericalExpansion.api.biome.features.BioxFeatureRegistry;
 import com.Apothic0n.BiosphericalExpansion.api.biome.features.decorators.BioxTreeDecoratorType;
 import com.Apothic0n.BiosphericalExpansion.api.biome.features.foliage_placers.BioxFoliagePlacerType;
@@ -25,6 +26,7 @@ public class BiosphericalExpansion {
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::commonSetup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
 
+        BioxDensityFunctions.register(eventBus);
         BioxParticleTypes.PARTICLE_TYPES.register(eventBus);
         BioxBlocks.BLOCKS.register(eventBus);
         BioxBlocks.generateStairsSlabsWalls();

@@ -23,46 +23,15 @@
     "lava": -1,
     "temperature": "biox:temperature",
     "vegetation": "biox:vegetation",
-    "erosion": "biox:continents",
-    "continents": "biox:erosion",
-    "depth": {
-      "type": "minecraft:add",
-      "argument1": {
-        "type": "minecraft:y_clamped_gradient",
-        "from_y": 39,
-        "to_y": 40,
-        "from_value": 0,
-        "to_value": 0.05
-      },
-      "argument2": {
-        "type": "minecraft:add",
-        "argument1": {
-          "type": "minecraft:y_clamped_gradient",
-          "from_y": 58,
-          "to_y": 59,
-          "from_value": 0,
-          "to_value": 0.05
-        },
-        "argument2": {
-          "type": "minecraft:add",
-          "argument1": {
-            "type": "minecraft:y_clamped_gradient",
-            "from_y": 62,
-            "to_y": 64,
-            "from_value": 0,
-            "to_value": 0.1
-          },
-          "argument2": {
-            "type": "minecraft:y_clamped_gradient",
-            "from_y": 65,
-            "to_y": 320,
-            "from_value": 0,
-            "to_value": 0.8
-          }
-        }
-      }
+    "erosion": 0,
+    "continents": {
+      "type": "biox:to_heightmap",
+      "input": "biox:normal",
+      "min_y": -64,
+      "max_y": 319
     },
-    "ridges": "minecraft:overworld/ridges",
+    "depth": 0,
+    "ridges": 0,
     "initial_density_without_jaggedness": {
       "type": "minecraft:y_clamped_gradient",
       "from_y": 15,
@@ -116,8 +85,7 @@
         }
       },
       "argument2": 1
-    }
-  ,
+    },
     "vein_toggle": {
       "type": "minecraft:interpolated",
       "argument": {

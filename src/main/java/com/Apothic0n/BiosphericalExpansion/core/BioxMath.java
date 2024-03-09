@@ -12,4 +12,8 @@ public class BioxMath {
             return 0;
         }
     }
+
+    public static double progressBetweenInts(int min, int max, int value) {
+        return (double) value / (max + min);
+    }
 }
