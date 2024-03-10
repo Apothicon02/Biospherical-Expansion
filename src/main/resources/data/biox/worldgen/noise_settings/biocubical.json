@@ -863,6 +863,7 @@
               "if_true": {
                 "type": "minecraft:biome",
                 "biome_is": [
+                  "minecraft:river",
                   "minecraft:swamp",
                   "minecraft:mangrove_swamp",
                   "minecraft:mushroom_fields"
@@ -2801,6 +2802,7 @@
               "if_true": {
                 "type": "minecraft:biome",
                 "biome_is": [
+                  "minecraft:river",
                   "minecraft:swamp",
                   "minecraft:mangrove_swamp",
                   "minecraft:mushroom_fields"

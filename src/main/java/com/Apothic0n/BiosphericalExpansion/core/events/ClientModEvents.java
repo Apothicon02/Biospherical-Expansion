@@ -126,6 +126,7 @@ public class ClientModEvents {
         Block mangrovePile = Blocks.MANGROVE_LEAVES;
         Block azaleaPile = Blocks.AZALEA_LEAVES;
         Block floweringAzaleaPile = Blocks.FLOWERING_AZALEA_LEAVES;
+
         for (int i = 0; i < wallBlocks.size(); i++) {
             Map<Block, RegistryObject<Block>> map = wallBlocks.get(i);
             if (map.containsKey(Blocks.SPRUCE_LEAVES)) {
@@ -170,18 +171,16 @@ public class ClientModEvents {
                 floweringAzaleaPile = map.get(Blocks.FLOWERING_AZALEA_LEAVES).get();
             }
         }
-        event.register((blockState, blockAndTintGetter, blockPos, tint) -> {
+
+        event.register((p_92636_, p_92637_, p_92638_, p_92639_) -> {
             return FoliageColor.getEvergreenColor();
         }, spruceLeaves, sprucePile);
-        event.register((blockState, blockAndTintGetter, blockPos, tint) -> {
+        event.register((p_92631_, p_92632_, p_92633_, p_92634_) -> {
             return FoliageColor.getBirchColor();
         }, birchLeaves, birchPile);
-        event.register((blockState, blockAndTintGetter, blockPos, tint) -> {
-            return Minecraft.getInstance().level != null && blockPos != null ? BiomeColors.getAverageFoliageColor(Minecraft.getInstance().level, new BlockPos(blockPos.getX(), 55, blockPos.getZ())) : FoliageColor.getDefaultColor();
-        }, mangroveLeaves, mangrovePile, Blocks.MANGROVE_LEAVES, Blocks.VINE);
-        event.register((blockState, blockAndTintGetter, blockPos, tint) -> {
-            return Minecraft.getInstance().level != null && blockPos != null ? BiomeColors.getAverageFoliageColor(Minecraft.getInstance().level, new BlockPos(blockPos.getX(), 68, blockPos.getZ())) : FoliageColor.getDefaultColor();
-        }, oakLeaves, oakPile, Blocks.OAK_LEAVES, jungleLeaves, junglePile, Blocks.JUNGLE_LEAVES, acaciaLeaves, acaciaPile, Blocks.ACACIA_LEAVES, darkOakLeaves, darkOakPile, Blocks.DARK_OAK_LEAVES);
+        event.register((p_92626_, p_92627_, p_92628_, p_92629_) -> {
+            return p_92627_ != null && p_92628_ != null ? BiomeColors.getAverageFoliageColor(p_92627_, p_92628_) : FoliageColor.getDefaultColor();
+        }, oakLeaves, oakPile, jungleLeaves, junglePile, acaciaLeaves, acaciaPile, darkOakLeaves, darkOakPile, mangroveLeaves, mangrovePile);
 
         event.register((blockState, blockAndTintGetter, blockPos, tint) -> {
             if (blockPos != null) {

@@ -4,13 +4,18 @@ import com.Apothic0n.BiosphericalExpansion.BiosphericalExpansion;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.MapCodec;
 import com.mojang.serialization.codecs.RecordCodecBuilder;
+import it.unimi.dsi.fastutil.objects.Object2DoubleMap;
+import it.unimi.dsi.fastutil.objects.Object2DoubleOpenHashMap;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.util.KeyDispatchDataCodec;
 import net.minecraft.world.level.levelgen.DensityFunction;
+import net.minecraft.world.phys.Vec2;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
 import org.jetbrains.annotations.NotNull;
+
+import java.util.concurrent.ConcurrentHashMap;
 
 import static com.Apothic0n.BiosphericalExpansion.core.BioxMath.progressBetweenInts;
 
@@ -20,7 +25,7 @@ public final class BioxDensityFunctions {
     public static void register(IEventBus eventBus) {
         DENSITY_FUNCTION_TYPES.register(eventBus);
     }
-
+    public static ConcurrentHashMap<String, Double> heightmap = new ConcurrentHashMap<>();
     protected record ToHeightmap(int minY, int maxY, DensityFunction input) implements DensityFunction {
         private static final MapCodec<BioxDensityFunctions.ToHeightmap> DATA_CODEC = RecordCodecBuilder.mapCodec((data) -> {
             return data.group(Codec.INT.fieldOf("min_y").forGetter(BioxDensityFunctions.ToHeightmap::minY), Codec.INT.fieldOf("max_y").forGetter(BioxDensityFunctions.ToHeightmap::maxY), DensityFunction.HOLDER_HELPER_CODEC.fieldOf("input").forGetter(BioxDensityFunctions.ToHeightmap::input)).apply(data, BioxDensityFunctions.ToHeightmap::new);
@@ -29,19 +34,24 @@ public final class BioxDensityFunctions {
 
         @Override
         public double compute(@NotNull FunctionContext context) {
-            double returnValue = 0;
-            for (int y = maxY(); y > minY(); y--) {
-                double value = input().compute(new SinglePointContext(context.blockX(), y, context.blockZ()));
-                if (value > 0) {
-                    if (context.blockY() < y-5 && context.blockY() < 60) {
-                        returnValue = -1;
-                    } else {
-                        returnValue = progressBetweenInts(minY(), maxY(), y);
+            int x = context.blockX();
+            int z = context.blockZ();
+            String id = x+"/"+z;
+            Double storedValue = heightmap.get(id);
+            if (storedValue != null) {
+                return storedValue;
+            } else {
+                for (int newY = maxY(); newY > minY(); newY--) {
+                    double value = input().compute(new SinglePointContext(x, newY, z));
+                    if (value > 0) {
+                        double returnValue = progressBetweenInts(minY(), maxY(), newY);
+                        heightmap.put(id, returnValue);
+                        return returnValue;
                     }
-                    break;
                 }
             }
-            return returnValue;
+            heightmap.put(id, 0D);
+            return 0;
         }
 
         @Override

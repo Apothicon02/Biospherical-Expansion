@@ -25,10 +25,54 @@
     "vegetation": "biox:vegetation",
     "erosion": 0,
     "continents": {
-      "type": "biox:to_heightmap",
-      "input": "biox:normal",
-      "min_y": -64,
-      "max_y": 319
+      "type": "minecraft:add",
+      "argument1": {
+        "type": "minecraft:add",
+        "argument1": {
+          "type": "minecraft:y_clamped_gradient",
+          "from_y": 10,
+          "to_y": 11,
+          "from_value": -1,
+          "to_value": 0
+        },
+        "argument2": {
+          "type": "minecraft:range_choice",
+          "input": {
+            "type": "minecraft:mul",
+            "argument1": {
+              "type": "minecraft:y_clamped_gradient",
+              "from_y": 47,
+              "to_y": 48,
+              "from_value": 0,
+              "to_value": 1
+            },
+            "argument2": {
+              "type": "minecraft:y_clamped_gradient",
+              "from_y": 63,
+              "to_y": 64,
+              "from_value": 1,
+              "to_value": 0
+            }
+          },
+          "min_inclusive": 1,
+          "max_exclusive": 10,
+          "when_in_range": {
+            "type": "minecraft:range_choice",
+            "input": "biox:rivers",
+            "min_inclusive": -10000,
+            "max_exclusive": 0,
+            "when_in_range": 1,
+            "when_out_of_range": 0
+          },
+          "when_out_of_range": 0
+        }
+      },
+      "argument2": {
+        "type": "biox:to_heightmap",
+        "input": "biox:normal",
+        "min_y": 16,
+        "max_y": 239
+      }
     },
     "depth": 0,
     "ridges": 0,
@@ -1343,6 +1387,7 @@
                 "type": "minecraft:biome",
                 "biome_is": [
                   "minecraft:desert",
+                  "minecraft:river",
                   "minecraft:beach",
                   "biox:himalayan_shore"
                 ]
@@ -2080,6 +2125,7 @@
               "if_true": {
                 "type": "minecraft:biome",
                 "biome_is": [
+                  "biox:birch_hills",
                   "minecraft:taiga",
                   "minecraft:old_growth_pine_taiga",
                   "minecraft:old_growth_spruce_taiga"
@@ -3281,6 +3327,7 @@
                 "type": "minecraft:biome",
                 "biome_is": [
                   "minecraft:desert",
+                  "minecraft:river",
                   "minecraft:beach",
                   "biox:himalayan_shore"
                 ]
@@ -4018,6 +4065,7 @@
               "if_true": {
                 "type": "minecraft:biome",
                 "biome_is": [
+                  "biox:birch_hills",
                   "minecraft:taiga",
                   "minecraft:old_growth_pine_taiga",
                   "minecraft:old_growth_spruce_taiga"

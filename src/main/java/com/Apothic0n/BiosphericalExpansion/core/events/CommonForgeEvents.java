@@ -53,7 +53,7 @@ public class CommonForgeEvents {
         if (event.getLevel() instanceof ServerLevel level && !level.dimensionType().hasCeiling()) {
             for (int x = 0; x < 128000; x = x+128) {
                 for (int z = 0; z < 128000; z = z+128) {
-                    BlockPos spawnPos = new BlockPos(x, 56, z);
+                    BlockPos spawnPos = new BlockPos(x, 63, z);
                     if (!level.getBiome(spawnPos).is(BiomeTags.IS_OCEAN)) {
                         ChunkPos chunkPos = level.getChunkAt(spawnPos).getPos();
                         level.setChunkForced(chunkPos.x, chunkPos.z, true);
