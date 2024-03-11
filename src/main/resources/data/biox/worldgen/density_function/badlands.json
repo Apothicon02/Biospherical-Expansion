@@ -1,7 +1,7 @@
 {
   "type": "minecraft:range_choice",
-  "input": "biox:temperature",
-  "min_inclusive": 0.54,
+  "input": "biox:accurate_temperature",
+  "min_inclusive": 0.81,
   "max_exclusive": 10,
   "when_in_range": {
     "type": "minecraft:min",
@@ -62,7 +62,7 @@
                   },
                   "argument2": {
                     "type": "minecraft:add",
-                    "argument1": -0.3,
+                    "argument1": -0.55,
                     "argument2": {
                       "type": "minecraft:min",
                       "argument1": {
@@ -95,10 +95,10 @@
                 "type": "minecraft:add",
                 "argument1": {
                   "type": "minecraft:max",
-                  "argument1": "biox:temperature",
-                  "argument2": 0.54
+                  "argument1": "biox:accurate_temperature",
+                  "argument2": 0.81
                 },
-                "argument2": -0.54
+                "argument2": -0.81
               },
               "argument2": {
                 "type": "minecraft:mul",
@@ -131,8 +131,8 @@
               },
               "argument2": {
                 "type": "minecraft:add",
-                "argument1": -0.54,
-                "argument2": "biox:temperature"
+                "argument1": -0.81,
+                "argument2": "biox:accurate_temperature"
               }
             }
           }

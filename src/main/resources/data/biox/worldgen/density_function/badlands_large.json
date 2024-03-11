@@ -1,7 +1,7 @@
 {
   "type": "minecraft:range_choice",
-  "input": "biox:temperature_large",
-  "min_inclusive": 0.54,
+  "input": "biox:accurate_temperature_large",
+  "min_inclusive": 0.81,
   "max_exclusive": 10,
   "when_in_range": {
     "type": "minecraft:min",
@@ -16,13 +16,13 @@
           "input": {
             "type": "minecraft:noise",
             "noise": "biox:oceans",
-            "xz_scale": 0.66,
+            "xz_scale": 1,
             "y_scale": 0
           },
           "min_inclusive": 35,
           "max_exclusive": 10000,
           "when_in_range": 0,
-          "when_out_of_range": "biox:oceans_large"
+          "when_out_of_range": "biox:oceans"
         },
         "argument2": {
           "type": "minecraft:add",
@@ -62,7 +62,7 @@
                   },
                   "argument2": {
                     "type": "minecraft:add",
-                    "argument1": -0.3,
+                    "argument1": -0.55,
                     "argument2": {
                       "type": "minecraft:min",
                       "argument1": {
@@ -95,10 +95,10 @@
                 "type": "minecraft:add",
                 "argument1": {
                   "type": "minecraft:max",
-                  "argument1": "biox:temperature_large",
-                  "argument2": 0.54
+                  "argument1": "biox:accurate_temperature_large",
+                  "argument2": 0.81
                 },
-                "argument2": -0.54
+                "argument2": -0.81
               },
               "argument2": {
                 "type": "minecraft:mul",
@@ -131,8 +131,8 @@
               },
               "argument2": {
                 "type": "minecraft:add",
-                "argument1": -0.54,
-                "argument2": "biox:temperature_large"
+                "argument1": -0.81,
+                "argument2": "biox:accurate_temperature_large"
               }
             }
           }

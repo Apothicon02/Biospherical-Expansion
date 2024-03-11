@@ -5,11 +5,7 @@
       "type": "minecraft:noise_based_count",
       "noise_to_count_ratio": 1,
       "noise_factor": 2,
-      "noise_offset": 0.69
-    },
-    {
-      "type": "minecraft:count",
-      "count": 2
+      "noise_offset": 0
     },
     {
       "type": "minecraft:random_offset",
@@ -23,12 +19,12 @@
       "y_spread": 0
     },
     {
-      "max_water_depth": 8,
-      "type": "minecraft:surface_water_depth_filter"
+      "type": "minecraft:surface_water_depth_filter",
+      "max_water_depth": 8
     },
     {
-      "heightmap": "OCEAN_FLOOR",
-      "type": "minecraft:heightmap"
+      "type": "minecraft:heightmap",
+      "heightmap": "OCEAN_FLOOR"
     },
     {
       "type": "minecraft:biome"

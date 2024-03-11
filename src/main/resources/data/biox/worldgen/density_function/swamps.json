@@ -41,7 +41,7 @@
                   "argument2": {
                     "type": "minecraft:add",
                     "argument1": 0.249,
-                    "argument2": "biox:temperature"
+                    "argument2": "biox:accurate_temperature"
                   }
                 }
               }
@@ -70,7 +70,7 @@
                   "argument2": {
                     "type": "minecraft:add",
                     "argument1": -0.799,
-                    "argument2": "biox:vegetation"
+                    "argument2": "biox:accurate_vegetation"
                   }
                 }
               }
@@ -102,7 +102,7 @@
                   "argument2": {
                     "type": "minecraft:add",
                     "argument1": 0.255,
-                    "argument2": "biox:temperature"
+                    "argument2": "biox:accurate_temperature"
                   }
                 }
               }
@@ -131,7 +131,7 @@
                   "argument2": {
                     "type": "minecraft:add",
                     "argument1": -0.792,
-                    "argument2": "biox:vegetation"
+                    "argument2": "biox:accurate_vegetation"
                   }
                 }
               }

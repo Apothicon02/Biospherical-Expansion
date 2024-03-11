@@ -1,15 +1,13 @@
 {
-  "temperature": 0.8,
-  "downfall": 0.4,
+  "temperature": 0.3,
+  "downfall": 0.5,
   "has_precipitation": true,
-  "category": "plains",
+  "category": "river",
   "effects": {
     "sky_color": 9806079,
     "fog_color": 12638463,
     "water_color": 7318712,
     "water_fog_color": 272948,
-    "grass_color": 14277473,
-    "foliage_color": 15073126,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
@@ -27,44 +25,7 @@
       }
     ],
     "axolotls": [],
-    "creature": [
-      {
-        "type": "minecraft:sheep",
-        "weight": 12,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:pig",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:chicken",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:cow",
-        "weight": 8,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:horse",
-        "weight": 5,
-        "minCount": 2,
-        "maxCount": 6
-      },
-      {
-        "type": "minecraft:donkey",
-        "weight": 1,
-        "minCount": 1,
-        "maxCount": 3
-      }
-    ],
+    "creature": [],
     "misc": [],
     "monster": [
       {
@@ -114,6 +75,12 @@
         "weight": 5,
         "minCount": 1,
         "maxCount": 1
+      },
+      {
+        "type": "minecraft:drowned",
+        "weight": 100,
+        "minCount": 1,
+        "maxCount": 1
       }
     ],
     "underground_water_creature": [
@@ -124,8 +91,22 @@
         "maxCount": 6
       }
     ],
-    "water_ambient": [],
-    "water_creature": []
+    "water_ambient": [
+      {
+        "type": "minecraft:salmon",
+        "weight": 5,
+        "minCount": 1,
+        "maxCount": 5
+      }
+    ],
+    "water_creature": [
+      {
+        "type": "minecraft:squid",
+        "weight": 2,
+        "minCount": 1,
+        "maxCount": 4
+      }
+    ]
   },
   "spawn_costs": {},
   "carvers": {
@@ -138,7 +119,6 @@
   "features": [
     [],
     [
-      "minecraft:lake_lava_surface"
     ],
     [
     ],
@@ -148,6 +128,15 @@
     ],
     [],
     [
+      "minecraft:ore_dirt",
+      "minecraft:ore_gravel",
+      "minecraft:ore_granite_upper",
+      "minecraft:ore_granite_lower",
+      "minecraft:ore_diorite_upper",
+      "minecraft:ore_diorite_lower",
+      "minecraft:ore_andesite_upper",
+      "minecraft:ore_andesite_lower",
+      "minecraft:ore_tuff",
       "minecraft:ore_coal_upper",
       "minecraft:ore_coal_lower",
       "minecraft:ore_iron_upper",
@@ -162,7 +151,11 @@
       "minecraft:ore_diamond_buried",
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
-      "minecraft:ore_copper"
+      "minecraft:ore_copper",
+      "minecraft:underwater_magma",
+      "minecraft:disk_sand",
+      "minecraft:disk_clay",
+      "minecraft:disk_gravel"
     ],
     [],
     [
@@ -171,22 +164,8 @@
     ],
     [
       "minecraft:glow_lichen",
-      "eco:grass_rocks",
-      "eco:wild_flower_patch",
-      "eco:trees_branching_oak",
-      "eco:trees_clustered_tall_oak",
-      "biox:trees_rare_giant_oak",
-      "minecraft:trees_plains",
-      "eco:clustered_tall_mushrooms",
-      "eco:bushes_clustered",
-      "eco:sunflowers",
-      "eco:basic_flowers",
-      "eco:clustered_overworld_mushrooms",
-      "eco:clustered_nether_mushrooms",
-      "eco:basic_grass",
-      "eco:plains_grass",
-      "minecraft:patch_sugar_cane",
-      "eco:clustered_pumpkin"
+      "minecraft:seagrass_river",
+      "minecraft:sea_pickle"
     ],
     [
       "minecraft:freeze_top_layer"
