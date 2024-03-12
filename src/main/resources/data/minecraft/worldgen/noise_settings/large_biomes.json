@@ -23,46 +23,69 @@
     "lava": -1,
     "temperature": "biox:temperature_large",
     "vegetation": "biox:vegetation_large",
-    "erosion": "biox:continents_large",
-    "continents": "biox:erosion_large",
-    "depth": {
+    "erosion": 0,
+    "continents": {
       "type": "minecraft:add",
       "argument1": {
-        "type": "minecraft:y_clamped_gradient",
-        "from_y": 39,
-        "to_y": 40,
-        "from_value": 0,
-        "to_value": 0.05
-      },
-      "argument2": {
         "type": "minecraft:add",
         "argument1": {
           "type": "minecraft:y_clamped_gradient",
-          "from_y": 58,
-          "to_y": 59,
-          "from_value": 0,
-          "to_value": 0.05
+          "from_y": 11,
+          "to_y": 12,
+          "from_value": -10,
+          "to_value": 0
         },
         "argument2": {
-          "type": "minecraft:add",
-          "argument1": {
-            "type": "minecraft:y_clamped_gradient",
-            "from_y": 62,
-            "to_y": 64,
-            "from_value": 0,
-            "to_value": 0.1
+          "type": "minecraft:range_choice",
+          "input": {
+            "type": "minecraft:mul",
+            "argument1": {
+              "type": "minecraft:y_clamped_gradient",
+              "from_y": 47,
+              "to_y": 48,
+              "from_value": 0,
+              "to_value": 1
+            },
+            "argument2": {
+              "type": "minecraft:y_clamped_gradient",
+              "from_y": 63,
+              "to_y": 64,
+              "from_value": 1,
+              "to_value": 0
+            }
           },
-          "argument2": {
-            "type": "minecraft:y_clamped_gradient",
-            "from_y": 65,
-            "to_y": 320,
-            "from_value": 0,
-            "to_value": 0.8
-          }
+          "min_inclusive": 1,
+          "max_exclusive": 10,
+          "when_in_range": {
+            "type": "minecraft:range_choice",
+            "input": {
+              "type": "minecraft:mul",
+              "argument1": "biox:rivers_large",
+              "argument2": {
+                "type": "minecraft:y_clamped_gradient",
+                "from_y": 59,
+                "to_y": 63,
+                "from_value": 0,
+                "to_value": 1
+              }
+            },
+            "min_inclusive": -10000,
+            "max_exclusive": 0,
+            "when_in_range": 1,
+            "when_out_of_range": 0
+          },
+          "when_out_of_range": 0
         }
+      },
+      "argument2": {
+        "type": "biox:to_heightmap",
+        "input": "biox:large_biomes",
+        "min_y": 16,
+        "max_y": 239
       }
     },
-    "ridges": "minecraft:overworld/ridges",
+    "depth": 0,
+    "ridges": 0,
     "initial_density_without_jaggedness": {
       "type": "minecraft:y_clamped_gradient",
       "from_y": 15,
@@ -76,8 +99,8 @@
         "type": "minecraft:range_choice",
         "input": {
           "type": "minecraft:y_clamped_gradient",
-          "from_y": 15,
-          "to_y": 16,
+          "from_y": 0,
+          "to_y": 1,
           "from_value": 0,
           "to_value": 1
         },
@@ -258,6 +281,48 @@
         }
       },
 
+      {
+        "type": "minecraft:condition",
+        "if_true": {
+          "type": "minecraft:y_above",
+          "anchor": {
+            "absolute": 65
+          },
+          "surface_depth_multiplier": 0,
+          "add_stone_depth": false
+        },
+        "then_run": {
+          "type": "minecraft:condition",
+          "if_true": {
+            "type": "minecraft:biome",
+            "biome_is": [
+              "minecraft:stony_shore",
+              "minecraft:snowy_beach",
+              "minecraft:beach",
+              "biox:himalayan_shore",
+              "biox:gravelly_river",
+              "minecraft:river",
+              "minecraft:frozen_river",
+              "minecraft:ocean",
+              "minecraft:deep_ocean",
+              "minecraft:cold_ocean",
+              "minecraft:deep_cold_ocean",
+              "minecraft:frozen_ocean",
+              "minecraft:deep_frozen_ocean",
+              "minecraft:lukewarm_ocean",
+              "minecraft:deep_lukewarm_ocean",
+              "minecraft:warm_ocean",
+              "biox:caldera_ocean"
+            ]
+          },
+          "then_run": {
+            "type": "minecraft:block",
+            "result_state": {
+              "Name": "minecraft:air"
+            }
+          }
+        }
+      },
       {
         "type": "minecraft:condition",
         "if_true": {
@@ -587,6 +652,115 @@
                   {
                     "type": "minecraft:condition",
                     "if_true": {
+                      "type": "minecraft:not",
+                      "invert": {
+                        "type": "minecraft:y_above",
+                        "anchor": {
+                          "absolute": 62
+                        },
+                        "surface_depth_multiplier": 0,
+                        "add_stone_depth": false
+                      }
+                    },
+                    "then_run": {
+                      "type": "minecraft:sequence",
+                      "sequence": [
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:noise_threshold",
+                            "noise": "eco:surface_variation",
+                            "min_threshold": -0.8,
+                            "max_threshold": -0.7
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:air"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:noise_threshold",
+                            "noise": "eco:surface_variation",
+                            "min_threshold": -0.5,
+                            "max_threshold": -0.4
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:air"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:noise_threshold",
+                            "noise": "eco:surface_variation",
+                            "min_threshold": -0.2,
+                            "max_threshold": -0.1
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:air"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:noise_threshold",
+                            "noise": "eco:surface_variation",
+                            "min_threshold": 0.1,
+                            "max_threshold": 0.2
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:air"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:noise_threshold",
+                            "noise": "eco:surface_variation",
+                            "min_threshold": 0.4,
+                            "max_threshold": 0.5
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:air"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:noise_threshold",
+                            "noise": "eco:surface_variation",
+                            "min_threshold": 0.7,
+                            "max_threshold": 0.8
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:air"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
                       "type": "minecraft:y_above",
                       "anchor": {
                         "absolute": 66
@@ -873,7 +1047,6 @@
               "if_true": {
                 "type": "minecraft:biome",
                 "biome_is": [
-                  "minecraft:river",
                   "minecraft:swamp",
                   "minecraft:mangrove_swamp",
                   "minecraft:mushroom_fields"
@@ -1374,7 +1547,23 @@
               "if_true": {
                 "type": "minecraft:biome",
                 "biome_is": [
+                  "biox:gravelly_river"
+                ]
+              },
+              "then_run": {
+                "type": "minecraft:block",
+                "result_state": {
+                  "Name": "minecraft:gravel"
+                }
+              }
+            },
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:biome",
+                "biome_is": [
                   "minecraft:desert",
+                  "minecraft:river",
                   "minecraft:beach",
                   "biox:himalayan_shore"
                 ]
@@ -2112,6 +2301,7 @@
               "if_true": {
                 "type": "minecraft:biome",
                 "biome_is": [
+                  "biox:birch_hills",
                   "minecraft:taiga",
                   "minecraft:old_growth_pine_taiga",
                   "minecraft:old_growth_spruce_taiga"
@@ -2526,6 +2716,115 @@
                   {
                     "type": "minecraft:condition",
                     "if_true": {
+                      "type": "minecraft:not",
+                      "invert": {
+                        "type": "minecraft:y_above",
+                        "anchor": {
+                          "absolute": 61
+                        },
+                        "surface_depth_multiplier": 0,
+                        "add_stone_depth": false
+                      }
+                    },
+                    "then_run": {
+                      "type": "minecraft:sequence",
+                      "sequence": [
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:noise_threshold",
+                            "noise": "eco:surface_variation",
+                            "min_threshold": -0.8,
+                            "max_threshold": -0.7
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:magma_block"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:noise_threshold",
+                            "noise": "eco:surface_variation",
+                            "min_threshold": -0.5,
+                            "max_threshold": -0.4
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:magma_block"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:noise_threshold",
+                            "noise": "eco:surface_variation",
+                            "min_threshold": -0.2,
+                            "max_threshold": -0.1
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:magma_block"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:noise_threshold",
+                            "noise": "eco:surface_variation",
+                            "min_threshold": 0.1,
+                            "max_threshold": 0.2
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:magma_block"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:noise_threshold",
+                            "noise": "eco:surface_variation",
+                            "min_threshold": 0.4,
+                            "max_threshold": 0.5
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:magma_block"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:noise_threshold",
+                            "noise": "eco:surface_variation",
+                            "min_threshold": 0.7,
+                            "max_threshold": 0.8
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:magma_block"
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
                       "type": "minecraft:y_above",
                       "anchor": {
                         "absolute": 66
@@ -2812,7 +3111,6 @@
               "if_true": {
                 "type": "minecraft:biome",
                 "biome_is": [
-                  "minecraft:river",
                   "minecraft:swamp",
                   "minecraft:mangrove_swamp",
                   "minecraft:mushroom_fields"
@@ -3313,7 +3611,23 @@
               "if_true": {
                 "type": "minecraft:biome",
                 "biome_is": [
+                  "biox:gravelly_river"
+                ]
+              },
+              "then_run": {
+                "type": "minecraft:block",
+                "result_state": {
+                  "Name": "minecraft:gravel"
+                }
+              }
+            },
+            {
+              "type": "minecraft:condition",
+              "if_true": {
+                "type": "minecraft:biome",
+                "biome_is": [
                   "minecraft:desert",
+                  "minecraft:river",
                   "minecraft:beach",
                   "biox:himalayan_shore"
                 ]
@@ -4051,6 +4365,7 @@
               "if_true": {
                 "type": "minecraft:biome",
                 "biome_is": [
+                  "biox:birch_hills",
                   "minecraft:taiga",
                   "minecraft:old_growth_pine_taiga",
                   "minecraft:old_growth_spruce_taiga"
@@ -4795,7 +5110,7 @@
         "type": "minecraft:condition",
         "if_true": {
           "type": "minecraft:noise_threshold",
-          "noise": "biox:temperature_large",
+          "noise": "biox:temperature",
           "min_threshold": -10,
           "max_threshold": -0.25
         },
@@ -5339,8 +5654,8 @@
         "type": "minecraft:condition",
         "if_true": {
           "type": "minecraft:noise_threshold",
-          "noise": "biox:temperature_large",
-          "min_threshold": 0.5,
+          "noise": "biox:temperature",
+          "min_threshold": 0.8,
           "max_threshold": 10
         },
         "then_run": {
@@ -5350,9 +5665,9 @@
               "type": "minecraft:condition",
               "if_true": {
                 "type": "minecraft:noise_threshold",
-                "noise": "biox:vegetation_large",
-                "min_threshold": -10,
-                "max_threshold": 0
+                "noise": "biox:vegetation",
+                "min_threshold": 0,
+                "max_threshold": 10
               },
               "then_run": {
                 "type": "minecraft:sequence",
@@ -6498,9 +6813,9 @@
               "type": "minecraft:condition",
               "if_true": {
                 "type": "minecraft:noise_threshold",
-                "noise": "biox:vegetation_large",
-                "min_threshold": 0,
-                "max_threshold": 10
+                "noise": "biox:vegetation",
+                "min_threshold": -10,
+                "max_threshold": 0
               },
               "then_run": {
                 "type": "minecraft:sequence",
@@ -6790,7 +7105,7 @@
               "type": "minecraft:condition",
               "if_true": {
                 "type": "minecraft:noise_threshold",
-                "noise": "biox:vegetation_large",
+                "noise": "biox:vegetation",
                 "min_threshold": -10,
                 "max_threshold": 0
               },
@@ -7938,7 +8253,7 @@
               "type": "minecraft:condition",
               "if_true": {
                 "type": "minecraft:noise_threshold",
-                "noise": "biox:vegetation_large",
+                "noise": "biox:vegetation",
                 "min_threshold": 0,
                 "max_threshold": 10
               },

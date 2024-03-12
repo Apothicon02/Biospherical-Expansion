@@ -1,8 +1,7 @@
 {
-  "temperature": 0.3,
+  "temperature": 0,
   "downfall": 0.5,
   "has_precipitation": true,
-  "category": "river",
   "effects": {
     "sky_color": 9806079,
     "fog_color": 12638463,
@@ -78,7 +77,7 @@
       },
       {
         "type": "minecraft:drowned",
-        "weight": 100,
+        "weight": 1,
         "minCount": 1,
         "maxCount": 1
       }
@@ -117,7 +116,8 @@
     ]
   },
   "features": [
-    [],
+    [
+    ],
     [
     ],
     [
@@ -163,8 +163,6 @@
       "minecraft:spring_lava"
     ],
     [
-      "minecraft:seagrass_river",
-      "minecraft:sea_pickle"
     ],
     [
       "minecraft:freeze_top_layer"

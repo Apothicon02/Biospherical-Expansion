@@ -139,6 +139,7 @@
       "minecraft:ore_copper_large"
     ],
     [
+      "biox:amethyst_block_floor_cluster",
       "eco:smooth_basalt_blob",
       "eco:calcite_blob",
       "eco:calcite_ground_blob",

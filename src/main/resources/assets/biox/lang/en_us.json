@@ -30,6 +30,9 @@
   "biome.biox.frozen_plains": "Frozen Plains",
   "biome.biox.birch_hills": "Birch Hills",
   "biome.biox.gravelly_river": "Gravelly River",
+  "biome.biox.wooded_desert": "Wooded Desert",
+  "biome.biox.scorching_desert": "Scorching Desert",
+  "biome.biox.eroded_desert": "Eroded Desert",
 
   "block.biox.amethyst_vines": "Amethyst Vines",
   "block.biox.amethyst_vines_plant": "Amethyst Vines Plant",

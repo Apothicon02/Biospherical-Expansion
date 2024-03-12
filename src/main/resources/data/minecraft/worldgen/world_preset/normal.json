@@ -1,7 +1,7 @@
 {
   "dimensions": {
     "minecraft:overworld": {
-      "type": "biox:brighter_deeper_overworld",
+      "type": "biox:brighter_overworld",
       "generator": {
         "type": "minecraft:noise",
         "settings": "minecraft:overworld",
@@ -21,7 +21,7 @@
                 ],
                 "erosion": 0,
                 "continentalness": [
-                  0.251,
+                  0.391,
                   1
                 ],
                 "weirdness": 0,
@@ -42,7 +42,7 @@
                 ],
                 "erosion": 0,
                 "continentalness": [
-                  0.251,
+                  0.391,
                   1
                 ],
                 "weirdness": 0,
@@ -63,7 +63,7 @@
                 ],
                 "erosion": 0,
                 "continentalness": [
-                  0.251,
+                  0.391,
                   1
                 ],
                 "weirdness": 0,
@@ -84,7 +84,7 @@
                 ],
                 "erosion": 0,
                 "continentalness": [
-                  0.251,
+                  0.391,
                   1
                 ],
                 "weirdness": 0,
@@ -105,7 +105,7 @@
                 ],
                 "erosion": 0,
                 "continentalness": [
-                  0.251,
+                  0.391,
                   1
                 ],
                 "weirdness": 0,
@@ -126,7 +126,7 @@
                 ],
                 "erosion": 0,
                 "continentalness": [
-                  0.251,
+                  0.391,
                   1
                 ],
                 "weirdness": 0,
@@ -284,6 +284,69 @@
               }
             },
 
+            {
+              "biome": "biox:wooded_desert",
+              "parameters": {
+                "temperature": [
+                  0.8,
+                  1
+                ],
+                "humidity": [
+                  0.1,
+                  1
+                ],
+                "erosion": 0,
+                "continentalness": [
+                  0.251,
+                  0.391
+                ],
+                "weirdness": 0,
+                "depth": 0,
+                "offset": 0
+              }
+            },
+            {
+              "biome": "biox:scorching_desert",
+              "parameters": {
+                "temperature": [
+                  0.8,
+                  1
+                ],
+                "humidity": [
+                  -0.1,
+                  0.1
+                ],
+                "erosion": 0,
+                "continentalness": [
+                  0.251,
+                  0.391
+                ],
+                "weirdness": 0,
+                "depth": 0,
+                "offset": 0
+              }
+            },
+            {
+              "biome": "biox:eroded_desert",
+              "parameters": {
+                "temperature": [
+                  0.8,
+                  1
+                ],
+                "humidity": [
+                  -1,
+                  -0.1
+                ],
+                "erosion": 0,
+                "continentalness": [
+                  0.251,
+                  0.391
+                ],
+                "weirdness": 0,
+                "depth": 0,
+                "offset": 0
+              }
+            },
             {
               "biome": "minecraft:desert",
               "parameters": {

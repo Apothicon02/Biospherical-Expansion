@@ -176,8 +176,7 @@
       "minecraft:ore_emerald"
     ],
     [
-      "minecraft:ore_infested",
-      "eco:amethyst_block_cluster"
+      "minecraft:ore_infested"
     ],
     [
       "minecraft:spring_water",

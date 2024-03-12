@@ -1,5 +1,5 @@
 {
-  "sea_level": -31,
+  "sea_level": -95,
   "disable_mob_generation": false,
   "aquifers_enabled": true,
   "ore_veins_enabled": true,
@@ -14,7 +14,7 @@
     }
   },
   "noise": {
-    "min_y": -64,
+    "min_y": -128,
     "height": 128,
     "size_horizontal": 1,
     "size_vertical": 2
@@ -46,60 +46,46 @@
     },
     "temperature": "biox:temperature",
     "vegetation": "biox:vegetation",
-    "continents": "minecraft:overworld_large_biomes/erosion",
-    "erosion": {
-      "type": "minecraft:mul",
-      "argument1": {
-        "type": "minecraft:shifted_noise",
-        "noise": "minecraft:continentalness_large",
-        "xz_scale": 1,
-        "y_scale": 0,
-        "shift_x": "minecraft:shift_x",
-        "shift_y": 0,
-        "shift_z": "minecraft:shift_z"
-      },
-      "argument2": {
-        "type": "minecraft:mul",
-        "argument1": {
-          "type": "minecraft:shifted_noise",
-          "noise": "minecraft:erosion_large",
-          "xz_scale": 1,
-          "y_scale": 0,
-          "shift_x": "minecraft:shift_x",
-          "shift_y": 0,
-          "shift_z": "minecraft:shift_z"
-        },
-        "argument2": 3
-      }
-    },
-    "depth": {
+    "continents": {
       "type": "minecraft:add",
       "argument1": {
         "type": "minecraft:y_clamped_gradient",
-        "from_y": -43,
-        "to_y": -42,
+        "from_y": -107,
+        "to_y": -106,
         "from_value": 0,
-        "to_value": 0.05
+        "to_value": 0.148
       },
       "argument2": {
         "type": "minecraft:add",
         "argument1": {
           "type": "minecraft:y_clamped_gradient",
-          "from_y": -33,
-          "to_y": -32,
+          "from_y": -101,
+          "to_y": -100,
           "from_value": 0,
-          "to_value": 0.05
+          "to_value": 0.084
         },
         "argument2": {
-          "type": "minecraft:y_clamped_gradient",
-          "from_y": -31,
-          "to_y": -30,
-          "from_value": 0,
-          "to_value": 0.9
+          "type": "minecraft:add",
+          "argument1": {
+            "type": "minecraft:y_clamped_gradient",
+            "from_y": -97,
+            "to_y": -96,
+            "from_value": 0,
+            "to_value": 0.017
+          },
+          "argument2": {
+            "type": "minecraft:y_clamped_gradient",
+            "from_y": -95,
+            "to_y": -94,
+            "from_value": 0,
+            "to_value": -1.5
+          }
         }
       }
     },
-    "ridges": "minecraft:overworld/ridges",
+    "erosion": 0,
+    "depth": 0,
+    "ridges": 0,
     "initial_density_without_jaggedness": 0,
     "final_density": "biox:lithospherical",
     "vein_toggle": 0,

@@ -1,5 +1,5 @@
 {
   "type": "minecraft:add",
-  "argument1": "biox:normal",
+  "argument1": "biox:large_biomes",
   "argument2": "eco:exospherical_islands"
 }

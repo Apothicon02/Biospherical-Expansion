@@ -127,18 +127,10 @@
       "eco:underwater_noise_calcite_rocks"
     ],
     [
-      "minecraft:lake_lava_underground",
-      "minecraft:lake_lava_surface"
     ],
     [
-      "minecraft:amethyst_geode",
-      "eco:sparse_packed_ice_pillar",
-      "eco:sparse_thin_blue_ice_pillar",
-      "eco:sparse_dark_prismarine_pillar"
     ],
     [
-      "minecraft:monster_room",
-      "minecraft:monster_room_deep"
     ],
     [],
     [],
@@ -178,29 +170,11 @@
       "minecraft:spring_lava"
     ],
     [
-      "minecraft:glow_lichen",
-      "minecraft:trees_water",
-      "eco:bushes_super_dense",
-      "minecraft:flower_default",
-      "minecraft:patch_grass_badlands",
-      "minecraft:brown_mushroom_normal",
-      "minecraft:red_mushroom_normal",
-      "minecraft:patch_sugar_cane",
-      "minecraft:patch_pumpkin",
-      "eco:large_pumpkin",
       "minecraft:seagrass_deep_cold",
       "minecraft:seagrass_simple",
-      "minecraft:kelp_cold",
-      "eco:cave_seagrass_warm",
-      "eco:cave_kelp_warm",
-      "eco:cave_pickle",
-      "eco:snowy_pool_with_ice",
-      "eco:powdered_snow_pool",
-      "eco:patch_snow_layer"
+      "minecraft:kelp_cold"
     ],
     [
-      "eco:dense_powdered_snow_fall",
-      "biox:amethyst_frosted_ice_crystals",
       "minecraft:freeze_top_layer"
     ]
   ]
