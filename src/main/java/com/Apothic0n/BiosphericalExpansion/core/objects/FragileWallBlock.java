@@ -116,8 +116,9 @@ public class FragileWallBlock extends Block implements SimpleWaterloggedBlock {
         return this.shapeByIndex.get(p_58050_);
     }
 
-    public VoxelShape getCollisionShape(BlockState p_58055_, BlockGetter p_58056_, BlockPos p_58057_, CollisionContext p_58058_) {
-        return this.collisionShapeByIndex.get(p_58055_);
+    @Override
+    public VoxelShape getCollisionShape(BlockState p_56625_, BlockGetter p_56626_, BlockPos p_56627_, CollisionContext p_56628_) {
+        return Shapes.empty();
     }
 
     public boolean isPathfindable(BlockState p_57996_, BlockGetter p_57997_, BlockPos p_57998_, PathComputationType p_57999_) {

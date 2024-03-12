@@ -1,5 +1,5 @@
 {
-  "feature": "biox:rooted_giant_mushrooms",
+  "feature": "minecraft:large_basalt_columns",
   "placement": [
     {
       "type": "minecraft:count",
@@ -7,12 +7,20 @@
         "type": "minecraft:weighted_list",
         "distribution": [
           {
-            "weight": 3,
-            "data": 10
+            "weight": 2,
+            "data": 13
+          },
+          {
+            "weight": 1,
+            "data": 20
           },
           {
             "weight": 7,
-            "data": 24
+            "data": 10
+          },
+          {
+            "weight": 13,
+            "data": 6
           }
         ]
       }
@@ -37,11 +45,17 @@
       "direction_of_search": "down",
       "max_steps": 32,
       "target_condition": {
-        "type": "minecraft:would_survive",
-        "state": {
-          "Name": "minecraft:birch_sapling"
-        }
+        "type": "minecraft:solid"
+      },
+      "allowed_search_condition": {
+        "type": "minecraft:matching_blocks",
+        "blocks": "minecraft:air"
       }
+    },
+    {
+      "type": "minecraft:random_offset",
+      "xz_spread": 0,
+      "y_spread": 1
     },
     {
       "type": "minecraft:biome"

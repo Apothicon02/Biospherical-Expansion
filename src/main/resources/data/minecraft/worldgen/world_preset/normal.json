@@ -1,7 +1,7 @@
 {
   "dimensions": {
     "minecraft:overworld": {
-      "type": "biox:brighter_overworld",
+      "type": "biox:brighter_deeper_overworld",
       "generator": {
         "type": "minecraft:noise",
         "settings": "minecraft:overworld",

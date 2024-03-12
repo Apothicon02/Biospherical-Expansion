@@ -54,7 +54,7 @@ public class CommonForgeEvents {
             for (int x = 0; x < 128000; x = x+128) {
                 for (int z = 0; z < 128000; z = z+128) {
                     BlockPos spawnPos = new BlockPos(x, 63, z);
-                    if (!level.getBiome(spawnPos).is(BiomeTags.IS_OCEAN)) {
+                    if (!level.getBiome(spawnPos).is(BiomeTags.IS_OCEAN) && !level.getBiome(spawnPos).is(BiomeTags.IS_RIVER) && !level.getBiome(spawnPos).toString().contains("caldera")) {
                         ChunkPos chunkPos = level.getChunkAt(spawnPos).getPos();
                         level.setChunkForced(chunkPos.x, chunkPos.z, true);
                         event.getSettings().setSpawn(spawnPos.atY(level.getHeight(Heightmap.Types.WORLD_SURFACE, x, z)), 0.0F);

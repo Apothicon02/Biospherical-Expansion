@@ -1,9 +1,9 @@
 {
-  "feature": "eco:lush_spore_blossom",
+  "feature": "eco:smooth_basalt_calcite_blob",
   "placement": [
     {
       "type": "minecraft:count",
-      "count": 76
+      "count": 36
     },
     {
       "type": "minecraft:in_square"
@@ -28,16 +28,13 @@
         "type": "minecraft:solid"
       },
       "allowed_search_condition": {
-        "type": "minecraft:matching_blocks",
-        "blocks": [
-          "minecraft:air"
-        ]
+        "type": "minecraft:true"
       }
     },
     {
       "type": "minecraft:random_offset",
       "xz_spread": 0,
-      "y_spread": -1
+      "y_spread": 1
     },
     {
       "type": "minecraft:biome"

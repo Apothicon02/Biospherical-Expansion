@@ -1,11 +1,29 @@
 {
-  "feature": "biox:cave_torch_flower",
+  "feature": "biox:normal_tall_birch",
   "placement": [
     {
-      "type": "minecraft:noise_based_count",
-      "noise_to_count_ratio": 25,
-      "noise_factor": 69,
-      "noise_offset": 0.7
+      "type": "minecraft:count",
+      "count": {
+        "type": "minecraft:weighted_list",
+        "distribution": [
+          {
+            "weight": 3,
+            "data": 13
+          },
+          {
+            "weight": 3,
+            "data": 16
+          },
+          {
+            "weight": 7,
+            "data": 18
+          },
+          {
+            "weight": 7,
+            "data": 22
+          }
+        ]
+      }
     },
     {
       "type": "minecraft:in_square"
@@ -28,13 +46,8 @@
       "max_steps": 32,
       "target_condition": {
         "type": "minecraft:would_survive",
-        "offset": [
-          0,
-          0,
-          0
-        ],
         "state": {
-          "Name": "minecraft:torchflower"
+          "Name": "minecraft:birch_sapling"
         }
       }
     },

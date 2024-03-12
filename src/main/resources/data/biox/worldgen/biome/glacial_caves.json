@@ -122,7 +122,8 @@
     ],
     [
       "minecraft:amethyst_geode",
-      "biox:blue_ice_crystal_spike"
+      "biox:blue_ice_crystal_spike",
+      "biox:ore_spike_ice"
     ],
     [
       "minecraft:monster_room",
