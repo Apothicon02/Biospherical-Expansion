@@ -1,6 +1,6 @@
 {
   "temperature": 0.95,
-  "downfall": 0.9,
+  "downfall": 1,
   "has_precipitation": true,
   "category": "jungle",
   "effects": {
@@ -8,6 +8,7 @@
     "fog_color": 12638463,
     "water_color": 7318712,
     "water_fog_color": 272948,
+    "grass_color": 7265674,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
@@ -55,18 +56,6 @@
         "weight": 10,
         "minCount": 4,
         "maxCount": 4
-      },
-      {
-        "type": "minecraft:parrot",
-        "weight": 40,
-        "minCount": 1,
-        "maxCount": 2
-      },
-      {
-        "type": "minecraft:panda",
-        "weight": 1,
-        "minCount": 1,
-        "maxCount": 2
       }
     ],
     "misc": [],
@@ -118,12 +107,6 @@
         "weight": 5,
         "minCount": 1,
         "maxCount": 1
-      },
-      {
-        "type": "minecraft:ocelot",
-        "weight": 2,
-        "minCount": 1,
-        "maxCount": 3
       }
     ],
     "underground_water_creature": [
@@ -154,8 +137,7 @@
     ],
     [
     ],
-    [
-    ],
+    [],
     [],
     [
       "minecraft:ore_coal_upper",
@@ -182,29 +164,27 @@
     ],
     [
       "minecraft:glow_lichen",
-      "eco:trees_underwater_giant_mangrove",
-      "eco:gray_standalone_cliffs",
-      "eco:mossy_stone_filler",
-      "eco:gray_stones",
-      "eco:mud_pond_extra",
-      "eco:tuff",
-      "eco:tuff_pool",
+      "eco:grass_rocks",
+      "biox:dense_mushroom_giant_red",
+      "biox:dense_noise_tall_red_mushrooms",
+      "eco:mud_pond",
       "minecraft:bamboo_light",
-      "biox:trees_dense_giant_jungle",
-      "biox:trees_sparse_branching_oak",
+      "eco:bamboo_cluster",
+      "eco:wild_flower_patch",
       "biox:trees_sparse_lush_jungle",
-      "eco:trees_azalea",
-      "eco:noise_tall_red_mushrooms",
-      "eco:sparse_tall_brown_mushrooms",
-      "eco:dense_bushes_clustered",
-      "eco:dense_jungle_bushes",
+      "biox:trees_rare_giant_jungle",
+      "eco:bushes_clustered",
       "eco:red_flowers",
-      "eco:purple_flowers",
-      "eco:dense_grass",
-      "eco:tall_grass",
+      "biox:dense_torchflowers",
+      "eco:overworld_mushrooms",
+      "eco:nether_mushrooms",
+      "eco:basic_grass",
+      "eco:plains_grass",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_melon",
-      "eco:large_melon"
+      "minecraft:vines",
+      "biox:mossy_patch_melon",
+      "eco:large_melon",
+      "biox:mossy_large_melon"
     ],
     [
       "minecraft:freeze_top_layer"

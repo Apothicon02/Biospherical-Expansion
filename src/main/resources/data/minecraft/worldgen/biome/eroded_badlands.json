@@ -1,18 +1,25 @@
 {
-  "temperature": 0.95,
-  "downfall": 0.9,
-  "has_precipitation": true,
-  "category": "jungle",
+  "temperature": 2,
+  "downfall": 0,
+  "has_precipitation": false,
   "effects": {
     "sky_color": 9806079,
     "fog_color": 12638463,
     "water_color": 7318712,
     "water_fog_color": 272948,
+    "grass_color": 9470285,
+    "foliage_color": 10387789,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
       "block_search_extent": 8,
       "offset": 2
+    },
+    "music": {
+      "sound": "minecraft:music.overworld.badlands",
+      "min_delay": 12000,
+      "max_delay": 24000,
+      "replace_current_music": false
     }
   },
   "spawners": {
@@ -25,50 +32,7 @@
       }
     ],
     "axolotls": [],
-    "creature": [
-      {
-        "type": "minecraft:sheep",
-        "weight": 12,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:pig",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:chicken",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:cow",
-        "weight": 8,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:chicken",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:parrot",
-        "weight": 40,
-        "minCount": 1,
-        "maxCount": 2
-      },
-      {
-        "type": "minecraft:panda",
-        "weight": 1,
-        "minCount": 1,
-        "maxCount": 2
-      }
-    ],
+    "creature": [],
     "misc": [],
     "monster": [
       {
@@ -118,12 +82,6 @@
         "weight": 5,
         "minCount": 1,
         "maxCount": 1
-      },
-      {
-        "type": "minecraft:ocelot",
-        "weight": 2,
-        "minCount": 1,
-        "maxCount": 3
       }
     ],
     "underground_water_creature": [
@@ -156,7 +114,9 @@
     ],
     [
     ],
-    [],
+    [
+      "eco:sand_patches"
+    ],
     [
       "minecraft:ore_coal_upper",
       "minecraft:ore_coal_lower",
@@ -173,7 +133,8 @@
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
-      "minecraft:underwater_magma"
+      "minecraft:underwater_magma",
+      "minecraft:ore_gold_extra"
     ],
     [],
     [
@@ -182,29 +143,18 @@
     ],
     [
       "minecraft:glow_lichen",
-      "eco:trees_underwater_giant_mangrove",
-      "eco:gray_standalone_cliffs",
-      "eco:mossy_stone_filler",
-      "eco:gray_stones",
-      "eco:mud_pond_extra",
-      "eco:tuff",
-      "eco:tuff_pool",
-      "minecraft:bamboo_light",
-      "biox:trees_dense_giant_jungle",
-      "biox:trees_sparse_branching_oak",
-      "biox:trees_sparse_lush_jungle",
-      "eco:trees_azalea",
-      "eco:noise_tall_red_mushrooms",
-      "eco:sparse_tall_brown_mushrooms",
-      "eco:dense_bushes_clustered",
-      "eco:dense_jungle_bushes",
-      "eco:red_flowers",
-      "eco:purple_flowers",
-      "eco:dense_grass",
-      "eco:tall_grass",
-      "minecraft:patch_sugar_cane",
-      "minecraft:patch_melon",
-      "eco:large_melon"
+      "eco:anvil_rocks",
+      "eco:terracotta_pond",
+      "eco:trees_dead_dark_oak",
+      "eco:dead_rooted_bushes",
+      "eco:bushes_clustered",
+      "minecraft:patch_grass_badlands",
+      "minecraft:patch_dead_bush_badlands",
+      "minecraft:brown_mushroom_normal",
+      "minecraft:red_mushroom_normal",
+      "minecraft:patch_sugar_cane_badlands",
+      "eco:clustered_pumpkin",
+      "minecraft:patch_cactus_decorated"
     ],
     [
       "minecraft:freeze_top_layer"

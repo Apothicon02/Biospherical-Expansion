@@ -117,8 +117,7 @@
   "features": [
     [],
     [
-      "minecraft:lake_lava_underground",
-      "minecraft:lake_lava_surface"
+      "minecraft:lake_lava_underground"
     ],
     [
       "minecraft:amethyst_geode"
@@ -155,7 +154,6 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:patch_tall_grass_2",
       "biox:dense_rooted_giant_mushrooms",
       "eco:clay_pool_with_dripleaves",
       "biox:dense_lush_spore_blossom",

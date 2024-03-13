@@ -447,23 +447,20 @@ public class ClientModEvents {
                 floweringAzaleaPile = map.get(Blocks.FLOWERING_AZALEA_LEAVES).get();
             }
         }
-        event.register((itemStack, tint) -> {
+        event.register((p_92636_, p_92637_) -> {
             return FoliageColor.getEvergreenColor();
         }, spruceLeaves, sprucePile);
-        event.register((itemStack, tint) -> {
+        event.register((p_92631_, p_92632_) -> {
             return FoliageColor.getBirchColor();
         }, birchLeaves, birchPile);
-        event.register((itemStack, tint) -> {
-            return Minecraft.getInstance().level != null && Minecraft.getInstance().player != null ? BiomeColors.getAverageFoliageColor(Minecraft.getInstance().level, new BlockPos(Minecraft.getInstance().player.blockPosition().getX(), 55, Minecraft.getInstance().player.blockPosition().getZ())) : FoliageColor.getDefaultColor();
-        }, mangroveLeaves, mangrovePile, Blocks.MANGROVE_LEAVES, Blocks.VINE);
-        event.register((itemStack, tint) -> {
-            return Minecraft.getInstance().level != null && Minecraft.getInstance().player != null ? BiomeColors.getAverageFoliageColor(Minecraft.getInstance().level, new BlockPos(Minecraft.getInstance().player.blockPosition().getX(), 68, Minecraft.getInstance().player.blockPosition().getZ())) : FoliageColor.getDefaultColor();
-        }, oakLeaves, oakPile, Blocks.OAK_LEAVES, jungleLeaves, junglePile, Blocks.JUNGLE_LEAVES, acaciaLeaves, acaciaPile, Blocks.ACACIA_LEAVES, darkOakLeaves, darkOakPile, Blocks.DARK_OAK_LEAVES);
+        event.register((p_92626_, p_92627_) -> {
+            return Minecraft.getInstance().level != null && Minecraft.getInstance().player != null ? BiomeColors.getAverageFoliageColor(Minecraft.getInstance().level, Minecraft.getInstance().player.blockPosition()) : FoliageColor.getDefaultColor();
+        }, oakLeaves, oakPile, jungleLeaves, junglePile, acaciaLeaves, acaciaPile, darkOakLeaves, darkOakPile, mangroveLeaves, mangrovePile);
 
         event.register((itemStack, tint) -> {
             if (Minecraft.getInstance().level != null) {
                 BlockPos blockPos = Minecraft.getInstance().player.blockPosition();
-                int color = Minecraft.getInstance().level != null && Minecraft.getInstance().player != null ? BiomeColors.getAverageFoliageColor(Minecraft.getInstance().level, new BlockPos(Minecraft.getInstance().player.blockPosition().getX(), 68, Minecraft.getInstance().player.blockPosition().getZ())) : FoliageColor.getDefaultColor();
+                int color = Minecraft.getInstance().level != null && Minecraft.getInstance().player != null ? BiomeColors.getAverageFoliageColor(Minecraft.getInstance().level, Minecraft.getInstance().player.blockPosition()) : FoliageColor.getDefaultColor();
                 int x = blockPos.getX();
                 int z = blockPos.getZ();
                 double saturate = Mth.clamp(SATURATION_NOISE.getValue(x * 0.66, z * 0.6, false) * 0.1, -0.2, 0.22) + 0.9;
@@ -485,7 +482,7 @@ public class ClientModEvents {
         event.register((itemStack, tint) -> {
             if (Minecraft.getInstance().level != null) {
                 BlockPos blockPos = Minecraft.getInstance().player.blockPosition();
-                int color = Minecraft.getInstance().level != null && Minecraft.getInstance().player != null ? BiomeColors.getAverageFoliageColor(Minecraft.getInstance().level, new BlockPos(Minecraft.getInstance().player.blockPosition().getX(), 68, Minecraft.getInstance().player.blockPosition().getZ())) : FoliageColor.getDefaultColor();
+                int color = Minecraft.getInstance().level != null && Minecraft.getInstance().player != null ? BiomeColors.getAverageFoliageColor(Minecraft.getInstance().level, Minecraft.getInstance().player.blockPosition()) : FoliageColor.getDefaultColor();
                 int x = blockPos.getX();
                 int z = blockPos.getZ();
                 double saturate = Mth.clamp(SATURATION_NOISE.getValue(x * 0.66, z * 0.6, false) * 0.1, -0.2, 0.22) + 0.9;

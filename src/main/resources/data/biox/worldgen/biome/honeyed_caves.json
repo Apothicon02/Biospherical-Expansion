@@ -123,8 +123,7 @@
   "features": [
     [],
     [
-      "minecraft:lake_lava_underground",
-      "minecraft:lake_lava_surface"
+      "minecraft:lake_lava_underground"
     ],
     [
       "minecraft:amethyst_geode",
@@ -163,7 +162,6 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:patch_tall_grass_2",
       "eco:dense_rooted_azalea_trees",
       "eco:rooted_big_tall_birch_trees",
       "eco:rooted_tilted_tall_birch_trees",

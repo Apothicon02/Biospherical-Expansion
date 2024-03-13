@@ -180,7 +180,8 @@
       "eco:fern_grass",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
-      "biox:patch_berry"
+      "biox:patch_berry",
+      "eco:cave_seagrass_warm"
     ],
     [
       "minecraft:freeze_top_layer"

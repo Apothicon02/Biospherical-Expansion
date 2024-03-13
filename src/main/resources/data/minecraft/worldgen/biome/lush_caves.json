@@ -143,8 +143,7 @@
   "features": [
     [],
     [
-      "minecraft:lake_lava_underground",
-      "minecraft:lake_lava_surface"
+      "minecraft:lake_lava_underground"
     ],
     [
       "minecraft:amethyst_geode",
@@ -159,15 +158,6 @@
     ],
     [],
     [
-      "minecraft:ore_dirt",
-      "minecraft:ore_gravel",
-      "minecraft:ore_granite_upper",
-      "minecraft:ore_granite_lower",
-      "minecraft:ore_diorite_upper",
-      "minecraft:ore_diorite_lower",
-      "minecraft:ore_andesite_upper",
-      "minecraft:ore_andesite_lower",
-      "minecraft:ore_tuff",
       "minecraft:ore_coal_upper",
       "minecraft:ore_coal_lower",
       "minecraft:ore_iron_upper",
@@ -182,11 +172,7 @@
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper",
-      "minecraft:underwater_magma",
-      "minecraft:ore_clay",
-      "minecraft:disk_sand",
-      "minecraft:disk_clay",
-      "minecraft:disk_gravel"
+      "minecraft:underwater_magma"
     ],
     [],
     [
@@ -195,7 +181,6 @@
     ],
     [
       "minecraft:glow_lichen",
-      "minecraft:patch_tall_grass_2",
       "eco:dense_rooted_azalea_trees",
       "eco:rooted_big_tall_birch_trees",
       "eco:rooted_tilted_tall_birch_trees",

@@ -22,7 +22,7 @@ public class BiomeSpecialEffectsGrassMixin {
      */
     @Inject(at = @At("RETURN"), method = "modifyColor", cancellable = true)
     private void eco_modifyColor(double x, double z, int grassColor, CallbackInfoReturnable<Integer> cir) {
-        double saturate = -(Mth.clamp(GRASS_SATURATION_NOISE.getValue(x * 0.05, z * 0.01, false) * 0.33, -0.33, 0.33)+0.33);
+        double saturate = -(Mth.clamp(GRASS_SATURATION_NOISE.getValue(x * 0.05, z * 0.01, false) * 0.33, -0.33, 0.33)+0.5);
         double brighten = Mth.clamp(GRASS_BRIGHTNESS_NOISE.getValue(x * 0.05, z * 0.01, false), -0.5, 0.5)+0.75;
         float red = (float) Mth.clamp(FastColor.ABGR32.red(grassColor), 1, 255)/255;
         float green = (float) Mth.clamp(FastColor.ABGR32.green(grassColor), 1, 255)/255;

@@ -1,8 +1,7 @@
 {
-  "temperature": 0.95,
-  "downfall": 0.9,
+  "temperature": 0.8,
+  "downfall": 0.4,
   "has_precipitation": true,
-  "category": "jungle",
   "effects": {
     "sky_color": 9806079,
     "fog_color": 12638463,
@@ -13,6 +12,12 @@
       "tick_delay": 6000,
       "block_search_extent": 8,
       "offset": 2
+    },
+    "music": {
+      "sound": "minecraft:music.overworld.dripstone_caves",
+      "min_delay": 12000,
+      "max_delay": 24000,
+      "replace_current_music": false
     }
   },
   "spawners": {
@@ -25,50 +30,7 @@
       }
     ],
     "axolotls": [],
-    "creature": [
-      {
-        "type": "minecraft:sheep",
-        "weight": 12,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:pig",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:chicken",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:cow",
-        "weight": 8,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:chicken",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:parrot",
-        "weight": 40,
-        "minCount": 1,
-        "maxCount": 2
-      },
-      {
-        "type": "minecraft:panda",
-        "weight": 1,
-        "minCount": 1,
-        "maxCount": 2
-      }
-    ],
+    "creature": [],
     "misc": [],
     "monster": [
       {
@@ -120,10 +82,10 @@
         "maxCount": 1
       },
       {
-        "type": "minecraft:ocelot",
-        "weight": 2,
-        "minCount": 1,
-        "maxCount": 3
+        "type": "minecraft:drowned",
+        "weight": 95,
+        "minCount": 4,
+        "maxCount": 4
       }
     ],
     "underground_water_creature": [
@@ -148,13 +110,18 @@
   "features": [
     [],
     [
-      "minecraft:lake_lava_surface"
+      "minecraft:lake_lava_underground"
     ],
     [
+      "minecraft:amethyst_geode",
+      "minecraft:large_dripstone"
     ],
     [
+      "minecraft:monster_room",
+      "minecraft:monster_room_deep"
     ],
     [
+      "eco:clay_water_fall"
     ],
     [],
     [
@@ -172,39 +139,20 @@
       "minecraft:ore_diamond_buried",
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
-      "minecraft:ore_copper",
+      "minecraft:ore_copper_large",
       "minecraft:underwater_magma"
     ],
-    [],
+    [
+      "minecraft:dripstone_cluster",
+      "minecraft:pointed_dripstone"
+    ],
     [
       "minecraft:spring_water",
       "minecraft:spring_lava"
     ],
     [
       "minecraft:glow_lichen",
-      "eco:trees_underwater_giant_mangrove",
-      "eco:gray_standalone_cliffs",
-      "eco:mossy_stone_filler",
-      "eco:gray_stones",
-      "eco:mud_pond_extra",
-      "eco:tuff",
-      "eco:tuff_pool",
-      "minecraft:bamboo_light",
-      "biox:trees_dense_giant_jungle",
-      "biox:trees_sparse_branching_oak",
-      "biox:trees_sparse_lush_jungle",
-      "eco:trees_azalea",
-      "eco:noise_tall_red_mushrooms",
-      "eco:sparse_tall_brown_mushrooms",
-      "eco:dense_bushes_clustered",
-      "eco:dense_jungle_bushes",
-      "eco:red_flowers",
-      "eco:purple_flowers",
-      "eco:dense_grass",
-      "eco:tall_grass",
-      "minecraft:patch_sugar_cane",
-      "minecraft:patch_melon",
-      "eco:large_melon"
+      "eco:clay_pool_with_dripleaves"
     ],
     [
       "minecraft:freeze_top_layer"

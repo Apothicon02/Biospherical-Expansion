@@ -1,8 +1,7 @@
 {
-  "temperature": 0.95,
-  "downfall": 0.9,
+  "temperature": 0.8,
+  "downfall": 0.4,
   "has_precipitation": true,
-  "category": "jungle",
   "effects": {
     "sky_color": 9806079,
     "fog_color": 12638463,
@@ -27,46 +26,10 @@
     "axolotls": [],
     "creature": [
       {
-        "type": "minecraft:sheep",
-        "weight": 12,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:pig",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:chicken",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:cow",
-        "weight": 8,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:chicken",
-        "weight": 10,
-        "minCount": 4,
-        "maxCount": 4
-      },
-      {
-        "type": "minecraft:parrot",
-        "weight": 40,
-        "minCount": 1,
-        "maxCount": 2
-      },
-      {
-        "type": "minecraft:panda",
-        "weight": 1,
-        "minCount": 1,
-        "maxCount": 2
+        "type": "minecraft:turtle",
+        "weight": 5,
+        "minCount": 2,
+        "maxCount": 5
       }
     ],
     "misc": [],
@@ -118,12 +81,6 @@
         "weight": 5,
         "minCount": 1,
         "maxCount": 1
-      },
-      {
-        "type": "minecraft:ocelot",
-        "weight": 2,
-        "minCount": 1,
-        "maxCount": 3
       }
     ],
     "underground_water_creature": [
@@ -182,29 +139,13 @@
     ],
     [
       "minecraft:glow_lichen",
-      "eco:trees_underwater_giant_mangrove",
-      "eco:gray_standalone_cliffs",
-      "eco:mossy_stone_filler",
-      "eco:gray_stones",
-      "eco:mud_pond_extra",
-      "eco:tuff",
-      "eco:tuff_pool",
-      "minecraft:bamboo_light",
-      "biox:trees_dense_giant_jungle",
-      "biox:trees_sparse_branching_oak",
-      "biox:trees_sparse_lush_jungle",
-      "eco:trees_azalea",
-      "eco:noise_tall_red_mushrooms",
-      "eco:sparse_tall_brown_mushrooms",
-      "eco:dense_bushes_clustered",
-      "eco:dense_jungle_bushes",
-      "eco:red_flowers",
-      "eco:purple_flowers",
-      "eco:dense_grass",
-      "eco:tall_grass",
+      "minecraft:flower_default",
+      "minecraft:patch_grass_badlands",
+      "minecraft:brown_mushroom_normal",
+      "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
-      "minecraft:patch_melon",
-      "eco:large_melon"
+      "minecraft:patch_pumpkin",
+      "eco:large_pumpkin"
     ],
     [
       "minecraft:freeze_top_layer"

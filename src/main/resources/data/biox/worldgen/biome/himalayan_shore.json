@@ -140,8 +140,7 @@
       "minecraft:red_mushroom_normal",
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
-      "eco:large_pumpkin",
-      "eco:large_dripstone"
+      "eco:large_pumpkin"
     ],
     [
       "minecraft:freeze_top_layer"
