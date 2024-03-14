@@ -123,12 +123,11 @@
   },
   "features": [
     [
-      "eco:underwater_clay",
-      "eco:underwater_noise_andesite_rocks"
     ],
     [
     ],
     [
+      "biox:andesite_cubes"
     ],
     [
     ],

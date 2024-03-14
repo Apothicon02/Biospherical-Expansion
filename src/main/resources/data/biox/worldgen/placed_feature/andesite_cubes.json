@@ -1,5 +1,5 @@
 {
-  "feature": "biox:calcite_cube",
+  "feature": "biox:andesite_cube",
   "placement": [
     {
       "type": "minecraft:count",
@@ -48,8 +48,7 @@
           0
         ],
         "blocks": [
-          "minecraft:diorite",
-          "minecraft:calcite"
+          "minecraft:andesite"
         ]
       }
     },

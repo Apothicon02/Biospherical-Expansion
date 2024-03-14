@@ -123,12 +123,11 @@
   },
   "features": [
     [
-      "eco:underwater_diorite",
-      "eco:underwater_noise_calcite_rocks"
     ],
     [
     ],
     [
+      "biox:calcite_cubes"
     ],
     [
     ],

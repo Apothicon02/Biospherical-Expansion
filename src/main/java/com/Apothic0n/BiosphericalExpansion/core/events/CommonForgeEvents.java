@@ -3,6 +3,7 @@ package com.Apothic0n.BiosphericalExpansion.core.events;
 import com.Apothic0n.BiosphericalExpansion.BiosphericalExpansion;
 import com.Apothic0n.BiosphericalExpansion.core.objects.BioxBlocks;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Holder;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -14,6 +15,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.chunk.ChunkGenerator;
@@ -54,14 +56,27 @@ public class CommonForgeEvents {
             for (int x = 0; x < 128000; x = x+128) {
                 for (int z = 0; z < 128000; z = z+128) {
                     BlockPos spawnPos = new BlockPos(x, 63, z);
-                    if (!level.getBiome(spawnPos).is(BiomeTags.IS_OCEAN) && !level.getBiome(spawnPos).is(BiomeTags.IS_RIVER) && !level.getBiome(spawnPos).toString().contains("caldera")) {
-                        ChunkPos chunkPos = level.getChunkAt(spawnPos).getPos();
-                        level.setChunkForced(chunkPos.x, chunkPos.z, true);
-                        event.getSettings().setSpawn(spawnPos.atY(level.getHeight(Heightmap.Types.WORLD_SURFACE, x, z)), 0.0F);
-                        cancel = true;
-                        x = 128000;
-                        z = 128000;
-                        break;
+                    Holder<Biome> center = level.getBiome(spawnPos);
+                    if (!center.is(BiomeTags.IS_OCEAN) && !center.toString().contains("caldera") && !center.toString().contains("swamp")) {
+                        Holder<Biome> northEast = level.getBiome(spawnPos.north(24).east(24));
+                        if (!northEast.is(BiomeTags.IS_OCEAN) && !northEast.toString().contains("caldera") && !northEast.toString().contains("swamp")) {
+                            Holder<Biome> northWest = level.getBiome(spawnPos.north(24).west(24));
+                            if (!northWest.is(BiomeTags.IS_OCEAN) && !northWest.toString().contains("caldera") && !northWest.toString().contains("swamp")) {
+                                Holder<Biome> southEast = level.getBiome(spawnPos.south(24).east(24));
+                                if (!southEast.is(BiomeTags.IS_OCEAN) && !southEast.toString().contains("caldera") && !southEast.toString().contains("swamp")) {
+                                    Holder<Biome> southWest = level.getBiome(spawnPos.south(24).west(24));
+                                    if (!southWest.is(BiomeTags.IS_OCEAN) && !southWest.toString().contains("caldera") && !southWest.toString().contains("swamp")) {
+                                        ChunkPos chunkPos = level.getChunkAt(spawnPos).getPos();
+                                        level.setChunkForced(chunkPos.x, chunkPos.z, true);
+                                        event.getSettings().setSpawn(spawnPos.atY(level.getHeight(Heightmap.Types.WORLD_SURFACE, x, z)), 0.0F);
+                                        cancel = true;
+                                        x = 128000;
+                                        z = 128000;
+                                        break;
+                                    }
+                                }
+                            }
+                        }
                     }
                 }
             }

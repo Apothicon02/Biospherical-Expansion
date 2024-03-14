@@ -13,7 +13,10 @@
     "dirt_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "minecraft:dirt"
+        "Name": "minecraft:stripped_jungle_wood",
+        "Properties": {
+          "axis": "y"
+        }
       }
     },
     "trunk_provider": {
@@ -47,11 +50,19 @@
     "decorators": [
       {
         "type": "minecraft:cocoa",
-        "probability": 0.15
+        "probability": 0.33
+      },
+      {
+        "type": "biox:trunk_mushrooms",
+        "probability": 0.6
+      },
+      {
+        "type": "biox:hanging_leaves",
+        "probability": 0.9
       },
       {
         "type": "minecraft:leave_vine",
-        "probability": 0.33
+        "probability": 0.03
       },
       {
         "type": "minecraft:alter_ground",

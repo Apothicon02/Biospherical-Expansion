@@ -135,12 +135,11 @@
   },
   "features": [
     [
-      "eco:underwater_packed_mud",
-      "eco:underwater_noise_granite_rocks"
     ],
     [
     ],
     [
+      "biox:granite_cubes"
     ],
     [
     ],
@@ -172,6 +171,7 @@
       "minecraft:spring_lava"
     ],
     [
+      "minecraft:warm_ocean_vegetation",
       "minecraft:seagrass_warm",
       "minecraft:kelp_warm"
     ],

@@ -125,12 +125,11 @@
   },
   "features": [
     [
-      "eco:underwater_blue_ice",
-      "eco:underwater_noise_ice_rocks"
     ],
     [
     ],
     [
+      "biox:blue_ice_cubes",
       "minecraft:iceberg_packed",
       "minecraft:iceberg_blue"
     ],

@@ -165,9 +165,12 @@
     [
       "minecraft:glow_lichen",
       "eco:grass_rocks",
-      "biox:dense_mushroom_giant_red",
+      "biox:dense_muddy_mushroom_giant_red",
       "biox:dense_noise_tall_red_mushrooms",
       "eco:mud_pond",
+      "biox:mossy_patch_melon",
+      "eco:large_melon",
+      "biox:mossy_large_melon",
       "minecraft:bamboo_light",
       "eco:bamboo_cluster",
       "eco:wild_flower_patch",
@@ -175,16 +178,11 @@
       "biox:trees_rare_giant_jungle",
       "eco:bushes_clustered",
       "eco:red_flowers",
-      "biox:dense_torchflowers",
       "eco:overworld_mushrooms",
       "eco:nether_mushrooms",
-      "eco:basic_grass",
-      "eco:plains_grass",
+      "biox:mudless_grass",
       "minecraft:patch_sugar_cane",
-      "minecraft:vines",
-      "biox:mossy_patch_melon",
-      "eco:large_melon",
-      "biox:mossy_large_melon"
+      "minecraft:vines"
     ],
     [
       "minecraft:freeze_top_layer"

@@ -188,6 +188,8 @@
       "minecraft:glow_lichen",
       "eco:grass_rocks",
       "eco:mud_pond",
+      "minecraft:patch_melon",
+      "eco:large_melon",
       "eco:tuff",
       "eco:tuff_pool",
       "eco:dense_bamboo",
@@ -201,9 +203,7 @@
       "minecraft:patch_sugar_cane",
       "minecraft:patch_pumpkin",
       "eco:large_pumpkin",
-      "minecraft:vines",
-      "minecraft:patch_melon",
-      "eco:large_melon"
+      "minecraft:vines"
     ],
     [
       "minecraft:freeze_top_layer"
