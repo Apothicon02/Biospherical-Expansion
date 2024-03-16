@@ -1,6 +1,10 @@
 {
   "values": [
     "biox:himalayan_shore",
-    "biox:molten_caves"
+    "biox:molten_caves",
+    "biox:tropical_plains",
+    "biox:cherry_swamp",
+    "biox:tropical_hills",
+    "biox:fungal_hills"
   ]
 }

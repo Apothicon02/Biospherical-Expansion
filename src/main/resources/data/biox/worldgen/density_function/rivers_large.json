@@ -14,7 +14,7 @@
           "xz_scale": 0.66,
           "y_scale": 0
         },
-        "min_inclusive": 30,
+        "min_inclusive": 15,
         "max_exclusive": 10000,
         "when_in_range": 0,
         "when_out_of_range": 100

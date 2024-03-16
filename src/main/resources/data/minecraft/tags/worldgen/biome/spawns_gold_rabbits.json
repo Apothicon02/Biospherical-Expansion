@@ -1,6 +1,10 @@
 {
   "values": [
     "biox:honeyed_caves",
-    "biox:himalayan_shore"
+    "biox:himalayan_shore",
+    "biox:prickly_desert",
+    "biox:scorching_desert",
+    "biox:wooded_desert",
+    "biox:eroded_desert"
   ]
 }

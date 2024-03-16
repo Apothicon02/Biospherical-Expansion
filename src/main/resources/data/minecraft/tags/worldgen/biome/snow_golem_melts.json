@@ -6,6 +6,14 @@
     "biox:caldera_ocean",
     "biox:mesa",
     "biox:eroded_mesa",
-    "biox:wooded_mesa"
+    "biox:wooded_mesa",
+    "biox:tropical_plains",
+    "biox:tropical_hills",
+    "biox:fungal_hills",
+    "biox:cherry_swamp",
+    "biox:prickly_desert",
+    "biox:eroded_desert",
+    "biox:wooded_desert",
+    "biox:scorching_desert"
   ]
 }

@@ -1,15 +1,15 @@
 {
   "values": [
-    "biox:caldera",
-    "biox:caldera_hills",
-    "biox:orchard",
     "biox:dark_plains",
     "biox:autumnal_dark_plains",
     "biox:birch_plains",
     "biox:flower_plains",
     "biox:popping_plains",
-    "biox:lowlands",
     "biox:sedimentary_plains",
-    "biox:tropical_plains"
+    "biox:tropical_plains",
+    "biox:clover_hills",
+    "biox:wooded_desert",
+    "biox:scorching_desert",
+    "biox:eroded_desert"
   ]
 }

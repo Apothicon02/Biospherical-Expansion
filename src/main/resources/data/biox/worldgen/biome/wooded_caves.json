@@ -1,14 +1,12 @@
 {
-  "temperature": 2,
-  "downfall": 0,
+  "temperature": 0.55,
+  "downfall": -0.5,
   "has_precipitation": false,
   "effects": {
     "sky_color": 9806079,
     "fog_color": 12638463,
     "water_color": 7318712,
     "water_fog_color": 272948,
-    "grass_color": 9470285,
-    "foliage_color": 10387789,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
@@ -16,7 +14,7 @@
       "offset": 2
     },
     "music": {
-      "sound": "minecraft:music.overworld.badlands",
+      "sound": "minecraft:music.overworld.dripstone_caves",
       "min_delay": 12000,
       "max_delay": 24000,
       "replace_current_music": false
@@ -32,7 +30,14 @@
       }
     ],
     "axolotls": [],
-    "creature": [],
+    "creature": [
+      {
+        "type": "minecraft:pig",
+        "weight": 7,
+        "minCount": 1,
+        "maxCount": 3
+      }
+    ],
     "misc": [],
     "monster": [
       {
@@ -106,11 +111,14 @@
   "features": [
     [],
     [
-      "minecraft:lake_lava_surface"
+      "minecraft:lake_lava_underground"
     ],
     [
+      "minecraft:amethyst_geode"
     ],
     [
+      "minecraft:monster_room",
+      "minecraft:monster_room_deep"
     ],
     [
     ],
@@ -130,8 +138,7 @@
       "minecraft:ore_diamond_buried",
       "minecraft:ore_lapis",
       "minecraft:ore_lapis_buried",
-      "minecraft:ore_copper",
-      "minecraft:ore_gold_extra"
+      "minecraft:ore_copper_large"
     ],
     [
     ],
@@ -141,23 +148,10 @@
     ],
     [
       "minecraft:glow_lichen",
-      "eco:grass_rocks",
-      "biox:cyan_terracotta_pond",
-      "eco:mud",
-      "eco:wild_flower_patch",
-      "biox:trees_orchard",
-      "biox:sparse_trees_giant_dead",
-      "eco:fallen_trees_birch_and_oak",
-      "eco:fallen_trees_dark_oak",
-      "eco:dead_rooted_bushes",
-      "eco:bushes_clustered",
-      "minecraft:patch_grass_badlands",
-      "minecraft:patch_dead_bush_badlands",
-      "minecraft:brown_mushroom_normal",
-      "minecraft:red_mushroom_normal",
-      "minecraft:patch_sugar_cane_badlands",
-      "eco:clustered_pumpkin",
-      "minecraft:patch_cactus_decorated"
+      "biox:rooted_giant_dead_trees",
+      "biox:sparse_cave_vines",
+      "eco:clay_pool_with_dripleaves",
+      "minecraft:classic_vines_cave_feature"
     ],
     [
       "minecraft:freeze_top_layer"

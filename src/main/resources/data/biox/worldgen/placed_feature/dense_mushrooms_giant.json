@@ -3,16 +3,24 @@
   "placement": [
     {
       "type": "minecraft:noise_based_count",
-      "noise_to_count_ratio": 120,
+      "noise_to_count_ratio": 3,
       "noise_factor": 2,
-      "noise_offset": -0.6
+      "noise_offset": 0.5
     },
     {
-      "type": "minecraft:in_square"
+      "type": "minecraft:random_offset",
+      "xz_spread": {
+        "type": "minecraft:uniform",
+        "value": {
+          "min_inclusive": 3,
+          "max_inclusive": 12
+        }
+      },
+      "y_spread": 0
     },
     {
       "type": "minecraft:heightmap",
-      "heightmap": "MOTION_BLOCKING"
+      "heightmap": "OCEAN_FLOOR"
     },
     {
       "type": "minecraft:biome"

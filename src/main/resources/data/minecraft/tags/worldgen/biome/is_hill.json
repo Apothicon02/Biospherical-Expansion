@@ -1,5 +1,14 @@
 {
   "values": [
-    "biox:caldera_hills"
+    "biox:caldera_hills",
+    "biox:autumnal_dark_plains",
+    "biox:dark_plains",
+    "biox:birch_hills",
+    "biox:highlands",
+    "biox:windswept_highlands",
+    "biox:sunflower_hills",
+    "biox:clover_hills",
+    "biox:tropical_hills",
+    "biox:fungal_hills"
   ]
 }

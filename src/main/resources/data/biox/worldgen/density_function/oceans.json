@@ -13,7 +13,7 @@
       },
       "argument2": {
         "type": "minecraft:add",
-        "argument1": -69,
+        "argument1": -50,
         "argument2": {
           "type": "minecraft:noise",
           "noise": "biox:oceans",

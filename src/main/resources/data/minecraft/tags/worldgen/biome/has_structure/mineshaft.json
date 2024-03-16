@@ -2,6 +2,8 @@
   "values": [
     "biox:honeyed_caves",
     "biox:glacial_caves",
-    "biox:geodeial_caves"
+    "biox:geodeial_caves",
+    "biox:fungal_caves",
+    "biox:wooded_caves"
   ]
 }

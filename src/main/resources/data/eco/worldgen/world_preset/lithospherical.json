@@ -1562,8 +1562,26 @@
               "biome": "biox:fungal_caves",
               "parameters": {
                 "temperature": [
-                  0.5,
+                  0.66,
                   0.8
+                ],
+                "humidity": [
+                  -1,
+                  0
+                ],
+                "erosion": 0,
+                "continentalness": -1,
+                "weirdness": 0,
+                "depth": 0,
+                "offset": 0
+              }
+            },
+            {
+              "biome": "biox:wooded_caves",
+              "parameters": {
+                "temperature": [
+                  0.5,
+                  0.66
                 ],
                 "humidity": [
                   -1,

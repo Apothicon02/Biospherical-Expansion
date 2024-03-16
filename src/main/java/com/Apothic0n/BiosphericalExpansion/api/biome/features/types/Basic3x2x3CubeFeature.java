@@ -2,6 +2,7 @@ package com.Apothic0n.BiosphericalExpansion.api.biome.features.types;
 
 import com.mojang.serialization.Codec;
 import net.minecraft.core.BlockPos;
+import net.minecraft.tags.BiomeTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.WorldGenLevel;
 import net.minecraft.world.level.block.Blocks;
@@ -20,6 +21,9 @@ public class Basic3x2x3CubeFeature extends Feature<SimpleBlockConfiguration> {
         BlockPos blockpos = pContext.origin();
         RandomSource random = pContext.random();
         BlockState material = pContext.config().toPlace().getState(random, blockpos);
+        if (blockpos.getY() > 55 && worldgenlevel.getBiome(blockpos).is(BiomeTags.IS_OCEAN)) {
+            return false;
+        }
         if (worldgenlevel.isEmptyBlock(blockpos.offset(-1, -1, 0)) || worldgenlevel.isEmptyBlock(blockpos.offset(1, -1, 0)) ||
                 worldgenlevel.isEmptyBlock(blockpos.offset(0, -1, -1)) || worldgenlevel.isEmptyBlock(blockpos.offset(0, -1, 1))) {
             return false;

@@ -116,7 +116,7 @@
                   "type": "minecraft:add",
                   "argument1": {
                     "type": "minecraft:min",
-                    "argument1": "biox:temperature_large",
+                    "argument1": "biox:accurate_temperature_large",
                     "argument2": -0.27
                   },
                   "argument2": 0.27
@@ -135,7 +135,7 @@
                   "type": "minecraft:add",
                   "argument1": {
                     "type": "minecraft:min",
-                    "argument1": "biox:vegetation_large",
+                    "argument1": "biox:accurate_vegetation_large",
                     "argument2": -0.54
                   },
                   "argument2": 0.54
@@ -157,7 +157,7 @@
                   "type": "minecraft:add",
                   "argument1": {
                     "type": "minecraft:min",
-                    "argument1": "biox:vegetation_large",
+                    "argument1": "biox:accurate_vegetation_large",
                     "argument2": -0.4
                   },
                   "argument2": 0.4
@@ -176,7 +176,7 @@
                   "type": "minecraft:add",
                   "argument1": {
                     "type": "minecraft:min",
-                    "argument1": "biox:temperature_large",
+                    "argument1": "biox:accurate_temperature_large",
                     "argument2": -0.2
                   },
                   "argument2": 0.2
