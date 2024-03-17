@@ -1,10 +1,10 @@
 {
   "dimensions": {
     "minecraft:overworld": {
-      "type": "eco:the_open_overworld",
+      "type": "eco:the_enclosed_overworld",
       "generator": {
         "type": "minecraft:noise",
-        "settings": "biox:tropospherical",
+        "settings": "biox:asthenospherical",
         "biome_source": {
           "type": "minecraft:multi_noise",
           "biomes": [
@@ -2158,10 +2158,10 @@
       }
     },
     "minecraft:the_nether": {
-      "type": "eco:the_open_nether",
+      "type": "minecraft:the_nether",
       "generator": {
         "type": "minecraft:noise",
-        "settings": "eco:tropospherical_nether",
+        "settings": "minecraft:nether",
         "biome_source": {
           "type": "minecraft:multi_noise",
           "preset": "minecraft:nether"

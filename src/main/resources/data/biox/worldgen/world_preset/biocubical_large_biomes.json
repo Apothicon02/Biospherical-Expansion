@@ -1462,11 +1462,32 @@
               }
             },
             {
+              "biome": "minecraft:beach",
+              "parameters": {
+                "temperature": [
+                  -0.8,
+                  -0.25
+                ],
+                "humidity": [
+                  -0.2,
+                  1
+                ],
+                "erosion": 0,
+                "continentalness": [
+                  0.235,
+                  0.25
+                ],
+                "weirdness": 0,
+                "depth": 0,
+                "offset": 0
+              }
+            },
+            {
               "biome": "minecraft:snowy_beach",
               "parameters": {
                 "temperature": [
                   -1,
-                  -0.25
+                  -0.8
                 ],
                 "humidity": [
                   -0.2,
@@ -1737,11 +1758,32 @@
               }
             },
             {
+              "biome": "minecraft:river",
+              "parameters": {
+                "temperature": [
+                  -0.8,
+                  -0.25
+                ],
+                "humidity": [
+                  -0.2,
+                  1
+                ],
+                "erosion": 0,
+                "continentalness": [
+                  1.149,
+                  1.234
+                ],
+                "weirdness": 0,
+                "depth": 0,
+                "offset": 0
+              }
+            },
+            {
               "biome": "minecraft:frozen_river",
               "parameters": {
                 "temperature": [
                   -1,
-                  -0.25
+                  -0.8
                 ],
                 "humidity": [
                   -0.2,

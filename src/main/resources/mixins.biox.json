@@ -9,6 +9,7 @@
   "mixins": [
     "BiomeMixin",
     "BiomeSpecialEffectsGrassMixin",
+    "LevelChunkMixin",
     "NoiseChunkGeneratorMixin",
     "UtilMixin"
   ],

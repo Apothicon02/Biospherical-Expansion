@@ -41,6 +41,6 @@ Expanding the biosphere!
 [[dependencies.biox]]
 modId="eco"
 mandatory=true
-versionRange="[2.4.3,)"
+versionRange="[2.4.4,)"
 ordering="AFTER"
 side="SERVER"

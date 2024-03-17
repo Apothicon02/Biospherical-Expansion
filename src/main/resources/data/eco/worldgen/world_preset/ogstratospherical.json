@@ -4,7 +4,7 @@
       "type": "eco:the_open_overworld",
       "generator": {
         "type": "minecraft:noise",
-        "settings": "biox:tropospherical",
+        "settings": "biox:ogstratospherical",
         "biome_source": {
           "type": "minecraft:multi_noise",
           "biomes": [
@@ -2161,7 +2161,7 @@
       "type": "eco:the_open_nether",
       "generator": {
         "type": "minecraft:noise",
-        "settings": "eco:tropospherical_nether",
+        "settings": "minecraft:nether",
         "biome_source": {
           "type": "minecraft:multi_noise",
           "preset": "minecraft:nether"
