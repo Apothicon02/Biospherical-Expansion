@@ -133,48 +133,6 @@
       {
         "type": "minecraft:condition",
         "if_true": {
-          "type": "minecraft:y_above",
-          "anchor": {
-            "absolute": 65
-          },
-          "surface_depth_multiplier": 0,
-          "add_stone_depth": false
-        },
-        "then_run": {
-          "type": "minecraft:condition",
-          "if_true": {
-            "type": "minecraft:biome",
-            "biome_is": [
-              "minecraft:stony_shore",
-              "minecraft:snowy_beach",
-              "minecraft:beach",
-              "biox:himalayan_shore",
-              "biox:gravelly_river",
-              "minecraft:river",
-              "minecraft:frozen_river",
-              "minecraft:ocean",
-              "minecraft:deep_ocean",
-              "minecraft:cold_ocean",
-              "minecraft:deep_cold_ocean",
-              "minecraft:frozen_ocean",
-              "minecraft:deep_frozen_ocean",
-              "minecraft:lukewarm_ocean",
-              "minecraft:deep_lukewarm_ocean",
-              "minecraft:warm_ocean",
-              "biox:caldera_ocean"
-            ]
-          },
-          "then_run": {
-            "type": "minecraft:block",
-            "result_state": {
-              "Name": "minecraft:air"
-            }
-          }
-        }
-      },
-      {
-        "type": "minecraft:condition",
-        "if_true": {
           "type": "minecraft:stone_depth",
           "offset": 0,
           "surface_type": "floor",

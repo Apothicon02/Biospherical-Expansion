@@ -41,21 +41,11 @@
         "argument2": {
           "type": "minecraft:range_choice",
           "input": {
-            "type": "minecraft:mul",
-            "argument1": {
-              "type": "minecraft:y_clamped_gradient",
-              "from_y": 47,
-              "to_y": 48,
-              "from_value": 0,
-              "to_value": 1
-            },
-            "argument2": {
-              "type": "minecraft:y_clamped_gradient",
-              "from_y": 63,
-              "to_y": 64,
-              "from_value": 1,
-              "to_value": 0
-            }
+            "type": "minecraft:y_clamped_gradient",
+            "from_y": 47,
+            "to_y": 48,
+            "from_value": 0,
+            "to_value": 1
           },
           "min_inclusive": 1,
           "max_exclusive": 10,
@@ -64,7 +54,13 @@
             "input": "biox:rivers",
             "min_inclusive": -10000,
             "max_exclusive": 0,
-            "when_in_range": 1,
+            "when_in_range": {
+              "type": "minecraft:y_clamped_gradient",
+              "from_y": 63,
+              "to_y": 64,
+              "from_value": 1,
+              "to_value": 0.103
+            },
             "when_out_of_range": 0
           },
           "when_out_of_range": 0

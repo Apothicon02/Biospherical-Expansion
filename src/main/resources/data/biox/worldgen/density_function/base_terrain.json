@@ -16,12 +16,7 @@
         },
         "argument2": -0.85
       },
-      "argument2": {
-        "type": "minecraft:noise",
-        "noise": "minecraft:ridge",
-        "xz_scale": 0.32,
-        "y_scale": 1
-      }
+      "argument2": "minecraft:overworld/ridges"
     },
     "argument2": {
       "type": "minecraft:add",
@@ -39,12 +34,7 @@
       "argument2": {
         "type": "minecraft:mul",
         "argument1": -1,
-        "argument2": {
-          "type": "minecraft:noise",
-          "noise": "minecraft:ridge",
-          "xz_scale": 0.32,
-          "y_scale": 1
-        }
+        "argument2": "minecraft:overworld/ridges"
       }
     }
   }
