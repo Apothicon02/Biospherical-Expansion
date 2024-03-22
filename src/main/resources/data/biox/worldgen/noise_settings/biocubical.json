@@ -187,56 +187,7 @@
       "y_scale": 1
     }
   },
-  "spawn_target": [
-    {
-      "temperature": [
-        -1,
-        1
-      ],
-      "humidity": [
-        -1,
-        1
-      ],
-      "continentalness": [
-        -1,
-        1
-      ],
-      "erosion": [
-        0,
-        0.21
-      ],
-      "weirdness": [
-        -1,
-        1
-      ],
-      "depth": 0,
-      "offset": 0
-    },
-    {
-      "temperature": [
-        -1,
-        1
-      ],
-      "humidity": [
-        -1,
-        1
-      ],
-      "continentalness": [
-        -1,
-        1
-      ],
-      "erosion": [
-        0,
-        0.21
-      ],
-      "weirdness": [
-        -1,
-        1
-      ],
-      "depth": 0,
-      "offset": 0
-    }
-  ],
+  "spawn_target": [],
   "surface_rule": {
     "type": "minecraft:sequence",
     "sequence": [
