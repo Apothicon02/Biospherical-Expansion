@@ -90,8 +90,8 @@
           "from_value": 0,
           "to_value": 1
         },
-        "min_inclusive": 0,
-        "max_exclusive": 1,
+        "min_inclusive": -1,
+        "max_exclusive": 0,
         "when_in_range": "biox:caves",
         "when_out_of_range": {
           "type": "minecraft:range_choice",
