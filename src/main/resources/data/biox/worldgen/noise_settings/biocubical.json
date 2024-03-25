@@ -93,8 +93,8 @@
           "from_value": 0,
           "to_value": 1
         },
-        "min_inclusive": -1,
-        "max_exclusive": 0,
+        "min_inclusive": 0,
+        "max_exclusive": 0.1,
         "when_in_range": {
           "type": "minecraft:cache_once",
           "argument": "biox:caves"
@@ -5065,495 +5065,6 @@
       {
         "type": "minecraft:condition",
         "if_true": {
-          "type": "minecraft:stone_depth",
-          "offset": 10,
-          "surface_type": "floor",
-          "add_surface_depth": false,
-          "secondary_depth_range": 0
-        },
-        "then_run": {
-          "type": "minecraft:sequence",
-          "sequence": [
-            {
-              "type": "minecraft:condition",
-              "if_true": {
-                "type": "minecraft:biome",
-                "biome_is": [
-                  "biox:wooded_desert"
-                ]
-              },
-              "then_run": {
-                "type": "minecraft:sequence",
-                "sequence": [
-                  {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:noise_threshold",
-                      "noise": "biox:volcanoes",
-                      "min_threshold": 0.8,
-                      "max_threshold": 100
-                    },
-                    "then_run": {
-                      "type": "minecraft:condition",
-                      "if_true": {
-                        "type": "minecraft:noise_threshold",
-                        "noise": "eco:surface_variation",
-                        "min_threshold": -0.069,
-                        "max_threshold": 0.042
-                      },
-                      "then_run": {
-                        "type": "minecraft:block",
-                        "result_state": {
-                          "Name": "minecraft:stone"
-                        }
-                      }
-                    }
-                  },
-                  {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:noise_threshold",
-                      "noise": "biox:volcanoes",
-                      "min_threshold": 0.8,
-                      "max_threshold": 100
-                    },
-                    "then_run": {
-                      "type": "minecraft:block",
-                      "result_state": {
-                        "Name": "minecraft:cobblestone"
-                      }
-                    }
-                  },
-                  {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:noise_threshold",
-                      "noise": "eco:surface_variation",
-                      "min_threshold": -0.069,
-                      "max_threshold": 0.042
-                    },
-                    "then_run": {
-                      "type": "minecraft:block",
-                      "result_state": {
-                        "Name": "minecraft:sandstone"
-                      }
-                    }
-                  },
-                  {
-                    "type": "minecraft:block",
-                    "result_state": {
-                      "Name": "minecraft:sandstone"
-                    }
-                  }
-                ]
-              }
-            },
-            {
-              "type": "minecraft:condition",
-              "if_true": {
-                "type": "minecraft:biome",
-                "biome_is": [
-                  "biox:scorching_desert"
-                ]
-              },
-              "then_run": {
-                "type": "minecraft:sequence",
-                "sequence": [
-                  {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:noise_threshold",
-                      "noise": "biox:volcanoes",
-                      "min_threshold": 0.8,
-                      "max_threshold": 100
-                    },
-                    "then_run": {
-                      "type": "minecraft:sequence",
-                      "sequence": [
-                        {
-                          "type": "minecraft:condition",
-                          "if_true": {
-                            "type": "minecraft:noise_threshold",
-                            "noise": "eco:surface_variation",
-                            "min_threshold": -0.3,
-                            "max_threshold": -0.1
-                          },
-                          "then_run": {
-                            "type": "minecraft:block",
-                            "result_state": {
-                              "Name": "minecraft:stone"
-                            }
-                          }
-                        },
-                        {
-                          "type": "minecraft:condition",
-                          "if_true": {
-                            "type": "minecraft:noise_threshold",
-                            "noise": "eco:surface_variation",
-                            "min_threshold": 0.3,
-                            "max_threshold": 0.6
-                          },
-                          "then_run": {
-                            "type": "minecraft:block",
-                            "result_state": {
-                              "Name": "minecraft:stone"
-                            }
-                          }
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:noise_threshold",
-                      "noise": "biox:volcanoes",
-                      "min_threshold": 0.8,
-                      "max_threshold": 100
-                    },
-                    "then_run": {
-                      "type": "minecraft:block",
-                      "result_state": {
-                        "Name": "minecraft:cobblestone"
-                      }
-                    }
-                  },
-                  {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:noise_threshold",
-                      "noise": "eco:surface_variation",
-                      "min_threshold": -0.3,
-                      "max_threshold": -0.1
-                    },
-                    "then_run": {
-                      "type": "minecraft:block",
-                      "result_state": {
-                        "Name": "minecraft:sandstone"
-                      }
-                    }
-                  },
-                  {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:noise_threshold",
-                      "noise": "eco:surface_variation",
-                      "min_threshold": 0.3,
-                      "max_threshold": 0.6
-                    },
-                    "then_run": {
-                      "type": "minecraft:block",
-                      "result_state": {
-                        "Name": "minecraft:sandstone"
-                      }
-                    }
-                  },
-                  {
-                    "type": "minecraft:block",
-                    "result_state": {
-                      "Name": "minecraft:red_sandstone"
-                    }
-                  }
-                ]
-              }
-            },
-            {
-              "type": "minecraft:condition",
-              "if_true": {
-                "type": "minecraft:biome",
-                "biome_is": [
-                  "biox:eroded_desert"
-                ]
-              },
-              "then_run": {
-                "type": "minecraft:sequence",
-                "sequence": [
-                  {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:noise_threshold",
-                      "noise": "biox:volcanoes",
-                      "min_threshold": 0.8,
-                      "max_threshold": 100
-                    },
-                    "then_run": {
-                      "type": "minecraft:condition",
-                      "if_true": {
-                        "type": "minecraft:noise_threshold",
-                        "noise": "eco:surface_variation",
-                        "min_threshold": -0.069,
-                        "max_threshold": 0.042
-                      },
-                      "then_run": {
-                        "type": "minecraft:block",
-                        "result_state": {
-                          "Name": "minecraft:stone"
-                        }
-                      }
-                    }
-                  },
-                  {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:noise_threshold",
-                      "noise": "biox:volcanoes",
-                      "min_threshold": 0.8,
-                      "max_threshold": 100
-                    },
-                    "then_run": {
-                      "type": "minecraft:block",
-                      "result_state": {
-                        "Name": "minecraft:cobblestone"
-                      }
-                    }
-                  },
-                  {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:noise_threshold",
-                      "noise": "eco:surface_variation",
-                      "min_threshold": -0.069,
-                      "max_threshold": 0.042
-                    },
-                    "then_run": {
-                      "type": "minecraft:block",
-                      "result_state": {
-                        "Name": "minecraft:red_sandstone"
-                      }
-                    }
-                  },
-                  {
-                    "type": "minecraft:block",
-                    "result_state": {
-                      "Name": "minecraft:red_sandstone"
-                    }
-                  }
-                ]
-              }
-            },
-            {
-              "type": "minecraft:condition",
-              "if_true": {
-                "type": "minecraft:biome",
-                "biome_is": [
-                  "biox:prickly_desert"
-                ]
-              },
-              "then_run": {
-                "type": "minecraft:sequence",
-                "sequence": [
-                  {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:noise_threshold",
-                      "noise": "biox:cracks",
-                      "min_threshold": -0.09,
-                      "max_threshold": -0.08
-                    },
-                    "then_run": {
-                      "type": "minecraft:block",
-                      "result_state": {
-                        "Name": "minecraft:mangrove_roots"
-                      }
-                    }
-                  },
-                  {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:noise_threshold",
-                      "noise": "biox:cracks_2",
-                      "min_threshold": -0.05,
-                      "max_threshold": -0.04
-                    },
-                    "then_run": {
-                      "type": "minecraft:block",
-                      "result_state": {
-                        "Name": "minecraft:mangrove_roots"
-                      }
-                    }
-                  },
-                  {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:noise_threshold",
-                      "noise": "biox:cracks_3",
-                      "min_threshold": -0.01,
-                      "max_threshold": 0.0
-                    },
-                    "then_run": {
-                      "type": "minecraft:block",
-                      "result_state": {
-                        "Name": "minecraft:mangrove_roots"
-                      }
-                    }
-                  },
-                  {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:noise_threshold",
-                      "noise": "biox:cracks_4",
-                      "min_threshold": 0.04,
-                      "max_threshold": 0.05
-                    },
-                    "then_run": {
-                      "type": "minecraft:block",
-                      "result_state": {
-                        "Name": "minecraft:mangrove_roots"
-                      }
-                    }
-                  },
-                  {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:noise_threshold",
-                      "noise": "biox:cracks",
-                      "min_threshold": -0.59,
-                      "max_threshold": -0.58
-                    },
-                    "then_run": {
-                      "type": "minecraft:block",
-                      "result_state": {
-                        "Name": "minecraft:mangrove_roots"
-                      }
-                    }
-                  },
-                  {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:noise_threshold",
-                      "noise": "biox:cracks_2",
-                      "min_threshold": -0.55,
-                      "max_threshold": -0.54
-                    },
-                    "then_run": {
-                      "type": "minecraft:block",
-                      "result_state": {
-                        "Name": "minecraft:mangrove_roots"
-                      }
-                    }
-                  },
-                  {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:noise_threshold",
-                      "noise": "biox:cracks_3",
-                      "min_threshold": -0.51,
-                      "max_threshold": -0.5
-                    },
-                    "then_run": {
-                      "type": "minecraft:block",
-                      "result_state": {
-                        "Name": "minecraft:mangrove_roots"
-                      }
-                    }
-                  },
-                  {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:noise_threshold",
-                      "noise": "biox:cracks_4",
-                      "min_threshold": 0.54,
-                      "max_threshold": 0.55
-                    },
-                    "then_run": {
-                      "type": "minecraft:block",
-                      "result_state": {
-                        "Name": "minecraft:mangrove_roots"
-                      }
-                    }
-                  },
-                  {
-                    "type": "minecraft:block",
-                    "result_state": {
-                      "Name": "minecraft:air"
-                    }
-                  }
-                ]
-              }
-            },
-            {
-              "type": "minecraft:condition",
-              "if_true": {
-                "type": "minecraft:biome",
-                "biome_is": [
-                  "minecraft:desert",
-                  "minecraft:river",
-                  "minecraft:beach",
-                  "biox:himalayan_shore"
-                ]
-              },
-              "then_run": {
-                "type": "minecraft:sequence",
-                "sequence": [
-                  {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:noise_threshold",
-                      "noise": "biox:volcanoes",
-                      "min_threshold": 0.8,
-                      "max_threshold": 100
-                    },
-                    "then_run": {
-                      "type": "minecraft:condition",
-                      "if_true": {
-                        "type": "minecraft:noise_threshold",
-                        "noise": "eco:surface_variation",
-                        "min_threshold": -0.069,
-                        "max_threshold": 0.042
-                      },
-                      "then_run": {
-                        "type": "minecraft:block",
-                        "result_state": {
-                          "Name": "minecraft:stone"
-                        }
-                      }
-                    }
-                  },
-                  {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:noise_threshold",
-                      "noise": "biox:volcanoes",
-                      "min_threshold": 0.8,
-                      "max_threshold": 100
-                    },
-                    "then_run": {
-                      "type": "minecraft:block",
-                      "result_state": {
-                        "Name": "minecraft:cobblestone"
-                      }
-                    }
-                  },
-                  {
-                    "type": "minecraft:condition",
-                    "if_true": {
-                      "type": "minecraft:noise_threshold",
-                      "noise": "eco:surface_variation",
-                      "min_threshold": -0.069,
-                      "max_threshold": 0.042
-                    },
-                    "then_run": {
-                      "type": "minecraft:block",
-                      "result_state": {
-                        "Name": "minecraft:sandstone"
-                      }
-                    }
-                  },
-                  {
-                    "type": "minecraft:block",
-                    "result_state": {
-                      "Name": "minecraft:sandstone"
-                    }
-                  }
-                ]
-              }
-            }
-          ]
-        }
-      },
-      {
-        "type": "minecraft:condition",
-        "if_true": {
           "type": "minecraft:biome",
           "biome_is": [
             "biox:prickly_desert"
@@ -5640,6 +5151,485 @@
             ]
           }
         }
+      },
+      {
+        "type": "minecraft:sequence",
+        "sequence": [
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:biome",
+              "biome_is": [
+                "biox:wooded_desert"
+              ]
+            },
+            "then_run": {
+              "type": "minecraft:sequence",
+              "sequence": [
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "noise": "biox:volcanoes",
+                    "min_threshold": 0.8,
+                    "max_threshold": 100
+                  },
+                  "then_run": {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "noise": "eco:surface_variation",
+                      "min_threshold": -0.069,
+                      "max_threshold": 0.042
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "minecraft:stone"
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "noise": "biox:volcanoes",
+                    "min_threshold": 0.8,
+                    "max_threshold": 100
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:cobblestone"
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "noise": "eco:surface_variation",
+                    "min_threshold": -0.069,
+                    "max_threshold": 0.042
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:sandstone"
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:block",
+                  "result_state": {
+                    "Name": "minecraft:sandstone"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:biome",
+              "biome_is": [
+                "biox:scorching_desert"
+              ]
+            },
+            "then_run": {
+              "type": "minecraft:sequence",
+              "sequence": [
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "noise": "biox:volcanoes",
+                    "min_threshold": 0.8,
+                    "max_threshold": 100
+                  },
+                  "then_run": {
+                    "type": "minecraft:sequence",
+                    "sequence": [
+                      {
+                        "type": "minecraft:condition",
+                        "if_true": {
+                          "type": "minecraft:noise_threshold",
+                          "noise": "eco:surface_variation",
+                          "min_threshold": -0.3,
+                          "max_threshold": -0.1
+                        },
+                        "then_run": {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "minecraft:stone"
+                          }
+                        }
+                      },
+                      {
+                        "type": "minecraft:condition",
+                        "if_true": {
+                          "type": "minecraft:noise_threshold",
+                          "noise": "eco:surface_variation",
+                          "min_threshold": 0.3,
+                          "max_threshold": 0.6
+                        },
+                        "then_run": {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "minecraft:stone"
+                          }
+                        }
+                      }
+                    ]
+                  }
+                },
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "noise": "biox:volcanoes",
+                    "min_threshold": 0.8,
+                    "max_threshold": 100
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:cobblestone"
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "noise": "eco:surface_variation",
+                    "min_threshold": -0.3,
+                    "max_threshold": -0.1
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:sandstone"
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "noise": "eco:surface_variation",
+                    "min_threshold": 0.3,
+                    "max_threshold": 0.6
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:sandstone"
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:block",
+                  "result_state": {
+                    "Name": "minecraft:red_sandstone"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:biome",
+              "biome_is": [
+                "biox:eroded_desert"
+              ]
+            },
+            "then_run": {
+              "type": "minecraft:sequence",
+              "sequence": [
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "noise": "biox:volcanoes",
+                    "min_threshold": 0.8,
+                    "max_threshold": 100
+                  },
+                  "then_run": {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "noise": "eco:surface_variation",
+                      "min_threshold": -0.069,
+                      "max_threshold": 0.042
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "minecraft:stone"
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "noise": "biox:volcanoes",
+                    "min_threshold": 0.8,
+                    "max_threshold": 100
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:cobblestone"
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "noise": "eco:surface_variation",
+                    "min_threshold": -0.069,
+                    "max_threshold": 0.042
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:red_sandstone"
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:block",
+                  "result_state": {
+                    "Name": "minecraft:red_sandstone"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:biome",
+              "biome_is": [
+                "biox:prickly_desert"
+              ]
+            },
+            "then_run": {
+              "type": "minecraft:sequence",
+              "sequence": [
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "noise": "biox:cracks",
+                    "min_threshold": -0.09,
+                    "max_threshold": -0.08
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:mangrove_roots"
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "noise": "biox:cracks_2",
+                    "min_threshold": -0.05,
+                    "max_threshold": -0.04
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:mangrove_roots"
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "noise": "biox:cracks_3",
+                    "min_threshold": -0.01,
+                    "max_threshold": 0.0
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:mangrove_roots"
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "noise": "biox:cracks_4",
+                    "min_threshold": 0.04,
+                    "max_threshold": 0.05
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:mangrove_roots"
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "noise": "biox:cracks",
+                    "min_threshold": -0.59,
+                    "max_threshold": -0.58
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:mangrove_roots"
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "noise": "biox:cracks_2",
+                    "min_threshold": -0.55,
+                    "max_threshold": -0.54
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:mangrove_roots"
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "noise": "biox:cracks_3",
+                    "min_threshold": -0.51,
+                    "max_threshold": -0.5
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:mangrove_roots"
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "noise": "biox:cracks_4",
+                    "min_threshold": 0.54,
+                    "max_threshold": 0.55
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:mangrove_roots"
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:block",
+                  "result_state": {
+                    "Name": "minecraft:air"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "type": "minecraft:condition",
+            "if_true": {
+              "type": "minecraft:biome",
+              "biome_is": [
+                "minecraft:desert",
+                "minecraft:river",
+                "minecraft:beach",
+                "biox:himalayan_shore"
+              ]
+            },
+            "then_run": {
+              "type": "minecraft:sequence",
+              "sequence": [
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "noise": "biox:volcanoes",
+                    "min_threshold": 0.8,
+                    "max_threshold": 100
+                  },
+                  "then_run": {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:noise_threshold",
+                      "noise": "eco:surface_variation",
+                      "min_threshold": -0.069,
+                      "max_threshold": 0.042
+                    },
+                    "then_run": {
+                      "type": "minecraft:block",
+                      "result_state": {
+                        "Name": "minecraft:stone"
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "noise": "biox:volcanoes",
+                    "min_threshold": 0.8,
+                    "max_threshold": 100
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:cobblestone"
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:condition",
+                  "if_true": {
+                    "type": "minecraft:noise_threshold",
+                    "noise": "eco:surface_variation",
+                    "min_threshold": -0.069,
+                    "max_threshold": 0.042
+                  },
+                  "then_run": {
+                    "type": "minecraft:block",
+                    "result_state": {
+                      "Name": "minecraft:sandstone"
+                    }
+                  }
+                },
+                {
+                  "type": "minecraft:block",
+                  "result_state": {
+                    "Name": "minecraft:sandstone"
+                  }
+                }
+              ]
+            }
+          }
+        ]
       },
 
       {
