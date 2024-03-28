@@ -160,8 +160,29 @@
               "biome": "minecraft:jagged_peaks",
               "parameters": {
                 "temperature": [
-                  -0.25,
+                  -0.8,
                   0.25
+                ],
+                "humidity": [
+                  -0.5,
+                  1
+                ],
+                "erosion": 0,
+                "continentalness": [
+                  0.545,
+                  1
+                ],
+                "weirdness": 0,
+                "depth": 0,
+                "offset": 0
+              }
+            },
+            {
+              "biome": "minecraft:jagged_peaks",
+              "parameters": {
+                "temperature": [
+                  -0.8,
+                  -0.25
                 ],
                 "humidity": [
                   -0.5,
@@ -182,7 +203,7 @@
               "parameters": {
                 "temperature": [
                   -1,
-                  -0.25
+                  -0.8
                 ],
                 "humidity": [
                   -0.5,
@@ -1444,7 +1465,7 @@
               "biome": "minecraft:stony_shore",
               "parameters": {
                 "temperature": [
-                  -1,
+                  -0.8,
                   -0.25
                 ],
                 "humidity": [
@@ -1490,7 +1511,7 @@
                   -0.8
                 ],
                 "humidity": [
-                  -0.2,
+                  -0.5,
                   1
                 ],
                 "erosion": 0,
@@ -1740,7 +1761,7 @@
               "biome": "biox:gravelly_river",
               "parameters": {
                 "temperature": [
-                  -1,
+                  -0.8,
                   -0.25
                 ],
                 "humidity": [
@@ -1786,7 +1807,7 @@
                   -0.8
                 ],
                 "humidity": [
-                  -0.2,
+                  -0.5,
                   1
                 ],
                 "erosion": 0,

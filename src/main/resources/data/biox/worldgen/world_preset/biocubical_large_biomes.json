@@ -1444,7 +1444,7 @@
               "biome": "minecraft:stony_shore",
               "parameters": {
                 "temperature": [
-                  -1,
+                  -0.8,
                   -0.25
                 ],
                 "humidity": [
@@ -1490,7 +1490,7 @@
                   -0.8
                 ],
                 "humidity": [
-                  -0.2,
+                  -0.5,
                   1
                 ],
                 "erosion": 0,
@@ -1740,7 +1740,7 @@
               "biome": "biox:gravelly_river",
               "parameters": {
                 "temperature": [
-                  -1,
+                  -0.8,
                   -0.25
                 ],
                 "humidity": [
@@ -1786,7 +1786,7 @@
                   -0.8
                 ],
                 "humidity": [
-                  -0.2,
+                  -0.5,
                   1
                 ],
                 "erosion": 0,

@@ -94,7 +94,7 @@ public final class BioxBlocks {
         String name = baseBlock.toString();
         return Map.of(
                 baseBlock, BLOCKS.register(name.substring(16, name.length() - 1) + "_pile", () ->
-                        new CollisionlessLayerBlock(BlockBehaviour.Properties.copy(baseBlock).forceSolidOff().noCollission().noOcclusion().replaceable().instabreak().requiresCorrectToolForDrops()))
+                        new CollisionlessLayerBlock(BlockBehaviour.Properties.copy(baseBlock).forceSolidOff().noCollission().noOcclusion().replaceable().instabreak()))
         );
     }
 
@@ -102,7 +102,7 @@ public final class BioxBlocks {
         String name = baseBlock.toString();
         return Map.of(
                 baseBlock, BLOCKS.register(name.substring(16, name.length() - 1) + "_wall", () ->
-                        new FragileWallBlock(BlockBehaviour.Properties.copy(baseBlock).forceSolidOff().noCollission().noOcclusion().instabreak().requiresCorrectToolForDrops()))
+                        new FragileWallBlock(BlockBehaviour.Properties.copy(baseBlock).forceSolidOff().noCollission().noOcclusion().replaceable().instabreak()))
         );
     }
 

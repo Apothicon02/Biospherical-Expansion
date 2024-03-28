@@ -145,7 +145,7 @@ public class CommonModEvents {
                 SimpleModel.create(new ResourceLocation("block/cube_all"), renderType)
                         .addTexture("all", baseBlock));
         map.put(pileBlockItem,
-                SimpleModel.create(pileBlock2));
+                SimpleModel.create(pileBlock2, renderType));
         return map;
     }
 
