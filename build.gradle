@@ -174,7 +174,7 @@ dependencies {
     jarJar(group: "commoble.databuddy", name: "databuddy-${databuddy_mc_version}", version: "[${databuddy_version}, ${databuddy_next_version})")
 
     // ecospherical expansion
-    implementation fg.deobf("com.Apothic0n.EcosphericalExpansion:Ecospherical-Expansion:2.4.4")
+    implementation fg.deobf("com.Apothic0n.EcosphericalExpansion:Ecospherical-Expansion:2.4.6")
     // locator
     runtimeOnly fg.deobf("com.Apothic0n.Locator:Locator:1.1.0")
 

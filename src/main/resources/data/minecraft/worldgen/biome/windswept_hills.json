@@ -159,9 +159,7 @@
     ],
     [
       "minecraft:ore_infested",
-      "eco:emerald_rocks",
-      "eco:sculk_vein",
-      "eco:sculk_patch_deep_dark"
+      "eco:emerald_rocks"
     ],
     [
       "minecraft:spring_water",
