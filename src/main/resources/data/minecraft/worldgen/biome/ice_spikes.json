@@ -7,9 +7,7 @@
     "sky_color": 9806079,
     "fog_color": 12638463,
     "water_color": 7318712,
-    "water_fog_color": 272948,
-    "foliage_color": 16777215,
-    "mood_sound": {
+    "water_fog_color": 272948,"mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
       "block_search_extent": 8,
@@ -144,9 +142,7 @@
       "minecraft:ore_lapis_buried",
       "minecraft:ore_copper"
     ],
-    [
-
-    ],
+    [],
     [
       "minecraft:spring_water",
       "minecraft:spring_lava"

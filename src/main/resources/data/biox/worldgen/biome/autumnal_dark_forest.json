@@ -8,8 +8,6 @@
     "fog_color": 12638463,
     "water_color": 7318712,
     "water_fog_color": 272948,
-    "grass_color": 13733683,
-    "foliage_color": 13718835,
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
@@ -175,7 +173,7 @@
       "eco:fallen_trees_dark_oak",
       "eco:noise_tall_red_mushrooms",
       "eco:sparse_tall_brown_mushrooms",
-      "eco:dark_oak_bushes",
+      "biox:dark_oak_bushes",
       "eco:basic_flowers",
       "eco:overworld_mushrooms",
       "eco:basic_grass",

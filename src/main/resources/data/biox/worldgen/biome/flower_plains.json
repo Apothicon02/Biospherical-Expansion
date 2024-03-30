@@ -8,9 +8,7 @@
     "fog_color": 12638463,
     "water_color": 7318712,
     "water_fog_color": 272948,
-    "grass_color": 7265674,
-    "foliage_color": 47226,
-    "mood_sound": {
+"mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
       "block_search_extent": 8,
@@ -177,10 +175,8 @@
       "biox:moss_bushes_super_dense",
       "biox:clustered_azalea_bushes",
       "minecraft:bamboo_light",
-      "eco:trees_branching_oak",
-      "eco:trees_clustered_tall_oak",
       "biox:trees_rare_giant_oak",
-      "biox:trees_noise_tall_birch",
+      "biox:trees_moss_tall_birch",
       "eco:moss_patch",
       "eco:extra_ancient_flower_patch",
       "eco:extra_tulip_flower_patch",

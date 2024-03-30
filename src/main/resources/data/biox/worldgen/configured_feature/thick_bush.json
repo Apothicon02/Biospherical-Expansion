@@ -19,7 +19,7 @@
     "trunk_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "minecraft:birch_log",
+        "Name": "minecraft:birch_wood",
         "Properties": {
           "axis": "y"
         }
@@ -37,10 +37,10 @@
     },
     "trunk_placer": {
       "type": "eco:straight_branching_trunk_placer",
-      "base_height": 9,
-      "height_rand_a": 5,
-      "height_rand_b": 2,
-      "max_branch_height": 4
+      "base_height": 1,
+      "height_rand_a": 1,
+      "height_rand_b": 1,
+      "max_branch_height": 3
     },
     "foliage_placer": {
       "type": "eco:tall_foliage_placer",
@@ -49,14 +49,6 @@
       "height": 4
     },
     "decorators": [
-      {
-        "type": "biox:trunk_mushrooms",
-        "probability": 0.3
-      },
-      {
-        "type": "minecraft:beehive",
-        "probability": 0.01
-      }
     ]
   }
 }

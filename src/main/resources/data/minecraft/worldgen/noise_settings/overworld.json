@@ -21,8 +21,14 @@
     "fluid_level_floodedness": -1,
     "fluid_level_spread": -1,
     "lava": -1,
-    "temperature": "biox:temperature",
-    "vegetation": "biox:vegetation",
+    "temperature": {
+      "type": "biox:store_temperature",
+      "input": "biox:temperature"
+    },
+    "vegetation": {
+      "type": "biox:store_humidity",
+      "input": "biox:vegetation"
+    },
     "erosion": 0,
     "continents": {
       "type": "minecraft:add",

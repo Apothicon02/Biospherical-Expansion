@@ -7,8 +7,6 @@
     "fog_color": 12638463,
     "water_color": 7318712,
     "water_fog_color": 272948,
-    "foliage_color": 9285927,
-    "grass_color_modifier": "swamp",
     "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,

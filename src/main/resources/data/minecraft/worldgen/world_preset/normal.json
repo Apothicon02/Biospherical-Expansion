@@ -1427,29 +1427,8 @@
                   0.5
                 ],
                 "humidity": [
-                  -0.2,
-                  0.8
-                ],
-                "erosion": 0,
-                "continentalness": [
-                  0.235,
-                  0.25
-                ],
-                "weirdness": 0,
-                "depth": 0,
-                "offset": 0
-              }
-            },
-            {
-              "biome": "minecraft:stony_shore",
-              "parameters": {
-                "temperature": [
-                  -0.25,
-                  0.5
-                ],
-                "humidity": [
                   -1,
-                  -0.2
+                  0.8
                 ],
                 "erosion": 0,
                 "continentalness": [

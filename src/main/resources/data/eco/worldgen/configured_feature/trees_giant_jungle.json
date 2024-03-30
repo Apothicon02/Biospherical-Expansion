@@ -133,10 +133,6 @@
         "probability": 0.2
       },
       {
-        "type": "minecraft:leave_vine",
-        "probability": 0.2
-      },
-      {
         "type": "minecraft:trunk_vine"
       },
       {

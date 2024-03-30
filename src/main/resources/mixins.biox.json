@@ -15,6 +15,7 @@
     "UtilMixin"
   ],
   "client": [
+    "BiomeColorsMixin"
   ],
   "server": [
   ]
