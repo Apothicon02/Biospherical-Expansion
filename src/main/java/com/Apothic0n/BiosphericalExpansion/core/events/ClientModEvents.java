@@ -40,6 +40,7 @@ public class ClientModEvents {
         if (event.getTabKey().equals(CreativeModeTabs.NATURAL_BLOCKS)) {
             event.accept(BioxItems.GLOWING_AMETHYST.get(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             event.accept(BioxItems.AQUATIC_LICHEN.get(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+            event.accept(BioxItems.DRY_GRASS.get(), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
             List<List<RegistryObject<Item>>> buildingBlockItems = List.of(BioxItems.wallItems, BioxItems.stairItems, BioxItems.slabItems, BioxItems.pileItems);
             for (int i = 0; i < buildingBlockItems.size(); i++) {
                 List<RegistryObject<Item>> blockItemTypeList = buildingBlockItems.get(i);

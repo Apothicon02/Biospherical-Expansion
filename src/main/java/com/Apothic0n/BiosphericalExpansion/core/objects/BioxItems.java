@@ -23,9 +23,10 @@ public final class BioxItems extends Items {
 
     public static final RegistryObject<Item> GLOWING_AMETHYST = ITEMS.register("glowing_amethyst", () ->
             new BlockItem(BioxBlocks.GLOWING_AMETHYST.get(), new Item.Properties()));
-
     public static final RegistryObject<Item> AQUATIC_LICHEN = ITEMS.register("aquatic_lichen", () ->
             new PlaceOnWaterBlockItem(BioxBlocks.AQUATIC_LICHEN.get(), new Item.Properties()));
+    public static final RegistryObject<Item> DRY_GRASS = ITEMS.register("dry_grass", () ->
+            new BlockItem(BioxBlocks.DRY_GRASS.get(), new Item.Properties()));
 
     public static final List<RegistryObject<Item>> wallItems = new ArrayList<>(List.of());
     public static final List<RegistryObject<Item>> stairItems = new ArrayList<>(List.of());
