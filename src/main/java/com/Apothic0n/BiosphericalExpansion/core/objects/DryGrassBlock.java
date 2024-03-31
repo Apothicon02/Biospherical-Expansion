@@ -28,6 +28,11 @@ public class DryGrassBlock extends GrowingPlantHeadBlock {
     }
 
     @Override
+    public boolean isRandomlyTicking(BlockState p_53961_) {
+        return false;
+    }
+
+    @Override
     public BlockState updateShape(BlockState blockState, Direction direction, BlockState blockState2, LevelAccessor levelAccessor, BlockPos blockPos, BlockPos blockPos2) {
         BlockState belowState = levelAccessor.getBlockState(blockPos.below());
         if (!belowState.is(BlockTags.DIRT) && !belowState.is(BioxBlocks.DRY_GRASS.get())) {
