@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=bottom": {
+      "model": "biox:block/dry_grass_middle"
+    },
+    "half=top": {
+      "model": "biox:block/dry_grass"
+    }
+  }
+}
