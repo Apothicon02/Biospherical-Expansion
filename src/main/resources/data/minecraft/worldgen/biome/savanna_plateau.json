@@ -7,7 +7,7 @@
     "fog_color": 12638463,
     "water_color": 7318712,
     "water_fog_color": 272948,
-"mood_sound": {
+    "mood_sound": {
       "sound": "minecraft:ambient.cave",
       "tick_delay": 6000,
       "block_search_extent": 8,
@@ -183,8 +183,7 @@
       "biox:mangrove_bushes_dense",
       "eco:dense_sunflowers",
       "eco:red_flowers",
-      "eco:basic_grass",
-      "eco:tall_grass"
+      "biox:dry_grass"
     ],
     [
       "minecraft:freeze_top_layer"

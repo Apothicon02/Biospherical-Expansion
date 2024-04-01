@@ -4,6 +4,8 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
@@ -12,11 +14,14 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.EnumProperty;
 import net.minecraft.world.level.block.state.properties.Half;
+import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class DryGrassBlock extends GrowingPlantHeadBlock {
-    public static final VoxelShape SHAPE = Block.box(4.0D, 0.0D, 4.0D, 12.0D, 15.0D, 12.0D);
+    public static final VoxelShape SHAPE = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 8.0D, 16.0D);
     public static final EnumProperty<Half> HALF = BlockStateProperties.HALF;
+    protected static final VoxelShape BOTTOM_AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 16.0D, 16.0D);
+    protected static final VoxelShape TOP_AABB = Block.box(0.0D, 0.0D, 0.0D, 16.0D, 2.0D, 16.0D);
 
     public DryGrassBlock(BlockBehaviour.Properties p_154864_) {
         super(p_154864_, Direction.UP, SHAPE, false, 0.1D);
@@ -33,7 +38,24 @@ public class DryGrassBlock extends GrowingPlantHeadBlock {
     }
 
     @Override
+    public BlockState getStateForPlacement(BlockPlaceContext context) {
+        return makeShape(context.getLevel(), context.getClickedPos());
+    }
+
+    @Override
+    public VoxelShape getShape(BlockState blockState, BlockGetter blockGetter, BlockPos p_56392_, CollisionContext p_56393_) {
+        if (blockState.getValue(HALF).equals(Half.BOTTOM)) {
+            return BOTTOM_AABB;
+        }
+        return TOP_AABB;
+    }
+
+    @Override
     public BlockState updateShape(BlockState blockState, Direction direction, BlockState blockState2, LevelAccessor levelAccessor, BlockPos blockPos, BlockPos blockPos2) {
+        return makeShape(levelAccessor, blockPos);
+    }
+
+    private BlockState makeShape(LevelAccessor levelAccessor, BlockPos blockPos) {
         BlockState belowState = levelAccessor.getBlockState(blockPos.below());
         if (!belowState.is(BlockTags.DIRT) && !belowState.is(BioxBlocks.DRY_GRASS.get())) {
             return Blocks.AIR.defaultBlockState();

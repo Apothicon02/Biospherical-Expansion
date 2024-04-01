@@ -873,7 +873,7 @@
               }
             },
             {
-              "biome": "biox:orchard",
+              "biome": "minecraft:flower_forest",
               "parameters": {
                 "temperature": [
                   0.33,
@@ -894,7 +894,7 @@
               }
             },
             {
-              "biome": "minecraft:sunflower_plains",
+              "biome": "biox:flower_plains",
               "parameters": {
                 "temperature": [
                   0.33,
@@ -1041,7 +1041,7 @@
               }
             },
             {
-              "biome": "minecraft:flower_forest",
+              "biome": "biox:orchard",
               "parameters": {
                 "temperature": [
                   -0.33,
@@ -1062,7 +1062,7 @@
               }
             },
             {
-              "biome": "biox:flower_plains",
+              "biome": "minecraft:sunflower_plains",
               "parameters": {
                 "temperature": [
                   -0.33,
