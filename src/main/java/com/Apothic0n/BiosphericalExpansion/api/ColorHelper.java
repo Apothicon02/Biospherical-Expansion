@@ -17,18 +17,18 @@ public class ColorHelper {
 
     public static int tintFoliageOrGrass(BlockState blockState, int x, int y, int z, double temperature, double humidity, boolean isFoliage) {
         double brighten = Mth.clamp(BRIGHTNESS_NOISE.getValue(x * 0.05, z * 0.01, false), -0.25, 0.25)+0.5;
-        double dryShift = 0.33;
+        double dryShift = 0.2;
         double darkShift = 0;
         double autumnalShift = 0;
         String name = blockState.getBlock().asItem().getDefaultInstance().getHoverName().getString();
         if (!isFoliage) {
             dryShift = 0.8;
             darkShift = 1.15;
-        } else {
+        } else if (name.contains("Dark Oak")) {
             autumnalShift = 1.5-((Mth.clamp(Mth.abs((float) temperature), 0.75, 0.8)-0.75)*30);
         }
         double snowFactor = getFactor(0.33, 1.1, -10, -0.8, temperature);
-        double autumnalFactor = getFactor(autumnalShift, 6, -0.75, -0.3, temperature);
+        double autumnalFactor = getFactor(autumnalShift, 15, -0.75, -0.18, temperature);
         double darkFactor = getFactor(darkShift, 3, -0.5, 0, temperature);
         double warmFactor = getFactor(0.1, 4, 0.15, 10, temperature);
         double dryFactor =  Mth.clamp(getFactor(dryShift, dryShift*3.33, -10, -0.1, humidity) - Math.max(0, getFactor(0.7, 5, -10, 0.425, temperature)), 0, 0.7);

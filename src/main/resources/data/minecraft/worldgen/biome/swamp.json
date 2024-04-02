@@ -9,10 +9,10 @@
     "water_color": 7318712,
     "water_fog_color": 272948,
     "mood_sound": {
-      "sound": "minecraft:ambient.cave",
-      "tick_delay": 6000,
-      "block_search_extent": 8,
-      "offset": 2
+      "max_delay": 24000,
+      "min_delay": 12000,
+      "replace_current_music": false,
+      "sound": "minecraft:music.overworld.flower_forest"
     },
     "music": {
       "sound": "minecraft:music.overworld.swamp",
