@@ -26,29 +26,15 @@
       }
     },
     "foliage_provider": {
-      "type": "minecraft:weighted_state_provider",
-      "entries": [
-        {
-          "weight": 1,
-          "data": {
-            "Name": "minecraft:flowering_azalea_leaves",
-            "Properties": {
-              "distance": "7",
-              "persistent": "false"
-            }
-          }
-        },
-        {
-          "weight": 11,
-          "data": {
-            "Name": "minecraft:azalea_leaves",
-            "Properties": {
-              "distance": "7",
-              "persistent": "false"
-            }
-          }
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:oak_leaves",
+        "Properties": {
+          "distance": "7",
+          "persistent": "false",
+          "waterlogged": "false"
         }
-      ]
+      }
     },
     "trunk_placer": {
       "type": "eco:straight_branching_trunk_placer",
@@ -106,7 +92,7 @@
             {
               "weight": 3,
               "data": {
-                "Name": "minecraft:moss_block"
+                "Name": "minecraft:grass_block"
               }
             }
           ]

@@ -880,7 +880,7 @@
                         {
                           "type": "minecraft:block",
                           "result_state": {
-                            "Name": "minecraft:sandstone"
+                            "Name": "minecraft:sand"
                           }
                         }
                       ]
@@ -1724,10 +1724,7 @@
                                 "then_run": {
                                   "type": "minecraft:block",
                                   "result_state": {
-                                    "Name": "minecraft:grass_block",
-                                    "Properties": {
-                                      "snowy": "false"
-                                    }
+                                    "Name": "minecraft:podzol"
                                   }
                                 }
                               },
@@ -1965,21 +1962,6 @@
                                 }
                               },
                               {
-                                "type": "minecraft:condition",
-                                "if_true": {
-                                  "type": "minecraft:noise_threshold",
-                                  "noise": "eco:surface_variation",
-                                  "min_threshold": 0.05,
-                                  "max_threshold": 0.261
-                                },
-                                "then_run": {
-                                  "type": "minecraft:block",
-                                  "result_state": {
-                                    "Name": "minecraft:moss_block"
-                                  }
-                                }
-                              },
-                              {
                                 "type": "minecraft:block",
                                 "result_state": {
                                   "Name": "minecraft:grass_block",
@@ -2013,7 +1995,7 @@
                                 "then_run": {
                                   "type": "minecraft:block",
                                   "result_state": {
-                                    "Name": "minecraft:moss_block"
+                                    "Name": "minecraft:grass_block"
                                   }
                                 }
                               },
@@ -2028,7 +2010,7 @@
                                 "then_run": {
                                   "type": "minecraft:block",
                                   "result_state": {
-                                    "Name": "minecraft:moss_block"
+                                    "Name": "minecraft:grass_block"
                                   }
                                 }
                               },
@@ -2043,7 +2025,7 @@
                                 "then_run": {
                                   "type": "minecraft:block",
                                   "result_state": {
-                                    "Name": "minecraft:moss_block"
+                                    "Name": "minecraft:grass_block"
                                   }
                                 }
                               },
@@ -2789,27 +2771,9 @@
                                 }
                               },
                               {
-                                "type": "minecraft:condition",
-                                "if_true": {
-                                  "type": "minecraft:noise_threshold",
-                                  "noise": "eco:surface_variation",
-                                  "min_threshold": -0.069,
-                                  "max_threshold": 0.042
-                                },
-                                "then_run": {
-                                  "type": "minecraft:block",
-                                  "result_state": {
-                                    "Name": "minecraft:grass_block",
-                                    "Properties": {
-                                      "snowy": "false"
-                                    }
-                                  }
-                                }
-                              },
-                              {
                                 "type": "minecraft:block",
                                 "result_state": {
-                                  "Name": "minecraft:moss_block"
+                                  "Name": "minecraft:grass_block"
                                 }
                               }
                             ]
@@ -2838,21 +2802,6 @@
                                   "type": "minecraft:block",
                                   "result_state": {
                                     "Name": "minecraft:mossy_cobblestone"
-                                  }
-                                }
-                              },
-                              {
-                                "type": "minecraft:condition",
-                                "if_true": {
-                                  "type": "minecraft:noise_threshold",
-                                  "noise": "eco:surface_variation",
-                                  "min_threshold": -0.169,
-                                  "max_threshold": 0.142
-                                },
-                                "then_run": {
-                                  "type": "minecraft:block",
-                                  "result_state": {
-                                    "Name": "minecraft:moss_block"
                                   }
                                 }
                               },
@@ -2903,21 +2852,6 @@
                                   "type": "minecraft:block",
                                   "result_state": {
                                     "Name": "minecraft:mossy_cobblestone"
-                                  }
-                                }
-                              },
-                              {
-                                "type": "minecraft:condition",
-                                "if_true": {
-                                  "type": "minecraft:noise_threshold",
-                                  "noise": "eco:surface_variation",
-                                  "min_threshold": -0.169,
-                                  "max_threshold": 0.142
-                                },
-                                "then_run": {
-                                  "type": "minecraft:block",
-                                  "result_state": {
-                                    "Name": "minecraft:moss_block"
                                   }
                                 }
                               },
@@ -3056,40 +2990,31 @@
                               "minecraft:plains",
                               "biox:birch_plains",
                               "biox:dark_plains",
-                              "biox:caldera",
-                              "biox:caldera_hills",
                               "biox:lowlands",
                               "biox:windswept_hills"
                             ]
                           },
                           "then_run": {
-                            "type": "minecraft:sequence",
-                            "sequence": [
-                              {
-                                "type": "minecraft:condition",
-                                "if_true": {
-                                  "type": "minecraft:noise_threshold",
-                                  "noise": "eco:surface_variation",
-                                  "min_threshold": -0.069,
-                                  "max_threshold": 0.042
-                                },
-                                "then_run": {
-                                  "type": "minecraft:block",
-                                  "result_state": {
-                                    "Name": "minecraft:moss_block"
-                                  }
-                                }
-                              },
-                              {
-                                "type": "minecraft:block",
-                                "result_state": {
-                                  "Name": "minecraft:grass_block",
-                                  "Properties": {
-                                    "snowy": "false"
-                                  }
-                                }
-                              }
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:grass_block"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:biome",
+                            "biome_is": [
+                              "biox:caldera",
+                              "biox:caldera_hills"
                             ]
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:podzol"
+                            }
                           }
                         },
                         {
@@ -3172,21 +3097,6 @@
                                 "type": "minecraft:condition",
                                 "if_true": {
                                   "type": "minecraft:noise_threshold",
-                                  "noise": "eco:surface_variation",
-                                  "min_threshold": -0.069,
-                                  "max_threshold": 0.042
-                                },
-                                "then_run": {
-                                  "type": "minecraft:block",
-                                  "result_state": {
-                                    "Name": "minecraft:moss_block"
-                                  }
-                                }
-                              },
-                              {
-                                "type": "minecraft:condition",
-                                "if_true": {
-                                  "type": "minecraft:noise_threshold",
                                   "noise": "biox:less_surface_variation",
                                   "min_threshold": 0.069,
                                   "max_threshold": 0.18
@@ -3221,48 +3131,13 @@
                             ]
                           },
                           "then_run": {
-                            "type": "minecraft:sequence",
-                            "sequence": [
-                              {
-                                "type": "minecraft:condition",
-                                "if_true": {
-                                  "type": "minecraft:noise_threshold",
-                                  "noise": "eco:surface_variation",
-                                  "min_threshold": -0.069,
-                                  "max_threshold": 0.042
-                                },
-                                "then_run": {
-                                  "type": "minecraft:block",
-                                  "result_state": {
-                                    "Name": "minecraft:moss_block"
-                                  }
-                                }
-                              },
-                              {
-                                "type": "minecraft:condition",
-                                "if_true": {
-                                  "type": "minecraft:noise_threshold",
-                                  "noise": "biox:less_surface_variation",
-                                  "min_threshold": 0.037,
-                                  "max_threshold": 0.23
-                                },
-                                "then_run": {
-                                  "type": "minecraft:block",
-                                  "result_state": {
-                                    "Name": "minecraft:moss_block"
-                                  }
-                                }
-                              },
-                              {
-                                "type": "minecraft:block",
-                                "result_state": {
-                                  "Name": "minecraft:grass_block",
-                                  "Properties": {
-                                    "snowy": "false"
-                                  }
-                                }
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:grass_block",
+                              "Properties": {
+                                "snowy": "false"
                               }
-                            ]
+                            }
                           }
                         },
                         {
@@ -3309,21 +3184,6 @@
                                   "type": "minecraft:block",
                                   "result_state": {
                                     "Name": "minecraft:coarse_dirt"
-                                  }
-                                }
-                              },
-                              {
-                                "type": "minecraft:condition",
-                                "if_true": {
-                                  "type": "minecraft:noise_threshold",
-                                  "noise": "biox:less_surface_variation",
-                                  "min_threshold": 0.037,
-                                  "max_threshold": 0.23
-                                },
-                                "then_run": {
-                                  "type": "minecraft:block",
-                                  "result_state": {
-                                    "Name": "minecraft:moss_block"
                                   }
                                 }
                               },
@@ -3456,7 +3316,7 @@
                                 "then_run": {
                                   "type": "minecraft:block",
                                   "result_state": {
-                                    "Name": "minecraft:moss_block"
+                                    "Name": "minecraft:grass_block"
                                   }
                                 }
                               },

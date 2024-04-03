@@ -26,21 +26,15 @@
       }
     },
     "foliage_provider": {
-      "type": "minecraft:weighted_state_provider",
-      "entries": [
-        {
-          "weight": 19,
-          "data": {
-            "Name": "minecraft:azalea_leaves"
-          }
-        },
-        {
-          "weight": 1,
-          "data": {
-            "Name": "minecraft:flowering_azalea_leaves"
-          }
+      "type": "minecraft:simple_state_provider",
+      "state": {
+        "Name": "minecraft:oak_leaves",
+        "Properties": {
+          "distance": "7",
+          "persistent": "false",
+          "waterlogged": "false"
         }
-      ]
+      }
     },
     "trunk_placer": {
       "type": "eco:straight_branching_trunk_placer",

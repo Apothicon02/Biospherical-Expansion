@@ -894,7 +894,7 @@
               }
             },
             {
-              "biome": "biox:flower_plains",
+              "biome": "minecraft:sunflower_plains",
               "parameters": {
                 "temperature": [
                   0.33,
@@ -923,7 +923,7 @@
                 ],
                 "humidity": [
                   -1,
-                  1
+                  0
                 ],
                 "erosion": 0,
                 "continentalness": [
@@ -944,6 +944,27 @@
                 ],
                 "humidity": [
                   -1,
+                  0
+                ],
+                "erosion": 0,
+                "continentalness": [
+                  0.251,
+                  0.391
+                ],
+                "weirdness": 0,
+                "depth": 0,
+                "offset": 0
+              }
+            },
+            {
+              "biome": "minecraft:forest",
+              "parameters": {
+                "temperature": [
+                  0.18,
+                  0.33
+                ],
+                "humidity": [
+                  0,
                   1
                 ],
                 "erosion": 0,
@@ -1062,7 +1083,7 @@
               }
             },
             {
-              "biome": "minecraft:sunflower_plains",
+              "biome": "biox:flower_plains",
               "parameters": {
                 "temperature": [
                   -0.33,
@@ -2093,7 +2114,7 @@
               "biome": "minecraft:deep_dark",
               "parameters": {
                 "temperature": [
-                  -0.6,
+                  -0.8,
                   -0.25
                 ],
                 "humidity": [
@@ -2112,7 +2133,7 @@
               "parameters": {
                 "temperature": [
                   -1,
-                  -0.6
+                  -0.8
                 ],
                 "humidity": [
                   -0.5,

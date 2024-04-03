@@ -328,26 +328,6 @@ public class ClientModEvents {
                 Blocks.END_STONE, Blocks.END_STONE_BRICKS, Blocks.END_STONE_BRICK_STAIRS, Blocks.END_STONE_BRICK_SLAB, Blocks.END_STONE_BRICK_WALL);
 
         event.register((blockState, blockAndTintGetter, blockPos, tint) -> {
-                    int color = blockAndTintGetter != null && blockPos != null ? BiomeColors.getAverageFoliageColor(blockAndTintGetter, blockPos) : FoliageColor.getDefaultColor();
-                    if (blockPos != null) {
-                        int x = blockPos.getX();
-                        int z = blockPos.getZ();
-                        double saturate = Mth.clamp(SATURATION_NOISE.getValue(x * 0.66, z * 0.6, false) * 0.1, -0.2, 0.22) + 0.9;
-                        float red = (float) Mth.clamp(FastColor.ABGR32.red(color), 1, 255) / 255;
-                        float green = (float) Mth.clamp(FastColor.ABGR32.green(color), 1, 255) / 255;
-                        float blue = (float) Mth.clamp(FastColor.ABGR32.blue(color), 1, 255) / 255;
-                        return FastColor.ABGR32.color(FastColor.ABGR32.alpha(color),
-                                (int) (Mth.clamp(blue * saturate, 0, 1) * 255),
-                                (int) (Mth.clamp(green * saturate, 0, 1) * 255),
-                                (int) (Mth.clamp(red * saturate, 0, 1) * 255));
-                    }
-                    return color;
-                },
-                Blocks.CAVE_VINES, Blocks.CAVE_VINES_PLANT,
-                Blocks.AZALEA, Blocks.FLOWERING_AZALEA,
-                Blocks.AZALEA_LEAVES, Blocks.FLOWERING_AZALEA_LEAVES, azaleaLeaves, azaleaPile, floweringAzaleaLeaves, floweringAzaleaPile);
-
-        event.register((blockState, blockAndTintGetter, blockPos, tint) -> {
                     int color = blockAndTintGetter != null && blockPos != null ? BiomeColors.getAverageGrassColor(blockAndTintGetter, blockPos) : GrassColor.getDefaultColor();
                     if (blockPos != null) {
                         int x = blockPos.getX();
@@ -363,8 +343,7 @@ public class ClientModEvents {
                     }
                     return color;
                 },
-                Blocks.MOSS_BLOCK, Blocks.MOSS_CARPET,
-                Blocks.GLOW_LICHEN, BioxBlocks.AQUATIC_LICHEN.get());
+                BioxBlocks.AQUATIC_LICHEN.get());
     }
 
     @SubscribeEvent
@@ -459,29 +438,6 @@ public class ClientModEvents {
                 return FastColor.ABGR32.color(1, 0, 179, 89);
             }
         },
-        Blocks.CAVE_VINES, Blocks.CAVE_VINES_PLANT,
-        Blocks.AZALEA, Blocks.FLOWERING_AZALEA,
-        Blocks.AZALEA_LEAVES, Blocks.FLOWERING_AZALEA_LEAVES, azaleaLeaves, azaleaPile, floweringAzaleaLeaves, floweringAzaleaPile);
-
-        event.register((itemStack, tint) -> {
-            if (Minecraft.getInstance().level != null) {
-                BlockPos blockPos = Minecraft.getInstance().player.blockPosition();
-                int color = Minecraft.getInstance().level != null && Minecraft.getInstance().player != null ? BiomeColors.getAverageFoliageColor(Minecraft.getInstance().level, Minecraft.getInstance().player.blockPosition()) : FoliageColor.getDefaultColor();
-                int x = blockPos.getX();
-                int z = blockPos.getZ();
-                double saturate = Mth.clamp(SATURATION_NOISE.getValue(x * 0.66, z * 0.6, false) * 0.1, -0.2, 0.22) + 0.9;
-                float red = (float) Mth.clamp(FastColor.ABGR32.red(color), 1, 255) / 255;
-                float green = (float) Mth.clamp(FastColor.ABGR32.green(color), 1, 255) / 255;
-                float blue = (float) Mth.clamp(FastColor.ABGR32.blue(color), 1, 255) / 255;
-                return FastColor.ABGR32.color(FastColor.ABGR32.alpha(color),
-                        (int) (Mth.clamp(blue * saturate, 0, 1) * 255),
-                        (int) (Mth.clamp(green * saturate, 0, 1) * 255),
-                        (int) (Mth.clamp(red * saturate, 0, 1) * 255));
-            } else {
-                return FastColor.ABGR32.color(1, 0, 179, 89);
-            }
-        },
-        Blocks.MOSS_BLOCK, Blocks.MOSS_CARPET,
-        Blocks.GLOW_LICHEN, BioxBlocks.AQUATIC_LICHEN.get());
+        BioxBlocks.AQUATIC_LICHEN.get());
     }
 }

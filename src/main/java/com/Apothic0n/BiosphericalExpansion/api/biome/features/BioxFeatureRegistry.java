@@ -24,6 +24,9 @@ public abstract class BioxFeatureRegistry {
             new CrystalFeature(SimpleBlockConfiguration.CODEC));
     public static final RegistryObject<Feature<NoneFeatureConfiguration>> DRY_GRASS_FEATURE = FEATURES.register("dry_grass", () ->
             new DryGrassFeature(NoneFeatureConfiguration.CODEC));
+    public static final RegistryObject<Feature<SimpleBlockConfiguration>> ARCH_FEATURE = FEATURES.register("arch", () ->
+            new ArchFeature(SimpleBlockConfiguration.CODEC));
+
     public static void register(IEventBus eventBus) {
         FEATURES.register(eventBus);
     }
