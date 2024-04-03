@@ -816,8 +816,7 @@
                       "biome_is": [
                         "minecraft:desert",
                         "minecraft:river",
-                        "minecraft:beach",
-                        "biox:himalayan_shore"
+                        "minecraft:beach"
                       ]
                     },
                     "then_run": {
@@ -874,6 +873,65 @@
                             "type": "minecraft:block",
                             "result_state": {
                               "Name": "minecraft:sandstone"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "minecraft:sand"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:biome",
+                      "biome_is": [
+                        "biox:himalayan_shore"
+                      ]
+                    },
+                    "then_run": {
+                      "type": "minecraft:sequence",
+                      "sequence": [
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:noise_threshold",
+                            "noise": "biox:volcanoes",
+                            "min_threshold": 0.8,
+                            "max_threshold": 100
+                          },
+                          "then_run": {
+                            "type": "minecraft:condition",
+                            "if_true": {
+                              "type": "minecraft:noise_threshold",
+                              "noise": "eco:surface_variation",
+                              "min_threshold": -0.069,
+                              "max_threshold": 0.042
+                            },
+                            "then_run": {
+                              "type": "minecraft:block",
+                              "result_state": {
+                                "Name": "minecraft:stone"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:noise_threshold",
+                            "noise": "biox:volcanoes",
+                            "min_threshold": 0.8,
+                            "max_threshold": 100
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:cobblestone"
                             }
                           }
                         },
@@ -1286,8 +1344,7 @@
                       "biome_is": [
                         "minecraft:desert",
                         "minecraft:river",
-                        "minecraft:beach",
-                        "biox:himalayan_shore"
+                        "minecraft:beach"
                       ]
                     },
                     "then_run": {
@@ -1344,6 +1401,65 @@
                             "type": "minecraft:block",
                             "result_state": {
                               "Name": "minecraft:sandstone"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "minecraft:sand"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:biome",
+                      "biome_is": [
+                        "biox:himalayan_shore"
+                      ]
+                    },
+                    "then_run": {
+                      "type": "minecraft:sequence",
+                      "sequence": [
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:noise_threshold",
+                            "noise": "biox:volcanoes",
+                            "min_threshold": 0.8,
+                            "max_threshold": 100
+                          },
+                          "then_run": {
+                            "type": "minecraft:condition",
+                            "if_true": {
+                              "type": "minecraft:noise_threshold",
+                              "noise": "eco:surface_variation",
+                              "min_threshold": -0.069,
+                              "max_threshold": 0.042
+                            },
+                            "then_run": {
+                              "type": "minecraft:block",
+                              "result_state": {
+                                "Name": "minecraft:cobblestone"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:noise_threshold",
+                            "noise": "biox:volcanoes",
+                            "min_threshold": 0.8,
+                            "max_threshold": 100
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:gravel"
                             }
                           }
                         },
@@ -3896,21 +4012,6 @@
                           }
                         },
                         {
-                          "type": "minecraft:condition",
-                          "if_true": {
-                            "type": "minecraft:noise_threshold",
-                            "noise": "eco:surface_variation",
-                            "min_threshold": -0.069,
-                            "max_threshold": 0.042
-                          },
-                          "then_run": {
-                            "type": "minecraft:block",
-                            "result_state": {
-                              "Name": "minecraft:sandstone"
-                            }
-                          }
-                        },
-                        {
                           "type": "minecraft:block",
                           "result_state": {
                             "Name": "minecraft:sandstone"
@@ -4441,8 +4542,7 @@
                       "biome_is": [
                         "minecraft:desert",
                         "minecraft:river",
-                        "minecraft:beach",
-                        "biox:himalayan_shore"
+                        "minecraft:beach"
                       ]
                     },
                     "then_run": {
@@ -4499,6 +4599,65 @@
                             "type": "minecraft:block",
                             "result_state": {
                               "Name": "minecraft:sandstone"
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:block",
+                          "result_state": {
+                            "Name": "minecraft:sand"
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "type": "minecraft:condition",
+                    "if_true": {
+                      "type": "minecraft:biome",
+                      "biome_is": [
+                        "biox:himalayan_shore"
+                      ]
+                    },
+                    "then_run": {
+                      "type": "minecraft:sequence",
+                      "sequence": [
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:noise_threshold",
+                            "noise": "biox:volcanoes",
+                            "min_threshold": 0.8,
+                            "max_threshold": 100
+                          },
+                          "then_run": {
+                            "type": "minecraft:condition",
+                            "if_true": {
+                              "type": "minecraft:noise_threshold",
+                              "noise": "eco:surface_variation",
+                              "min_threshold": -0.069,
+                              "max_threshold": 0.042
+                            },
+                            "then_run": {
+                              "type": "minecraft:block",
+                              "result_state": {
+                                "Name": "minecraft:cobblestone"
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "type": "minecraft:condition",
+                          "if_true": {
+                            "type": "minecraft:noise_threshold",
+                            "noise": "biox:volcanoes",
+                            "min_threshold": 0.8,
+                            "max_threshold": 100
+                          },
+                          "then_run": {
+                            "type": "minecraft:block",
+                            "result_state": {
+                              "Name": "minecraft:gravel"
                             }
                           }
                         },

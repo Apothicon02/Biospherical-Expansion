@@ -7,10 +7,9 @@ import net.minecraft.client.particle.TextureSheetParticle;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.core.BlockPos;
 import net.minecraft.util.FastColor;
-import org.jline.utils.Colors;
 
 
-public class OakLeavesParticle extends TextureSheetParticle {
+public class LeavesParticle extends TextureSheetParticle {
     private static final float ACCELERATION_SCALE = 0.0025F;
     private static final int INITIAL_LIFETIME = 300;
     private static final int CURVE_ENDPOINT_TIME = 300;
@@ -20,7 +19,7 @@ public class OakLeavesParticle extends TextureSheetParticle {
     private final float particleRandom;
     private final float spinAcceleration;
 
-    public OakLeavesParticle(ClientLevel level, double x, double y, double z, SpriteSet spriteSet) {
+    public LeavesParticle(ClientLevel level, double x, double y, double z, SpriteSet spriteSet) {
         super(level, x, y, z);
         this.setSprite(spriteSet.get(this.random.nextInt(12), 12));
         this.rotSpeed = (float)Math.toRadians(this.random.nextBoolean() ? -30.0D : 30.0D);
@@ -29,7 +28,7 @@ public class OakLeavesParticle extends TextureSheetParticle {
         this.lifetime = 300;
         this.gravity = 7.5E-4F;
         float f = this.random.nextBoolean() ? 0.05F : 0.075F;
-        int rgb = BiomeColors.getAverageFoliageColor(level, new BlockPos((int) x, 68, (int) z));
+        int rgb = BiomeColors.getAverageFoliageColor(level, new BlockPos((int) x, (int) (y+0.5), (int) z));
         this.rCol = (float) FastColor.ARGB32.red(rgb) / 255;
         this.gCol = (float) FastColor.ARGB32.green(rgb) / 255;
         this.bCol = (float) FastColor.ARGB32.blue(rgb) / 255;

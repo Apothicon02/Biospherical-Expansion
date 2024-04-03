@@ -2,24 +2,10 @@
   "feature": "biox:moss_bushes_super_dense",
   "placement": [
     {
-      "type": "minecraft:count",
-      "count": {
-        "type": "minecraft:weighted_list",
-        "distribution": [
-          {
-            "data": 27,
-            "weight": 20
-          },
-          {
-            "data": 30,
-            "weight": 40
-          },
-          {
-            "data": 33,
-            "weight": 40
-          }
-        ]
-      }
+      "type": "minecraft:noise_based_count",
+      "noise_to_count_ratio": 6,
+      "noise_factor": 22,
+      "noise_offset": -0.33
     },
     {
       "type": "minecraft:in_square"

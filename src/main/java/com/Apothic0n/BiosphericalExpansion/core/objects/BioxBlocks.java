@@ -35,7 +35,7 @@ public final class BioxBlocks {
                     .lightLevel(brightness -> {return 11;})));
     public static final RegistryObject<Block> AQUATIC_LICHEN = BLOCKS.register("aquatic_lichen", () ->
             new WaterlilyBlock(BlockBehaviour.Properties.of().mapColor(MapColor.GLOW_LICHEN)
-                    .replaceable().noCollission().strength(0.2F).sound(SoundType.GLOW_LICHEN).offsetType(BlockBehaviour.OffsetType.XYZ).lightLevel(brightness -> {return 7;}).ignitedByLava().pushReaction(PushReaction.DESTROY)));
+                    .replaceable().noCollission().strength(0.2F).sound(SoundType.GLOW_LICHEN).lightLevel(brightness -> {return 7;}).ignitedByLava().pushReaction(PushReaction.DESTROY)));
     public static final RegistryObject<Block> DRY_GRASS = BLOCKS.register("dry_grass", () ->
             new DryGrassBlock(BlockBehaviour.Properties.of().mapColor(MapColor.COLOR_YELLOW)
                     .replaceable().noCollission().instabreak().offsetType(BlockBehaviour.OffsetType.XZ).sound(SoundType.CROP).pushReaction(PushReaction.DESTROY)));

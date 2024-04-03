@@ -174,10 +174,6 @@
         "probability": 0.8
       },
       {
-        "type": "minecraft:trunk_vine",
-        "probability": 0.37
-      },
-      {
         "type": "minecraft:cocoa",
         "probability": 0.25
       }

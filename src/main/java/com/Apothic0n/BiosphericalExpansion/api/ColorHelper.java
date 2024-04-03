@@ -20,16 +20,19 @@ public class ColorHelper {
         double dryShift = 0.2;
         double darkShift = 0;
         double autumnalShift = 0;
+        double snowShift = 0;
         String name = blockState.getBlock().asItem().getDefaultInstance().getHoverName().getString();
         if (!isFoliage) {
             dryShift = 0.8;
             darkShift = 1.15;
         } else if (name.contains("Dark Oak")) {
             autumnalShift = 1.5-((Mth.clamp(Mth.abs((float) temperature), 0.75, 0.8)-0.75)*30);
+        } else {
+            snowShift = 0.33;
         }
-        double snowFactor = getFactor(0.33, 1.1, -10, -0.8, temperature);
-        double autumnalFactor = getFactor(autumnalShift, 15, -0.75, -0.18, temperature);
-        double darkFactor = getFactor(darkShift, 3, -0.69, 0, temperature);
+        double snowFactor = getFactor(snowShift, 1.1, -10, -0.8, temperature);
+        double autumnalFactor = getFactor(autumnalShift, 15, -10, -0.18, temperature);
+        double darkFactor = getFactor(darkShift, 3, -10, 0, temperature);
         double warmFactor = getFactor(0.1, 4, 0.15, 10, temperature);
         double dryFactor =  Mth.clamp(getFactor(dryShift, dryShift*3.33, -10, -0.1, humidity) - Math.max(0, getFactor(0.7, 5, -10, 0.425, temperature)), 0, 0.7);
         float red = (float) (0.6 + warmFactor + snowFactor + dryFactor - darkFactor + autumnalFactor);

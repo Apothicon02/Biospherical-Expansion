@@ -42,7 +42,7 @@ public class DryGrassFeature extends Feature<NoneFeatureConfiguration> {
                 BlockPos blockPos = new BlockPos(x, worldgenlevel.getHeight(Heightmap.Types.WORLD_SURFACE_WG, x, z), z);
                 BlockState belowState = worldgenlevel.getBlockState(blockPos.below());
                 if (worldgenlevel.getBiome(blockPos).is(BiomeTags.IS_SAVANNA) && worldgenlevel.getBlockState(blockPos).is(Blocks.AIR) && belowState.is(BlockTags.DIRT)) {
-                    if (belowState.is(Blocks.GRASS_BLOCK) || belowState.is(Blocks.MOSS_BLOCK)) {
+                    if (belowState.is(Blocks.GRASS_BLOCK)) {
                         double height = HEIGHT_NOISE.getValue(x, z, false);
                         if (height > 0.33) {
                             worldgenlevel.setBlock(blockPos, bottomState, UPDATE_ALL);

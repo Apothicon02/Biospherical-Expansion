@@ -75,17 +75,35 @@ public class ArchFeature extends Feature<SimpleBlockConfiguration> {
                         String biomeName = biome.toString();
                         if (worldGenLevel.getBlockState(blockPos).is(Blocks.LAVA)) {
                             placeState = Blocks.DEEPSLATE_COAL_ORE.defaultBlockState();
-                        } else if (y < 6) {
-                            BlockState maybeNewState = getCaveBlock(biome, biomeName, beingReplaced);
-                            if (!maybeNewState.isAir()) {
-                                placeState = maybeNewState;
-                            }
-                        } else if (y >= 62) {
-                            placeState = getSurfaceBlock(biome, biomeName, x, y, z);
                         } else {
-                            BlockState maybeNewState = getOceanBlock(biome, biomeName);
-                            if (!maybeNewState.isAir()) {
-                                placeState = maybeNewState;
+                            if (y <= ogY) {
+                                if (y < 6) {
+                                    BlockState maybeNewState = getLowerCaveBlock(biome, biomeName, beingReplaced);
+                                    if (!maybeNewState.isAir()) {
+                                        placeState = maybeNewState;
+                                    }
+                                } else if (y >= 62) {
+                                    placeState = getLowerSurfaceBlock(biome, biomeName, x, y, z);
+                                } else {
+                                    BlockState maybeNewState = getLowerOceanBlock(biome, biomeName);
+                                    if (!maybeNewState.isAir()) {
+                                        placeState = maybeNewState;
+                                    }
+                                }
+                            } else {
+                                if (y < 6) {
+                                    BlockState maybeNewState = getCaveBlock(biome, biomeName, beingReplaced);
+                                    if (!maybeNewState.isAir()) {
+                                        placeState = maybeNewState;
+                                    }
+                                } else if (y >= 62) {
+                                    placeState = getSurfaceBlock(biome, biomeName, x, y, z);
+                                } else {
+                                    BlockState maybeNewState = getOceanBlock(biome, biomeName);
+                                    if (!maybeNewState.isAir()) {
+                                        placeState = maybeNewState;
+                                    }
+                                }
                             }
                         }
                         worldGenLevel.setBlock(blockPos, placeState, UPDATE_ALL);
@@ -95,12 +113,12 @@ public class ArchFeature extends Feature<SimpleBlockConfiguration> {
         }
     }
 
-    private BlockState getOceanBlock(Holder<Biome> biome, String biomeName) {
-        if (!biome.is(Biomes.WARM_OCEAN) && !biome.is(Biomes.LUKEWARM_OCEAN) && !biome.is(Biomes.DEEP_LUKEWARM_OCEAN) && !biome.is(BiomeTags.IS_RIVER)) {
+    private BlockState getLowerOceanBlock(Holder<Biome> biome, String biomeName) {
+        if (!biome.is(Biomes.WARM_OCEAN) && !biome.is(Biomes.LUKEWARM_OCEAN) && !biome.is(Biomes.DEEP_LUKEWARM_OCEAN)) {
             if (biome.is(Biomes.OCEAN) || biome.is(Biomes.DEEP_OCEAN)) {
-               return Blocks.PRISMARINE.defaultBlockState();
+                return Blocks.TUBE_CORAL_BLOCK.defaultBlockState();
             } else if (biomeName.contains("caldera") || biome.is(Biomes.RIVER)) {
-                return Blocks.CALCITE.defaultBlockState();
+                return Blocks.DIORITE.defaultBlockState();
             } else {
                 return Blocks.BLUE_ICE.defaultBlockState();
             }
@@ -108,20 +126,51 @@ public class ArchFeature extends Feature<SimpleBlockConfiguration> {
         return Blocks.AIR.defaultBlockState();
     }
 
+    private BlockState getOceanBlock(Holder<Biome> biome, String biomeName) {
+        if (!biome.is(Biomes.WARM_OCEAN) && !biome.is(Biomes.LUKEWARM_OCEAN) && !biome.is(Biomes.DEEP_LUKEWARM_OCEAN)) {
+            if (biome.is(Biomes.OCEAN) || biome.is(Biomes.DEEP_OCEAN)) {
+               return Blocks.PRISMARINE.defaultBlockState();
+            } else if (biomeName.contains("caldera") || biome.is(Biomes.RIVER)) {
+                return Blocks.CALCITE.defaultBlockState();
+            } else {
+                return Blocks.ICE.defaultBlockState();
+            }
+        }
+        return Blocks.AIR.defaultBlockState();
+    }
+
+    private BlockState getLowerSurfaceBlock(Holder<Biome> biome, String biomeName, int x, int y, int z) {
+        if (biomeName.contains("desert") || biome.is(BiomeTags.IS_BADLANDS) || biome.is(BiomeTags.IS_SAVANNA) || biome.is(Biomes.WARM_OCEAN) || biome.is(Biomes.LUKEWARM_OCEAN) || biome.is(Biomes.DEEP_LUKEWARM_OCEAN)) {
+            return Blocks.LIGHT_GRAY_TERRACOTTA.defaultBlockState();
+        } else {
+            return Blocks.DIORITE.defaultBlockState();
+        }
+    }
+
     private BlockState getSurfaceBlock(Holder<Biome> biome, String biomeName, int x, int y, int z) {
-        if (biomeName.contains("desert")) {
-            return Blocks.RED_SANDSTONE.defaultBlockState();
-        } else if (biomeName.contains("caldera") || (BioxDensityFunctions.temperature != null && BioxDensityFunctions.temperature.compute(new DensityFunction.SinglePointContext(x, y, z)) >= 2)) {
-            return Blocks.MAGMA_BLOCK.defaultBlockState();
+        if (biomeName.contains("desert") || biome.is(BiomeTags.IS_BADLANDS) || biome.is(BiomeTags.IS_SAVANNA) || biome.is(Biomes.WARM_OCEAN) || biome.is(Biomes.LUKEWARM_OCEAN) || biome.is(Biomes.DEEP_LUKEWARM_OCEAN)) {
+            return Blocks.WHITE_TERRACOTTA.defaultBlockState();
         } else {
             return Blocks.CALCITE.defaultBlockState();
         }
     }
 
-    private BlockState getCaveBlock(Holder<Biome> biome, String biomeName, BlockState beingReplaced) {
+    private BlockState getLowerCaveBlock(Holder<Biome> biome, String biomeName, BlockState beingReplaced) {
         if (biomeName.contains("glacial_caves")) {
             return Blocks.BLUE_ICE.defaultBlockState();
         } else if (biomeName.contains("caldera") || biomeName.contains("molten_caves")) {
+            return Blocks.DIORITE.defaultBlockState();
+        } else if (!beingReplaced.is(Blocks.WATER)) {
+            return Blocks.MUDDY_MANGROVE_ROOTS.defaultBlockState();
+        } else {
+            return getOceanBlock(biome, biomeName);
+        }
+    }
+
+    private BlockState getCaveBlock(Holder<Biome> biome, String biomeName, BlockState beingReplaced) {
+        if (biomeName.contains("glacial_caves")) {
+            return Blocks.ICE.defaultBlockState();
+        } else if (biomeName.contains("caldera") || biomeName.contains("molten_caves") || biomeName.contains("geodeial_caves")) {
             return Blocks.CALCITE.defaultBlockState();
         } else if (!beingReplaced.is(Blocks.WATER)) {
             return Blocks.MANGROVE_ROOTS.defaultBlockState();

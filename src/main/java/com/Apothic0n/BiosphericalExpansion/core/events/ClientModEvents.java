@@ -55,12 +55,12 @@ public class ClientModEvents {
     public static void registerSpriteSet(RegisterParticleProvidersEvent event) {
         event.registerSpriteSet(BioxParticleTypes.OAK_LEAVES.get(), (spriteSet) -> {
             return (particleType, level, x, y, z, p_277222_, p_277223_, p_277224_) -> {
-                return new OakLeavesParticle(level, x, y, z, spriteSet);
+                return new LeavesParticle(level, x, y, z, spriteSet);
             };
         });
         event.registerSpriteSet(BioxParticleTypes.DARK_OAK_LEAVES.get(), (spriteSet) -> {
             return (particleType, level, x, y, z, p_277222_, p_277223_, p_277224_) -> {
-                return new OakLeavesParticle(level, x, y, z, spriteSet);
+                return new LeavesParticle(level, x, y, z, spriteSet);
             };
         });
         event.registerSpriteSet(BioxParticleTypes.BIRCH_LEAVES.get(), (spriteSet) -> {
@@ -75,17 +75,17 @@ public class ClientModEvents {
         });
         event.registerSpriteSet(BioxParticleTypes.JUNGLE_LEAVES.get(), (spriteSet) -> {
             return (particleType, level, x, y, z, p_277222_, p_277223_, p_277224_) -> {
-                return new OakLeavesParticle(level, x, y, z, spriteSet);
+                return new LeavesParticle(level, x, y, z, spriteSet);
             };
         });
         event.registerSpriteSet(BioxParticleTypes.ACACIA_LEAVES.get(), (spriteSet) -> {
             return (particleType, level, x, y, z, p_277222_, p_277223_, p_277224_) -> {
-                return new OakLeavesParticle(level, x, y, z, spriteSet);
+                return new LeavesParticle(level, x, y, z, spriteSet);
             };
         });
         event.registerSpriteSet(BioxParticleTypes.MANGROVE_LEAVES.get(), (spriteSet) -> {
             return (particleType, level, x, y, z, p_277222_, p_277223_, p_277224_) -> {
-                return new MangroveLeavesParticle(level, x, y, z, spriteSet);
+                return new LeavesParticle(level, x, y, z, spriteSet);
             };
         });
         event.registerSpriteSet(BioxParticleTypes.AZALEA_LEAVES.get(), (spriteSet) -> {
@@ -113,8 +113,6 @@ public class ClientModEvents {
         Block acaciaLeaves = Blocks.ACACIA_LEAVES;
         Block darkOakLeaves = Blocks.DARK_OAK_LEAVES;
         Block mangroveLeaves = Blocks.MANGROVE_LEAVES;
-        Block azaleaLeaves = Blocks.AZALEA_LEAVES;
-        Block floweringAzaleaLeaves = Blocks.FLOWERING_AZALEA_LEAVES;
         Block sprucePile = Blocks.SPRUCE_LEAVES;
         Block birchPile = Blocks.BIRCH_LEAVES;
         Block oakPile = Blocks.OAK_LEAVES;
@@ -122,8 +120,6 @@ public class ClientModEvents {
         Block acaciaPile = Blocks.ACACIA_LEAVES;
         Block darkOakPile = Blocks.DARK_OAK_LEAVES;
         Block mangrovePile = Blocks.MANGROVE_LEAVES;
-        Block azaleaPile = Blocks.AZALEA_LEAVES;
-        Block floweringAzaleaPile = Blocks.FLOWERING_AZALEA_LEAVES;
 
         for (int i = 0; i < wallBlocks.size(); i++) {
             Map<Block, RegistryObject<Block>> map = wallBlocks.get(i);
@@ -141,10 +137,6 @@ public class ClientModEvents {
                 darkOakLeaves = map.get(Blocks.DARK_OAK_LEAVES).get();
             } else if (map.containsKey(Blocks.MANGROVE_LEAVES)) {
                 mangroveLeaves = map.get(Blocks.MANGROVE_LEAVES).get();
-            } else if (map.containsKey(Blocks.AZALEA_LEAVES)) {
-                azaleaLeaves = map.get(Blocks.AZALEA_LEAVES).get();
-            } else if (map.containsKey(Blocks.FLOWERING_AZALEA_LEAVES)) {
-                floweringAzaleaLeaves = map.get(Blocks.FLOWERING_AZALEA_LEAVES).get();
             }
         }
         for (int i = 0; i < pileBlocks.size(); i++) {
@@ -163,10 +155,6 @@ public class ClientModEvents {
                 darkOakPile = map.get(Blocks.DARK_OAK_LEAVES).get();
             } else if (map.containsKey(Blocks.MANGROVE_LEAVES)) {
                 mangrovePile = map.get(Blocks.MANGROVE_LEAVES).get();
-            } else if (map.containsKey(Blocks.AZALEA_LEAVES)) {
-                azaleaPile = map.get(Blocks.AZALEA_LEAVES).get();
-            } else if (map.containsKey(Blocks.FLOWERING_AZALEA_LEAVES)) {
-                floweringAzaleaPile = map.get(Blocks.FLOWERING_AZALEA_LEAVES).get();
             }
         }
 
@@ -263,10 +251,7 @@ public class ClientModEvents {
                         return -328966;
                     }
                 },
-                Blocks.SAND, Blocks.SANDSTONE, Blocks.SANDSTONE_STAIRS, Blocks.SANDSTONE_SLAB, Blocks.SANDSTONE_WALL,
-                Blocks.SMOOTH_SANDSTONE, Blocks.SMOOTH_SANDSTONE_STAIRS, Blocks.SMOOTH_SANDSTONE_SLAB, Blocks.CHISELED_SANDSTONE,
-                Blocks.RED_SAND, Blocks.RED_SANDSTONE, Blocks.RED_SANDSTONE_STAIRS, Blocks.RED_SANDSTONE_SLAB, Blocks.RED_SANDSTONE_WALL,
-                Blocks.SMOOTH_RED_SANDSTONE, Blocks.SMOOTH_RED_SANDSTONE_STAIRS, Blocks.SMOOTH_RED_SANDSTONE_SLAB, Blocks.CHISELED_RED_SANDSTONE);
+                Blocks.SAND);
 
         event.register((blockState, blockAndTintGetter, blockPos, tint) -> {
                     if (blockPos != null) {

@@ -130,10 +130,7 @@
       },
       {
         "type": "biox:hanging_leaves",
-        "probability": 0.2
-      },
-      {
-        "type": "minecraft:trunk_vine"
+        "probability": 0.7
       },
       {
         "type": "minecraft:cocoa",
